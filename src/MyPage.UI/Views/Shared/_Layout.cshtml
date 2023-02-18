@@ -1,0 +1,188 @@
+﻿<html>
+<head>
+    @*<link href="@Url.Content("~/Content/css/menu.css")" rel="stylesheet" type="text/css" />*@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <header>
+        <div class="menu" id="menu">
+            <div class="perfil">
+                <div class="my-photo-wrapper">
+                    <img class="my-photo" id="my-photo" src="/img/perfil.jpg" alt="My perfil photo" />
+                </div>
+                <p class="name" id="name">
+                    matheus.assis
+                </p>
+            </div>
+
+            <div class="menu-items" id="menu-items">
+                <a class="menu-item" href="/">
+                    Sobre
+                </a>
+                <a class="menu-item" href="/">
+                    Projetos
+                </a>
+                <a class="menu-item" href="/">
+                    Contato
+                </a>
+            </div>
+
+            <div class="material-symbols-outlined" id="menu-button-mobile">
+                menu
+            </div>
+
+            <div class="menu-items-mobile" id="menu-items-mobile">
+                <a class="menu-item" href="/">
+                    Sobre
+                </a>
+                <a class="menu-item" href="/">
+                    Projetos
+                </a>
+                <a class="menu-item" href="/">
+                    Contato
+                </a>
+            </div>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    @*<footer>
+    Rodapé
+    </footer>*@
+</body>
+</html>
+
+
+<style>
+    body, head {
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+    }
+
+    header {
+        position: fixed;
+        width: 100%;
+    }
+
+    body {
+        margin: 0;
+        background: #000000;
+        color: white;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .menu {
+        display: flex;
+        flex
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 20px;
+        padding-right: 25px !important;
+        background: rgb(12, 12, 12);
+        /*transition: background-color .3s,padding .3s linear;*/
+        transition: padding .3s linear;
+     }
+
+    .menu-items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .menu-items-mobile {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .menu-button-mobile {
+        display: none;
+    }
+
+    .menu-item {
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+        font-size: 16px;
+        transition: opacity .2s linear;
+    }
+
+    .menu-item:hover {
+        opacity: 0.7;
+    }
+
+    .perfil {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .name {
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .my-photo-wrapper {
+        display: flex;
+    }
+
+    .my-photo {
+        border-radius: 100%;
+        width: 60px;
+        transition: width .3s linear;
+    }
+</style>
+
+<script>
+    menuSwitch();
+    window.onscroll = () => scrollFunction();
+    window.addEventListener("resize", () => menuSwitch())
+
+    function menuSwitch() {
+        if (window.matchMedia("(min-width: 720px)").matches) {
+            document.getElementById("menu-items").style.display = "flex";
+            document.getElementById("menu-button-mobile").style.display = "none";
+
+            document.getElementById("menu-items").style.flexDirection = "row";
+            document.getElementById("menu-items").style.alignItems = "center";
+            document.getElementById("menu-items").style.justifyContent = "center";
+
+        } else {
+            document.getElementById("menu-items").style.display = "none";
+            document.getElementById("menu-button-mobile").style.display = "block";
+        }
+    }
+
+    function menuButtonHandle() {
+        document.getElementById("menu-items").style.display = "flex";
+        document.getElementById("menu-items").style.flexDirection = "row";
+        document.getElementById("menu-items").style.alignItems = "center";
+        document.getElementById("menu-items").style.justifyContent = "center";
+    }
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("menu").style.padding = "0";
+            document.getElementById("menu").style.boxShadow = "0 1px 6px 0 rgb(0 0 0 / 15%)"
+            document.getElementById("my-photo").style.width = "0";
+        }
+        else {
+            document.getElementById("menu").style.padding = "18px 20px";
+            document.getElementById("menu").style.boxShadow = "none"
+            document.getElementById("my-photo").style.width = "60px";
+        }
+    }
+
+</script>

@@ -1,0 +1,15 @@
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-items {
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-item {
+    align-items: center;
+    justify-content: center;
+}
