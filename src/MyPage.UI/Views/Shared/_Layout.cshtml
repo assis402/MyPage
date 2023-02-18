@@ -9,31 +9,35 @@
 <body>
     <header>
         <div class="menu" id="menu">
-            <div class="perfil">
-                <div class="my-photo-wrapper">
-                    <img class="my-photo" id="my-photo" src="/img/perfil.jpg" alt="My perfil photo" />
+            <div class="menu-container" id="menu-container">
+                <div class="perfil">
+                    <div class="my-photo-wrapper">
+                        <img class="my-photo" id="my-photo" src="/img/perfil.jpg" alt="My perfil photo" />
+                    </div>
+                    <p class="name" id="name">
+                        matheus.assis
+                    </p>
                 </div>
-                <p class="name" id="name">
-                    matheus.assis
-                </p>
-            </div>
 
-            <div class="menu-items" id="menu-items">
-                <a class="menu-item" href="/">
-                    Sobre
-                </a>
-                <a class="menu-item" href="/">
-                    Projetos
-                </a>
-                <a class="menu-item" href="/">
-                    Contato
-                </a>
-            </div>
+                <div class="menu-items" id="menu-items">
+                    <a class="menu-item" href="/">
+                        Sobre
+                    </a>
+                    <a class="menu-item" href="/">
+                        Projetos
+                    </a>
+                    <a class="menu-item" href="/">
+                        Contato
+                    </a>
+                </div>
 
-            <div class="material-symbols-outlined" id="menu-button-mobile">
-                menu
+                <div class="material-symbols-outlined" 
+                     id="menu-button-mobile"
+                     onclick="handleMobileMenu()"
+                 >
+                    menu
+                </div>
             </div>
-
             <div class="menu-items-mobile" id="menu-items-mobile">
                 <a class="menu-item" href="/">
                     Sobre
@@ -80,16 +84,18 @@
     }
 
     .menu {
+        flex-wrap: wrap;
         display: flex;
-        flex
+    }
+
+    .menu-container {
+        display: flex;
+        width: 100%;
         align-items: center;
-        justify-content: space-between;
-        padding: 18px 20px;
-        padding-right: 25px !important;
         background: rgb(12, 12, 12);
-        /*transition: background-color .3s,padding .3s linear;*/
-        transition: padding .3s linear;
-     }
+        justify-content: space-between;
+        padding: 20px;
+    }
 
     .menu-items {
         display: flex;
@@ -99,10 +105,15 @@
     }
 
     .menu-items-mobile {
-        display: none;
-        align-items: center;
+        padding: 15px;
+        padding-top: 0;
+        display: flex;
+        align-items: flex-start;
         justify-content: center;
         flex-direction: column;
+        background: rgb(12, 12, 12);
+        width: 100%;
+        opacity: 0;
     }
 
     .menu-button-mobile {
@@ -114,7 +125,8 @@
         justify-content: center;
         padding: 8px 12px;
         font-size: 16px;
-        transition: opacity .2s linear;
+        transition: opacity .3s linear;
+        font-weight: 300;
     }
 
     .menu-item:hover {
@@ -126,7 +138,6 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 30px;
     }
 
     .name {
@@ -141,7 +152,7 @@
     .my-photo {
         border-radius: 100%;
         width: 60px;
-        transition: width .3s linear;
+        margin-right: 20px;
     }
 </style>
 
@@ -165,23 +176,44 @@
         }
     }
 
-    function menuButtonHandle() {
-        document.getElementById("menu-items").style.display = "flex";
-        document.getElementById("menu-items").style.flexDirection = "row";
-        document.getElementById("menu-items").style.alignItems = "center";
-        document.getElementById("menu-items").style.justifyContent = "center";
+    function handleMobileMenu() {
+        //let menu = document.getElementById("menu-items-mobile").style.display;
+        //if (menu === "flex") {
+        //    document.getElementById("menu-items-mobile").style.display = "none";
+        //    document.getElementById("menu-items-mobile").style.opacity = "0";
+        //} else {
+        //    document.getElementById("menu-items-mobile").style.display = "flex";
+        //    document.getElementById("menu-items-mobile").style.opacity = "1";
+        //}
+
+        let menu = document.getElementById("menu-items-mobile").style.opacity;
+        if (menu === "1") {
+            document.getElementById("menu-items-mobile").style.opacity = "0";
+            document.getElementById("menu-items-mobile").style.transition = "opacity .3s linear";
+        } else {
+            document.getElementById("menu-items-mobile").style.opacity = "1";
+            document.getElementById("menu-items-mobile").style.transition = "opacity .3s linear";
+        }
     }
 
     function scrollFunction() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("menu").style.padding = "0";
-            document.getElementById("menu").style.boxShadow = "0 1px 6px 0 rgb(0 0 0 / 15%)"
-            document.getElementById("my-photo").style.width = "0";
+            document.getElementById("menu-container").style.padding = "0 20px"
+            document.getElementById("menu-container").style.boxShadow = "0 1px 6px 0 rgb(0 0 0 / 15%)"
+            document.getElementById("my-photo").style.width = "0"
+            document.getElementById("my-photo").style.marginRight = "5px"
+
+            document.getElementById("menu-container").style.transition = "padding .3s linear";
+            document.getElementById("my-photo").style.transition = "width .3s linear, margin .3s linear";
         }
         else {
-            document.getElementById("menu").style.padding = "18px 20px";
-            document.getElementById("menu").style.boxShadow = "none"
-            document.getElementById("my-photo").style.width = "60px";
+            document.getElementById("menu-container").style.padding = "20px"
+            document.getElementById("menu-container").style.boxShadow = "none"
+            document.getElementById("my-photo").style.width = "60px"
+            document.getElementById("my-photo").style.marginRight = "20px";
+
+            document.getElementById("menu-container").style.transition = "padding .3s linear";
+            document.getElementById("my-photo").style.transition = "width .3s linear, margin .3s linear";
         }
     }
 
