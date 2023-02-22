@@ -1,36 +1,217 @@
 ﻿<div class="about-external-container">
-       <p class="about-title">Olá, me chamo <br /> Matheus de Assis.</p>
-       <p class="about-body">
-        Trabalho com desenvolvimento de software há mais de dois anos, 
-        majoritarimanete com backend em C# .NET. Contrary to popular belief, Lorem Ipsum is not simply random text.
-       </p
-       <p class="about-body">
-        Trabalho com desenvolvimento de software há mais de dois anos, 
-        majoritarimanete com backend em C# .NET. Contrary to popular belief, Lorem Ipsum is not simply random text.
-       </p>
-       <p class="about-body">
-        Trabalho com desenvolvimento de software há mais de dois anos, 
-        majoritarimanete com backend em C# .NET. Contrary to popular belief, Lorem Ipsum is not simply random text.
-       </p>
-       <p class="about-body">
-        Trabalho com desenvolvimento de software há mais de dois anos, 
-        majoritarimanete com backend em C# .NET. Contrary to popular belief, Lorem Ipsum is not simply random text.
-       </p>
+    <div class="about-minified">
+        <p class="about-title">Olá, me chamo <br /> <b>Matheus de Assis</b></p>
+        <div class="main-stack">
+            <div class="main-stack-header">
+                <p class="main-stack-title">
+                    STACK PRINCIPAL
+                </p>
+                <p class="main-stack-body">
+                    Desenvolvedor Backend .NET
+                </p>
+            </div>
+            <div class="main-stack-footer">
+                <img class="tech-icon" src="/img/c-sharp.png" alt="C#" />
+                <img class="tech-icon" src="/img/dotnet.png" alt=".NET" />
+            </div>
+        </div>
+    </div>
+    <div class="about-buttons">
+        <div class="about-button" onclick="showAbout()" id="show-about">
+            <div class="inner-button">saber mais</div>
+            <div class="material-symbols-outlined" id="expand_more">
+                expand_more
+            </div>
+        </div>
+    </div>
+    <div id="about-body-container">
+        <p class="about-body" id="about-body-1">
+            Trabalho com desenvolvimento de software há mais de dois anos, majoritariamente com foco em
+            Backend na linguagem <span class="emphasis">C# .NET (.NET Core e .NET Framework)</span>.
+        </p>
+        <p class="about-body" id="about-body-2">
+            Atuei em projetos que também utilizei outras tecnologias,
+            como frontend web (Dashboard Admin) em  <span class="emphasis">Angular</span>, banco de dados em
+            <span class="emphasis">SQL Server, MySql, Redis e MongoDB, testes unitários</span>
+            e arquitetura em microsserviços.
+        </p>
+        <p class="about-body" id="about-body-3">
+            Pessoalmente, abordo outros tópicos e tecnologias durante meus estudos, como plataformas de computação em nuvem, mais especificamente a Microsoft Azure, e desenvolvimento de aplicativos com React Native.
+        </p>
+    </div>
+</div>
+<div class="timeline-external-container">
+
 </div>
 
 <style>
     .about-external-container {
-        padding: 80px 20%;
+        padding: 0 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 20%;
+    }
 
+    #about-body-container {
+        padding: 0 10%;
+        opacity: 0;
+        height: 0;
+        transition: opacity .2s linear;
+    }
+
+    .about-minified {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        height: 165px;
+        padding-bottom: 70px;
     }
 
     .about-title {
-        font-size: 40px;
+        margin: 0;
+        text-align: right;
+        font-size: 50px;
+        font-weight: 300;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 165px;
+    }
+
+    .main-stack {
+        border: 1px solid #1e1e1e;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 140px;
+        padding: 15px;
+    }
+
+    .main-stack-header {
+    }
+
+    .main-stack-footer {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .main-stack-title {
+        font-weight: 200;
+        color: #dfdfdf;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .main-stack-body {
+        font-size: 22px;
+        margin: 0;
         font-weight: 500;
-        text-align: center;
+    }
+
+    .tech-icon {
+        z-index: -1;
+        height: 50px;
+        filter: grayscale(50%);
+        transition: filter .2s linear;
+    }
+
+    .tech-icon:hover {
+        filter: grayscale(0%);
     }
 
     .about-body {
-        text-align: center;
+        text-align: left;
+        font-weight: 200;
+        color: #dfdfdf;
+        height: 0;
     }
+
+    .emphasis {
+        font-weight: 500;
+        color: white;
+    }
+
+    .about-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-button {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: opacity .2s linear;
+    }
+
+    .inner-button {
+        display: flex;
+        justify-content: center;
+        font-weight: 500;
+        align-items: center;
+        width: 110px;
+        color: #dfdfdf;
+        border-bottom: 1px solid #1e1e1e;
+        transition: border-bottom .2s linear, color .2s linear;
+    }
+
+    #expand_more {
+        z-index: -1;
+        opacity: 0.3;
+        transition: opacity .2s linear;
+    }
+
+    .inner-button:hover {
+        color: white;
+        border-bottom: 1px solid white;
+    }
+
+    @@media (max-width: 1100px) {
+
+       .about-title {
+            font-size: 6.5vh;
+       }
+
+        .main-stack-body {
+            font-size: 3.5vh;
+        }
+
+        .main-stack-title {
+            font-size: 2.0vh;
+        }
+    }
+
+    .timeline-external-container {
+        background: rgb(12, 12, 12);
+        height: 700px;
+        margin-top: 100px;
+    }
+
 </style>
+
+<script>
+    function showAbout() {
+        document.getElementById("show-about").style.opacity = "0";
+        document.getElementById("show-about").style.cursor = "default";
+
+        setTimeout(() => {
+            document.getElementById("show-about").style.height = "0";
+        }, 200)
+
+        setTimeout(() => {
+            document.getElementById("about-body-container").style.height = "auto";
+            document.getElementById("about-body-1").style.height = "auto";
+            document.getElementById("about-body-2").style.height = "auto";
+            document.getElementById("about-body-3").style.height = "auto";
+            document.getElementById("about-body-container").style.opacity = "1";
+        }, 200)
+    }
+</script>
