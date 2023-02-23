@@ -46,16 +46,16 @@
 
 <style>
     .about-external-container {
-        padding: 0 10%;
+        padding: 0 5%;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        margin-top: 20%;
+        margin-top: 200px;
     }
 
     #about-body-container {
-        padding: 0 10%;
+        padding: 0 5%;
         opacity: 0;
         height: 0;
         transition: opacity .2s linear;
@@ -76,19 +76,20 @@
         font-size: 50px;
         font-weight: 300;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-direction: column;
         height: 165px;
     }
 
     .main-stack {
-        border: 1px solid #1e1e1e;
         width: 350px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 140px;
         padding: 15px;
+        background-color: #0c0c0c;
+        z-index: -1;
     }
 
     .main-stack-header {
@@ -174,18 +175,62 @@
         border-bottom: 1px solid white;
     }
 
-    @@media (max-width: 1100px) {
+    .inner-button:hover + #expand_more {
+        opacity: 1;
+    }
 
+    @@media (max-width: 1200px) {
        .about-title {
-            font-size: 6.5vh;
+            font-size: 40px;
        }
 
         .main-stack-body {
-            font-size: 3.5vh;
+            font-size: 18px;
         }
 
         .main-stack-title {
-            font-size: 2.0vh;
+            font-size: 10px;
+        }
+    }
+
+    @@media (max-width: 900px) {
+        .about-title {
+            font-size: 35px;
+        }
+    }
+
+    @@media (max-width: 800px) {
+        .about-title {
+            font-size: 32px;
+        }
+    }
+
+    @@media (max-width: 720px) {
+        .about-minified {
+            flex-direction: column;
+            height: auto;
+            gap: 10px;
+            padding-bottom: 30px;
+        }
+
+        .about-title {
+            text-align: left;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .about-external-container {
+            padding: 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 30%;
+        }
+
+        .main-stack {
+            width: 100%;
+            height: 150px;
         }
     }
 

@@ -15,7 +15,7 @@
                         <img class="my-photo" id="my-photo" src="/img/perfil.jpg" alt="My perfil photo" />
                     </div>
                     <p class="name" id="name">
-                        matheus.assis
+                        my page
                     </p>
                 </div>
 
@@ -31,10 +31,9 @@
                     </a>
                 </div>
 
-                <div class="material-symbols-outlined" 
+                <div class="material-symbols-outlined"
                      id="menu-button-mobile"
-                     onclick="handleMobileMenu()"
-                 >
+                     onclick="handleMobileMenu()">
                     menu
                 </div>
             </div>
@@ -94,9 +93,11 @@
         display: flex;
         width: 100%;
         align-items: center;
-        background: rgb(12, 12, 12);
+        background: rgb(0, 0, 0);
         justify-content: space-between;
         padding: 20px;
+        z-index: 10000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0);
     }
 
     .menu-items {
@@ -113,10 +114,11 @@
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
-        background: rgb(12, 12, 12);
+        background: rgb(0, 0, 0);
         width: 100%;
         opacity: 0;
         height: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     #menu-button-mobile {
@@ -125,9 +127,9 @@
         transition: opacity .2s linear;
     }
 
-    #menu-button-mobile:hover {
-         opacity: 0.6;
-    }
+        #menu-button-mobile:hover {
+            opacity: 0.6;
+        }
 
     .menu-item {
         align-items: center;
@@ -136,12 +138,11 @@
         font-size: 16px;
         transition: opacity .2s linear;
         font-weight: 300;
-
     }
 
-    .menu-item:hover {
-        opacity: 0.6;
-    }
+        .menu-item:hover {
+            opacity: 0.6;
+        }
 
     .perfil {
         display: flex;
@@ -187,44 +188,49 @@
     }
 
     function handleMobileMenu() {
-        let menu = document.getElementById("menu-items-mobile").style.opacity;
-        if (menu === "1") {
+        let menuIsOpen = document.getElementById("menu-items-mobile").style.opacity === "1";
+        if (menuIsOpen) {
             document.getElementById("menu-items-mobile").style.opacity = "0";
-            document.getElementById("menu-items-mobile").style.height = "0";
             document.getElementById("menu-items-mobile").style.transition = "opacity .3s linear";
+
+            setTimeout(() => {
+                document.getElementById("menu-items-mobile").style.height = "0";
+            }, 300);
         } else {
             document.getElementById("menu-items-mobile").style.opacity = "1";
-            document.getElementById("menu-items-mobile").style.height = "auto";
             document.getElementById("menu-items-mobile").style.transition = "opacity .3s linear";
+
+            document.getElementById("menu-items-mobile").style.height = "auto";
         }
     }
 
     function scrollFunction() {
+        let menuIsOpen = document.getElementById("menu-items-mobile").style.opacity === "1";
+
         if (document.body.scrollTop > 20) {
             document.getElementById("menu-container").style.padding = "0 20px"
             document.getElementById("menu-container").style.boxShadow = "0 1px 6px 0 rgb(0 0 0 / 15%)"
             document.getElementById("my-photo").style.width = "0"
             document.getElementById("my-photo").style.marginRight = "5px"
 
-            document.getElementById("menu-container").style.transition = "background .5s linear, padding .3s linear";
-            document.getElementById("my-photo").style.transition = "width .3s linear, margin .3s linear";
-        }
+            if (menuIsOpen) {
+                document.getElementById("menu-container").style.borderBottom = "2px solid rgba(255, 255, 255, 0.08)"
+            }
 
-        if (document.body.scrollTop < 20) {
+            document.getElementById("menu-container").style.transition = "border-bottom .3s linear, padding .3s linear";
+            document.getElementById("my-photo").style.transition = "width .3s linear, margin .3s linear";
+        } else {
             document.getElementById("menu-container").style.padding = "20px"
             document.getElementById("menu-container").style.boxShadow = "none"
             document.getElementById("my-photo").style.width = "60px"
             document.getElementById("my-photo").style.marginRight = "20px";
+            document.getElementById("menu-container").style.borderBottom = "1px solid rgba(255, 255, 255, 0)"
 
-            document.getElementById("menu-container").style.transition = "background .5s linear, padding .3s linear";
+
+            document.getElementById("menu-container").style.transition = "border-bottom .3s linear, padding .3s linear";
             document.getElementById("my-photo").style.transition = "width .3s linear, margin .3s linear";
         }
 
-        if (document.body.scrollTop > 580 && document.body.scrollTop < 800) {
-            document.getElementById("menu-container").style.background = "rgb(0, 0, 0)"
-        } else {
-            document.getElementById("menu-container").style.background = "rgb(12, 12, 12)"
-        }
     }
 
 </script>
