@@ -41,7 +41,17 @@
     </div>
 </div>
 <div class="timeline-external-container">
-
+    <div class="timeline-container">
+        <div class="timeline-mini-title">EXPERIÊNCIA</div>
+        <div class="timeline-body">
+            <div class="timeline-exp">
+                <div class="timeline-exp-date">Atualmente</div>
+                <div class="timeline-exp-circle"></div>
+                <div class="timeline-exp-title">Desenvolvedor Backend</div>
+            </div>
+            <div class="timeline-bar"></div>
+        </div>
+    </div>
 </div>
 
 <style>
@@ -52,10 +62,11 @@
         justify-content: center;
         flex-direction: column;
         margin-top: 200px;
+        margin-bottom: 50px;
     }
 
     #about-body-container {
-        padding: 0 5%;
+        padding: 0 10%;
         opacity: 0;
         height: 0;
         transition: opacity .2s linear;
@@ -73,7 +84,7 @@
     .about-title {
         margin: 0;
         text-align: right;
-        font-size: 50px;
+        font-size: 45px;
         font-weight: 300;
         display: flex;
         justify-content: space-around;
@@ -206,6 +217,10 @@
     }
 
     @@media (max-width: 720px) {
+        #about-body-container {
+            padding: 0 5%;
+        }
+
         .about-minified {
             flex-direction: column;
             height: auto;
@@ -223,7 +238,7 @@
             padding: 0 5%;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             flex-direction: column;
             margin-top: 30%;
         }
@@ -233,13 +248,26 @@
             height: 150px;
         }
     }
+</style>
 
+<style>
     .timeline-external-container {
         background: rgb(12, 12, 12);
         height: 700px;
-        margin-top: 100px;
+        padding-top: 30px;
     }
 
+    .timeline-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .timeline-mini-title {
+        color: rgb(130, 130, 130);
+        font-weight: 200;
+        font-size: 14px;
+    }
 </style>
 
 <script>

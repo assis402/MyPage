@@ -69,7 +69,7 @@
     header {
         position: fixed;
         width: 100%;
-        top: 0;
+        top: -4;
     }
 
     body {
@@ -118,13 +118,15 @@
         width: 100%;
         opacity: 0;
         height: 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     #menu-button-mobile {
         display: none;
         cursor: pointer;
         transition: opacity .2s linear;
+        -webkit-user-select: none;
+        user-select: none;
     }
 
         #menu-button-mobile:hover {
@@ -193,10 +195,16 @@
             document.getElementById("menu-items-mobile").style.opacity = "0";
             document.getElementById("menu-items-mobile").style.transition = "opacity .3s linear";
 
+            if (document.body.scrollTop > 20) {
+                document.getElementById("menu-container").style.borderBottom = "2px solid rgba(255, 255, 255, 0.1)"
+            }
+
             setTimeout(() => {
                 document.getElementById("menu-items-mobile").style.height = "0";
             }, 300);
         } else {
+            document.getElementById("menu-container").style.borderBottom = "2px solid rgba(255, 255, 255, 0.0)"
+
             document.getElementById("menu-items-mobile").style.opacity = "1";
             document.getElementById("menu-items-mobile").style.transition = "opacity .3s linear";
 
@@ -213,8 +221,8 @@
             document.getElementById("my-photo").style.width = "0"
             document.getElementById("my-photo").style.marginRight = "5px"
 
-            if (menuIsOpen) {
-                document.getElementById("menu-container").style.borderBottom = "2px solid rgba(255, 255, 255, 0.08)"
+            if (!menuIsOpen) {
+                document.getElementById("menu-container").style.borderBottom = "2px solid rgba(255, 255, 255, 0.1)"
             }
 
             document.getElementById("menu-container").style.transition = "border-bottom .3s linear, padding .3s linear";
