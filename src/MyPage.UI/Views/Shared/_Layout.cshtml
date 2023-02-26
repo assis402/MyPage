@@ -84,7 +84,6 @@
         body {
             -ms-overflow-style: none;
             scrollbar-width: none;
-            overflow-y: scroll;
             overflow-x: hidden;
             max-width: 100%;
         }
@@ -190,7 +189,7 @@
 <script>
     menuSwitch();
     window.onscroll = () => scrollFunction();
-    window.addEventListener("resize", () => menuSwitch())
+    window.addEventListener("scroll", () => menuSwitch())
 
     function menuSwitch() {
         if (window.matchMedia("(min-width: 720px)").matches) {
@@ -233,7 +232,7 @@
     function scrollFunction() {
         let menuIsOpen = document.getElementById("menu-items-mobile").style.opacity === "1";
 
-        if (document.body.scrollTop > 20) {
+        if (window.pageYOffset > 20 || document.body.scrollTop > 20) {
             document.getElementById("menu-container").style.padding = "0 20px"
             document.getElementById("menu-container").style.boxShadow = "0 1px 6px 0 rgb(0 0 0 / 15%)"
             document.getElementById("my-photo").style.width = "0"
