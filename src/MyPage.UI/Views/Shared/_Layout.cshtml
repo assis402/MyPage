@@ -1,5 +1,6 @@
 ﻿<html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @*<link href="@Url.Content("~/Content/css/menu.css")" rel="stylesheet" type="text/css" />*@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,6 +72,22 @@
         margin: 0;
         background: #000000;
         color: white;
+    }
+
+
+    @@media screen and (max-width: 720px){
+        ::-webkit-scrollbar {
+            -webkit-appearance: none;
+            width: 0;
+        }
+
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            max-width: 100%;
+        }
     }
 
     a {
