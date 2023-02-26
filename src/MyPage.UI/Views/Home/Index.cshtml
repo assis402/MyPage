@@ -23,16 +23,12 @@
             </p>
             <div class="presentation-buttons">
                 <div class="about-button" onclick="showAbout()">
+                    <img class="about-icon" src="~/img/info.png" />
                     <div class="inner-button">saber mais</div>
-                    <div class="material-symbols-outlined" id="expand_more">
-                        expand_more
-                    </div>
                 </div>
                 <div class="projects-button" onclick="">
+                    <img class="projects-icon" src="~/img/projects.png" />
                     <div class="inner-button">ver projetos</div>
-                    <div class="material-symbols-outlined" id="expand_more">
-                        expand_more
-                    </div>
                 </div>
             </div>
         </div>
@@ -53,6 +49,12 @@
                 de aplicativos com React Native e plataformas de computação em nuvem, mais especificamente
                 a Microsoft Azure, da qual obtive aprovação nas certificações AZ-900 e AZ-204.
             </p>
+            <div class="presentation-buttons second-buttons">
+                <div class="about-button second-button" onclick="">
+                    <img class="projects-icon" src="~/img/projects.png" />
+                    <div class="inner-button">confira meus projetos pessoais</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -78,15 +80,12 @@
                         <div class="timeline-exp-subtitle">C#, .NET Core, MySQL, SQL Server, Redis, APIs Rest, Microsserviços e Testes Unitários</div>
                     </div>
                 </div>
-                <div class="timeline-company">
+                <div class="timeline-company" onclick="window.open('https://labsit.io/','labsit')">
                     <span class="material-symbols-outlined company-icon" title="Empresa">
                         work
                     </span>
-                    <span title="Empresa">
-                        <a class="company-link" href="https://labsit.io/" target="_blank" rel="noopener noreferrer">
-                            Labsit
-                        </a>
-                    </span>
+                    <span title="Empresa">Labsit</span>
+                    <img class="mini-out-logo" src="~/img/out.png" />
                     <span class="timeline-company-arrow labsit-arrow"></span>
                 </div>
                 <div class="timeline-bar labsit-bar"></div>
@@ -109,15 +108,12 @@
                         <div class="timeline-exp-subtitle">Testes manuais (exploratórios, em APIs e etc) e documentações de testes</div>
                     </div>
                 </div>
-                <div class="timeline-company">
+                <div class="timeline-company" onclick="window.open('https://fitbank.com.br/','fitbank')">
                     <span class="material-symbols-outlined company-icon" title="Empresa">
                         work
                     </span>
-                    <span title="Empresa">
-                        <a class="company-link" href="https://fitbank.com.br/" target="_blank" rel="noopener noreferrer">
-                            FitBank
-                        </a>
-                    </span>
+                    <span title="Empresa">FitBank</span>
+                    <img class="mini-out-logo" src="~/img/out.png" />
                     <span class="timeline-company-arrow fitbank-arrow"></span>
                 </div>
                 <div class="timeline-bar fitbank-bar"></div>
@@ -146,6 +142,10 @@
 </div>
 <style>
     .about-external-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
     }
 
     .about-container {
@@ -154,13 +154,18 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        padding-top: 200px;
+        padding-top: 150px;
         padding-bottom: 70px;
     }
 
     .presentation {
-        padding: 0 20%;
+        padding: 0 10%;
+        max-width: 850px;
         text-align: center;
+    }
+
+    .presentation-text {
+        font-weight: 200;
     }
 
     #about-body-container {
@@ -168,6 +173,7 @@
         opacity: 0;
         height: 0;
         transition: opacity .2s linear;
+        max-width: 1100px;
     }
 
     .about-minified {
@@ -183,7 +189,7 @@
         margin: 0;
         text-align: right;
         font-size: 45px;
-        font-weight: 300;
+        font-weight: 200;
         display: flex;
         justify-content: space-around;
         flex-direction: column;
@@ -191,17 +197,19 @@
     }
 
     .main-stack {
-        width: 350px;
         display: flex;
+        background: linear-gradient(to right, #070808, #18181c);
+        align-items: center;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
         height: 140px;
-        padding: 15px;
+        padding: 15px 30px;
         background-color: #0c0c0c;
         z-index: -1;
     }
 
     .main-stack-header {
+        text-align: center;
     }
 
     .main-stack-footer {
@@ -248,48 +256,75 @@
         align-items: center;
         flex-direction: column;
         transition: opacity .2s linear;
+        gap: 30px;
     }
 
     .presentation-buttons {
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 40px;
     }
 
     .about-button {
-        flex-direction: column;
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
-
+        width: 150px;
+        height: 40px;
+        transition: opacity .2s linear, color .2s linear;
+        font-weight: 500;
+        color: white;
+        gap: 12px;
+        line-height: 20px;
+        background: linear-gradient(to right, #27006a, #541db1);
+        opacity: 0.85;
     }
 
-    .inner-button {
+    .projects-button {
         display: flex;
         justify-content: center;
-        font-weight: 500;
         align-items: center;
-        width: 110px;
-        color: #dfdfdf;
-        border-bottom: 1px solid #1e1e1e;
-        transition: border-bottom .2s linear, color .2s linear;
-    }
-
-    #expand_more {
-        z-index: -1;
-        opacity: 0.3;
-        transition: opacity .2s linear;
-    }
-
-    .inner-button:hover {
+        cursor: pointer;
+        width: 150px;
+        height: 40px;
+        transition: opacity .2s linear, color .2s linear, border .2s linear;
+        font-weight: 500;
         color: white;
-        border-bottom: 1px solid white;
+        gap: 12px;
+        line-height: 20px;
+        border: 1px solid #1b1b1b;
+        opacity: 0.85;
     }
 
-        .inner-button:hover + #expand_more {
-            opacity: 1;
-        }
+    .about-button:hover {
+        opacity: 1;
+    }
+
+    .projects-button:hover {
+        opacity: 1;
+        border: 1px solid #424141;
+    }
+
+    .second-buttons {
+        margin-top: 40px;
+    }
+
+    .second-button {
+        width: auto;
+        padding: 5px 15px;
+    }
+
+    .about-icon {
+        height: 20px;
+        filter: invert(0.8);
+    }
+
+    .projects-icon {
+                height: 20px;
+        filter: invert(0.8);
+    }
 
     @@media (max-width: 1200px) {
         .about-title {
@@ -317,37 +352,33 @@
         }
     }
 
-    @@media (min-width: 720.01px) {
-        .about-external-container {
-            height: 100vh;
-        }
-    }
-
     @@media (max-width: 720px) {
         #about-body-container {
-            padding: 0 5%;
+            padding: 0 8%;
+
         }
 
         .about-minified {
             flex-direction: column;
             height: auto;
             gap: 10px;
+            width: 100%;
             padding-bottom: 30px;
         }
 
         .about-title {
             text-align: left;
-            width: 100%;
             justify-content: center;
         }
 
         .about-container {
-            padding: 0 5%;
+            padding: 0 0;
             display: flex;
             align-items: center;
             justify-content: flex-start;
             flex-direction: column;
-            margin-top: 30%;
+            margin-top: 25%;
+            margin-bottom: 40px;
         }
 
         .main-stack {
@@ -363,7 +394,8 @@
     }
 
     .timeline-external-container {
-        background: rgb(12, 12, 12);
+        /*background: #0f0f12;*/
+        background: linear-gradient(to left, #060708, #18181c);
         padding-top: 40px;
         padding-bottom: 70px;
     }
@@ -457,35 +489,45 @@
     }
 
     .timeline-company {
-        width: 110px;
+        width: 143px;
         height: 40px;
-        background-color: #1e1e1e;
+        background-color: #1b1c20;
         position: absolute;
         bottom: 0;
-        margin-left: -122.5px;
+        margin-left: -155.5px;
         display: flex;
         align-items: center;
         font-size: 14px;
-        color: #dfdfdf;
+        color: #b8b8b9;
         font-weight: 500;
         justify-content: inherit;
         padding-left: 10px;
-        gap: 10px;
+        gap: 15px;
+        transition: color .2s linear, border .2s linear;
+        cursor: pointer;
+        border: 1px solid #28282c;
+        border-right: 0px;
     }
 
     .company-icon {
-        opacity: 0.9;
-    }
-
-    .company-link {
-        text-decoration: underline;
-        text-decoration-color: #8b8b8b;
+        opacity: 0.8;
         transition: opacity .2s linear;
     }
 
-        .company-link:hover {
-            opacity: 0.6;
-        }
+    .mini-out-logo {
+        height: 10px;
+        filter: invert(0.8);
+    }
+
+    .timeline-company:hover {
+        color: white;
+        border: 1px solid #b0b0bf;
+        border-right: 0px;
+    }
+
+    .timeline-company:hover + .company-icon {
+        opacity: 1;
+    }
 
     .timeline-bar {
         width: 2px;
@@ -512,8 +554,8 @@
     .timeline-company-arrow {
         width: 0;
         height: 0;
-        border-top: 19px solid transparent;
-        border-bottom: 19px solid transparent;
+        border-top: 21px solid transparent;
+        border-bottom: 21px solid transparent;
     }
 
     @@media (max-width: 720px) {
@@ -576,7 +618,7 @@
     }
 
     .contact:hover {
-        background: #0c0c0c;
+        background: #1b1c20;
     }
 
     .contact-logo {
