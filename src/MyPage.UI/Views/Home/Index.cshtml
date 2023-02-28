@@ -19,7 +19,7 @@
         </div>
         <div class="presentation" id="presentation">
             <p class="presentation-text">
-                Esta é minha página profissional, onde busco contar um resumo da minha trajetório, elencar conhecimentos e expor projetos pessoais.
+                Esta é minha página profissional, onde busco contar um resumo da minha trajetória, elencar conhecimentos e expor projetos pessoais.
             </p>
             <div class="presentation-buttons">
                 <div class="about-button" onclick="showAbout()">
@@ -39,8 +39,8 @@
                 <span class="emphasis">C# .NET (.NET Core e .NET Framework)</span>.
             </p>
             <p class="about-body" id="about-body-2">
-                Atuei em projetos que também utilizei outras tecnologias,
-                como frontend web (Dashboard Admin) em  <span class="emphasis">Angular</span>, banco de dados em
+                Atuei em projetos nos quais também utilizei outras tecnologias,
+                como frontend web (dashboard admin) em  <span class="emphasis">Angular</span>, banco de dados em
                 <span class="emphasis">SQL Server, MySql, Redis e MongoDB, testes unitários</span>
                 e arquitetura em microsserviços.
             </p>
@@ -159,7 +159,7 @@
     }
 
     .presentation {
-        padding: 0 10%;
+        margin: 0 10%;
         max-width: 850px;
         text-align: center;
     }
@@ -280,6 +280,9 @@
         line-height: 20px;
         background: linear-gradient(to right, #27006a, #541db1);
         opacity: 0.85;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     .projects-button {
@@ -296,6 +299,9 @@
         line-height: 20px;
         border: 1px solid #1b1b1b;
         opacity: 0.85;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     .about-button:hover {
@@ -379,6 +385,10 @@
             flex-direction: column;
             margin-top: 20%;
             margin-bottom: 40px;
+        }
+
+        .about-external-container {
+            min-height: auto;
         }
 
         .main-stack {
@@ -507,6 +517,9 @@
         cursor: pointer;
         border: 1px solid #28282c;
         border-right: 0px;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     .company-icon {
@@ -610,6 +623,9 @@
         height: 45px;
         padding: 0 12px;
         transition: background .2s linear;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     .email {
