@@ -147,6 +147,24 @@
   <data name="Background" xml:space="preserve">
     <value>EXPERIÊNCIA</value>
   </data>
+  <data name="LabsitDate_01" xml:space="preserve">
+    <value>agosto 2021 - maio de 2022</value>
+  </data>
+  <data name="LabsitDate_02" xml:space="preserve">
+    <value>janeiro de 2023 - atualmente</value>
+  </data>
+  <data name="LabsitSubTitle_01" xml:space="preserve">
+    <value>C#, .NET Core, MySQL, SQL Server, Redis, APIs Rest, Microsserviços e Testes Unitários</value>
+  </data>
+  <data name="LabsitSubTitle_02" xml:space="preserve">
+    <value>C#, .NET Core, Angular 8, ASP.NET, .NET Framework, MySQL, SQL Server, APIs Rest, Microsserviços e Testes Unitários</value>
+  </data>
+  <data name="LabsitTitle_01" xml:space="preserve">
+    <value>Desenvolvedor Backend Pleno</value>
+  </data>
+  <data name="LabsitTitle_02" xml:space="preserve">
+    <value>Desenvolvedor Fullstack</value>
+  </data>
   <data name="MainStackBody" xml:space="preserve">
     <value>Desenvolvedor Backend .NET</value>
   </data>
