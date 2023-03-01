@@ -117,10 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutBody_01" xml:space="preserve">
+    <value>Sou estudante de Análise e Desenvolvimento de Sistemas e trabalho com desenvolvimento de software há mais de dois anos, majoritariamente com foco em Backend na linguagem</value>
+  </data>
+  <data name="AboutBody_02" xml:space="preserve">
+    <value>Atuei em projetos nos quais também utilizei outras tecnologias, como frontend web (dashboard admin) em</value>
+  </data>
+  <data name="AboutBody_02.1" xml:space="preserve">
+    <value>, banco de dados em</value>
+  </data>
+  <data name="AboutBody_03" xml:space="preserve">
+    <value>Pessoalmente, abordo outros tópicos e tecnologias durante meus estudos, como desenvolvimento de aplicativos com React Native e plataformas de computação em nuvem, mais especificamente a Microsoft Azure, da qual obtive aprovação nas certificações AZ-900 e AZ-204.</value>
+  </data>
+  <data name="AboutButton" xml:space="preserve">
+    <value>saber mais</value>
+  </data>
+  <data name="AboutEmphases_01" xml:space="preserve">
+    <value>C# .NET (.NET Core e .NET Framework).</value>
+  </data>
+  <data name="AboutEmphases_02" xml:space="preserve">
+    <value>SQL Server, MySql, Redis e MongoDB, testes unitários e arquitetura em microsserviços.</value>
+  </data>
   <data name="AboutTitle_Greeting" xml:space="preserve">
     <value>Olá, me chamo</value>
   </data>
   <data name="AboutTitle_Name" xml:space="preserve">
     <value>Matheus de Assis</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>EXPERIÊNCIA</value>
+  </data>
+  <data name="MainStackBody" xml:space="preserve">
+    <value>Desenvolvedor Backend .NET</value>
+  </data>
+  <data name="MainStackTitle" xml:space="preserve">
+    <value>STACK PRINCIPAL</value>
+  </data>
+  <data name="PresentationText" xml:space="preserve">
+    <value>Esta é minha página profissional, onde busco contar um resumo da minha trajetória, elencar conhecimentos e expor projetos pessoais.</value>
+  </data>
+  <data name="ProjectsButton" xml:space="preserve">
+    <value>ver projetos</value>
+  </data>
+  <data name="SecondProjectsButton" xml:space="preserve">
+    <value>confira meus projetos pessoais</value>
   </data>
 </root>

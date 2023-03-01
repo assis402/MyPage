@@ -5,10 +5,10 @@
             <div class="main-stack">
                 <div class="main-stack-header">
                     <p class="main-stack-title">
-                        STACK PRINCIPAL @LanguageResource["Teste"]
+                        @LanguageResource["MainStackTitle"]
                     </p>
                     <p class="main-stack-body">
-                        Desenvolvedor Backend .NET
+                        @LanguageResource["MainStackBody"]
                     </p>
                 </div>
                 <div class="main-stack-footer">
@@ -19,40 +19,35 @@
         </div>
         <div class="presentation" id="presentation">
             <p class="presentation-text">
-                Esta é minha página profissional, onde busco contar um resumo da minha trajetória, elencar conhecimentos e expor projetos pessoais.
+                @LanguageResource["PresentationText"]
             </p>
             <div class="presentation-buttons">
                 <div class="about-button" onclick="showAbout()">
                     <img class="about-icon" src="~/img/info.png" />
-                    <div class="inner-button">saber mais</div>
+                    <div class="inner-button">@LanguageResource["AboutButton"]</div>
                 </div>
                 <div class="projects-button" onclick="">
                     <img class="projects-icon" src="~/img/projects.png" />
-                    <div class="inner-button">ver projetos</div>
+                    <div class="inner-button">@LanguageResource["ProjectsButton"]</div>
                 </div>
             </div>
-        </div>
+        </div>  
         <div id="about-body-container">
             <p class="about-body" id="about-body-1">
-                Sou estudante de Análise e Desenvolvimento de Sistemas e trabalho com desenvolvimento de
-                software há mais de dois anos, majoritariamente com foco em Backend na linguagem
-                <span class="emphasis">C# .NET (.NET Core e .NET Framework)</span>.
+                @LanguageResource["AboutBody_01"]
+                <span class="emphasis">@LanguageResource["AboutEmphases_01"]</span>
             </p>
             <p class="about-body" id="about-body-2">
-                Atuei em projetos nos quais também utilizei outras tecnologias,
-                como frontend web (dashboard admin) em  <span class="emphasis">Angular</span>, banco de dados em
-                <span class="emphasis">SQL Server, MySql, Redis e MongoDB, testes unitários</span>
-                e arquitetura em microsserviços.
+                @LanguageResource["AboutBody_02"] <span class="emphasis">Angular</span>@LanguageResource["AboutBody_02.1"]
+                <span class="emphasis"> @LanguageResource["AboutEmphases_02"]</span>
             </p>
             <p class="about-body" id="about-body-3">
-                Pessoalmente, abordo outros tópicos e tecnologias durante meus estudos, como desenvolvimento
-                de aplicativos com React Native e plataformas de computação em nuvem, mais especificamente
-                a Microsoft Azure, da qual obtive aprovação nas certificações AZ-900 e AZ-204.
+                @LanguageResource["AboutBody_03"]
             </p>
             <div class="presentation-buttons second-buttons">
                 <div class="about-button second-button" onclick="">
                     <img class="projects-icon" src="~/img/projects.png" />
-                    <div class="inner-button">confira meus projetos pessoais</div>
+                    <div class="inner-button">@LanguageResource["SecondProjectsButton"]</div>
                 </div>
             </div>
         </div>
@@ -60,24 +55,24 @@
 </div>
 <div class="timeline-external-container">
     <div class="timeline-container">
-        <div class="mini-title">EXPERIÊNCIA</div>
+        <div class="mini-title">@LanguageResource["Background"]</div>
         <div class="timeline-body">
             <div class="timeline-exp">
-                <div class="timeline-exp-date">janeiro de 2023 - atualmente</div>
+                <div class="timeline-exp-date">@LanguageResource["LabsitDate_02"]</div>
                 <div class="timeline-exp-circle labsit-full-circle"></div>
                 <div class="timeline-exp-title">
-                    Desenvolvedor Fullstack
-                    <div class="timeline-exp-subtitle">C#, .NET Core, Angular 8, ASP.NET, .NET Framework, MySQL, SQL Server, APIs Rest, Microsserviços e Testes Unitários</div>
+                    @LanguageResource["LabsitTitle_02"]
+                    <div class="timeline-exp-subtitle">@LanguageResource["LabsitSubtitle_02"]</div>
                 </div>
             </div>
             <div class="timeline-bar labsit-bar"></div>
             <div class="timeline-exp-wrapper">
                 <div class="timeline-exp">
-                    <div class="timeline-exp-date">agosto 2021 - maio de 2022</div>
+                    <div class="timeline-exp-date"></div>
                     <div class="timeline-exp-circle labsit-border-circle"></div>
                     <div class="timeline-exp-title">
-                        Desenvolvedor Backend Pleno
-                        <div class="timeline-exp-subtitle">C#, .NET Core, MySQL, SQL Server, Redis, APIs Rest, Microsserviços e Testes Unitários</div>
+                        
+                        <div class="timeline-exp-subtitle"></div>
                     </div>
                 </div>
                 <div class="timeline-company" onclick="window.open('https://labsit.io/','labsit')">
@@ -109,7 +104,7 @@
                     </div>
                 </div>
                 <div class="timeline-company" onclick="window.open('https://fitbank.com.br/','fitbank')">
-                    <span class="material-symbols-outlined company-icon" title="Empresa">
+                    <span class="material-symbols-outlined company-icon" title="Company">
                         work
                     </span>
                     <span title="Empresa">FitBank</span>
