@@ -22,14 +22,14 @@ namespace MyPage.UI.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class LanguageResource {
+    public class LanguageResource_en_US2 {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal LanguageResource() {
+        internal LanguageResource_en_US2() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MyPage.UI.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyPage.UI.Resources.LanguageResource", typeof(LanguageResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyPage.UI.Resources.LanguageResource.en-US2", typeof(LanguageResource_en_US2).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -97,7 +97,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a saber mais.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a read more.
         /// </summary>
         public static string AboutButton {
             get {
@@ -106,7 +106,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a C# .NET (.NET Core e .NET Framework)..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a C# .NET (.NET Core and .NET Framework)..
         /// </summary>
         public static string AboutEmphases_01 {
             get {
@@ -124,7 +124,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Olá, me chamo.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Hello, my name is.
         /// </summary>
         public static string AboutTitle_Greeting {
             get {
@@ -142,7 +142,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a EXPERIÊNCIA.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a BACKGROUND.
         /// </summary>
         public static string Background {
             get {
@@ -151,7 +151,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Empresa.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Company.
         /// </summary>
         public static string Company {
             get {
@@ -160,7 +160,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a CONTATO.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a CONTACT.
         /// </summary>
         public static string Contact {
             get {
@@ -169,7 +169,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a novembro 2020 - abril de 2021.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a november 2020 - april 2021.
         /// </summary>
         public static string FitbankDate_01 {
             get {
@@ -178,7 +178,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a abril 2021 - agosto de 2021.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a april 2021 - august 2021.
         /// </summary>
         public static string FitbankDate_02 {
             get {
@@ -205,7 +205,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Estagiário de Testes.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a QA Intern.
         /// </summary>
         public static string FitbankTitle_01 {
             get {
@@ -214,7 +214,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Desenvolvedor Backend Junior.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Junior Backend Developer.
         /// </summary>
         public static string FitbankTitle_02 {
             get {
@@ -223,7 +223,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a agosto 2021 - maio de 2022.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a august 2021 - may 2022.
         /// </summary>
         public static string LabsitDate_01 {
             get {
@@ -232,7 +232,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a janeiro de 2023 - atualmente.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a january 2023 - today.
         /// </summary>
         public static string LabsitDate_02 {
             get {
@@ -259,7 +259,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Desenvolvedor Backend Pleno.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Mid-level Backend Developer.
         /// </summary>
         public static string LabsitTitle_01 {
             get {
@@ -268,7 +268,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Desenvolvedor Fullstack.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Fullstack Developer.
         /// </summary>
         public static string LabsitTitle_02 {
             get {
@@ -277,7 +277,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Desenvolvedor Backend .NET.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .NET Backend Developer.
         /// </summary>
         public static string MainStackBody {
             get {
@@ -286,7 +286,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a STACK PRINCIPAL.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a MAIN STACK.
         /// </summary>
         public static string MainStackTitle {
             get {
@@ -304,7 +304,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a ver projetos.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a view projects.
         /// </summary>
         public static string ProjectsButton {
             get {
@@ -313,7 +313,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a confira meus projetos pessoais.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a check out my personal projects.
         /// </summary>
         public static string SecondProjectsButton {
             get {

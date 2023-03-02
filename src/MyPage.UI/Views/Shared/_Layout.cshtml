@@ -1,5 +1,7 @@
-﻿<html>
+﻿<!DOCTYPE html>
+<html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @*<link href="@Url.Content("~/Content/css/menu.css")" rel="stylesheet" type="text/css" />*@
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,6 +29,14 @@
                     <a class="menu-item" href="/">
                         projetos
                     </a>
+                    <div class="menu-languages">
+                        <a asp-controller="language" asp-action="change" asp-route-culture="en-US">
+                            <img class="menu-language-flag" src="~/img/en-us.svg"/>
+                        </a> 
+                        <a asp-controller="language" asp-action="change" asp-route-culture="pt-BR">
+                            <img class="menu-language-flag" src="~/img/pt-br.svg" />
+                        </a>
+                    </div>
                 </div>
 
                 <div class="material-symbols-outlined"
@@ -183,6 +193,12 @@
         border-radius: 100%;
         width: 60px;
         margin-right: 20px;
+    }
+
+    .menu-language-flag {
+        height: 50px;
+        border-radius: 1px;
+        opacity: 0.8;
     }
 </style>
 

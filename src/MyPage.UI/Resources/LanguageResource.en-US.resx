@@ -130,34 +130,34 @@
     <value>Pessoalmente, abordo outros tópicos e tecnologias durante meus estudos, como desenvolvimento de aplicativos com React Native e plataformas de computação em nuvem, mais especificamente a Microsoft Azure, da qual obtive aprovação nas certificações AZ-900 e AZ-204.</value>
   </data>
   <data name="AboutButton" xml:space="preserve">
-    <value>saber mais</value>
+    <value>read more</value>
   </data>
   <data name="AboutEmphases_01" xml:space="preserve">
-    <value>C# .NET (.NET Core e .NET Framework).</value>
+    <value>C# .NET (.NET Core and .NET Framework).</value>
   </data>
   <data name="AboutEmphases_02" xml:space="preserve">
     <value>SQL Server, MySql, Redis e MongoDB, testes unitários e arquitetura em microsserviços.</value>
   </data>
   <data name="AboutTitle_Greeting" xml:space="preserve">
-    <value>Olá, me chamo</value>
+    <value>Hello, my name is</value>
   </data>
   <data name="AboutTitle_Name" xml:space="preserve">
     <value>Matheus de Assis</value>
   </data>
   <data name="Background" xml:space="preserve">
-    <value>EXPERIÊNCIA</value>
+    <value>BACKGROUND</value>
   </data>
   <data name="Company" xml:space="preserve">
-    <value>Empresa</value>
+    <value>Company</value>
   </data>
   <data name="Contact" xml:space="preserve">
-    <value>CONTATO</value>
+    <value>CONTACT</value>
   </data>
   <data name="FitbankDate_01" xml:space="preserve">
-    <value>novembro 2020 - abril de 2021</value>
+    <value>november 2020 - april 2021</value>
   </data>
   <data name="FitbankDate_02" xml:space="preserve">
-    <value>abril 2021 - agosto de 2021</value>
+    <value>april 2021 - august 2021</value>
   </data>
   <data name="FitbankSubtitle_01" xml:space="preserve">
     <value>Testes manuais (exploratórios, em APIs e etc) e documentações de testes</value>
@@ -166,16 +166,16 @@
     <value>C#, .NET Framework, ASP.NET, Xamarin, JavaScript, SQL Server e APIs</value>
   </data>
   <data name="FitbankTitle_01" xml:space="preserve">
-    <value>Estagiário de Testes</value>
+    <value>QA Intern</value>
   </data>
   <data name="FitbankTitle_02" xml:space="preserve">
-    <value>Desenvolvedor Backend Junior</value>
+    <value>Junior Backend Developer</value>
   </data>
   <data name="LabsitDate_01" xml:space="preserve">
-    <value>agosto 2021 - maio de 2022</value>
+    <value>august 2021 - may 2022</value>
   </data>
   <data name="LabsitDate_02" xml:space="preserve">
-    <value>janeiro de 2023 - atualmente</value>
+    <value>january 2023 - today</value>
   </data>
   <data name="LabsitSubTitle_01" xml:space="preserve">
     <value>C#, .NET Core, MySQL, SQL Server, Redis, APIs Rest, Microsserviços e Testes Unitários</value>
@@ -184,24 +184,24 @@
     <value>C#, .NET Core, Angular 8, ASP.NET, .NET Framework, MySQL, SQL Server, APIs Rest, Microsserviços e Testes Unitários</value>
   </data>
   <data name="LabsitTitle_01" xml:space="preserve">
-    <value>Desenvolvedor Backend Pleno</value>
+    <value>Mid-level Backend Developer</value>
   </data>
   <data name="LabsitTitle_02" xml:space="preserve">
-    <value>Desenvolvedor Fullstack</value>
+    <value>Fullstack Developer</value>
   </data>
   <data name="MainStackBody" xml:space="preserve">
-    <value>Desenvolvedor Backend .NET</value>
+    <value>.NET Backend Developer</value>
   </data>
   <data name="MainStackTitle" xml:space="preserve">
-    <value>STACK PRINCIPAL</value>
+    <value>MAIN STACK</value>
   </data>
   <data name="PresentationText" xml:space="preserve">
     <value>Esta é minha página profissional, onde busco contar um resumo da minha trajetória, elencar conhecimentos e expor projetos pessoais.</value>
   </data>
   <data name="ProjectsButton" xml:space="preserve">
-    <value>ver projetos</value>
+    <value>view projects</value>
   </data>
   <data name="SecondProjectsButton" xml:space="preserve">
-    <value>confira meus projetos pessoais</value>
+    <value>check out my personal projects</value>
   </data>
 </root>
