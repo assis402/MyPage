@@ -30,10 +30,10 @@
                         @LanguageResource["ProjectsMenu"]
                     </a>
                     <div class="menu-languages">
-                        <a asp-controller="language" asp-action="change" asp-route-culture="en-US">
-                            <img class="menu-language-flag" src="~/img/en-us.svg"/>
-                        </a> 
-                        <a asp-controller="language" asp-action="change" asp-route-culture="pt-BR">
+                        <a asp-controller="language" asp-action="change" asp-route-culture="en-US" class="language-link">
+                            <img class="menu-language-flag" src="~/img/en-us.svg" />
+                        </a>
+                        <a asp-controller="language" asp-action="change" asp-route-culture="pt-BR" class="language-link">
                             <img class="menu-language-flag" src="~/img/pt-br.svg" />
                         </a>
                     </div>
@@ -45,13 +45,23 @@
                     menu
                 </div>
             </div>
-            <div class="menu-items-mobile" id="menu-items-mobile">
-                <a class="menu-item" href="/">
-                    sobre
-                </a>
-                <a class="menu-item" href="/">
-                    projetos
-                </a>
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="menu-items-mobile">
+                    <a asp-controller="home" asp-action="index" class="menu-item">
+                        @LanguageResource["AboutMenu"]
+                    </a>
+                    <a asp-controller="projects" asp-action="index" class="menu-item">
+                        @LanguageResource["ProjectsMenu"]
+                    </a>
+                </div>
+                <div class="menu-languages-mobile">
+                    <a asp-controller="language" asp-action="change" asp-route-culture="en-US" class="language-link">
+                        <img class="menu-language-flag" src="~/img/en-us.svg" />
+                    </a>
+                    <a asp-controller="language" asp-action="change" asp-route-culture="pt-BR" class="language-link">
+                        <img class="menu-language-flag" src="~/img/pt-br.svg" />
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -85,7 +95,7 @@
     }
 
 
-    @@media screen and (max-width: 720px){
+    @@media screen and (max-width: 720px) {
         ::-webkit-scrollbar {
             -webkit-appearance: none;
             width: 0;
@@ -123,7 +133,7 @@
         justify-content: space-between;
         padding: 20px;
         z-index: 10000;
-        border-bottom: 1px solid rgba(255, 255, 255, 0);
+        border-bottom: 2px solid rgba(255, 255, 255, 0);
     }
 
     .menu-items {
@@ -133,19 +143,24 @@
         flex-direction: row;
     }
 
-    .menu-items-mobile {
+    .menu-mobile {
         padding: 15px;
         padding-top: 0;
         display: flex;
         align-items: flex-start;
-        justify-content: center;
-        flex-direction: column;
+        justify-content: space-between;
+        flex-direction: row;
         background: rgb(0, 0, 0);
         width: 100%;
         opacity: 0;
         height: 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding-bottom: 30px;
+        padding-bottom: 25px;
+    }
+
+    .menu-items-mobile {
+        display: flex;
+        flex-direction: column;
     }
 
     #menu-button-mobile {
@@ -154,11 +169,12 @@
         transition: opacity .2s linear;
         -webkit-user-select: none;
         user-select: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
-    #menu-button-mobile:hover, #menu-button-mobile:active {
-        opacity: 0.6;
-    }
+        #menu-button-mobile:hover, #menu-button-mobile:active {
+            opacity: 0.6;
+        }
 
     .menu-item {
         align-items: center;
@@ -167,6 +183,7 @@
         font-size: 16px;
         transition: opacity .2s linear;
         font-weight: 300;
+        -webkit-tap-highlight-color: transparent;
     }
 
         .menu-item:hover, .menu-item:active {
@@ -203,6 +220,19 @@
         margin-left: 20px;
     }
 
+    .menu-languages-mobile {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 10px;
+        height: 100%;
+        margin-right: 10px;
+    }
+
+    .language-link {
+        -webkit-tap-highlight-color: transparent;
+    }
+
     .menu-language-flag {
         height: 28px;
         opacity: 0.7;
@@ -211,26 +241,27 @@
         align-items: center;
         border-radius: 8px;
         transition: opacity .2s linear;
+        -webkit-tap-highlight-color: transparent;
     }
 
-    .menu-language-flag:hover, .menu-language-flag:active {
-        opacity: 1;
-    }
+        .menu-language-flag:hover, .menu-language-flag:active {
+            opacity: 1;
+        }
 
-/*    .menu-language-icon {
-        height: 25px;
-        opacity: 0.7;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        filter: invert();
-    }*/
+    /*    .menu-language-icon {
+            height: 25px;
+            opacity: 0.7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: invert();
+        }*/
 </style>
 
 <script>
     menuSwitch();
     window.onscroll = () => scrollFunction();
-    window.addEventListener("scroll", () => menuSwitch())
+    window.addEventListener("resize", () => menuSwitch())
 
     function menuSwitch() {
         if (window.matchMedia("(min-width: 720px)").matches) {
@@ -248,34 +279,33 @@
     }
 
     function handleMobileMenu() {
-        let menuIsOpen = document.getElementById("menu-items-mobile").style.opacity === "1";
+        let menuIsOpen = document.getElementById("menu-mobile").style.opacity === "1";
         if (menuIsOpen) {
-            document.getElementById("menu-items-mobile").style.opacity = "0";
-            document.getElementById("menu-items-mobile").style.transition = "opacity .3s linear";
+            document.getElementById("menu-mobile").style.opacity = "0";
+            document.getElementById("menu-mobile").style.transition = "opacity .3s linear";
 
             if (document.body.scrollTop > 20) {
                 document.getElementById("menu-container").style.borderBottom = "2px solid rgba(255, 255, 255, 0.1)"
             }
 
             setTimeout(() => {
-                document.getElementById("menu-items-mobile").style.height = "0";
+                document.getElementById("menu-mobile").style.height = "0";
             }, 300);
         } else {
             document.getElementById("menu-container").style.borderBottom = "2px solid rgba(255, 255, 255, 0.0)"
 
-            document.getElementById("menu-items-mobile").style.opacity = "1";
-            document.getElementById("menu-items-mobile").style.transition = "opacity .3s linear";
+            document.getElementById("menu-mobile").style.opacity = "1";
+            document.getElementById("menu-mobile").style.transition = "opacity .3s linear";
 
-            document.getElementById("menu-items-mobile").style.height = "auto";
+            document.getElementById("menu-mobile").style.height = "auto";
         }
     }
 
     function scrollFunction() {
-        let menuIsOpen = document.getElementById("menu-items-mobile").style.opacity === "1";
+        let menuIsOpen = document.getElementById("menu-mobile").style.opacity === "1";
 
         if (window.pageYOffset > 20 || document.body.scrollTop > 20) {
             document.getElementById("menu-container").style.padding = "0 20px"
-            document.getElementById("menu-container").style.boxShadow = "0 1px 6px 0 rgb(0 0 0 / 15%)"
             document.getElementById("my-photo").style.width = "0"
             document.getElementById("my-photo").style.marginRight = "5px"
 
@@ -287,16 +317,13 @@
             document.getElementById("my-photo").style.transition = "width .3s linear, margin .3s linear";
         } else {
             document.getElementById("menu-container").style.padding = "20px"
-            document.getElementById("menu-container").style.boxShadow = "none"
             document.getElementById("my-photo").style.width = "60px"
             document.getElementById("my-photo").style.marginRight = "20px";
-            document.getElementById("menu-container").style.borderBottom = "1px solid rgba(255, 255, 255, 0)"
+            document.getElementById("menu-container").style.borderBottom = "2px solid rgba(255, 255, 255, 0)"
 
 
             document.getElementById("menu-container").style.transition = "border-bottom .3s linear, padding .3s linear";
             document.getElementById("my-photo").style.transition = "width .3s linear, margin .3s linear";
         }
-
     }
-
 </script>

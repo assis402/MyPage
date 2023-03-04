@@ -3,13 +3,26 @@
         @for (int i = 0; i < 8; i++)
         {
             <div class="project">
-                <div class="project-body">
-                    <span class="project-title">TransactionAPI</span>
-                    <span class="project-mini-description">Minimal API em C#, com persistência em MongoDB</span>
-                    <div class="project-links">
-                        <div class="project-link">
-                            <span>ver vídeo</span>
-                            <img src="~/img/out.png" />
+                <div class="project-content">
+                    <div class="project-header">
+                        <span class="project-title">TransactionAPI</span>
+                        <div class="project-tags">
+                            <div class="project-tag">.NET 7</div>
+                            <div class="project-tag">Minimal API</div>
+                            <div class="project-tag">MongoDB</div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-mini-description">Minimal API em C#, com persistência em MongoDB</div>
+                        <div class="project-links">
+                            <div class="project-link">
+                                <span>github</span>
+                                <img src="~/img/out.png" />
+                            </div>
+                            <div class="project-link">
+                                <span>ver vídeo</span>
+                                <img src="~/img/out.png" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -22,33 +35,37 @@
 <style>
     .projects-external-container {
         display: flex;
-        padding: 10% 15%;
+        padding: 130px 0 50px 0;
         justify-content: center;
         align-items: center;
     }
 
     .projects-container {
-        display: grid;
-        grid-template-columns: auto auto auto auto;
+        display: flex;
         gap: 10px;
         justify-content: center;
         align-items: center;
         height: 100%;
+        flex-wrap: wrap;
+        max-width: 1200px;
     }
 
     .project {
         background: #0c0c0f;
         height: 300px;
-        width: 250px;
+        width: 260px;
         position: relative;
     }
 
-    .project-body {
+    .project-content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 20px;
         height: 260px;
+    }
+
+    .project-body {
     }
 
     .project-bar {
@@ -58,6 +75,12 @@
         width: 100%;
         background: purple;
     }
+    
+    .project-header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 
     .project-title {
         font-weight: 200;
@@ -65,10 +88,27 @@
 
     .project-mini-description {
         font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    .project-tags {
+        display: flex;
+        gap: 7px;
+    }
+
+    .project-tag {
+        font-size: 11px;
+        border-radius: 30px;
+        background-color: #292930;
+        padding: 3px 7px;
+        border: 1px solid #484747;
+        opacity: 0.8;
     }
 
     .project-links {
-
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
     }
 
     .project-link {
@@ -78,10 +118,11 @@
         align-items: center;
         line-height: 5px;
         gap: 5px;
+        color: #d2d2d2;
     }
 
-    .project-link img {
-        filter: invert(0.5);
-        height: 10px;
-    }
+        .project-link img {
+            filter: invert(0.5);
+            height: 10px;
+        }
 </style>
