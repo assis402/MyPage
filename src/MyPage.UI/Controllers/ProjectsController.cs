@@ -4,9 +4,9 @@ using System.Diagnostics;
 
 namespace MyPage.UI.Controllers
 {
-    public class HomeController : Controller
+    public class ProjectsController : Controller
     {
-        public HomeController()
+        public ProjectsController()
         {
         }
 

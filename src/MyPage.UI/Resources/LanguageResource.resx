@@ -138,6 +138,9 @@
   <data name="AboutEmphases_02" xml:space="preserve">
     <value>SQL Server, MySql, Redis e MongoDB, testes unitários e arquitetura em microsserviços.</value>
   </data>
+  <data name="AboutMenu" xml:space="preserve">
+    <value>sobre</value>
+  </data>
   <data name="AboutTitle_Greeting" xml:space="preserve">
     <value>Olá, me chamo</value>
   </data>
@@ -200,6 +203,9 @@
   </data>
   <data name="ProjectsButton" xml:space="preserve">
     <value>ver projetos</value>
+  </data>
+  <data name="ProjectsMenu" xml:space="preserve">
+    <value>projetos</value>
   </data>
   <data name="SecondProjectsButton" xml:space="preserve">
     <value>confira meus projetos pessoais</value>

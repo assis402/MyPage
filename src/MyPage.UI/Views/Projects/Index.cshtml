@@ -1,0 +1,87 @@
+﻿<div class="projects-external-container">
+    <div class="projects-container">
+        @for (int i = 0; i < 8; i++)
+        {
+            <div class="project">
+                <div class="project-body">
+                    <span class="project-title">TransactionAPI</span>
+                    <span class="project-mini-description">Minimal API em C#, com persistência em MongoDB</span>
+                    <div class="project-links">
+                        <div class="project-link">
+                            <span>ver vídeo</span>
+                            <img src="~/img/out.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="project-bar"></div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .projects-external-container {
+        display: flex;
+        padding: 10% 15%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .projects-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .project {
+        background: #0c0c0f;
+        height: 300px;
+        width: 250px;
+        position: relative;
+    }
+
+    .project-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+        height: 260px;
+    }
+
+    .project-bar {
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        width: 100%;
+        background: purple;
+    }
+
+    .project-title {
+        font-weight: 200;
+    }
+
+    .project-mini-description {
+        font-weight: 500;
+    }
+
+    .project-links {
+
+    }
+
+    .project-link {
+        font-size: 13px;
+        font-weight: 200;
+        display: flex;
+        align-items: center;
+        line-height: 5px;
+        gap: 5px;
+    }
+
+    .project-link img {
+        filter: invert(0.5);
+        height: 10px;
+    }
+</style>

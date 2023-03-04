@@ -23,11 +23,11 @@
                 </div>
 
                 <div class="menu-items" id="menu-items">
-                    <a class="menu-item" href="/">
-                        sobre
+                    <a asp-controller="home" asp-action="index" class="menu-item">
+                        @LanguageResource["AboutMenu"]
                     </a>
-                    <a class="menu-item" href="/">
-                        projetos
+                    <a asp-controller="projects" asp-action="index" class="menu-item">
+                        @LanguageResource["ProjectsMenu"]
                     </a>
                     <div class="menu-languages">
                         <a asp-controller="language" asp-action="change" asp-route-culture="en-US">
@@ -156,9 +156,9 @@
         user-select: none;
     }
 
-        #menu-button-mobile:hover {
-            opacity: 0.6;
-        }
+    #menu-button-mobile:hover, #menu-button-mobile:active {
+        opacity: 0.6;
+    }
 
     .menu-item {
         align-items: center;
@@ -169,7 +169,7 @@
         font-weight: 300;
     }
 
-        .menu-item:hover {
+        .menu-item:hover, .menu-item:active {
             opacity: 0.6;
         }
 
@@ -195,11 +195,36 @@
         margin-right: 20px;
     }
 
-    .menu-language-flag {
-        height: 50px;
-        border-radius: 1px;
-        opacity: 0.8;
+    .menu-languages {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-left: 20px;
     }
+
+    .menu-language-flag {
+        height: 28px;
+        opacity: 0.7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        transition: opacity .2s linear;
+    }
+
+    .menu-language-flag:hover, .menu-language-flag:active {
+        opacity: 1;
+    }
+
+/*    .menu-language-icon {
+        height: 25px;
+        opacity: 0.7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        filter: invert();
+    }*/
 </style>
 
 <script>

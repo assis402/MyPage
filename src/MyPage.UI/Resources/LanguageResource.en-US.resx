@@ -118,25 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutBody_01" xml:space="preserve">
-    <value>Sou estudante de Análise e Desenvolvimento de Sistemas e trabalho com desenvolvimento de software há mais de dois anos, majoritariamente com foco em Backend na linguagem</value>
+    <value>I'm an Information Technology student and I've been working with software development for over two years, mostly focusing on Backend in the</value>
   </data>
   <data name="AboutBody_02" xml:space="preserve">
-    <value>Atuei em projetos nos quais também utilizei outras tecnologias, como frontend web (dashboard admin) em</value>
+    <value>I worked on projects in which I also used other technologies, such as web frontend (dashboard admin) in</value>
   </data>
   <data name="AboutBody_02.1" xml:space="preserve">
-    <value>, banco de dados em</value>
+    <value>, databases in</value>
   </data>
   <data name="AboutBody_03" xml:space="preserve">
-    <value>Pessoalmente, abordo outros tópicos e tecnologias durante meus estudos, como desenvolvimento de aplicativos com React Native e plataformas de computação em nuvem, mais especificamente a Microsoft Azure, da qual obtive aprovação nas certificações AZ-900 e AZ-204.</value>
+    <value>Personally, I cover other topics and technologies during my studies, such as mobile app development with React Native and cloud computing platforms, more specifically with Microsoft Azure, from which I passed the AZ-900 and AZ-204 certifications.</value>
   </data>
   <data name="AboutButton" xml:space="preserve">
     <value>read more</value>
   </data>
   <data name="AboutEmphases_01" xml:space="preserve">
-    <value>C# .NET (.NET Core and .NET Framework).</value>
+    <value>C# language (.NET and .NET Framework).</value>
   </data>
   <data name="AboutEmphases_02" xml:space="preserve">
-    <value>SQL Server, MySql, Redis e MongoDB, testes unitários e arquitetura em microsserviços.</value>
+    <value>SQL Server, MySql, Redis and MongoDB, unit tests and microservices architecture.</value>
+  </data>
+  <data name="AboutMenu" xml:space="preserve">
+    <value>about</value>
   </data>
   <data name="AboutTitle_Greeting" xml:space="preserve">
     <value>Hello, my name is</value>
@@ -160,10 +163,10 @@
     <value>april 2021 - august 2021</value>
   </data>
   <data name="FitbankSubtitle_01" xml:space="preserve">
-    <value>Testes manuais (exploratórios, em APIs e etc) e documentações de testes</value>
+    <value>Manual tests (exploratory, APIs, etc) and test documentation</value>
   </data>
   <data name="FitbankSubtitle_02" xml:space="preserve">
-    <value>C#, .NET Framework, ASP.NET, Xamarin, JavaScript, SQL Server e APIs</value>
+    <value>C#, .NET Framework, ASP.NET, Xamarin, JavaScript, SQL Server and APIs</value>
   </data>
   <data name="FitbankTitle_01" xml:space="preserve">
     <value>QA Intern</value>
@@ -177,11 +180,11 @@
   <data name="LabsitDate_02" xml:space="preserve">
     <value>january 2023 - today</value>
   </data>
-  <data name="LabsitSubTitle_01" xml:space="preserve">
-    <value>C#, .NET Core, MySQL, SQL Server, Redis, APIs Rest, Microsserviços e Testes Unitários</value>
+  <data name="LabsitSubtitle_01" xml:space="preserve">
+    <value>C#, .NET Core, MySQL, SQL Server, Redis, APIs Rest, Microservices and Unit Tests</value>
   </data>
-  <data name="LabsitSubTitle_02" xml:space="preserve">
-    <value>C#, .NET Core, Angular 8, ASP.NET, .NET Framework, MySQL, SQL Server, APIs Rest, Microsserviços e Testes Unitários</value>
+  <data name="LabsitSubtitle_02" xml:space="preserve">
+    <value>C#, .NET Core, Angular 8, ASP.NET, .NET Framework, MySQL, SQL Server, APIs Rest, Microservices and Unit Tests</value>
   </data>
   <data name="LabsitTitle_01" xml:space="preserve">
     <value>Mid-level Backend Developer</value>
@@ -196,12 +199,15 @@
     <value>MAIN STACK</value>
   </data>
   <data name="PresentationText" xml:space="preserve">
-    <value>Esta é minha página profissional, onde busco contar um resumo da minha trajetória, elencar conhecimentos e expor projetos pessoais.</value>
+    <value>This is my professional page, where I present a summary of my career, list knowledge and expose personal projects.</value>
   </data>
   <data name="ProjectsButton" xml:space="preserve">
-    <value>view projects</value>
+    <value>see projects</value>
+  </data>
+  <data name="ProjectsMenu" xml:space="preserve">
+    <value>projects</value>
   </data>
   <data name="SecondProjectsButton" xml:space="preserve">
-    <value>check out my personal projects</value>
+    <value>look out my personal projects</value>
   </data>
 </root>

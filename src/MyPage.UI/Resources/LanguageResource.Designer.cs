@@ -124,6 +124,15 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a sobre.
+        /// </summary>
+        public static string AboutMenu {
+            get {
+                return ResourceManager.GetString("AboutMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Olá, me chamo.
         /// </summary>
         public static string AboutTitle_Greeting {
@@ -309,6 +318,15 @@ namespace MyPage.UI.Resources {
         public static string ProjectsButton {
             get {
                 return ResourceManager.GetString("ProjectsButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a projetos.
+        /// </summary>
+        public static string ProjectsMenu {
+            get {
+                return ResourceManager.GetString("ProjectsMenu", resourceCulture);
             }
         }
         
