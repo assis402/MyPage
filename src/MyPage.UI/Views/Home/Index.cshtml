@@ -116,25 +116,6 @@
         </div>
     </div>
 </div>
-<div class="contact-external-container">
-    <div class="mini-title">@LanguageResource["CONTACT"]</div>
-    <div class="contact-container">
-        <div class="contact" onclick="window.open('https://github.com/assis402','github')" ;>
-            <img class="contact-logo" src="~/img/github.png" />
-            <span>Github</span>
-            <img class="out-logo" src="~/img/out.png" />
-        </div>
-        <div class="contact" onclick="window.open('https://www.linkedin.com/in/assisdematheus/','linkedin')">
-            <img class="contact-logo" src="~/img/linkedin.png" />
-            <span>Linkedin</span>
-            <img class="out-logo" src="~/img/out.png" />
-        </div>
-        <div class="contact email" onclick="">
-            <img class="contact-logo" src="~/img/email.png" />
-            <span style="font-size: 15px">assis4002@gmail.com</span>
-        </div>
-    </div>
-</div>
 <style>
     .about-external-container {
         display: flex;
@@ -405,7 +386,6 @@
     }
 
     .timeline-external-container {
-        /*background: #0f0f12;*/
         background: linear-gradient(to left, #060708, #18181c);
         padding-top: 40px;
         padding-bottom: 70px;
@@ -595,78 +575,9 @@
     }
 </style>
 
-<style>
-    .contact-external-container {
-        padding-top: 40px;
-        padding-bottom: 70px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-    }
-
-    .contact-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 50px;
-    }
-
-    .contact {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        font-weight: 500;
-        color: #dfdfdf;
-        cursor: pointer;
-        height: 45px;
-        padding: 0 12px;
-        transition: background .2s linear;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .email {
-        font-size: 15px;
-        cursor: text;
-    }
-
-    .contact:hover {
-        background: #1b1c20;
-    }
-
-    .contact-logo {
-        height: 25px;
-        filter: invert(0.7);
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-
-    .out-logo {
-        height: 13px;
-        filter: invert(0.7);
-        margin-left: -8px;
-    }
-
-    @@media (max-width: 720px) {
-        .contact-container {
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .contact-external-container {
-            gap: 30px;
-        }
-    }
-</style>
-
 <script>
+    window.onload = () => selectLanguageFlag();
+
     function showAbout() {
         document.getElementById("presentation").style.opacity = "0";
         document.getElementById("presentation").style.cursor = "default";

@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
+using MyPage.Application.Helpers;
 using MyPage.UI;
 using System.Globalization;
 using System.Reflection;
@@ -6,6 +8,11 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+var configuration = builder.Configuration;
+
+builder.Services.Configure<Settings>(configuration)
+                .AddSingleton(sp => sp.GetRequiredService<IOptions<Settings>>().Value);
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 

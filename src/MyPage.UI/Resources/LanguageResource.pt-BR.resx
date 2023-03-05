@@ -156,6 +156,9 @@
   <data name="Contact" xml:space="preserve">
     <value>CONTATO</value>
   </data>
+  <data name="Culture" xml:space="preserve">
+    <value>pt-BR</value>
+  </data>
   <data name="FitbankDate_01" xml:space="preserve">
     <value>novembro 2020 - abril de 2021</value>
   </data>
@@ -180,10 +183,10 @@
   <data name="LabsitDate_02" xml:space="preserve">
     <value>janeiro de 2023 - atualmente</value>
   </data>
-  <data name="LabsitSubTitle_01" xml:space="preserve">
+  <data name="LabsitSubtitle_01" xml:space="preserve">
     <value>C#, .NET Core, MySQL, SQL Server, Redis, APIs Rest, Microsserviços e Testes Unitários</value>
   </data>
-  <data name="LabsitSubTitle_02" xml:space="preserve">
+  <data name="LabsitSubtitle_02" xml:space="preserve">
     <value>C#, .NET Core, Angular 8, ASP.NET, .NET Framework, MySQL, SQL Server, APIs Rest, Microsserviços e Testes Unitários</value>
   </data>
   <data name="LabsitTitle_01" xml:space="preserve">

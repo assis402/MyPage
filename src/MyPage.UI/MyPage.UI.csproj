@@ -26,6 +26,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\MyPage.Application\MyPage.Application.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Update="Resources\LanguageResource.en-US.Designer.cs">
 	    <DependentUpon>LanguageResource.en-US.resx</DependentUpon>
 	    <DesignTime>True</DesignTime>

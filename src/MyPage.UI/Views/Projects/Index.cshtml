@@ -42,16 +42,16 @@
 
     .projects-container {
         display: flex;
-        gap: 10px;
-        justify-content: center;
+        gap: 20px;
+        justify-content: left;
         align-items: center;
         height: 100%;
         flex-wrap: wrap;
-        max-width: 1200px;
+        max-width: 1380px;
     }
 
     .project {
-        background: #0c0c0f;
+        background: linear-gradient(to bottom, #0c0c0f, #080808);
         height: 300px;
         width: 260px;
         position: relative;
@@ -125,4 +125,50 @@
             filter: invert(0.5);
             height: 10px;
         }
+
+    @@media screen and (max-width: 1430px) {
+        .projects-container {
+            max-width: 1100px;
+        }
+    }
+
+    @@media screen and (max-width: 1150px) {
+        .projects-container {
+            max-width: 820px;
+        }
+    }
+
+    @@media screen and (max-width: 870px) {
+        .projects-container {
+            max-width: 540px;
+        }
+    }
+
+    @@media screen and (max-width: 570px) {
+        .projects-container {
+            justify-content: center;
+            /*max-width: 390px;*/
+            padding: 0 20px;
+        }
+
+        .project-content {
+            height: 180px;
+        }
+
+        .project {
+            height: 220px;
+            width: 100%;
+        }
+    }
 </style>
+
+<script>
+    window.onload = () => {
+        selectLanguageFlag();
+        changeFooterBackground();
+    };
+
+    function changeFooterBackground() {
+        document.getElementById("contact-external-container").style.background = "linear-gradient(to right, #060708, #18181c)"
+    }
+</script>
