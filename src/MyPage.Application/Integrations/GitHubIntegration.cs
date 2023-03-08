@@ -1,10 +1,11 @@
 ﻿using Flurl.Http;
 using MyPage.Application.Models;
 using MyPage.Application.Helpers;
+using MyPage.Application.Integrations.Interfaces;
 
 namespace MyPage.Application.Integrations
 {
-    public class GitHubIntegration
+    public class GitHubIntegration : IGitHubIntegration
     {
         private readonly Settings _settings;
         private readonly string _userToken;
@@ -18,23 +19,26 @@ namespace MyPage.Application.Integrations
         public async Task Login()
         {
             var loginUrl = _settings.GitHubSettings.GitHubLoginUrl;
-            await loginUrl.WithHeader("Accept", "application/vnd.github+json")
-                          .WithHeader("Authorization", _userToken)
-                          .GetJsonAsync();
+            await GetRequestClient(loginUrl).GetJsonAsync();
         }
 
         public async Task<List<GitHubRepositoryModel>> GetRepositories()
         {
             var reposUrl = _settings.GitHubSettings.GitHubReposUrl;
-
-            return await reposUrl.WithHeader("Accept", "application/vnd.github+json")
-                                 .GetJsonAsync<List<GitHubRepositoryModel>>();
+            return await GetRequestClient(reposUrl).GetJsonAsync<List<GitHubRepositoryModel>>();
         }
 
         public async Task<CustomPropertiesModel> GetCustomPropertiesByRepositoryUrl(string repositoryUrl)
         {
             var url = $"{repositoryUrl}/blob/master/mypage-props.json";
             return await url.GetJsonAsync<CustomPropertiesModel>();
+        }
+
+        private IFlurlRequest GetRequestClient(string url)
+        {
+            return url.WithHeader("Accept", "application/vnd.github+json")
+                      .WithHeader("X-GitHub-Api-Version", "2022-11-28")
+                      .WithHeader("Authorization", _userToken);
         }
     }
 }

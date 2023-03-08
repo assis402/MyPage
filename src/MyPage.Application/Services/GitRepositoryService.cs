@@ -1,9 +1,10 @@
 ﻿using MyPage.Application.Models;
 using MyPage.Application.Integrations;
+using MyPage.Application.Services.Interfaces;
 
 namespace MyPage.Application.Services
 {
-    public class GitRepositoryService
+    public class GitRepositoryService : IGitRepositoryService
     {
         private readonly GitHubIntegration _gitHubIntegration;
 
@@ -20,7 +21,7 @@ namespace MyPage.Application.Services
             foreach (var repository in repositories)
             {
                 var customProperties = await _gitHubIntegration.GetCustomPropertiesByRepositoryUrl(repository.Url);
-
+                
             }
 
             return null;

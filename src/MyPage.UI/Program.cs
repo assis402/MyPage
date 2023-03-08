@@ -14,6 +14,8 @@ var configuration = builder.Configuration;
 builder.Services.Configure<Settings>(configuration)
                 .AddSingleton(sp => sp.GetRequiredService<IOptions<Settings>>().Value);
 
+builder.Services.AddTransient<>()
+
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 builder.Services.AddControllersWithViews()
