@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MyPage.Application.Models.Enums;
+using Newtonsoft.Json;
 
 namespace MyPage.Application.Models
 {
@@ -21,8 +22,12 @@ namespace MyPage.Application.Models
 
         public string VideoUrl { get; set; }
 
-        public void SetCustomPropertiesByCulture(CustomPropertiesModel customProperties, string culture)
+        public void SetCustomPropertiesByLanguage(CustomPropertiesModel customProperties, Language currentLanguage)
         {
+            if (customProperties.Description.TryGetValue(currentLanguage, out string description))
+                Description = description;
+
+            VideoUrl = customProperties.VideoUrl;
         }
     }
 }

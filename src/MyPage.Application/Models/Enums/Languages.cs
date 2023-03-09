@@ -1,6 +1,6 @@
 ﻿namespace MyPage.Application.Models.Enums
 {
-    public enum Languages
+    public enum Language
     {
         PT_BR,
         EN_US

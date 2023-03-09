@@ -7,7 +7,7 @@ namespace MyPage.Application.Integrations.Interfaces
     {
         public Task Login();
 
-        public Task<List<GitHubRepositoryModel>> GetRepositories();
+        public Task<ICollection<GitHubRepositoryModel>> GetRepositories();
 
         public Task<CustomPropertiesModel> GetCustomPropertiesByRepositoryUrl(string repositoryUrl);
     }

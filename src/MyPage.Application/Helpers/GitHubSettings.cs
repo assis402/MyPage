@@ -9,4 +9,6 @@ public class GitHubSettings
     public string GitHubLoginUrl { get; set; }
     public string GitHubReposUrl { get; set; }
     public string GitHubToken { get; set; }
+    public string CustomPropertiesPath { get; set; }
+    public string TopicName { get; set; }
 }

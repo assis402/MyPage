@@ -22,15 +22,15 @@ namespace MyPage.Application.Integrations
             await GetRequestClient(loginUrl).GetJsonAsync();
         }
 
-        public async Task<List<GitHubRepositoryModel>> GetRepositories()
+        public async Task<ICollection<GitHubRepositoryModel>> GetRepositories()
         {
             var reposUrl = _settings.GitHubSettings.GitHubReposUrl;
-            return await GetRequestClient(reposUrl).GetJsonAsync<List<GitHubRepositoryModel>>();
+            return await GetRequestClient(reposUrl).GetJsonAsync<ICollection<GitHubRepositoryModel>>();
         }
 
         public async Task<CustomPropertiesModel> GetCustomPropertiesByRepositoryUrl(string repositoryUrl)
         {
-            var url = $"{repositoryUrl}/blob/master/mypage-props.json";
+            var url = repositoryUrl + _settings.GitHubSettings.CustomPropertiesPath;
             return await url.GetJsonAsync<CustomPropertiesModel>();
         }
 
