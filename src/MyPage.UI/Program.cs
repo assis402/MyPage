@@ -1,6 +1,10 @@
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
 using MyPage.Application.Helpers;
+using MyPage.Application.Integrations;
+using MyPage.Application.Integrations.Interfaces;
+using MyPage.Application.Services;
+using MyPage.Application.Services.Interfaces;
 using MyPage.UI;
 using System.Globalization;
 using System.Reflection;
@@ -14,7 +18,8 @@ var configuration = builder.Configuration;
 builder.Services.Configure<Settings>(configuration)
                 .AddSingleton(sp => sp.GetRequiredService<IOptions<Settings>>().Value);
 
-//builder.Services.AddTransient<>()
+builder.Services.AddTransient<IGitHubIntegration, GitHubIntegration>();
+builder.Services.AddTransient<IGitRepositoryService, GitRepositoryService>();
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 

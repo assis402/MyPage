@@ -1,5 +1,6 @@
 ﻿using Flurl.Http;
 using Microsoft.AspNetCore.Mvc;
+using MyPage.Application.Services.Interfaces;
 using MyPage.UI.Models;
 using System.Diagnostics;
 
@@ -7,6 +8,8 @@ namespace MyPage.UI.Controllers
 {
     public class ProjectsController : Controller
     {
+        private readonly IGitRepositoryService _gitRepository;
+
         public ProjectsController()
         {
         }
