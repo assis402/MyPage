@@ -6,9 +6,10 @@ public class GitHubSettings
 {
     internal IFlurlRequest _requestClient;
 
-    public string GitHubLoginUrl { get; set; }
-    public string GitHubReposUrl { get; set; }
-    public string GitHubToken { get; set; }
+    public string LoginUrl { get; set; }
+    public string ReposUrl { get; set; }
+    public string Token { get; set; }
     public string CustomPropertiesPath { get; set; }
+    public string RawBaseUrl { get; set; }
     public string TopicName { get; set; }
 }

@@ -18,6 +18,7 @@ var configuration = builder.Configuration;
 builder.Services.Configure<Settings>(configuration)
                 .AddSingleton(sp => sp.GetRequiredService<IOptions<Settings>>().Value);
 
+builder.Services.AddMemoryCache();
 builder.Services.AddTransient<IGitHubIntegration, GitHubIntegration>();
 builder.Services.AddTransient<IGitRepositoryService, GitRepositoryService>();
 

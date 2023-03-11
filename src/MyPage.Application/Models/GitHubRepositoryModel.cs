@@ -11,23 +11,21 @@ namespace MyPage.Application.Models
         [JsonProperty("name")]
         public string Title { get; set; }
 
+        [JsonProperty("full_name")]
+        public string FullName { get; set; } 
+
         [JsonProperty("topics")]
-        public List<string> Topic { get; set; }
+        public IEnumerable<string> Topic { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime CreatedAt { get; set; }
 
+        public CustomPropertiesModel CustomProperties { get; set; }
 
-        public string Description { get; set; }
-
-        public string VideoUrl { get; set; }
-
-        public void SetCustomPropertiesByLanguage(CustomPropertiesModel customProperties, Language currentLanguage)
+        public void SetDescriptionByLanguage(Language currentLanguage)
         {
-            if (customProperties.Description.TryGetValue(currentLanguage, out string description))
-                Description = description;
-
-            VideoUrl = customProperties.VideoUrl;
+            if (CustomProperties.DescriptionDictonary.TryGetValue(currentLanguage, out string description))
+                CustomProperties.Description = description;
         }
     }
 }

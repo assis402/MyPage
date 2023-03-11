@@ -157,7 +157,7 @@
     <value>CONTACT</value>
   </data>
   <data name="Culture" xml:space="preserve">
-    <value>en-US</value>
+    <value>en_US</value>
   </data>
   <data name="FitbankDate_01" xml:space="preserve">
     <value>november 2020 - april 2021</value>

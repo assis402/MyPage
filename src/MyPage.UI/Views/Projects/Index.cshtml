@@ -1,6 +1,39 @@
-﻿<div class="projects-external-container">
+﻿@using MyPage.Application.Models;
+@model ICollection<GitHubRepositoryModel>
+
+<div class="projects-external-container">
     <div class="projects-container">
-        @for (int i = 0; i < 8; i++)
+        @foreach (var project in Model)
+        {
+            <div class="project">
+                <div class="project-content">
+                    <div class="project-header">
+                        <span class="project-title">@project.Title</span>
+                        <div class="project-tags">
+                            @foreach (var tag in project.Tags)
+                            {
+                                <div class="project-tag">@tag</div>
+                            }
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-mini-description">@project.Description</div>
+                        <div class="project-links">
+                            <div class="project-link">
+                                <span>github</span>
+                                <img src="~/img/out.png" />
+                            </div>
+                            <div class="project-link">
+                                <span>ver vídeo</span>
+                                <img src="~/img/out.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-bar"></div>
+            </div>
+        }
+        @for (int i = 0; i < 2; i++)
         {
             <div class="project">
                 <div class="project-content">

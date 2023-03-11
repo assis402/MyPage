@@ -19,16 +19,30 @@ namespace MyPage.Application.Services
 
         public async Task<ICollection<GitHubRepositoryModel>> GetPortfolioRepositories(Language currentLanguage)
         {
+            var repositories = await GetPortfolioRepositoriesFromGitHub();
+
+            return null;
+        }
+
+        private async Task<ICollection<GitHubRepositoryModel>> GetPortfolioRepositoriesFromGitHub()
+        {
             var repositories = await _gitHubIntegration.GetRepositories();
-            repositories = repositories.Where(_ => _.Topic.Contains(_settings.GitHubSettings.TopicName)).ToList();
+            repositories = repositories.Where(_ => _.Topic.Contains(_settings.GitHubSettings.TopicName))
+                                       .OrderByDescending(_ => _.CreatedAt)
+                                       .ToList();
 
             foreach (var repository in repositories)
             {
-                var customProperties = await _gitHubIntegration.GetCustomPropertiesByRepositoryUrl(repository.Url);
-                repository.SetCustomPropertiesByLanguage(customProperties, currentLanguage);
+                var customProperties = await _gitHubIntegration.GetCustomPropertiesByRepository(repository.FullName);
+                repository.CustomProperties = customProperties;
             }
 
             return repositories;
+        }
+
+        private async Task<ICollection<GitHubRepositoryModel>> GetPortfolioRepositoriesFromCache()
+        {
+            return null;
         }
     }
 }

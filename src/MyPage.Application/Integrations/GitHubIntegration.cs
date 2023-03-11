@@ -13,32 +13,34 @@ namespace MyPage.Application.Integrations
         public GitHubIntegration(Settings settings)
         {
             _settings = settings;
-            _userToken = _settings.GitHubSettings.GitHubToken;
+            _userToken = _settings.GitHubSettings.Token;
         }
 
         public async Task Login()
         {
-            var loginUrl = _settings.GitHubSettings.GitHubLoginUrl;
+            var loginUrl = _settings.GitHubSettings.LoginUrl;
             await GetRequestClient(loginUrl).GetJsonAsync();
         }
 
         public async Task<ICollection<GitHubRepositoryModel>> GetRepositories()
         {
-            var reposUrl = _settings.GitHubSettings.GitHubReposUrl;
+            var reposUrl = _settings.GitHubSettings.ReposUrl;
             return await GetRequestClient(reposUrl).GetJsonAsync<ICollection<GitHubRepositoryModel>>();
         }
 
-        public async Task<CustomPropertiesModel> GetCustomPropertiesByRepositoryUrl(string repositoryUrl)
+        public async Task<CustomPropertiesModel> GetCustomPropertiesByRepository(string repositoryFullName)
         {
-            var url = repositoryUrl + _settings.GitHubSettings.CustomPropertiesPath;
+            var url = _settings.GitHubSettings.RawBaseUrl + repositoryFullName + _settings.GitHubSettings.CustomPropertiesPath;
+            var test = await url.GetJsonAsync();
             return await url.GetJsonAsync<CustomPropertiesModel>();
         }
 
         private IFlurlRequest GetRequestClient(string url)
         {
-            return url.WithHeader("Accept", "application/vnd.github+json")
-                      .WithHeader("X-GitHub-Api-Version", "2022-11-28")
-                      .WithHeader("Authorization", _userToken);
+            return url.WithHeader("Authorization", _userToken)
+                      .WithHeader("User-Agent", "MyPageUI")
+                      .WithHeader("Accept", "application/vnd.github+json")
+                      .WithHeader("X-GitHub-Api-Version", "2022-11-28");
         }
     }
 }

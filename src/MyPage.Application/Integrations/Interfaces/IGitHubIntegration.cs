@@ -9,6 +9,6 @@ namespace MyPage.Application.Integrations.Interfaces
 
         public Task<ICollection<GitHubRepositoryModel>> GetRepositories();
 
-        public Task<CustomPropertiesModel> GetCustomPropertiesByRepositoryUrl(string repositoryUrl);
+        public Task<CustomPropertiesModel> GetCustomPropertiesByRepository(string repositoryFullName);
     }
 }

@@ -1,5 +1,8 @@
 ﻿using Flurl.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
+using MyPage.Application.Helpers;
+using MyPage.Application.Models.Enums;
 using MyPage.Application.Services.Interfaces;
 using MyPage.UI.Models;
 using System.Diagnostics;
@@ -8,20 +11,21 @@ namespace MyPage.UI.Controllers
 {
     public class ProjectsController : Controller
     {
-        private readonly IGitRepositoryService _gitRepository;
+        private readonly IGitRepositoryService _gitHubService;
+        private readonly IStringLocalizer<LanguageResource> _languageResource;
 
-        public ProjectsController()
+        public ProjectsController(IGitRepositoryService gitHubService,
+                                  IStringLocalizer<LanguageResource> languageResource)
         {
+            _gitHubService = gitHubService;
+            _languageResource = languageResource;
         }
 
-        public async Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> Index()
         {
-            var url = "https://api.github.com/orgs/assis402/repos";
-
-            var test = await url.WithHeader("Accept", "application/vnd.github+json")
-                                .WithHeader("Authorization", "Bearer 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")
-                                .GetJsonAsync();
-            return View();
+            var currentLanguage = _languageResource["Culture"].Value.ToEnum<Language>();
+            var repositories = await _gitHubService.GetPortfolioRepositories(currentLanguage);
+            return View(repositories);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
