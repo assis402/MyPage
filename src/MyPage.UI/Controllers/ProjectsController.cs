@@ -1,5 +1,4 @@
-﻿using Flurl.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using MyPage.Application.Helpers;
 using MyPage.Application.Models.Enums;
@@ -11,21 +10,40 @@ namespace MyPage.UI.Controllers
 {
     public class ProjectsController : Controller
     {
-        private readonly IGitRepositoryService _gitHubService;
+        private readonly IPortfolioService _portfolioService;
         private readonly IStringLocalizer<LanguageResource> _languageResource;
 
-        public ProjectsController(IGitRepositoryService gitHubService,
+        public ProjectsController(IPortfolioService portfolioService,
                                   IStringLocalizer<LanguageResource> languageResource)
         {
-            _gitHubService = gitHubService;
+            _portfolioService = portfolioService;
             _languageResource = languageResource;
         }
 
         public async Task<IActionResult> Index()
         {
             var currentLanguage = _languageResource["Culture"].Value.ToEnum<Language>();
-            var repositories = await _gitHubService.GetPortfolioRepositories(currentLanguage);
+            var repositories = await _portfolioService.GetPortfolioRepositories(currentLanguage);
             return View(repositories);
+        }
+
+        public IActionResult ClearCache()
+        {
+            try
+            {
+                _portfolioService.ClearPortfolioRepositoriesCache();
+                return Ok("Cache in memory \"Projects\" cleared successfully.");
+            }
+            catch (Exception ex)
+            {
+                var errorMessage = new
+                {
+                    Message = "Error when clearing Cache in memory \"Projects\".",
+                    Exception = ex.Message
+                };
+
+                return BadRequest(errorMessage);
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

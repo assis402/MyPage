@@ -31,7 +31,6 @@ namespace MyPage.Application.Integrations
         public async Task<CustomPropertiesModel> GetCustomPropertiesByRepository(string repositoryFullName)
         {
             var url = _settings.GitHubSettings.RawBaseUrl + repositoryFullName + _settings.GitHubSettings.CustomPropertiesPath;
-            var test = await url.GetJsonAsync();
             return await url.GetJsonAsync<CustomPropertiesModel>();
         }
 

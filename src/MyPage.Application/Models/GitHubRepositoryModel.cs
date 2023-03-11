@@ -15,7 +15,7 @@ namespace MyPage.Application.Models
         public string FullName { get; set; } 
 
         [JsonProperty("topics")]
-        public IEnumerable<string> Topic { get; set; }
+        public IEnumerable<string> Topics { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime CreatedAt { get; set; }

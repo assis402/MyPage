@@ -10,14 +10,14 @@
                     <div class="project-header">
                         <span class="project-title">@project.Title</span>
                         <div class="project-tags">
-                            @foreach (var tag in project.Tags)
+                            @foreach (var tag in project.CustomProperties.Tags)
                             {
                                 <div class="project-tag">@tag</div>
                             }
                         </div>
                     </div>
                     <div class="project-body">
-                        <div class="project-mini-description">@project.Description</div>
+                        <div class="project-mini-description">@project.CustomProperties.Description</div>
                         <div class="project-links">
                             <div class="project-link">
                                 <span>github</span>
@@ -154,10 +154,10 @@
         color: #d2d2d2;
     }
 
-        .project-link img {
-            filter: invert(0.5);
-            height: 10px;
-        }
+    .project-link img {
+        filter: invert(0.5);
+        height: 10px;
+    }
 
     @@media screen and (max-width: 1430px) {
         .projects-container {
