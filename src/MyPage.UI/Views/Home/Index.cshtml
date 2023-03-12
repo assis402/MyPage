@@ -1,4 +1,4 @@
-﻿<div class="about-external-container">
+﻿<div class="about-external-container" id="about-external-container">
     <div class="about-container">
         <div class="about-minified">
             <p class="about-title">@LanguageResource["AboutTitle_Greeting"] <br /> <b>@LanguageResource["AboutTitle_Name"]</b></p>
@@ -119,9 +119,10 @@
 <style>
     .about-external-container {
         display: flex;
-        align-items: center;
+        /*align-items: center;*/
         justify-content: center;
-        min-height: 100vh;
+        height: 100vh;
+        /*transition: height .2s linear;*/
     }
 
     .about-container {
@@ -366,7 +367,6 @@
         }
 
         .about-external-container {
-            min-height: auto;
         }
 
         .main-stack {
@@ -577,12 +577,13 @@
 
 <script>
     window.onload = () => selectLanguageFlag();
-
+    
     function showAbout() {
         document.getElementById("presentation").style.opacity = "0";
         document.getElementById("presentation").style.cursor = "default";
 
         setTimeout(() => {
+            document.getElementById("about-external-container").style.height = "auto";
             document.getElementById("presentation").style.height = "0";
         }, 200)
 

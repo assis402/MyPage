@@ -1,6 +1,19 @@
 ﻿@using MyPage.Application.Models;
 @model ICollection<GitHubRepositoryModel>
 
+<div class="modal" id="modal">
+    <div class="modal-internal">
+        <iframe class="video"
+                id="video"
+                width="560"
+                height="315"
+                src=""
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+        </iframe>
+    </div>
+</div>
 <div class="projects-external-container">
     <div class="projects-container">
         @foreach (var project in Model)
@@ -19,13 +32,13 @@
                     <div class="project-body">
                         <div class="project-mini-description">@project.CustomProperties.Description</div>
                         <div class="project-links">
-                            <div class="project-link">
+                            <div class="project-link" onclick="window.open('@project.Url','github')">
                                 <span>github</span>
                                 <img src="~/img/out.png" />
                             </div>
-                            <div class="project-link">
+                            <div class="project-link" onclick="openVideoModel('@project.CustomProperties.VideoUrl')">
                                 <span>ver vídeo</span>
-                                <img src="~/img/out.png" />
+                                <img src="~/img/play.png" style="height: 13px" />
                             </div>
                         </div>
                     </div>
@@ -54,7 +67,7 @@
                             </div>
                             <div class="project-link">
                                 <span>ver vídeo</span>
-                                <img src="~/img/out.png" />
+                                <img src="~/img/play.png" style="height: 13px" />
                             </div>
                         </div>
                     </div>
@@ -66,6 +79,34 @@
 </div>
 
 <style>
+    .modal {
+        display: none;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        z-index: 10000;
+        transition: opacity .3s linear;
+    }
+
+    .modal-internal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .video {
+        border: solid 0.5px #18181c;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-color: #18181c;
+        background-image: url("/img/play.png");
+    }
+
     .projects-external-container {
         display: flex;
         padding: 130px 0 50px 0;
@@ -108,7 +149,7 @@
         width: 100%;
         background: purple;
     }
-    
+
     .project-header {
         display: flex;
         flex-direction: column;
@@ -152,12 +193,13 @@
         line-height: 5px;
         gap: 5px;
         color: #d2d2d2;
+        cursor: pointer;
     }
 
-    .project-link img {
-        filter: invert(0.5);
-        height: 10px;
-    }
+        .project-link img {
+            filter: invert(0.5);
+            height: 11px;
+        }
 
     @@media screen and (max-width: 1430px) {
         .projects-container {
@@ -196,12 +238,21 @@
 </style>
 
 <script>
-    window.onload = () => {
+    document.addEventListener("DOMContentLoaded", () => {
         selectLanguageFlag();
         changeFooterBackground();
-    };
+    });
 
     function changeFooterBackground() {
         document.getElementById("contact-external-container").style.background = "linear-gradient(to right, #060708, #18181c)"
+    }
+
+    function openVideoModel(videoUrl) {
+        document.getElementById("video").src = "https://www.youtube.com/embed/QFvt2cNSOaM";
+        document.getElementById("modal").style.display = "flex";
+
+        setTimeout(() => {
+            document.getElementById("modal").style.opacity = "1";
+        }, 200)
     }
 </script>
