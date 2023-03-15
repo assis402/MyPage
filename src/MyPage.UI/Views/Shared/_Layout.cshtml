@@ -18,7 +18,7 @@
                         <img class="my-photo" id="my-photo" src="/img/perfil.png" alt="My perfil photo" />
                     </div>
                     <p class="name" id="name">
-                        my page
+                        MyPage
                     </p>
                 </div>
 
@@ -110,26 +110,6 @@
         color: white;
     }
 
-
-    @@media screen and (max-width: 720px) {
-        ::-webkit-scrollbar {
-            -webkit-appearance: none;
-            width: 0;
-        }
-
-        body {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-            overflow-x: hidden;
-            max-width: 100%;
-        }
-
-        html {
-            max-width: 100%;
-            overflow-x: hidden;
-        }
-    }
-
     a {
         color: white;
         text-decoration: none;
@@ -149,7 +129,7 @@
         justify-content: space-between;
         padding: 20px;
         z-index: 10000;
-        border-bottom: 2px solid rgba(255, 255, 255, 0);
+        border-bottom: 0px solid rgba(210, 213, 255, 0.3);
     }
 
     .menu-items {
@@ -170,7 +150,7 @@
         width: 100%;
         opacity: 0;
         height: 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(210, 213, 255, 0.3);
         padding-bottom: 25px;
     }
 
@@ -271,6 +251,37 @@
             align-items: center;
             filter: invert();
         }*/
+
+    @@media screen and (max-width: 720px) {
+        ::-webkit-scrollbar {
+            -webkit-appearance: none;
+            width: 0;
+        }
+
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        html {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .menu-item {
+            font-size: 20px;
+        }
+
+        .name {
+            font-size: 22px;
+        }
+
+        .menu-language-flag {
+            height: 38px;
+        }
+    }
 </style>
 
 <style>
@@ -403,7 +414,7 @@
             document.getElementById("my-photo").style.marginRight = "5px"
 
             if (!menuIsOpen) {
-                document.getElementById("menu-container").style.borderBottom = "2px solid rgba(255, 255, 255, 0.1)"
+                document.getElementById("menu-container").style.borderBottom = "1px solid rgba(210, 213, 255, 0.3)"
             }
 
             document.getElementById("menu-container").style.transition = "border-bottom .3s linear, padding .3s linear";

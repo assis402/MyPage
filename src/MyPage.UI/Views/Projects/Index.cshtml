@@ -46,7 +46,7 @@
                 <div class="project-bar"></div>
             </div>
         }
-        @for (int i = 0; i < 2; i++)
+        @for (int i = 0; i < 5; i++)
         {
             <div class="project">
                 <div class="project-content">
@@ -125,7 +125,8 @@
     }
 
     .project {
-        background: linear-gradient(to bottom, #0c0c0f, #080808);
+        background-color: #121218;
+        /*background: linear-gradient(to bottom, #0c0c0f, #080808);*/
         height: 300px;
         width: 260px;
         position: relative;
@@ -244,7 +245,7 @@
     });
 
     function changeFooterBackground() {
-        document.getElementById("contact-external-container").style.background = "linear-gradient(to right, #060708, #18181c)"
+        document.getElementById("contact-external-container").style.background = "linear-gradient(to right, #060708, #242430)"
     }
 
     function openVideoModel(videoUrl) {

@@ -175,7 +175,7 @@
 
     .main-stack {
         display: flex;
-        background: linear-gradient(to right, #070808, #18181c);
+        background: linear-gradient(to right, #070808, #242430);
         align-items: center;
         flex-direction: column;
         justify-content: space-around;
@@ -187,6 +187,8 @@
 
     .main-stack-header {
         text-align: center;
+        display: flex;
+        flex-direction: column;
     }
 
     .main-stack-footer {
@@ -250,13 +252,13 @@
         cursor: pointer;
         width: 150px;
         height: 40px;
-        transition: opacity .2s linear, color .2s linear;
+        transition: color .2s linear, border .2s linear;
+        border: 1px solid #a2a3af00;
         font-weight: 500;
         color: white;
         gap: 12px;
         line-height: 20px;
         background: linear-gradient(to right, #27006a, #541db1);
-        opacity: 0.85;
         -webkit-user-select: none;
         -ms-user-select: none;
         user-select: none;
@@ -270,13 +272,12 @@
         cursor: pointer;
         width: 150px;
         height: 40px;
-        transition: opacity .2s linear, color .2s linear, border .2s linear;
+        transition: color .2s linear, border .2s linear;
         font-weight: 500;
         color: white;
         gap: 12px;
         line-height: 20px;
-        border: 1px solid #1b1b1b;
-        opacity: 0.85;
+        border: 1px solid #363639;
         -webkit-user-select: none;
         -ms-user-select: none;
         user-select: none;
@@ -285,12 +286,11 @@
     }
 
     .about-button:hover {
-        opacity: 1;
+        border: 1px solid #a2a3af;
     }
 
     .projects-button:hover {
-        opacity: 1;
-        border: 1px solid #424141;
+        border: 1px solid #636369;
     }
 
     .second-buttons {
@@ -300,6 +300,7 @@
     .second-button {
         width: auto;
         padding: 5px 15px;
+        font-size: 15px;
     }
 
     .about-icon {
@@ -362,20 +363,41 @@
             align-items: center;
             justify-content: flex-start;
             flex-direction: column;
-            margin-top: 23%;
-            margin-bottom: 17%;
+            margin-top: 26%;
+            margin-bottom: 14%;
         }
 
         .about-external-container {
+            height: auto;
         }
 
         .main-stack {
             width: 100%;
-            height: 150px;
+            height: 200px;
         }
 
         .presentation-buttons {
             gap: 10%;
+        }
+
+        .main-stack-title {
+            font-size: 15px !important;
+        }
+
+        .main-stack-body {
+            font-size: 22px !important;
+        }
+
+        .main-stack-footer {
+            gap: 20px;
+        }
+
+        .main-stack-header {
+            gap: 5px;
+        }
+
+        .tech-icon {
+            height: 60px;
         }
     }
 </style>
@@ -386,7 +408,7 @@
     }
 
     .timeline-external-container {
-        background: linear-gradient(to left, #060708, #18181c);
+        background: linear-gradient(to left, #060708, #242430);
         padding-top: 40px;
         padding-bottom: 70px;
     }
@@ -482,7 +504,7 @@
     .timeline-company {
         width: 143px;
         height: 40px;
-        background-color: #1b1c20;
+        background-color: #262936;
         position: absolute;
         bottom: 0;
         margin-left: -155.5px;
