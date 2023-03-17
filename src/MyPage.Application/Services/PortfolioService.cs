@@ -14,14 +14,14 @@ namespace MyPage.Application.Services
         private readonly IMemoryCache _memoryCache;
 
         public PortfolioService(Settings settings,
-                                    IGitHubIntegration gitHubIntegration,
-                                    IMemoryCache memoryCache)
+                                IGitHubIntegration gitHubIntegration,
+                                IMemoryCache memoryCache)
         {
             _settings = settings;
             _gitHubIntegration = gitHubIntegration;
             _memoryCache = memoryCache;
         }
-
+        
         public async Task<ICollection<GitHubRepositoryModel>> GetPortfolioRepositories(Language currentLanguage)
         {
             var projectList = await GetPortfolioRepositoriesFromCache();

@@ -2,7 +2,7 @@
 @model ICollection<GitHubRepositoryModel>
 
 <div class="modal" id="modal">
-    <div class="modal-internal">
+    <div class="modal-internal" onclick="closeVideoModel()">
         <iframe class="video"
                 id="video"
                 width="560"
@@ -104,7 +104,8 @@
         background-attachment: fixed;
         background-position: center;
         background-color: #18181c;
-        background-image: url("/img/play.png");
+        background-image: url("/img/loading.gif");
+        background-size: 50px;
     }
 
     .projects-external-container {
@@ -249,11 +250,20 @@
     }
 
     function openVideoModel(videoUrl) {
-        document.getElementById("video").src = "https://www.youtube.com/embed/QFvt2cNSOaM";
+        document.getElementById("video").src = videoUrl;
         document.getElementById("modal").style.display = "flex";
 
         setTimeout(() => {
             document.getElementById("modal").style.opacity = "1";
+        }, 200)
+    }
+
+    function closeVideoModel() {
+        document.getElementById("video").src = "";
+        document.getElementById("modal").style.opacity = "0";
+
+        setTimeout(() => {
+            document.getElementById("modal").style.display = "none";
         }, 200)
     }
 </script>

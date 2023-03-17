@@ -20,7 +20,7 @@ namespace MyPage.UI.Controllers
             _languageResource = languageResource;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
             var currentLanguage = _languageResource["Culture"].Value.ToEnum<Language>();
             var repositories = await _portfolioService.GetPortfolioRepositories(currentLanguage);
