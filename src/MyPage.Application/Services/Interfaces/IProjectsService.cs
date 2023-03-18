@@ -3,9 +3,9 @@ using MyPage.Application.Models.Enums;
 
 namespace MyPage.Application.Services.Interfaces
 {
-    public interface IPortfolioService
+    public interface IProjectsService
     {
-        public Task<ICollection<GitHubRepositoryModel>> GetPortfolioRepositories(Language currentLanguage);
+        public Task<ProjectsPageModel> GetPortfolioRepositories(Language currentLanguage);
 
         public void ClearPortfolioRepositoriesCache();
     }

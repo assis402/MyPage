@@ -7,13 +7,13 @@ using MyPage.Application.Services.Interfaces;
 
 namespace MyPage.Application.Services
 {
-    public class PortfolioService : IPortfolioService
+    public class ProjectsService : IProjectsService
     {
         private readonly Settings _settings;
         private readonly IGitHubIntegration _gitHubIntegration;
         private readonly IMemoryCache _memoryCache;
 
-        public PortfolioService(Settings settings,
+        public ProjectsService(Settings settings,
                                 IGitHubIntegration gitHubIntegration,
                                 IMemoryCache memoryCache)
         {
@@ -22,14 +22,14 @@ namespace MyPage.Application.Services
             _memoryCache = memoryCache;
         }
         
-        public async Task<ICollection<GitHubRepositoryModel>> GetPortfolioRepositories(Language currentLanguage)
+        public async Task<ProjectsPageModel> GetPortfolioRepositories(Language currentLanguage)
         {
             var projectList = await GetPortfolioRepositoriesFromCache();
 
             foreach (var project in projectList)
                 project.SetDescriptionByLanguage(currentLanguage);
 
-            return projectList;
+            return new ProjectsPageModel(projectList);
         }
 
         private async Task<ICollection<GitHubRepositoryModel>> GetPortfolioRepositoriesFromGitHub()

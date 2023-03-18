@@ -10,21 +10,26 @@ namespace MyPage.UI.Controllers
 {
     public class ProjectsController : Controller
     {
-        private readonly IPortfolioService _portfolioService;
+        private readonly IProjectsService _portfolioService;
         private readonly IStringLocalizer<LanguageResource> _languageResource;
 
-        public ProjectsController(IPortfolioService portfolioService,
+        public ProjectsController(IProjectsService portfolioService,
                                   IStringLocalizer<LanguageResource> languageResource)
         {
             _portfolioService = portfolioService;
             _languageResource = languageResource;
         }
 
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string searchString = "")
         {
+
             var currentLanguage = _languageResource["Culture"].Value.ToEnum<Language>();
-            var repositories = await _portfolioService.GetPortfolioRepositories(currentLanguage);
-            return View(repositories);
+            var projectsResponse = await _portfolioService.GetPortfolioRepositories(currentLanguage);
+
+            ViewData["CurrentFilter"] = searchString;
+            projectsResponse.GetProjectListByCurrentFilter(searchString);
+
+            return View(projectsResponse.ProjectList);
         }
 
         public IActionResult ClearCache()

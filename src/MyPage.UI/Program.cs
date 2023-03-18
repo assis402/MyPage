@@ -20,7 +20,7 @@ builder.Services.Configure<Settings>(configuration)
 
 builder.Services.AddMemoryCache();
 builder.Services.AddTransient<IGitHubIntegration, GitHubIntegration>();
-builder.Services.AddTransient<IPortfolioService, PortfolioService>();
+builder.Services.AddTransient<IProjectsService, ProjectsService>();
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 

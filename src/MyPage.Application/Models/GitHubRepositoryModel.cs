@@ -27,5 +27,10 @@ namespace MyPage.Application.Models
             if (CustomProperties.DescriptionDictonary.TryGetValue(currentLanguage, out string description))
                 CustomProperties.Description = description;
         }
+
+        public bool Contains(string text)
+        {
+            return Title.Contains(text) || CustomProperties.Description.Contains(text);
+        }
     }
 }
