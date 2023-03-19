@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using MyPage.Application.Helpers;
 using MyPage.Application.Integrations;
 using MyPage.Application.Integrations.Interfaces;
+using MyPage.Application.Models.GitHubIntegration;
 using MyPage.Application.Services;
 using MyPage.Application.Services.Interfaces;
 using MyPage.UI;
@@ -21,6 +22,9 @@ builder.Services.Configure<Settings>(configuration)
 builder.Services.AddMemoryCache();
 builder.Services.AddTransient<IGitHubIntegration, GitHubIntegration>();
 builder.Services.AddTransient<IProjectsService, ProjectsService>();
+builder.Services.AddTransient<IMemoryCacheService<ICollection<GitHubRepositoryModel>>, ProjectsCacheService>();
+builder.Services.AddTransient<IMemoryCacheService<IEnumerable<string>>, TagsCacheService>();
+
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 

@@ -1,7 +1,7 @@
 ﻿using MyPage.Application.Models.Enums;
 using Newtonsoft.Json;
 
-namespace MyPage.Application.Models
+namespace MyPage.Application.Models.GitHubIntegration
 {
     public class GitHubRepositoryModel
     {
@@ -12,7 +12,7 @@ namespace MyPage.Application.Models
         public string Title { get; set; }
 
         [JsonProperty("full_name")]
-        public string FullName { get; set; } 
+        public string FullName { get; set; }
 
         [JsonProperty("topics")]
         public IEnumerable<string> Topics { get; set; }
@@ -20,7 +20,7 @@ namespace MyPage.Application.Models
         [JsonProperty("created_at")]
         public DateTime CreatedAt { get; set; }
 
-        public CustomPropertiesModel CustomProperties { get; set; }
+        public GitHubCustomPropertiesModel CustomProperties { get; set; }
 
         public void SetDescriptionByLanguage(Language currentLanguage)
         {
@@ -30,7 +30,10 @@ namespace MyPage.Application.Models
 
         public bool Contains(string text)
         {
-            return Title.Contains(text) || CustomProperties.Description.Contains(text);
+            text = text.ToLower().Trim();
+
+            return Title.ToLower().Contains(text) ||
+                   CustomProperties.Description.ToLower().Contains(text);
         }
     }
 }

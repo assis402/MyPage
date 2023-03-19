@@ -24,19 +24,20 @@ namespace MyPage.UI.Controllers
         {
 
             var currentLanguage = _languageResource["Culture"].Value.ToEnum<Language>();
-            var projectsResponse = await _portfolioService.GetPortfolioRepositories(currentLanguage);
+            var projectsResponse = await _portfolioService.GetPortfolioProjects(currentLanguage);
 
             ViewData["CurrentFilter"] = searchString;
-            projectsResponse.GetProjectListByCurrentFilter(searchString);
+            var projectList = projectsResponse.GetProjectListByCurrentFilter(searchString);
 
-            return View(projectsResponse.ProjectList);
+            return View(projectList);
         }
 
         public IActionResult ClearCache()
         {
             try
             {
-                _portfolioService.ClearPortfolioRepositoriesCache();
+                _portfolioService.ClearPortfolioProjectsCache();
+                _portfolioService.ClearPortfolioTagsCache();
                 return Ok("Cache in memory \"Projects\" cleared successfully.");
             }
             catch (Exception ex)

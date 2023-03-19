@@ -2,8 +2,9 @@
 {
     public class Settings
     {
-        public string CacheKey { get; set; }
-        public int DaysToCacheExpiration { get; set; }
+        public string ProjectsCacheKey { get; set; }
+        public string TagsCacheKey { get; set; }
+        public int CacheExpirationInDays { get; set; }
         public GitHubSettings GitHubSettings { get; set; }
     }
 }

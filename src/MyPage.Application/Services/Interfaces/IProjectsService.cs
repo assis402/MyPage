@@ -1,12 +1,15 @@
-﻿using MyPage.Application.Models;
-using MyPage.Application.Models.Enums;
+﻿using MyPage.Application.Models.Enums;
+using MyPage.Application.Models.Pages;
 
 namespace MyPage.Application.Services.Interfaces
 {
     public interface IProjectsService
     {
-        public Task<ProjectsPageModel> GetPortfolioRepositories(Language currentLanguage);
+        public Task<ProjectsPageModel> GetPortfolioProjects(Language currentLanguage);
 
-        public void ClearPortfolioRepositoriesCache();
+        public void ClearPortfolioProjectsCache();
+
+        public void ClearPortfolioTagsCache();
+
     }
 }

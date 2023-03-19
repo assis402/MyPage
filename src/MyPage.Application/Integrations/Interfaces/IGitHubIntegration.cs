@@ -1,5 +1,5 @@
 ﻿using Flurl.Http;
-using MyPage.Application.Models;
+using MyPage.Application.Models.GitHubIntegration;
 
 namespace MyPage.Application.Integrations.Interfaces
 {
@@ -7,8 +7,6 @@ namespace MyPage.Application.Integrations.Interfaces
     {
         public Task Login();
 
-        public Task<ICollection<GitHubRepositoryModel>> GetRepositories();
-
-        public Task<CustomPropertiesModel> GetCustomPropertiesByRepository(string repositoryFullName);
+        public Task<GitHubResponseModel> GetGitHubResponseData();
     }
 }

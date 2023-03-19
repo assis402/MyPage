@@ -1,7 +1,7 @@
 ﻿using Flurl.Http;
-using MyPage.Application.Models;
 using MyPage.Application.Helpers;
 using MyPage.Application.Integrations.Interfaces;
+using MyPage.Application.Models.GitHubIntegration;
 
 namespace MyPage.Application.Integrations
 {
@@ -22,16 +22,31 @@ namespace MyPage.Application.Integrations
             await GetRequestClient(loginUrl).GetJsonAsync();
         }
 
-        public async Task<ICollection<GitHubRepositoryModel>> GetRepositories()
+        public async Task<GitHubResponseModel> GetGitHubResponseData()
         {
-            var reposUrl = _settings.GitHubSettings.ReposUrl;
-            return await GetRequestClient(reposUrl).GetJsonAsync<ICollection<GitHubRepositoryModel>>();
+            var repositoryList = await GetRepositories();
+
+            foreach (var repository in repositoryList)
+            {
+                var customProperties = await GetCustomPropertiesByRepository(repository.FullName);
+                repository.CustomProperties = customProperties;
+            }
+
+            return new GitHubResponseModel(repositoryList);
         }
 
-        public async Task<CustomPropertiesModel> GetCustomPropertiesByRepository(string repositoryFullName)
+        private async Task<ICollection<GitHubRepositoryModel>> GetRepositories()
+        {
+            var reposUrl = _settings.GitHubSettings.ReposUrl;
+            var repositoryList = await GetRequestClient(reposUrl).GetJsonAsync<ICollection<GitHubRepositoryModel>>();
+
+            return repositoryList;
+        }
+
+        private async Task<GitHubCustomPropertiesModel> GetCustomPropertiesByRepository(string repositoryFullName)
         {
             var url = _settings.GitHubSettings.RawBaseUrl + repositoryFullName + _settings.GitHubSettings.CustomPropertiesPath;
-            return await url.GetJsonAsync<CustomPropertiesModel>();
+            return await url.GetJsonAsync<GitHubCustomPropertiesModel>();
         }
 
         private IFlurlRequest GetRequestClient(string url)

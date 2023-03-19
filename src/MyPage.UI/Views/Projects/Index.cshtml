@@ -1,4 +1,4 @@
-﻿@using MyPage.Application.Models;
+﻿@using MyPage.Application.Models.GitHubIntegration;
 @model ICollection<GitHubRepositoryModel>
 
 <div class="modal" id="modal">
@@ -19,7 +19,7 @@
         <div class="search-container">
             <input class="search-box" type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
             <input type="submit" value="" class="search-button" />
-            <a asp-action="Index">Limpar</a>
+            <a asp-action="Index" class="clear-filter-button"></a>
         </div>
     </form>
     <div class="projects-container">
@@ -88,10 +88,11 @@
 
     .search-container {
         display: flex;
+        height: 50px;
     }
 
     .search-button {
-        background-color: #121318;
+        background-color: transparent;
         height: 50px;
         width: 50px;
         border: none;
@@ -99,18 +100,30 @@
         background-image: url(/img/loupe.png);
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: 20px;
+        background-size: 25px;
+    }
+
+    .clear-filter-button {
+        height: 50px;
+        width: 30px;
+        cursor: pointer;
+        background-image: url(/img/close.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 18px;
     }
 
     .search-box {
-        background-color: #121318;
+        background-color: transparent;
         border: none;
         width: 400px;
-        height: 20px;
+        height: 30px;
+        padding-top: 10px;
+        padding-bottom: 5px;
         color: #ffffffa3;
         font-size: 15px;
-        padding: 15px;
         outline: none;
+        border-bottom: 1px solid #121218; 
     }
 
     .projects-external-container {
@@ -119,6 +132,7 @@
         padding: 130px 0 50px 0;
         justify-content: center;
         align-items: center;
+        gap: 50px;
     }
 
     .projects-container {

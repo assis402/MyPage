@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.Caching.Memory;
-using MyPage.Application.Helpers;
+﻿using MyPage.Application.Helpers;
 using MyPage.Application.Integrations.Interfaces;
-using MyPage.Application.Models;
 using MyPage.Application.Models.Enums;
+using MyPage.Application.Models.GitHubIntegration;
+using MyPage.Application.Models.Pages;
 using MyPage.Application.Services.Interfaces;
 
 namespace MyPage.Application.Services
@@ -11,53 +11,45 @@ namespace MyPage.Application.Services
     {
         private readonly Settings _settings;
         private readonly IGitHubIntegration _gitHubIntegration;
-        private readonly IMemoryCache _memoryCache;
+        private readonly IMemoryCacheService<ICollection<GitHubRepositoryModel>> _projectsCacheService;
+        private readonly IMemoryCacheService<IEnumerable<string>> _tagsCacheService;
 
         public ProjectsService(Settings settings,
-                                IGitHubIntegration gitHubIntegration,
-                                IMemoryCache memoryCache)
+                               IGitHubIntegration gitHubIntegration,
+                               IMemoryCacheService<ICollection<GitHubRepositoryModel>> projectsCacheService,
+                               IMemoryCacheService<IEnumerable<string>> tagsCacheService)
         {
             _settings = settings;
             _gitHubIntegration = gitHubIntegration;
-            _memoryCache = memoryCache;
+            _projectsCacheService = projectsCacheService;
+            _tagsCacheService = tagsCacheService;
         }
-        
-        public async Task<ProjectsPageModel> GetPortfolioRepositories(Language currentLanguage)
+
+        public async Task<ProjectsPageModel> GetPortfolioProjects(Language currentLanguage)
         {
-            var projectList = await GetPortfolioRepositoriesFromCache();
+            var projectList = await GetPortfolioProjectsFromCache();
+            var projectsPageModel = new ProjectsPageModel(projectList, currentLanguage);
 
-            foreach (var project in projectList)
-                project.SetDescriptionByLanguage(currentLanguage);
+            var tagList = await GetPortfolioTagsFromCache(projectsPageModel);
+            projectsPageModel.SetTagList(tagList);
 
-            return new ProjectsPageModel(projectList);
+            return projectsPageModel;
         }
 
-        private async Task<ICollection<GitHubRepositoryModel>> GetPortfolioRepositoriesFromGitHub()
+        private async Task<ICollection<GitHubRepositoryModel>> GetPortfolioProjectsFromCache() 
+            => await _projectsCacheService.GetOrCreate(GetPortfolioProjectsFromGitHub);
+
+        private async Task<IEnumerable<string>> GetPortfolioTagsFromCache(ProjectsPageModel projectsPageModel) 
+            => await _tagsCacheService.GetOrCreate(projectsPageModel.GetUncachedTagList);
+
+        public void ClearPortfolioProjectsCache() => _projectsCacheService.ClearCache();
+
+        public void ClearPortfolioTagsCache() => _tagsCacheService.ClearCache();
+
+        private async Task<ICollection<GitHubRepositoryModel>> GetPortfolioProjectsFromGitHub()
         {
-            var repositoryList = await _gitHubIntegration.GetRepositories();
-            repositoryList = repositoryList.Where(repository => repository.Topics.Contains(_settings.GitHubSettings.TopicName))
-                                            .OrderByDescending(repository => repository.CreatedAt)
-                                            .ToList();
-
-            foreach (var repository in repositoryList)
-            {
-                var customProperties = await _gitHubIntegration.GetCustomPropertiesByRepository(repository.FullName);
-                repository.CustomProperties = customProperties;
-            }
-
-            return repositoryList;
+            var gitHubResponse = await _gitHubIntegration.GetGitHubResponseData();
+            return gitHubResponse.GetFilteredRepositoryListByTopic(_settings.GitHubSettings.TopicName);
         }
-
-        private async Task<ICollection<GitHubRepositoryModel>> GetPortfolioRepositoriesFromCache()
-        {
-            return await _memoryCache.GetOrCreateAsync(_settings.CacheKey, async cacheEntry =>
-            {
-                cacheEntry.AbsoluteExpirationRelativeToNow = TimeSpan.FromDays(_settings.DaysToCacheExpiration);
-                cacheEntry.SetPriority(CacheItemPriority.High);
-                return await GetPortfolioRepositoriesFromGitHub();
-            });
-        }
-
-        public void ClearPortfolioRepositoriesCache() => _memoryCache.Remove(_settings.CacheKey);
     }
 }
