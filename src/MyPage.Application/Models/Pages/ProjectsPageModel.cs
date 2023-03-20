@@ -10,7 +10,7 @@ namespace MyPage.Application.Models.Pages
 {
     public class ProjectsPageModel
     {
-        public ProjectsPageModel(ICollection<GitHubRepositoryModel> projectList, Language currentLanguage)
+        internal ProjectsPageModel(ICollection<GitHubRepositoryModel> projectList, Language currentLanguage)
         {
             foreach (var project in projectList)
                 project.SetDescriptionByLanguage(currentLanguage);
@@ -22,16 +22,17 @@ namespace MyPage.Application.Models.Pages
 
         public IEnumerable<string> TagList { get; private set; }
 
-        public ICollection<GitHubRepositoryModel> GetProjectListByCurrentFilter(string searchString)
-        {
-            return ProjectList.Where(project => project.Contains(searchString)).ToList();
-        }
-
-        public async Task<IEnumerable<string>> GetUncachedTagList()
+        internal async Task<IEnumerable<string>> GetUncachedTagList()
         {
             return await Task.FromResult(ProjectList.SelectMany(_ => _.CustomProperties.Tags));
         }
 
-        public void SetTagList(IEnumerable<string> tagList) => TagList = tagList;
+        internal void SetTagList(IEnumerable<string> tagList) => TagList = tagList;
+
+        internal void FilterProjectListByCurrentFilter(string searchString)
+        {
+            ProjectList = ProjectList.Where(project => project.Contains(searchString)).ToList();
+        }
+
     }
 }

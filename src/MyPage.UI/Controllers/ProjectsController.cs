@@ -20,15 +20,14 @@ namespace MyPage.UI.Controllers
             _languageResource = languageResource;
         }
 
-        public async Task<IActionResult> Index(string searchString = "")
+        public async Task<IActionResult> Index(string searchFilter = "")
         {
+            ViewData["CurrentFilter"] = searchFilter;
+
             var currentLanguage = _languageResource["Culture"].Value.ToEnum<Language>();
-            var projectsResponse = await _portfolioService.GetPortfolioProjects(currentLanguage);
+            var projectsPageModel = await _portfolioService.GetPortfolioProjectsByLanguageAndFilter(currentLanguage, searchFilter);
 
-            ViewData["CurrentFilter"] = searchString;
-            var projectList = projectsResponse.GetProjectListByCurrentFilter(searchString);
-
-            return View(projectList);
+            return View(projectsPageModel);
         }
 
         public IActionResult ClearCache()

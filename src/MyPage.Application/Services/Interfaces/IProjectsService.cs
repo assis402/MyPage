@@ -5,11 +5,10 @@ namespace MyPage.Application.Services.Interfaces
 {
     public interface IProjectsService
     {
-        public Task<ProjectsPageModel> GetPortfolioProjects(Language currentLanguage);
+        public Task<ProjectsPageModel> GetPortfolioProjectsByLanguageAndFilter(Language currentLanguage, string searchFilter);
 
         public void ClearPortfolioProjectsCache();
 
         public void ClearPortfolioTagsCache();
-
     }
 }

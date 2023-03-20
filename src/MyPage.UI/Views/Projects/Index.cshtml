@@ -1,5 +1,5 @@
-﻿@using MyPage.Application.Models.GitHubIntegration;
-@model ICollection<GitHubRepositoryModel>
+﻿@using MyPage.Application.Models.Pages;
+@model ProjectsPageModel
 
 <div class="modal" id="modal">
     <div class="modal-internal" onclick="closeVideoModel()">
@@ -21,9 +21,13 @@
             <input type="submit" value="" class="search-button" />
             <a asp-action="Index" class="clear-filter-button"></a>
         </div>
+        @foreach (var tag in Model.TagList)
+        {
+            <p>@tag</p>
+        }
     </form>
     <div class="projects-container">
-        @foreach (var project in Model)
+        @foreach (var project in Model.ProjectList)
         {
             <div class="project">
                 <div class="project-content">
