@@ -22,17 +22,15 @@ namespace MyPage.Application.Integrations
             await GetRequestClient(loginUrl).GetJsonAsync();
         }
 
-        public async Task<GitHubResponseModel> GetGitHubResponseData()
+        public async Task<GitHubDataModel> GetGitHubDataByRepositoryTopicName(string topicName)
         {
             var repositoryList = await GetRepositories();
+            var gitHubDataModel = new GitHubDataModel(repositoryList);
 
-            foreach (var repository in repositoryList)
-            {
-                var customProperties = await GetCustomPropertiesByRepository(repository.FullName);
-                repository.CustomProperties = customProperties;
-            }
+            gitHubDataModel.FilterRepositoryListByTopic(topicName);
+            await gitHubDataModel.SetRepositoriesCustomProperties(GetCustomPropertiesByRepository);
 
-            return new GitHubResponseModel(repositoryList);
+            return gitHubDataModel;
         }
 
         private async Task<ICollection<GitHubRepositoryModel>> GetRepositories()

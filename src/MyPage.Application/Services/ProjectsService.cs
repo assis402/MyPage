@@ -48,8 +48,8 @@ namespace MyPage.Application.Services
 
         private async Task<ICollection<GitHubRepositoryModel>> GetPortfolioProjectsFromGitHub()
         {
-            var gitHubResponse = await _gitHubIntegration.GetGitHubResponseData();
-            return gitHubResponse.GetFilteredRepositoryListByTopic(_settings.GitHubSettings.TopicName);
+            var gitHubDataModel = await _gitHubIntegration.GetGitHubDataByRepositoryTopicName(_settings.GitHubSettings.TopicName);
+            return gitHubDataModel.RepositoryList;
         }
     }
 }

@@ -7,6 +7,6 @@ namespace MyPage.Application.Integrations.Interfaces
     {
         public Task Login();
 
-        public Task<GitHubResponseModel> GetGitHubResponseData();
+        public Task<GitHubDataModel> GetGitHubDataByRepositoryTopicName(string topicName);
     }
 }

@@ -22,7 +22,6 @@ namespace MyPage.UI.Controllers
 
         public async Task<IActionResult> Index(string searchString = "")
         {
-
             var currentLanguage = _languageResource["Culture"].Value.ToEnum<Language>();
             var projectsResponse = await _portfolioService.GetPortfolioProjects(currentLanguage);
 
