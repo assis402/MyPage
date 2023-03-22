@@ -15,16 +15,18 @@
     </div>
 </div>
 <div class="projects-external-container">
-    <form asp-action="Index" method="get">
+    <form asp-action="Index" method="get" class="search-form">
         <div class="search-container">
             <input class="search-box" type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
             <input type="submit" value="" class="search-button" />
             <a asp-action="Index" class="clear-filter-button"></a>
         </div>
-        @foreach (var tag in Model.TagList)
-        {
-            <p>@tag</p>
-        }
+        <div class="tag-list">
+            @foreach (var tag in Model.TagList)
+            {
+                <div class="project-tag">@tag</div>
+            }
+        </div>
     </form>
     <div class="projects-container">
         @foreach (var project in Model.ProjectList)
@@ -93,6 +95,17 @@
     .search-container {
         display: flex;
         height: 50px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .search-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .search-button {
@@ -109,12 +122,12 @@
 
     .clear-filter-button {
         height: 50px;
-        width: 30px;
+        width: 50px;
         cursor: pointer;
         background-image: url(/img/close.png);
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: 18px;
+        background-size: 22px;
     }
 
     .search-box {
@@ -127,7 +140,22 @@
         color: #ffffffa3;
         font-size: 15px;
         outline: none;
-        border-bottom: 1px solid #121218; 
+        border-bottom: 2px solid #1f1f2a;
+        transition: border-bottom .2s linear; 
+    }
+
+        .search-box:focus {
+            border-bottom: 2px solid #8e8eb0;
+        }
+
+    .tag-list {
+        display: flex;
+        flex-direction: row;
+        width: 52%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 7px;
+        /*height: 30px;*/
     }
 
     .projects-external-container {
@@ -204,6 +232,10 @@
         padding: 3px 7px;
         border: 1px solid #484747;
         opacity: 0.8;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
     }
 
     .project-links {
