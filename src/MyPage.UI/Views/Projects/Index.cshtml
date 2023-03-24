@@ -18,8 +18,10 @@
     <form asp-action="Index" method="get" class="search-form">
         <div class="search-container">
             <input class="search-box" type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
-            <input type="submit" value="" class="search-button" />
-            <a asp-action="Index" class="clear-filter-button"></a>
+            <div class="search-buttons">
+                <input type="submit" value="" class="search-button" />
+                <a asp-action="Index" class="clear-filter-button"></a>
+            </div>
         </div>
         <div class="tag-list">
             @foreach (var tag in Model.TagList)
@@ -94,10 +96,12 @@
 
     .search-container {
         display: flex;
-        height: 50px;
+        height: 25px;
         align-items: center;
         justify-content: center;
-        width: 100%;
+        margin: 0 17%;
+        width: -webkit-fill-available;
+        gap: 15px;
     }
 
     .search-form {
@@ -106,12 +110,19 @@
         align-items: center;
         flex-direction: column;
         gap: 20px;
+        width: 100%;
+    }
+
+    .search-buttons {
+        display: flex;
+        gap: 17px;
     }
 
     .search-button {
+        padding: 0;
         background-color: transparent;
-        height: 50px;
-        width: 50px;
+        height: 25px;
+        width: 26px;
         border: none;
         cursor: pointer;
         background-image: url(/img/loupe.png);
@@ -121,21 +132,21 @@
     }
 
     .clear-filter-button {
-        height: 50px;
-        width: 50px;
+        height: 25px;
+        width: 26px;
         cursor: pointer;
         background-image: url(/img/close.png);
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: 22px;
+        background-size: 24px;
     }
 
     .search-box {
         background-color: transparent;
         border: none;
-        width: 400px;
-        height: 30px;
-        padding-top: 10px;
+        width: 100%;
+        height: 20px;
+        padding-top: 5px;
         padding-bottom: 5px;
         color: #ffffffa3;
         font-size: 15px;
@@ -151,12 +162,21 @@
     .tag-list {
         display: flex;
         flex-direction: row;
-        width: 52%;
         overflow-x: auto;
         overflow-y: hidden;
         gap: 7px;
         /*height: 30px;*/
+        margin: 0 17%;
+        width: -webkit-fill-available;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow-y: hidden;
     }
+
+        .tag-list::-webkit-scrollbar {
+            -webkit-appearance: none;
+            width: 0;
+        }
 
     .projects-external-container {
         display: flex;
@@ -226,9 +246,9 @@
     }
 
     .project-tag {
-        font-size: 11px;
+        font-size: 12px;
         border-radius: 30px;
-        background-color: #292930;
+        background-color: #22222a;
         padding: 3px 7px;
         border: 1px solid #484747;
         opacity: 0.8;
