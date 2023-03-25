@@ -18,16 +18,18 @@ namespace MyPage.Application.Models.Pages
             ProjectList = projectList;
         }
 
+        public string SearchFilter { get; set; }
+
         public ICollection<GitHubRepositoryModel> ProjectList { get; private set; }
 
-        public IEnumerable<string> TagList { get; private set; }
+        public ICollection<TagModel> TagList { get; private set; }
 
         internal async Task<IEnumerable<string>> GetUncachedTagList()
         {
             return await Task.FromResult(ProjectList.SelectMany(_ => _.CustomProperties.Tags));
         }
 
-        internal void SetTagList(IEnumerable<string> tagList) => TagList = tagList;
+        internal void SetTagList(IEnumerable<string> tagList) => TagList = tagList.ToList();
 
         internal void FilterProjectListByCurrentFilter(string searchString)
         {

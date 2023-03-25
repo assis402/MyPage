@@ -331,6 +331,15 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a pesquise um projeto.
+        /// </summary>
+        public static string SearchDefaultText {
+            get {
+                return ResourceManager.GetString("SearchDefaultText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a confira meus projetos pessoais.
         /// </summary>
         public static string SecondProjectsButton {

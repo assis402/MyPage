@@ -17,7 +17,7 @@
 <div class="projects-external-container">
     <form asp-action="Index" method="get" class="search-form">
         <div class="search-container">
-            <input class="search-box" type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input class="search-box" type="text" name="SearchFilter" value="@ViewData["SearchFilter"]" placeholder="@LanguageResource["SearchDefaultText"]" />
             <div class="search-buttons">
                 <input type="submit" value="" class="search-button" />
                 <a asp-action="Index" class="clear-filter-button"></a>
@@ -26,7 +26,7 @@
         <div class="tag-list">
             @foreach (var tag in Model.TagList)
             {
-                <div class="project-tag">@tag</div>
+                <div class="project-tag-search">@tag</div>
             }
         </div>
     </form>
@@ -113,7 +113,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap: 35px;
+        gap: 40px;
         width: 100%;
     }
 
@@ -173,7 +173,7 @@
         width: -moz-available;
         width: -webkit-fill-available;
         width: fill-available;
-        padding-bottom: 25px;
+        padding-bottom: 18px;
         max-width: 750px;
         min-width: 485px;
         overflow: -moz-scrollbars-vertical;
@@ -181,19 +181,44 @@
     }
 
         .tag-list::-webkit-scrollbar {
-            width: 12px; /* width of the entire scrollbar */
+            height: 12px;
         }
 
         .tag-list::-webkit-scrollbar-track {
-            background: orange; /* color of the tracking area */
+            background: #0d0e12;
+            border-radius: 10px;
+            margin: 0 0px;
         }
 
         .tag-list::-webkit-scrollbar-thumb {
-            background-color: blue; /* color of the scroll thumb */
-            border-radius: 20px; /* roundness of the scroll thumb */
-            border: 3px solid orange; /* creates padding around scroll thumb */
+            background-color: #444456;
+            border-radius: 20px;
+            border: 3px solid #0d0e12;
         }
 
+    .project-tag-search {
+        font-size: 12px;
+        border-radius: 30px;
+        background-color: #22222a;
+        padding: 3px 7px;
+        border: 1px solid #484747;
+        opacity: 0.8;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: border .2s linear, opacity .2s linear;
+    }
+
+    .project-tag-search:hover {
+        border: 1px solid white;
+        opacity: 1;
+    }
+
+        .project-tag-search:focus, project-tag-search:active {
+
+        }
 
     .projects-external-container {
         display: flex;

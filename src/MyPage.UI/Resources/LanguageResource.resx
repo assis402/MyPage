@@ -210,6 +210,9 @@
   <data name="ProjectsMenu" xml:space="preserve">
     <value>projetos</value>
   </data>
+  <data name="SearchDefaultText" xml:space="preserve">
+    <value>pesquise um projeto</value>
+  </data>
   <data name="SecondProjectsButton" xml:space="preserve">
     <value>confira meus projetos pessoais</value>
   </data>
