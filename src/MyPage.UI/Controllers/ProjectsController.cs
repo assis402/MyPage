@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Localization;
 using MyPage.Application.Helpers;
 using MyPage.Application.Models.Enums;
+using MyPage.Application.Models.Pages;
 using MyPage.Application.Services.Interfaces;
 using MyPage.UI.Models;
 using System.Diagnostics;
@@ -12,6 +13,7 @@ namespace MyPage.UI.Controllers
     {
         private readonly IProjectsService _portfolioService;
         private readonly IStringLocalizer<LanguageResource> _languageResource;
+        private ProjectsPageModel _projectsPageModel;
 
         public ProjectsController(IProjectsService portfolioService,
                                   IStringLocalizer<LanguageResource> languageResource)
@@ -20,12 +22,11 @@ namespace MyPage.UI.Controllers
             _languageResource = languageResource;
         }
 
-        public async Task<IActionResult> Index(List<int> tagsFilter, string searchFilter = "")
+        public async Task<IActionResult> Index(string tagFilter, string searchFilter = "")
         {
             ViewData["SearchFilter"] = searchFilter;
-
             var currentLanguage = _languageResource["Culture"].Value.ToEnum<Language>();
-            var projectsPageModel = await _portfolioService.GetPortfolioProjectsByLanguageAndFilter(currentLanguage, searchFilter);
+            var projectsPageModel = await _portfolioService.GetPortfolioProjectsByLanguageAndFilter(currentLanguage, searchFilter, tagFilter);
 
             return View(projectsPageModel);
         }

@@ -1,4 +1,5 @@
-﻿@using MyPage.Application.Models.Pages;
+﻿@using MyPage.Application.Helpers;
+@using MyPage.Application.Models.Pages;
 @model ProjectsPageModel
 
 <div class="modal" id="modal">
@@ -18,6 +19,7 @@
     <form asp-action="Index" method="get" class="search-form">
         <div class="search-container">
             <input class="search-box" type="text" name="SearchFilter" value="@ViewData["SearchFilter"]" placeholder="@LanguageResource["SearchDefaultText"]" />
+            <input type="hidden" name="tagList" value="" id="tagFilter"/>
             <div class="search-buttons">
                 <input type="submit" value="" class="search-button" />
                 <a asp-action="Index" class="clear-filter-button"></a>
@@ -26,7 +28,14 @@
         <div class="tag-list">
             @foreach (var tag in Model.TagList)
             {
-                <div class="project-tag-search">@tag</div>
+                if (!tag.SelectedToFilter)
+                {
+                    <div id="@tag.TagName" class="project-tag-search" onclick="addOrRemoveSelectedTag('@tag.TagName')">@tag.TagName</div>
+                }
+                else
+                {
+                    <div id="@tag.TagName" class="project-tag-search tag-selected" onclick="addOrRemoveSelectedTag('@tag.TagName')">@tag.TagName</div>
+                }
             }
         </div>
     </form>
@@ -211,6 +220,12 @@
         transition: border .2s linear, opacity .2s linear;
     }
 
+    .tag-selected {
+        background-color: blue !important;
+        border: 1px solid white !important;
+        opacity: 1 !important;
+    }
+
     .project-tag-search:hover {
         border: 1px solid white;
         opacity: 1;
@@ -382,10 +397,40 @@
 </style>
 
 <script>
+    var tagFilter = "";
+
     document.addEventListener("DOMContentLoaded", () => {
         selectLanguageFlag();
         changeFooterBackground();
     });
+
+    function setTagFilter() {
+        document.getElementById("tagFilter").value = tagFilter
+        console.log(tagFilter)
+    }
+
+    function addOrRemoveSelectedTag(tagName) {
+        if (tagFilter.includes(tagName))
+        {
+            removeSelectedTag(tagName)
+        }
+        else
+        {
+            addSelectedTag(tagName)
+        }
+    }
+
+    function addSelectedTag(tagName){
+        tagFilter = tagFilter + tagName + ';'
+        setTagFilter()
+        document.getElementById(tagName).className = "project-tag-search tag-selected";
+    }
+
+    function removeSelectedTag(tagName) {
+        tagFilter = tagFilter.replace(tagName + ';','');
+        setTagFilter()
+        document.getElementById(tagName).className = "project-tag-search";
+    }
 
     function changeFooterBackground() {
         document.getElementById("contact-external-container").style.background = "linear-gradient(to right, #060708, #242430)"

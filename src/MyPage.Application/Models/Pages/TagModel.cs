@@ -14,8 +14,10 @@ namespace MyPage.Application.Models.Pages
             TagName = tagName;
         }
 
-        public bool SelectedToFilter { get; set; }
+        public bool SelectedToFilter { get; private set; }
 
-        public string TagName { get; set; }
+        public string TagName { get; private set; }
+
+        public void ToggleSelectedToFilter() => SelectedToFilter = !SelectedToFilter;
     }
 }

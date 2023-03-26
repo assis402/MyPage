@@ -25,7 +25,7 @@ namespace MyPage.Application.Services
             _tagsCacheService = tagsCacheService;
         }
 
-        public async Task<ProjectsPageModel> GetPortfolioProjectsByLanguageAndFilter(Language currentLanguage, string searchFilter)
+        public async Task<ProjectsPageModel> GetPortfolioProjectsByLanguageAndFilter(Language currentLanguage, string searchFilter, string tagFilter)
         {
             var projectList = await GetPortfolioProjectsFromCache();
             var projectsPageModel = new ProjectsPageModel(projectList, currentLanguage);
@@ -33,7 +33,7 @@ namespace MyPage.Application.Services
             var tagList = await GetPortfolioTagsFromCache(projectsPageModel);
             projectsPageModel.SetTagList(tagList);
 
-            projectsPageModel.FilterProjectListByCurrentFilter(searchFilter);
+            projectsPageModel.FilterProjectListBySearchFilter(searchFilter);
 
             return projectsPageModel;
         }

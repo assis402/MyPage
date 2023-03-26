@@ -5,7 +5,7 @@ namespace MyPage.Application.Services.Interfaces
 {
     public interface IProjectsService
     {
-        public Task<ProjectsPageModel> GetPortfolioProjectsByLanguageAndFilter(Language currentLanguage, string searchFilter);
+        public Task<ProjectsPageModel> GetPortfolioProjectsByLanguageAndFilter(Language currentLanguage, string searchFilter, string tagFilter);
 
         public void ClearPortfolioProjectsCache();
 
