@@ -83,7 +83,8 @@
             </div>
             <div class="contact email" onclick="">
                 <img class="contact-logo" src="~/img/email.png" />
-                <span style="font-size: 15px">assis4002@gmail.com</span>
+                <span>assis4002@gmail.com</span>
+                <img id="email" class="copy-img" src="~/img/copy.png" onclick="copyEmail('assis4002@gmail.com')"/>
             </div>
         </div>
     </footer>
@@ -239,18 +240,19 @@
         transition: opacity .2s linear;
         -webkit-tap-highlight-color: transparent;
     }
+
         .menu-language-flag:hover, .menu-language-flag:active {
             opacity: 1;
         }
 
     /*    .menu-language-icon {
-            height: 25px;
-            opacity: 0.7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            filter: invert();
-        }*/
+                height: 25px;
+                opacity: 0.7;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                filter: invert();
+            }*/
 
     @@media screen and (max-width: 720px) {
         ::-webkit-scrollbar {
@@ -325,12 +327,12 @@
         -ms-user-select: none;
         user-select: none;
         -webkit-tap-highlight-color: transparent;
-
     }
 
     .email {
         font-size: 15px;
         cursor: text;
+        user-select: text;
     }
 
     .contact:hover {
@@ -349,6 +351,21 @@
         height: 13px;
         filter: invert(0.7);
         margin-left: -8px;
+    }
+
+    .copy-img {
+        height: 22px;
+        filter: invert(0.7);
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        margin-left: -8px;
+        transition: filter .2s linear;
+    }
+
+    .copy-img:hover, .copy-img:active, .copy-img:focus {
+        filter: invert(1);
     }
 
     @@media (max-width: 720px) {
@@ -444,5 +461,10 @@
             document.getElementById("enUS-flag").style.opacity = "1"
             document.getElementById("enUS-flag-mobile").style.opacity = "1"
         }
+    }
+
+    function copyEmail(email) {
+        navigator.clipboard.writeText(email);
+        document.getElementById("email").src = "/img/copy-checked.png"
     }
 </script>

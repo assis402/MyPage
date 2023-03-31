@@ -19,7 +19,7 @@
     <form asp-action="Index" method="get" class="search-form">
         <div class="search-container">
             <input class="search-box" type="text" name="SearchFilter" value="@ViewData["SearchFilter"]" placeholder="@LanguageResource["SearchDefaultText"]" />
-            <input type="hidden" name="tagList" value="" id="tagFilter"/>
+            <input type="hidden" name="tagList" value="" id="tagFilter" />
             <div class="search-buttons">
                 <input type="submit" value="" class="search-button" />
                 <a asp-action="Index" class="clear-filter-button"></a>
@@ -142,7 +142,12 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 25px;
+        transition: background-image .2s linear;
     }
+
+        .search-button:active, .search-button:hover, .search-button:focus {
+            background-image: url(/img/loupe-active.png);
+        }
 
     .clear-filter-button {
         height: 25px;
@@ -152,7 +157,12 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 24px;
+        transition: background-image .2s linear;
     }
+
+        .clear-filter-button:active, .clear-filter-button:hover, .clear-filter-button:focus {
+            background-image: url(/img/close-active.png);
+        }
 
     .search-box {
         background-color: transparent;
@@ -167,10 +177,6 @@
         border-bottom: 2px solid #1f1f2a;
         transition: border-bottom .2s linear;
     }
-
-        .search-box:focus {
-            border-bottom: 2px solid #8e8eb0;
-        }
 
     .tag-list {
         display: flex;
@@ -217,23 +223,22 @@
         align-items: center;
         white-space: nowrap;
         cursor: pointer;
-        transition: border .2s linear, opacity .2s linear;
+        transition: border .2s linear, opacity .2s linear, background-color .2s linear;
     }
 
     .tag-selected {
-        background-color: blue !important;
+        background-color: #3e4064 !important;
         border: 1px solid white !important;
         opacity: 1 !important;
     }
 
     .project-tag-search:hover {
-        border: 1px solid white;
+        border: 1px solid #888787;
         opacity: 1;
     }
 
-        .project-tag-search:focus, project-tag-search:active {
-
-        }
+    .project-tag-search:focus, project-tag-search:active {
+    }
 
     .projects-external-container {
         display: flex;
@@ -348,12 +353,12 @@
             max-width: 820px;
         }
         /*.search-container {
-                margin: 0 20%;
-            }
+                    margin: 0 20%;
+                }
 
-            .tag-list {
-                margin: 0 15%;
-            }*/
+                .tag-list {
+                    margin: 0 15%;
+                }*/
     }
 
     @@media screen and (max-width: 870px) {
@@ -410,24 +415,22 @@
     }
 
     function addOrRemoveSelectedTag(tagName) {
-        if (tagFilter.includes(tagName))
-        {
+        if (tagFilter.includes(tagName)) {
             removeSelectedTag(tagName)
         }
-        else
-        {
+        else {
             addSelectedTag(tagName)
         }
     }
 
-    function addSelectedTag(tagName){
+    function addSelectedTag(tagName) {
         tagFilter = tagFilter + tagName + ';'
         setTagFilter()
         document.getElementById(tagName).className = "project-tag-search tag-selected";
     }
 
     function removeSelectedTag(tagName) {
-        tagFilter = tagFilter.replace(tagName + ';','');
+        tagFilter = tagFilter.replace(tagName + ';', '');
         setTagFilter()
         document.getElementById(tagName).className = "project-tag-search";
     }

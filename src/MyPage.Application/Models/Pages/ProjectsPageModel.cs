@@ -37,9 +37,11 @@ namespace MyPage.Application.Models.Pages
             ProjectList = ProjectList.Where(project => project.Contains(searchString)).ToList();
         }
 
-        internal void FilterProjectListByTagFilter(string searchString)
+        internal void FilterProjectListByTagFilter(string tagFilter)
         {
-            ProjectList = ProjectList.Where(project => project.Contains(searchString)).ToList();
+            var tags = tagFilter.Split();
+
+            ProjectList = ProjectList.Where(project => project.Contains(tagFilter)).ToList();
         }
     }
 }
