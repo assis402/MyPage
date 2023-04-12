@@ -13,7 +13,6 @@ namespace MyPage.UI.Controllers
     {
         private readonly IProjectsService _portfolioService;
         private readonly IStringLocalizer<LanguageResource> _languageResource;
-        private ProjectsPageModel _projectsPageModel;
 
         public ProjectsController(IProjectsService portfolioService,
                                   IStringLocalizer<LanguageResource> languageResource)
@@ -25,6 +24,7 @@ namespace MyPage.UI.Controllers
         public async Task<IActionResult> Index(string tagFilter, string searchFilter = "")
         {
             ViewData["SearchFilter"] = searchFilter.Trim();
+            ViewData["TagFilter"] = tagFilter;
             var currentLanguage = _languageResource["Culture"].Value.ToEnum<Language>();
             var projectsPageModel = await _portfolioService.GetPortfolioProjectsByLanguageAndFilter(currentLanguage, searchFilter.Trim(), tagFilter);
 

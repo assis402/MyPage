@@ -37,7 +37,7 @@ namespace MyPage.Application.Services
                 projectsPageModel.FilterProjectListBySearchFilter(searchFilter);
 
             if (tagFilter.IsNotEmpty())
-                projectsPageModel.FilterProjectListBySearchFilter(searchFilter);
+                projectsPageModel.FilterProjectListByTagFilter(tagFilter);
 
             return projectsPageModel;
         }

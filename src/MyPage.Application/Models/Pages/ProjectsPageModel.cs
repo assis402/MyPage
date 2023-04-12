@@ -1,10 +1,5 @@
 ﻿using MyPage.Application.Models.Enums;
 using MyPage.Application.Models.GitHubIntegration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyPage.Application.Models.Pages
 {
@@ -39,9 +34,19 @@ namespace MyPage.Application.Models.Pages
 
         internal void FilterProjectListByTagFilter(string tagFilter)
         {
-            var tags = tagFilter.Split();
+            var selectedTags = tagFilter.Split(";", StringSplitOptions.RemoveEmptyEntries);
 
-            ProjectList = ProjectList.Where(project => project.Contains(tagFilter)).ToList();
+            SetSelectedTags(selectedTags);
+            ProjectList = ProjectList.Where(project => project.CustomProperties.Tags.Any(tag => selectedTags.Contains(tag))).ToList();
+        }
+        
+        private void SetSelectedTags(string[] selectedTags)
+        {
+            foreach (var tag in TagList)
+            {
+                if (selectedTags.Contains(tag.TagName))
+                    tag.ToggleSelectedToFilter();
+            }
         }
     }
 }
