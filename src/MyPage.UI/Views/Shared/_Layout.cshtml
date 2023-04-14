@@ -15,10 +15,10 @@
             <div class="menu-container" id="menu-container">
                 <div class="perfil">
                     <div class="my-photo-wrapper">
-                        <img class="my-photo" id="my-photo" src="/img/perfil.png" alt="My perfil photo" />
+                        <img class="my-photo" id="my-photo" src="/img/perfil.png" alt="My perfil photo" loading="lazy" />
                     </div>
                     <p class="name" id="name">
-                        MyPage
+                        <a href="/">MyPage</a>
                     </p>
                 </div>
 
@@ -149,8 +149,9 @@
         flex-direction: row;
         background: rgb(0, 0, 0);
         width: 100%;
+        height: auto;
         opacity: 0;
-        height: 0;
+        display: none;
         border-bottom: 1px solid rgba(210, 213, 255, 0.3);
         padding-bottom: 25px;
     }
@@ -411,15 +412,17 @@
             }
 
             setTimeout(() => {
-                document.getElementById("menu-mobile").style.height = "0";
-            }, 300);
+                document.getElementById("menu-mobile").style.display = "none"
+            }, 200);
         } else {
-            document.getElementById("menu-container").style.borderBottom = "2px solid rgba(255, 255, 255, 0.0)"
+            document.getElementById("menu-mobile").style.display = "flex"
 
-            document.getElementById("menu-mobile").style.opacity = "1";
-            document.getElementById("menu-mobile").style.transition = "opacity .3s linear";
+            setTimeout(() => {
+                document.getElementById("menu-container").style.borderBottom = "2px solid rgba(255, 255, 255, 0.0)"
 
-            document.getElementById("menu-mobile").style.height = "auto";
+                document.getElementById("menu-mobile").style.opacity = "1";
+                document.getElementById("menu-mobile").style.transition = "opacity .3s linear";
+            }, 200);
         }
     }
 

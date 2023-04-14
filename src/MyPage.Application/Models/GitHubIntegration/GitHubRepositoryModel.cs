@@ -1,4 +1,5 @@
-﻿using MyPage.Application.Models.Enums;
+﻿using MyPage.Application.Helpers;
+using MyPage.Application.Models.Enums;
 using Newtonsoft.Json;
 
 namespace MyPage.Application.Models.GitHubIntegration
@@ -8,8 +9,14 @@ namespace MyPage.Application.Models.GitHubIntegration
         [JsonProperty("html_url")]
         public string Url { get; set; }
 
+        private string title;
+
         [JsonProperty("name")]
-        public string Title { get; set; }
+        public string Title
+        {
+            get { return title.Captalize(); }
+            set { title = value; }
+        }
 
         [JsonProperty("full_name")]
         public string FullName { get; set; }

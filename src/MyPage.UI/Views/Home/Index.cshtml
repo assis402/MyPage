@@ -26,10 +26,10 @@
                     <img class="about-icon" src="~/img/info.png" />
                     <div class="inner-button">@LanguageResource["AboutButton"]</div>
                 </div>
-                <div class="projects-button" onclick="">
+                <a class="projects-button" href="/projects">
                     <img class="projects-icon" src="~/img/projects.png" />
                     <div class="inner-button">@LanguageResource["ProjectsButton"]</div>
-                </div>
+                </a>
             </div>
         </div>
         <div id="about-body-container">
@@ -45,10 +45,10 @@
                 @LanguageResource["AboutBody_03"]
             </p>
             <div class="presentation-buttons second-buttons">
-                <div class="about-button second-button" onclick="">
+                <a class="about-button second-button" href="/projects">
                     <img class="projects-icon" src="~/img/projects.png" />
                     <div class="inner-button">@LanguageResource["SecondProjectsButton"]</div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -148,7 +148,7 @@
     #about-body-container {
         padding: 0 10%;
         opacity: 0;
-        height: 0;
+        display: none;
         transition: opacity .2s linear;
         max-width: 1100px;
     }
@@ -221,7 +221,6 @@
         text-align: left;
         font-weight: 200;
         color: #dfdfdf;
-        height: 0;
     }
 
     .emphasis {
@@ -606,15 +605,10 @@
 
         setTimeout(() => {
             document.getElementById("about-external-container").style.height = "auto";
-            document.getElementById("presentation").style.height = "0";
+            document.getElementById("presentation").style.display = "none";
+            document.getElementById("about-body-container").style.display = "block";
         }, 200)
 
-        setTimeout(() => {
-            document.getElementById("about-body-container").style.height = "auto";
-            document.getElementById("about-body-1").style.height = "auto";
-            document.getElementById("about-body-2").style.height = "auto";
-            document.getElementById("about-body-3").style.height = "auto";
-            document.getElementById("about-body-container").style.opacity = "1";
-        }, 200)
+        document.getElementById("about-body-container").style.opacity = "1";
     }
 </script>

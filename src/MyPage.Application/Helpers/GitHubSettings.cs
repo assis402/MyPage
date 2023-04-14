@@ -1,6 +1,4 @@
-﻿using Flurl.Http;
-
-namespace MyPage.Application.Helpers;
+﻿namespace MyPage.Application.Helpers;
 
 public class GitHubSettings
 {

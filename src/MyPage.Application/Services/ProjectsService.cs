@@ -42,10 +42,10 @@ namespace MyPage.Application.Services
             return projectsPageModel;
         }
 
-        private async Task<ICollection<GitHubRepositoryModel>> GetPortfolioProjectsFromCache() 
+        private async Task<ICollection<GitHubRepositoryModel>> GetPortfolioProjectsFromCache()
             => await _projectsCacheService.GetOrCreate(GetPortfolioProjectsFromGitHub);
 
-        private async Task<IEnumerable<string>> GetPortfolioTagsFromCache(ProjectsPageModel projectsPageModel) 
+        private async Task<IEnumerable<string>> GetPortfolioTagsFromCache(ProjectsPageModel projectsPageModel)
             => await _tagsCacheService.GetOrCreate(projectsPageModel.GetUncachedTagList);
 
         public void ClearPortfolioProjectsCache() => _projectsCacheService.ClearCache();

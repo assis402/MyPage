@@ -1,5 +1,4 @@
-﻿using Flurl.Http;
-using MyPage.Application.Models.GitHubIntegration;
+﻿using MyPage.Application.Models.GitHubIntegration;
 
 namespace MyPage.Application.Integrations.Interfaces
 {

@@ -24,7 +24,7 @@ namespace MyPage.Application.Models.Pages
 
         internal void SetTagList(IEnumerable<string> tagList)
         {
-            TagList = tagList.Select(tagName => new TagModel(false, tagName)).ToList();
+            TagList = tagList.Distinct().Select(tagName => new TagModel(false, tagName)).ToList();
         }
 
         internal void FilterProjectListBySearchFilter(string searchString)
@@ -39,7 +39,7 @@ namespace MyPage.Application.Models.Pages
             SetSelectedTags(selectedTags);
             ProjectList = ProjectList.Where(project => project.CustomProperties.Tags.Any(tag => selectedTags.Contains(tag))).ToList();
         }
-        
+
         private void SetSelectedTags(string[] selectedTags)
         {
             foreach (var tag in TagList)

@@ -11,21 +11,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Content\css\menu.css" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Content Include="Content\css\menu.css">
-	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-	  </Content>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Include="wwwroot\img\perfil.jpg" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <ProjectReference Include="..\MyPage.Application\MyPage.Application.csproj" />
 	</ItemGroup>
 
