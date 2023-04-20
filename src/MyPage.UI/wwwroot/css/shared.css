@@ -45,6 +45,9 @@ a {
     flex-direction: row;
 }
 
+#menu-items {
+}
+
 .menu-mobile {
     padding: 15px;
     padding-top: 0;

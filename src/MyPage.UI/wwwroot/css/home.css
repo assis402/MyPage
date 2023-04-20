@@ -364,8 +364,8 @@
     background: #d500d3;
     border: 2px solid #d500d3;
     -webkit-box-shadow: 0px 0px 15px 10px rgba(213, 0, 211, 0.3);
-    -moz-box-shadow: 0px 0px 15px 10px rgb(213, 0, 211, 0.3);
-    box-shadow: 0px 0px 15px 10px rgb(213, 0, 211, 0.3);
+    -moz-box-shadow: 0px 0px 15px 10px rgba(213, 0, 211, 0.3);
+    box-shadow: 0px 0px 15px 10px rgba(213, 0, 211, 0.3);
 }
 
 .fitbank-border-circle {

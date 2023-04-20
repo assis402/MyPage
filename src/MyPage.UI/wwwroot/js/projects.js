@@ -1,5 +1,3 @@
-var tagFilter = document.getElementById("tagFilter").value
-
 document.addEventListener("DOMContentLoaded", () => {
     selectLanguageFlag();
     changeFooterBackground();
@@ -11,6 +9,8 @@ function setTagFilter() {
 }
 
 function addOrRemoveSelectedTag(tagName) {
+    var tagFilter = document.getElementById("tagFilter").value;
+
     if (tagFilter.includes(tagName)) {
         removeSelectedTag(tagName)
     }
