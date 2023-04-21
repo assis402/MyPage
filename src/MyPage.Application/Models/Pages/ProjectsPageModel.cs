@@ -42,10 +42,9 @@ namespace MyPage.Application.Models.Pages
 
         private void SetSelectedTags(string[] selectedTags)
         {
-            foreach (var tag in TagList)
+            foreach (var tag in TagList.Where(tag => selectedTags.Contains(tag.TagName)))
             {
-                if (selectedTags.Contains(tag.TagName))
-                    tag.ToggleSelectedToFilter();
+                tag.ToggleSelectedToFilter();
             }
         }
     }

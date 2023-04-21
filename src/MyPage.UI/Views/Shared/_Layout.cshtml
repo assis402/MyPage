@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var culture = LanguageResource["Culture"];
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
@@ -8,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    <script src="~/js/site.min.js" asp-append-version="true"></script>
 </head>
 <body>
     <header>
@@ -32,10 +35,10 @@
                     </a>
                     <div class="menu-languages">
                         <a asp-controller="language" asp-action="change" asp-route-culture="en-US" class="language-link">
-                            <img class="menu-language-flag" id="enUS-flag" src="~/img/en-us.svg" />
+                            <img class="menu-language-flag @(culture == "en_US" ? "menu-language-flag-active" : "")" src="~/img/en-us.svg" />
                         </a>
                         <a asp-controller="language" asp-action="change" asp-route-culture="pt-BR" class="language-link">
-                            <img class="menu-language-flag" id="ptBR-flag" src="~/img/pt-br.svg" />
+                            <img class="menu-language-flag @(culture == "pt_BR" ? "menu-language-flag-active" : "")" id="ptBR-flag" src="~/img/pt-br.svg" />
                         </a>
                     </div>
                 </div>
@@ -57,10 +60,10 @@
                 </div>
                 <div class="menu-languages-mobile">
                     <a asp-controller="language" asp-action="change" asp-route-culture="en-US" class="language-link">
-                        <img class="menu-language-flag" id="enUS-flag-mobile" src="~/img/en-us.svg" />
+                        <img class="menu-language-flag @(culture == "en_US" ? "menu-language-flag-active" : "")" src="~/img/en-us.svg" />
                     </a>
                     <a asp-controller="language" asp-action="change" asp-route-culture="pt-BR" class="language-link">
-                        <img class="menu-language-flag" id="ptBR-flag-mobile" src="~/img/pt-br.svg" />
+                        <img class="menu-language-flag @(culture == "pt_BR" ? "menu-language-flag-active" : "")" src="~/img/pt-br.svg" />
                     </a>
                 </div>
             </div>
@@ -69,7 +72,10 @@
 
     @RenderBody()
 
-    <footer class="contact-external-container" id="contact-external-container">
+    @{
+        var pageName = ViewContext.RouteData.Values["controller"]?.ToString()?.ToLower();
+    }
+    <footer class="contact-external-container @(pageName == "projects" ? "projects-footer" : "")" id="contact-external-container">
         <div class="mini-title">@LanguageResource["CONTACT"]</div>
         <div class="contact-container">
             <div class="contact" onclick="window.open('https://github.com/assis402','github')">
@@ -91,7 +97,4 @@
     </footer>
 </body>
 </html>
-
-<script>
-    var culture = "@LanguageResource["Culture"]";
-</script>
+<script src="~/js/site.min.js" asp-append-version="true"></script>

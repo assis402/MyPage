@@ -1,7 +1,3 @@
-menuSwitch();
-window.onscroll = () => scrollFunction();
-window.addEventListener("resize", () => menuSwitch())
-
 function menuSwitch() {
     if (window.matchMedia("(min-width: 720px)").matches) {
         document.getElementById("menu-items").style.display = "flex";
@@ -10,7 +6,6 @@ function menuSwitch() {
         document.getElementById("menu-items").style.flexDirection = "row";
         document.getElementById("menu-items").style.alignItems = "center";
         document.getElementById("menu-items").style.justifyContent = "center";
-
     } else {
         document.getElementById("menu-items").style.display = "none";
         document.getElementById("menu-button-mobile").style.display = "block";
@@ -62,7 +57,6 @@ function scrollFunction() {
         document.getElementById("my-photo").style.marginRight = "20px";
         document.getElementById("menu-container").style.borderBottom = "2px solid rgba(255, 255, 255, 0)"
 
-
         document.getElementById("menu-container").style.transition = "border-bottom .3s linear, padding .3s linear";
         document.getElementById("my-photo").style.transition = "width .3s linear, margin .3s linear";
     }
@@ -73,14 +67,6 @@ function copyEmail(email) {
     document.getElementById("email").src = "/img/copy-checked.png"
 }
 
-function selectLanguageFlag() {
-    if (culture === "pt_BR") {
-        document.getElementById("ptBR-flag").style.opacity = "1"
-        document.getElementById("ptBR-flag-mobile").style.opacity = "1"
-    }
-
-    if (culture === "en_US") {
-        document.getElementById("enUS-flag").style.opacity = "1"
-        document.getElementById("enUS-flag-mobile").style.opacity = "1"
-    }
-}
+menuSwitch();
+window.onscroll = () => scrollFunction();
+window.addEventListener("resize", () => menuSwitch())

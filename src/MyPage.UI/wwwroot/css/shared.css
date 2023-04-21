@@ -78,9 +78,9 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
-#menu-button-mobile:hover, #menu-button-mobile:active {
-    opacity: 0.6;
-}
+    #menu-button-mobile:hover, #menu-button-mobile:active {
+        opacity: 0.6;
+    }
 
 .menu-item {
     align-items: center;
@@ -92,9 +92,9 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
-.menu-item:hover, .menu-item:active {
-    opacity: 0.6;
-}
+    .menu-item:hover, .menu-item:active {
+        opacity: 0.6;
+    }
 
 .perfil {
     display: flex;
@@ -150,7 +150,11 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
-.menu-language-flag:hover, .menu-language-flag:active {
+    .menu-language-flag:hover, .menu-language-flag:active {
+        opacity: 1;
+    }
+
+.menu-language-flag-active {
     opacity: 1;
 }
 
@@ -193,6 +197,10 @@ a {
     justify-content: center;
     align-items: center;
     gap: 40px;
+}
+
+.projects-footer {
+    background: linear-gradient(to right, #060708, #242430);
 }
 
 .contact-container {

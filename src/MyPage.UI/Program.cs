@@ -25,7 +25,6 @@ builder.Services.AddTransient<IProjectsService, ProjectsService>();
 builder.Services.AddTransient<IMemoryCacheService<ICollection<GitHubRepositoryModel>>, ProjectsCacheService>();
 builder.Services.AddTransient<IMemoryCacheService<IEnumerable<string>>, TagsCacheService>();
 
-
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 builder.Services.AddControllersWithViews()

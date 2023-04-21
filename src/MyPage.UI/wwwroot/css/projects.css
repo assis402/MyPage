@@ -69,9 +69,9 @@
     transition: background-image .2s linear;
 }
 
-.search-button:active, .search-button:hover, .search-button:focus {
-    background-image: url(/img/loupe-active.png);
-}
+    .search-button:active, .search-button:hover, .search-button:focus {
+        background-image: url(/img/loupe-active.png);
+    }
 
 .clear-filter-button {
     height: 25px;
@@ -118,21 +118,21 @@
     overflow-x: scroll;
 }
 
-.tag-list::-webkit-scrollbar {
-    height: 12px;
-}
+    .tag-list::-webkit-scrollbar {
+        height: 12px;
+    }
 
-.tag-list::-webkit-scrollbar-track {
-    background: #0d0e12;
-    border-radius: 10px;
-    margin: 0 0px;
-}
+    .tag-list::-webkit-scrollbar-track {
+        background: #0d0e12;
+        border-radius: 10px;
+        margin: 0 0px;
+    }
 
-.tag-list::-webkit-scrollbar-thumb {
-    background-color: #444456;
-    border-radius: 20px;
-    border: 3px solid #0d0e12;
-}
+    .tag-list::-webkit-scrollbar-thumb {
+        background-color: #444456;
+        border-radius: 20px;
+        border: 3px solid #0d0e12;
+    }
 
 .project-tag-search {
     font-size: 12px;

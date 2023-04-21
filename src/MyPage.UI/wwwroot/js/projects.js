@@ -1,8 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-    selectLanguageFlag();
-    changeFooterBackground();
-});
-
 function setTagFilter() {
     document.getElementById("tagFilter").value = tagFilter
     console.log(tagFilter)
@@ -29,10 +24,6 @@ function removeSelectedTag(tagName) {
     tagFilter = tagFilter.replace(tagName + ';', '');
     setTagFilter()
     document.getElementById(tagName).className = "project-tag-search";
-}
-
-function changeFooterBackground() {
-    document.getElementById("contact-external-container").style.background = "linear-gradient(to right, #060708, #242430)"
 }
 
 function openVideoModel(videoUrl) {
