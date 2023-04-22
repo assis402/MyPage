@@ -33,10 +33,10 @@ namespace MyPage.Application.Services
             var tagList = await GetPortfolioTagsFromCache(projectsPageModel);
             projectsPageModel.SetTagList(tagList);
 
-            if (searchFilter.IsNotEmpty())
+            if (searchFilter.IsNotNullOrEmpty())
                 projectsPageModel.FilterProjectListBySearchFilter(searchFilter);
 
-            if (tagFilter.IsNotEmpty())
+            if (tagFilter.IsNotNullOrEmpty())
                 projectsPageModel.FilterProjectListByTagFilter(tagFilter);
 
             return projectsPageModel;

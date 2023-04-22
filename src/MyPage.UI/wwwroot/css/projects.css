@@ -95,11 +95,15 @@
     height: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
-    color: #ffffffa3;
+    color: #8a8a9f;
     font-size: 15px;
     outline: none;
     border-bottom: 2px solid #1f1f2a;
     transition: border-bottom .2s linear;
+}
+
+.search-box::placeholder {
+    color: #39394a;
 }
 
 .tag-list {
@@ -186,7 +190,7 @@
 
 .project {
     background-color: #121218;
-    height: 300px;
+    height: 325px;
     width: 260px;
     position: relative;
 }
@@ -196,7 +200,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
-    height: 260px;
+    height: 285px;
 }
 
 .project-body {
@@ -213,11 +217,12 @@
 .project-header {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .project-title {
-    font-weight: 200;
+    font-weight: 300;
+    font-size: 19px;
 }
 
 .project-mini-description {
@@ -247,27 +252,53 @@
 .project-links {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    align-items: flex-start;
+    row-gap: 10px;
+    column-gap: 20px;
+    flex-wrap: wrap;
 }
 
 .project-link {
-    font-size: 13px;
     font-weight: 200;
     display: flex;
     align-items: center;
     line-height: 5px;
-    gap: 5px;
+    gap: 8px;
     color: #d2d2d2;
     cursor: pointer;
+    transition: color linear .2s;
 }
 
-    .project-link img {
-        filter: invert(0.5);
-        height: 11px;
+.project-link-icon {
+    font-size: 18px;
+    color: #808080;
+    transition: color linear .2s;
+}
+
+.project-link-img {
+    height: 18px;
+    filter: grayscale(0.4);
+    transition: filter linear .2s;
+}
+
+.project-link span {
+    font-size: 13px;
+}
+
+    .project-link:active, .project-link:hover, .project-link:focus {
+        color: white;
+    }
+
+    .project-link:hover .project-link-icon {
+        color: white !important;
+    }
+
+    .project-link:hover .project-link-img {
+        filter: grayscale(0) !important;
     }
 
 @media screen and (max-width: 1430px) {
-    .projects-container {
+        .projects-container {
         max-width: 1100px;
     }
 }
@@ -291,11 +322,11 @@
     }
 
     .project-content {
-        height: 180px;
+        height: 210px;
     }
 
     .project {
-        height: 220px;
+        height: 250px;
         width: 100%;
     }
 

@@ -10,7 +10,7 @@ namespace MyPage.Application.Helpers
         public static string ToJson(this object obj)
             => JsonConvert.SerializeObject(obj);
 
-        public static bool IsNotEmpty(this string text)
+        public static bool IsNotNullOrEmpty(this string text)
             => !string.IsNullOrEmpty(text) && !string.IsNullOrWhiteSpace(text);
 
         public static string Captalize(this string value)

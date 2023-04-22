@@ -1,5 +1,3 @@
-window.onload = () => selectLanguageFlag();
-
 function showAbout() {
     document.getElementById("presentation").style.opacity = "0";
     document.getElementById("presentation").style.cursor = "default";

@@ -19,7 +19,7 @@
     <form asp-action="Index" method="get" class="search-form">
         <div class="search-container">
             <input class="search-box" type="text" name="SearchFilter" value="@ViewData["SearchFilter"]" placeholder="@LanguageResource["SearchDefaultText"]" />
-            <input type="hidden" name="tagFilter" value="@ViewData["TagFilter"]" id="tagFilter" />
+            <input type="hidden" name="TagFilter" value="@ViewData["TagFilter"]" id="tagFilter" />
             <div class="search-buttons">
                 <input type="submit" value="" class="search-button" />
                 <a asp-action="Index" class="clear-filter-button"></a>
@@ -58,12 +58,22 @@
                         <div class="project-links">
                             <div class="project-link" onclick="window.open('@project.Url','github')">
                                 <span>github</span>
-                                <img src="~/img/out.png" />
+                                <i class="fab fa-github project-link-icon"></i>
                             </div>
-                            <div class="project-link" onclick="openVideoModel('@project.CustomProperties.VideoUrl')">
-                                <span>ver vídeo</span>
-                                <img src="~/img/play.png" style="height: 13px" />
-                            </div>
+                            @if (project.CustomProperties.VideoUrl.IsNotNullOrEmpty())
+                            {
+                                <div class="project-link" onclick="openVideoModel('@project.CustomProperties.VideoUrl')">
+                                    <span>@LanguageResource["VideoText"]</span>
+                                    <i class="far fa-play-circle project-link-icon"></i>
+                                </div>
+                            }
+                            @if (project.CustomProperties.SwaggerUrl.IsNotNullOrEmpty())
+                            {
+                                <div class="project-link" onclick="window.open('@project.CustomProperties.SwaggerUrl','github')">
+                                    <span>swagger</span>
+                                    <img class="project-link-img" src="~/img/swagger.png" />
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

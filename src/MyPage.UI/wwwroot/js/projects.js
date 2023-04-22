@@ -1,11 +1,12 @@
+let tagFilterElement = document.getElementById("tagFilter");
+let tagFilter = tagFilterElement ? tagFilterElement.value : "";
+
 function setTagFilter() {
     document.getElementById("tagFilter").value = tagFilter
     console.log(tagFilter)
 }
 
 function addOrRemoveSelectedTag(tagName) {
-    var tagFilter = document.getElementById("tagFilter").value;
-
     if (tagFilter.includes(tagName)) {
         removeSelectedTag(tagName)
     }

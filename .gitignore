@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Minified files
+*.min.js
+*.min.css
+/src/MyPage.UI/wwwroot/css/site.min.css
+/src/MyPage.UI/wwwroot/js/site.min.js

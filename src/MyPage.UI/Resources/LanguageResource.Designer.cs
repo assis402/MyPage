@@ -347,5 +347,14 @@ namespace MyPage.UI.Resources {
                 return ResourceManager.GetString("SecondProjectsButton", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a vídeo.
+        /// </summary>
+        public static string VideoText {
+            get {
+                return ResourceManager.GetString("VideoText", resourceCulture);
+            }
+        }
     }
 }

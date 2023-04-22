@@ -216,4 +216,7 @@
   <data name="SecondProjectsButton" xml:space="preserve">
     <value>confira meus projetos pessoais</value>
   </data>
+  <data name="VideoText" xml:space="preserve">
+    <value>vídeo</value>
+  </data>
 </root>

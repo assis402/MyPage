@@ -12,6 +12,8 @@ namespace MyPage.Application.Models.GitHubIntegration
 
         public string VideoUrl { get; set; }
 
+        public string SwaggerUrl { get; set; }
+
         public IEnumerable<string> Tags { get; set; }
     }
 }
