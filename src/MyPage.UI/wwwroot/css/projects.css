@@ -57,35 +57,40 @@
 
 .search-button {
     padding: 0;
-    background-color: transparent;
+    background-color: #323240;
     height: 25px;
     width: 26px;
     border: none;
     cursor: pointer;
-    background-image: url(/img/loupe.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 25px;
-    transition: background-image .2s linear;
+    mask-image: url(/img/loupe.svg);
+    mask-size: 30px;
+    mask-position: center;
+    -webkit-mask-position: center;
+    -webkit-mask-size: 30px;
+    -webkit-mask-image: url(/img/loupe.svg);
+    transition: background-color .2s linear;
 }
 
     .search-button:active, .search-button:hover, .search-button:focus {
-        background-image: url(/img/loupe-active.png);
+        background-color: #8e8eb0;
     }
 
 .clear-filter-button {
+    background-color: #323240;
     height: 25px;
     width: 26px;
     cursor: pointer;
-    background-image: url(/img/close.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 24px;
-    transition: background-image .2s linear;
+    mask-image: url(/img/close.svg);
+    mask-size: 36px;
+    mask-position: center;
+    -webkit-mask-position: center;
+    -webkit-mask-size: 36px;
+    -webkit-mask-image: url(/img/close.svg);
+    transition: background-color .2s linear;
 }
 
     .clear-filter-button:active, .clear-filter-button:hover, .clear-filter-button:focus {
-        background-image: url(/img/close-active.png);
+        background-color: #8e8eb0;
     }
 
 .search-box {

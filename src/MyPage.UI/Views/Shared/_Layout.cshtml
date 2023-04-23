@@ -70,32 +70,34 @@
             </div>
         </div>
     </header>
+    
+    <div class="body-footer-container">
+        @RenderBody()
 
-    @RenderBody()
-
-    @{
-        var pageName = ViewContext.RouteData.Values["controller"]?.ToString()?.ToLower();
-    }
-    <footer class="contact-external-container @(pageName == "projects" ? "projects-footer" : "")" id="contact-external-container">
-        <div class="mini-title">@LanguageResource["CONTACT"]</div>
-        <div class="contact-container">
-            <div class="contact" onclick="window.open('https://github.com/assis402','github')">
-                <img class="contact-logo" src="~/img/github.png" />
-                <span>Github</span>
-                <img class="out-logo" src="~/img/out.png" />
+        @{
+            var pageName = ViewContext.RouteData.Values["controller"]?.ToString()?.ToLower();
+        }
+        <footer class="contact-external-container @(pageName == "projects" ? "projects-footer" : "")" id="contact-external-container">
+            <div class="mini-title">@LanguageResource["CONTACT"]</div>
+            <div class="contact-container">
+                <div class="contact" onclick="window.open('https://github.com/assis402','github')">
+                    <img class="contact-logo" src="~/img/github.svg" />
+                    <span>Github</span>
+                    <img class="out-logo" src="~/img/out.svg" />
+                </div>
+                <div class="contact" onclick="window.open('https://www.linkedin.com/in/assisdematheus/','linkedin')">
+                    <img class="contact-logo" src="~/img/linkedin.svg" />
+                    <span>Linkedin</span>
+                    <img class="out-logo" src="~/img/out.svg" />
+                </div>
+                <div class="contact email" onclick="">
+                    <img class="contact-logo" src="~/img/email.svg" />
+                    <span>assis4002@gmail.com</span>
+                    <img id="email" class="copy-img" src="~/img/copy.svg" onclick="copyEmail('assis4002@gmail.com')"/>
+                </div>
             </div>
-            <div class="contact" onclick="window.open('https://www.linkedin.com/in/assisdematheus/','linkedin')">
-                <img class="contact-logo" src="~/img/linkedin.png" />
-                <span>Linkedin</span>
-                <img class="out-logo" src="~/img/out.png" />
-            </div>
-            <div class="contact email" onclick="">
-                <img class="contact-logo" src="~/img/email.png" />
-                <span>assis4002@gmail.com</span>
-                <img id="email" class="copy-img" src="~/img/copy.png" onclick="copyEmail('assis4002@gmail.com')"/>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>
 <script src="~/js/site.min.js" asp-append-version="true"></script>

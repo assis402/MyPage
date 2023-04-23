@@ -21,6 +21,13 @@ a {
     text-decoration: none;
 }
 
+.body-footer-container {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
 .menu {
     flex-wrap: wrap;
     display: flex;
@@ -254,7 +261,7 @@ a {
 }
 
 .out-logo {
-    height: 13px;
+    height: 14px;
     filter: invert(0.7);
     margin-left: -8px;
 }

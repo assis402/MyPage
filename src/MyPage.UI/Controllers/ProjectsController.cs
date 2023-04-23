@@ -3,7 +3,6 @@ using Microsoft.Extensions.Localization;
 using MyPage.Application.Helpers;
 using MyPage.Application.Models.Enums;
 using MyPage.Application.Services.Interfaces;
-using MyPage.UI.Models;
 using System.Diagnostics;
 
 namespace MyPage.UI.Controllers
@@ -48,12 +47,6 @@ namespace MyPage.UI.Controllers
 
                 return BadRequest(errorMessage);
             }
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

@@ -64,7 +64,7 @@ function scrollFunction() {
 
 function copyEmail(email) {
     navigator.clipboard.writeText(email);
-    document.getElementById("email").src = "/img/copy-checked.png"
+    document.getElementById("email").src = "/img/copy-checked.svg"
 }
 
 menuSwitch();

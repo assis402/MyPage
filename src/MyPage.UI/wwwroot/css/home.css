@@ -1,7 +1,7 @@
 ﻿.about-external-container {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .about-container {
@@ -39,6 +39,11 @@
     gap: 60px;
     height: 165px;
     padding-bottom: 50px;
+    /*-webkit-transition: all 0.7s ease-out;
+    -moz-transition: all 0.7s ease-out;
+    -ms-transition: all 0.7s ease-out;
+    -o-transition: all 0.7s ease-out;
+    transition: all 0.7s ease-out;*/
 }
 
 .about-title {
@@ -134,7 +139,7 @@
     border: 1px solid black;
     font-weight: 500;
     color: white;
-    gap: 12px;
+    gap: 10px;
     line-height: 20px;
     background: linear-gradient(to right, #27006a, #541db1);
     -webkit-user-select: none;
@@ -153,7 +158,7 @@
     transition: color .2s linear, border .2s linear;
     font-weight: 500;
     color: white;
-    gap: 12px;
+    gap: 10px;
     line-height: 20px;
     border: 1px solid #363639;
     -webkit-user-select: none;
@@ -182,13 +187,17 @@
 }
 
 .about-icon {
-    height: 20px;
+    height: 25px;
     filter: invert(0.8);
 }
 
 .projects-icon {
-    height: 20px;
+    height: 25px;
     filter: invert(0.8);
+}
+
+.inner-button {
+    font-size: 15px;
 }
 
 @media (max-width: 1200px) {
@@ -247,6 +256,7 @@
 
     .about-external-container {
         height: auto;
+        min-height: auto;
     }
 
     .main-stack {
@@ -408,7 +418,7 @@
 }
 
 .mini-out-logo {
-    height: 10px;
+    height: 12px;
     filter: invert(0.8);
 }
 
@@ -433,7 +443,7 @@
 }
 
 .labsit-arrow {
-    border-right: 13px solid #d500d3;
+    border-right: 11px solid #d500d3;
 }
 
 .fitbank-bar {
@@ -441,13 +451,13 @@
 }
 
 .fitbank-arrow {
-    border-right: 13px solid #231891;
+    border-right: 11px solid #231891;
 }
 
 .timeline-company-arrow {
     width: 0;
     height: 0;
-    border-top: 21px solid transparent;
+    border-top: 22px solid transparent;
     border-bottom: 21px solid transparent;
 }
 
