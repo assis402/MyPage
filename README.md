@@ -23,7 +23,7 @@ This project was built in ASP.NET MVC and integrated with the Github API for dis
         └── Program.cs          // Application startup and configuration.
 ```
 
-## Todo
+## To Do
 - [x] About page.
 - [x] Github integration.
 - [x] Projects page.
