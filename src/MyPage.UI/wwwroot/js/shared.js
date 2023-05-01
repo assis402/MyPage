@@ -53,8 +53,8 @@ function scrollFunction() {
         document.getElementById("my-photo").style.transition = "width .3s linear, margin .3s linear";
     } else {
         document.getElementById("menu-container").style.padding = "20px"
-        document.getElementById("my-photo").style.width = "60px"
-        document.getElementById("my-photo").style.marginRight = "20px";
+        document.getElementById("my-photo").style.width = "4.6rem"
+        document.getElementById("my-photo").style.marginRight = "25px";
         document.getElementById("menu-container").style.borderBottom = "2px solid rgba(255, 255, 255, 0)"
 
         document.getElementById("menu-container").style.transition = "border-bottom .3s linear, padding .3s linear";
