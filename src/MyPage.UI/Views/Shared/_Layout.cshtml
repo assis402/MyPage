@@ -1,7 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Components;
 @{
     var culture = LanguageResource["Culture"];
-    string path = @Context.Request.Path;
+    string path = @Context.Request.PathBase;
 }
 
 <!DOCTYPE html>
