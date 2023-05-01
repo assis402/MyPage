@@ -58,7 +58,12 @@ else
 {
     app.UseStaticFiles();
 }
-    app.UsePathBase("/matheus/mypage");
+
+app.Use((context, next) =>
+{
+    context.Request.PathBase = "/matheus/mypage";
+    return next();
+});
 
 var supportedCultures = new[]
 {
