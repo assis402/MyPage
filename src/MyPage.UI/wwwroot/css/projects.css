@@ -23,7 +23,7 @@
     background-attachment: fixed;
     background-position: center;
     background-color: #18181c;
-    background-image: url(../img/loading.gif);
+    background-image: url(../img/loading.gif) no-repeat Xpx Ypx;
     background-size: 50px;
 }
 

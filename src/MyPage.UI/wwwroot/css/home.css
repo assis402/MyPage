@@ -186,6 +186,10 @@
     font-size: 15px;
 }
 
+.second-button:hover {
+    border: 1px solid #636369;
+}
+
 .about-icon {
     height: 25px;
     filter: invert(0.8);
