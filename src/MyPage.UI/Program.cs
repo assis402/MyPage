@@ -52,12 +52,13 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
-    app.UseStaticFiles("/matheus/mypage");
+    app.UseStaticFiles();
 }
 else
 {
     app.UseStaticFiles();
 }
+    app.UsePathBase("/matheus/mypage");
 
 var supportedCultures = new[]
 {
