@@ -12,8 +12,8 @@
                     </p>
                 </div>
                 <div class="main-stack-footer">
-                    <img class="tech-icon" src="/img/c-sharp.png" alt="C#" />
-                    <img class="tech-icon" src="/img/dotnet.png" alt=".NET" />
+                    <img class="tech-icon" src="~/img/c-sharp.png" alt="C#" />
+                    <img class="tech-icon" src="~/img/dotnet.png" alt=".NET" />
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
                     <img class="about-icon" src="~/img/info.svg" />
                     <div class="inner-button">@LanguageResource["AboutButton"]</div>
                 </div>
-                <a class="projects-button" href="/projects">
+                <a asp-controller="projects" asp-action="index" class="projects-button">
                     <img class="projects-icon" src="~/img/projects.svg" />
                     <div class="inner-button">@LanguageResource["ProjectsButton"]</div>
                 </a>
@@ -45,7 +45,7 @@
                 @LanguageResource["AboutBody_03"]
             </p>
             <div class="presentation-buttons second-buttons">
-                <a class="about-button second-button" href="/projects">
+                <a asp-controller="projects" asp-action="index" class="about-button second-button">
                     <img class="projects-icon" src="~/img/projects.svg" />
                     <div class="inner-button">@LanguageResource["SecondProjectsButton"]</div>
                 </a>

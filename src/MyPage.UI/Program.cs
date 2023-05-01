@@ -25,9 +25,7 @@ builder.Services.AddTransient<IGitHubIntegration, GitHubIntegration>();
 builder.Services.AddTransient<IProjectsService, ProjectsService>();
 builder.Services.AddTransient<IMemoryCacheService<ICollection<GitHubRepositoryModel>>, ProjectsCacheService>();
 builder.Services.AddTransient<IMemoryCacheService<IEnumerable<string>>, TagsCacheService>();
-
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
-
 builder.Services.AddControllersWithViews()
                 .AddDataAnnotationsLocalization(option =>
                 {
@@ -37,7 +35,6 @@ builder.Services.AddControllersWithViews()
                         return factory.Create("LanguageResource", assemblyName.Name!);
                     };
                 });
-
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
     options.ForwardedHeaders =
@@ -52,18 +49,14 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
-    app.UseStaticFiles();
-}
-else
-{
-    app.UseStaticFiles();
+    app.Use((context, next) =>
+    {
+        context.Request.PathBase = "/matheus/mypage";
+        return next();
+    });
 }
 
-app.Use((context, next) =>
-{
-    context.Request.PathBase = "/matheus/mypage";
-    return next();
-});
+app.UseStaticFiles();
 
 var supportedCultures = new[]
 {
@@ -80,9 +73,7 @@ app.UseRequestLocalization(new RequestLocalizationOptions
 
 app.UseForwardedHeaders();
 app.UseHttpsRedirection();
-
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(
