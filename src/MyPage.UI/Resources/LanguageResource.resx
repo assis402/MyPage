@@ -201,6 +201,12 @@
   <data name="MainStackTitle" xml:space="preserve">
     <value>STACK PRINCIPAL</value>
   </data>
+  <data name="MediumPostDate" xml:space="preserve">
+    <value>Publicado em</value>
+  </data>
+  <data name="MediumTitle" xml:space="preserve">
+    <value>ARTIGOS NO MEDIUM</value>
+  </data>
   <data name="PresentationText" xml:space="preserve">
     <value>Esta é minha página profissional, onde busco contar um resumo da minha trajetória, elencar conhecimentos e expor projetos pessoais.</value>
   </data>

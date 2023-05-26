@@ -85,7 +85,7 @@
         @{
             var pageName = ViewContext.RouteData.Values["controller"]?.ToString()?.ToLower();
         }
-        <footer class="contact-external-container @(pageName == "projects" ? "projects-footer" : "")" id="contact-external-container">
+        <footer class="contact-external-container" id="contact-external-container">
             <div class="mini-title">@LanguageResource["Contact"]</div>
             <div class="contact-container">
                 <div class="contact" onclick="window.open('https://github.com/assis402','github')">

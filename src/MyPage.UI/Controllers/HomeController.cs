@@ -1,16 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyPage.Application.Services.Interfaces;
 
 namespace MyPage.UI.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController()
-        {
-        }
+        private readonly IAboutService _aboutService;
 
-        public IActionResult Index()
+        public HomeController(IAboutService aboutService) => _aboutService = aboutService;
+
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var pageModel = await _aboutService.GetAboutPageModel();
+            return View(pageModel);
         }
     }
 }

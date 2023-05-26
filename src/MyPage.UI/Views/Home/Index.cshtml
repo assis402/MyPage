@@ -1,4 +1,7 @@
-﻿<div class="about-external-container" id="about-external-container">
+﻿@using MyPage.Application.Models.Pages;
+@model AboutPageModel;
+
+<div class="about-external-container" id="about-external-container">
     <div class="about-container">
         <div class="about-minified">
             <p class="about-title">@LanguageResource["AboutTitle_Greeting"] <br /> <b>@LanguageResource["AboutTitle_Name"]</b></p>
@@ -113,6 +116,36 @@
                 </div>
                 <div class="timeline-bar fitbank-bar"></div>
             </div>
+        </div>
+    </div>
+    @*<div class="mini-footer">
+        <div>Acesse meu <b>Linkedin</b> e veja com mais detalhes.</div>
+        <img src="~/img/cursor.svg" />
+    </div>*@
+</div>
+<div class="medium-external-container">
+    <div class="medium-container">
+        <div class="mini-title">@LanguageResource["MediumTitle"]</div>
+        @if (LanguageResource["Culture"] == "pt_BR")
+        {
+            <div class="mini-sub-title">(apenas em inglês)</div> 
+        }
+        <div class="medium-body">
+            @foreach (var publication in Model.PublicationList)
+            {
+                <div class="medium-card" onclick="window.open('@publication.Url','medium post')">
+                    <img class="medium-card-img" src="@publication.ImageUrl" />
+                    <div class="medium-card-content">
+                        <span class="medium-card-title">@publication.Title</span>
+                        <span class="medium-card-description">@publication.Description</span>
+                        <span class="medium-card-date">@LanguageResource["MediumPostDate"] @publication.FormatedDate</span>
+                    </div>
+                </div>
+                @if (Model.PublicationList.Last() != publication)
+                {
+                    <div class="medium-card-divisor"></div>
+                }
+            }
         </div>
     </div>
 </div>

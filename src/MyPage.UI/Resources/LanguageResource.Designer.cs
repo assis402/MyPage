@@ -304,6 +304,24 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Publicado em.
+        /// </summary>
+        public static string MediumPostDate {
+            get {
+                return ResourceManager.GetString("MediumPostDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ARTIGOS NO MEDIUM.
+        /// </summary>
+        public static string MediumTitle {
+            get {
+                return ResourceManager.GetString("MediumTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Esta é minha página profissional, onde busco contar um resumo da minha trajetória, elencar conhecimentos e expor projetos pessoais..
         /// </summary>
         public static string PresentationText {

@@ -11,13 +11,13 @@ namespace MyPage.Application.Services
     {
         private readonly Settings _settings;
         private readonly IGitHubIntegration _gitHubIntegration;
-        private readonly IMemoryCacheService<ICollection<GitHubRepositoryModel>> _projectsCacheService;
-        private readonly IMemoryCacheService<IEnumerable<string>> _tagsCacheService;
+        private readonly IProjectsCacheService _projectsCacheService;
+        private readonly ITagsCacheService _tagsCacheService;
 
         public ProjectsService(Settings settings,
                                IGitHubIntegration gitHubIntegration,
-                               IMemoryCacheService<ICollection<GitHubRepositoryModel>> projectsCacheService,
-                               IMemoryCacheService<IEnumerable<string>> tagsCacheService)
+                               IProjectsCacheService projectsCacheService,
+                               ITagsCacheService tagsCacheService)
         {
             _settings = settings;
             _gitHubIntegration = gitHubIntegration;

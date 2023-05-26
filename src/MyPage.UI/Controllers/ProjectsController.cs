@@ -3,7 +3,6 @@ using Microsoft.Extensions.Localization;
 using MyPage.Application.Helpers;
 using MyPage.Application.Models.Enums;
 using MyPage.Application.Services.Interfaces;
-using System.Diagnostics;
 
 namespace MyPage.UI.Controllers
 {

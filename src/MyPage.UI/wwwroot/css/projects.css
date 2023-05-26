@@ -107,9 +107,9 @@
     transition: border-bottom .2s linear;
 }
 
-.search-box::placeholder {
-    color: #39394a;
-}
+    .search-box::placeholder {
+        color: #39394a;
+    }
 
 .tag-list {
     display: flex;
@@ -290,9 +290,9 @@
     font-size: 13px;
 }
 
-    .project-link:active, .project-link:hover, .project-link:focus {
-        color: white;
-    }
+.project-link:active, .project-link:hover, .project-link:focus {
+    color: white;
+}
 
     .project-link:hover .project-link-icon {
         color: white !important;
@@ -303,7 +303,7 @@
     }
 
 @media screen and (max-width: 1430px) {
-        .projects-container {
+    .projects-container {
         max-width: 1100px;
     }
 }

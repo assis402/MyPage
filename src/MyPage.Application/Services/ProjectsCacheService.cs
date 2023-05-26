@@ -5,7 +5,7 @@ using MyPage.Application.Services.Interfaces;
 
 namespace MyPage.Application.Services
 {
-    public class ProjectsCacheService : IMemoryCacheService<ICollection<GitHubRepositoryModel>>
+    public class ProjectsCacheService : IProjectsCacheService
     {
         private readonly IMemoryCache _memoryCache;
         private readonly string _key;
