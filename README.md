@@ -1,4 +1,4 @@
-# MyPage
+# MyPage ![status](https://img.shields.io/static/v1?label=status&message=ready&color=blue)
 Professional web page with ASP.NET (C#, HTML, CSS and Javascript).
 
 This project was built in ASP.NET MVC and integrated with the Github API for displaying repositories and their information.
