@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutBody_01" xml:space="preserve">
-    <value>Sou estudante de Análise e Desenvolvimento de Sistemas e trabalho com desenvolvimento de software há mais de dois anos, majoritariamente com foco em Backend na linguagem</value>
+    <value>Sou estudante de Análise e Desenvolvimento de Sistemas e trabalho com desenvolvimento de software há {0} anos e {1} meses, majoritariamente com foco em Backend na linguagem</value>
   </data>
   <data name="AboutBody_02" xml:space="preserve">
     <value>Atuei em projetos nos quais também utilizei outras tecnologias, como frontend web (dashboard admin) em</value>
@@ -149,6 +149,9 @@
   </data>
   <data name="Background" xml:space="preserve">
     <value>EXPERIÊNCIA</value>
+  </data>
+  <data name="BackgroundMore" xml:space="preserve">
+    <value>veja mais detalhes no Linkedin</value>
   </data>
   <data name="Company" xml:space="preserve">
     <value>Empresa</value>
@@ -200,6 +203,9 @@
   </data>
   <data name="MainStackTitle" xml:space="preserve">
     <value>STACK PRINCIPAL</value>
+  </data>
+  <data name="MediumMore" xml:space="preserve">
+    <value>veja meus outros artigos</value>
   </data>
   <data name="MediumPostDate" xml:space="preserve">
     <value>Publicado em</value>

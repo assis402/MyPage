@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutBody_01" xml:space="preserve">
-    <value>I'm an Information Technology student and I've been working with software development for over two years, mostly focusing on Backend in the</value>
+    <value>I'm an Information Technology student and I've been working with software development for {0} years and {1} months, mostly focusing on Backend in the</value>
   </data>
   <data name="AboutBody_02" xml:space="preserve">
     <value>I worked on projects in which I also used other technologies, such as web frontend (dashboard admin) in</value>
@@ -149,6 +149,9 @@
   </data>
   <data name="Background" xml:space="preserve">
     <value>BACKGROUND</value>
+  </data>
+  <data name="BackgroundMore" xml:space="preserve">
+    <value>see more details on Linkedin</value>
   </data>
   <data name="Company" xml:space="preserve">
     <value>Company</value>
@@ -200,6 +203,9 @@
   </data>
   <data name="MainStackTitle" xml:space="preserve">
     <value>MAIN STACK</value>
+  </data>
+  <data name="MediumMore" xml:space="preserve">
+    <value>see more articles</value>
   </data>
   <data name="MediumPostDate" xml:space="preserve">
     <value>Published on</value>

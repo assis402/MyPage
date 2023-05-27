@@ -61,7 +61,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Sou estudante de Análise e Desenvolvimento de Sistemas e trabalho com desenvolvimento de software há mais de dois anos, majoritariamente com foco em Backend na linguagem.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Sou estudante de Análise e Desenvolvimento de Sistemas e trabalho com desenvolvimento de software há {0} anos e {1} meses, majoritariamente com foco em Backend na linguagem.
         /// </summary>
         public static string AboutBody_01 {
             get {
@@ -156,6 +156,15 @@ namespace MyPage.UI.Resources {
         public static string Background {
             get {
                 return ResourceManager.GetString("Background", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a veja mais detalhes no Linkedin.
+        /// </summary>
+        public static string BackgroundMore {
+            get {
+                return ResourceManager.GetString("BackgroundMore", resourceCulture);
             }
         }
         
@@ -300,6 +309,15 @@ namespace MyPage.UI.Resources {
         public static string MainStackTitle {
             get {
                 return ResourceManager.GetString("MainStackTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a veja meus outros artigos.
+        /// </summary>
+        public static string MediumMore {
+            get {
+                return ResourceManager.GetString("MediumMore", resourceCulture);
             }
         }
         

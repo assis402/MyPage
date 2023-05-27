@@ -37,7 +37,7 @@
         </div>
         <div id="about-body-container">
             <p class="about-body" id="about-body-1">
-                @LanguageResource["AboutBody_01"]
+                @string.Format(LanguageResource["AboutBody_01"], Model.WorkYears, Model.WorkMonths)
                 <span class="emphasis">@LanguageResource["AboutEmphases_01"]</span>
             </p>
             <p class="about-body" id="about-body-2">
@@ -117,28 +117,28 @@
                 <div class="timeline-bar fitbank-bar"></div>
             </div>
         </div>
+        <div class="more" onclick="window.open('@Settings.MediumUserUrl','medium')">
+            <span class="material-symbols-outlined">more_horiz</span>
+            <p class="more-text">@LanguageResource["BackgroundMore"]</p>
+        </div>
     </div>
-    @*<div class="mini-footer">
-        <div>Acesse meu <b>Linkedin</b> e veja com mais detalhes.</div>
-        <img src="~/img/cursor.svg" />
-    </div>*@
 </div>
 <div class="medium-external-container">
     <div class="medium-container">
         <div class="mini-title">@LanguageResource["MediumTitle"]</div>
         @if (LanguageResource["Culture"] == "pt_BR")
         {
-            <div class="mini-sub-title">(apenas em inglês)</div> 
+            <div class="mini-sub-title">(apenas em inglês)</div>
         }
         <div class="medium-body">
-            @foreach (var publication in Model.PublicationList)
+            @foreach (var publication in Model.PublicationList.Take(5))
             {
                 <div class="medium-card" onclick="window.open('@publication.Url','medium post')">
                     <img class="medium-card-img" src="@publication.ImageUrl" />
                     <div class="medium-card-content">
                         <span class="medium-card-title">@publication.Title</span>
                         <span class="medium-card-description">@publication.Description</span>
-                        <span class="medium-card-date">@LanguageResource["MediumPostDate"] @publication.FormatedDate</span>
+                        <span class="medium-card-date">@LanguageResource["MediumPostDate"] @publication.GetFormatedDate()</span>
                     </div>
                 </div>
                 @if (Model.PublicationList.Last() != publication)
@@ -147,5 +147,12 @@
                 }
             }
         </div>
+        @if (Model.PublicationList.Count() > 5)
+        {
+            <div class="more" onclick="window.open('@Settings.MediumUserUrl','medium')">
+                <span class="material-symbols-outlined">more_horiz</span>
+                <p class="more-text">@LanguageResource["MediumMore"]</p>
+            </div>            
+        }
     </div>
 </div>

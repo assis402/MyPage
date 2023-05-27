@@ -2,8 +2,6 @@
 using MyPage.Application.Helpers;
 using MyPage.Application.Integrations.Interfaces;
 using MyPage.Application.Models.MediumIntegration;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace MyPage.Application.Integrations
 {
@@ -13,7 +11,7 @@ namespace MyPage.Application.Integrations
 
         public MediumIntegration(Settings settings)
         {
-            _mediumUrl = settings.MediumUrl;
+            _mediumUrl = settings.MediumIntegrationUrl;
         }
 
         public async Task<IEnumerable<MediumPublicationModel>> GetPublications()

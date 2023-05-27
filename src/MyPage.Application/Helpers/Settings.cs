@@ -12,6 +12,8 @@
 
         public GitHubSettings GitHubSettings { get; set; }
 
-        public string MediumUrl { get; set; }
+        public string MediumIntegrationUrl { get; set; }
+
+        public string MediumUserUrl { get; set; }
     }
 }
