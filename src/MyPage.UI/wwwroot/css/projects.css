@@ -286,6 +286,12 @@
     transition: filter linear .2s;
 }
 
+.project-link-svg {
+    height: 18px;
+    transition: filter linear .2s;
+    filter: invert(0.6);
+}
+
 .project-link span {
     font-size: 13px;
 }
@@ -300,6 +306,10 @@
 
     .project-link:hover .project-link-img {
         filter: grayscale(0) !important;
+    }
+
+    .project-link:hover .project-link-svg {
+        filter: invert(1) !important;
     }
 
 @media screen and (max-width: 1430px) {
