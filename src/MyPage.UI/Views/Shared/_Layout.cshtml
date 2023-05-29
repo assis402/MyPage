@@ -29,7 +29,9 @@
             <div class="menu-container" id="menu-container">
                 <div class="perfil">
                     <div class="my-photo-wrapper">
-                        <img class="my-photo" id="my-photo" src="~/img/perfil.png" alt="My perfil photo" loading="lazy" />
+                        <a asp-controller="home" asp-action="index">
+                            <img class="my-photo" id="my-photo" src="~/img/perfil.png" alt="My perfil photo" loading="lazy" />
+                        </a>
                     </div>
                     <p class="name" id="name">
                         <a asp-controller="home" asp-action="index">MyPage</a>
@@ -94,7 +96,7 @@
                     <span>Github</span>
                     <img class="out-logo" src="~/img/out.svg" />
                 </div>
-                <div class="contact" onclick="window.open('https://www.linkedin.com/in/assisdematheus/','linkedin')">
+                <div class="contact" onclick="window.open('https://linkedin.com/in/assisdematheus/','linkedin')">
                     <img class="contact-logo" src="~/img/linkedin.svg" />
                     <span>Linkedin</span>
                     <img class="out-logo" src="~/img/out.svg" />
