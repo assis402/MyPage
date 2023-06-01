@@ -60,21 +60,21 @@
                                 <span>github</span>
                                 <i class="fab fa-github project-link-icon"></i>
                             </div>
-                            @if (project.CustomProperties.NuGetUrl.IsNotNullOrEmpty())
+                            @if (project.CustomProperties.NuGetUrl.IsNotNullAndNotEmpty())
                             {
                                 <div class="project-link" onclick="window.open('@project.CustomProperties.NuGetUrl','nuget')">
                                     <span>nuget</span>
                                     <img class="project-link-svg" src="~/img/nuget.svg" />
                                 </div>
                             }
-                            @if (project.CustomProperties.VideoUrl.IsNotNullOrEmpty())
+                            @if (project.CustomProperties.VideoUrl.IsNotNullAndNotEmpty())
                             {
                                 <div class="project-link" onclick="openVideoModel('@project.CustomProperties.VideoUrl')">
                                     <span>@LanguageResource["VideoText"]</span>
                                     <i class="far fa-play-circle project-link-icon"></i>
                                 </div>
                             }
-                            @if (project.CustomProperties.SwaggerUrl.IsNotNullOrEmpty())
+                            @if (project.CustomProperties.SwaggerUrl.IsNotNullAndNotEmpty())
                             {
                                 <div class="project-link" onclick="window.open('@project.CustomProperties.SwaggerUrl','github')">
                                     <span>swagger</span>

@@ -134,7 +134,9 @@
             @foreach (var publication in Model.PublicationList.Take(5))
             {
                 <div class="medium-card" onclick="window.open('@publication.Url','medium post')">
-                    <img class="medium-card-img" src="@publication.ImageUrl" />
+                    <div class="medium-card-img">
+                        <img src="@publication.ImageUrl" />
+                    </div>
                     <div class="medium-card-content">
                         <span class="medium-card-title">@publication.Title</span>
                         <span class="medium-card-description">@publication.Description</span>

@@ -499,8 +499,17 @@
 }
 
 .medium-card-img {
-    height: 5rem;
+    height: 6rem;
+    min-width: 6rem;
+    max-width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+    .medium-card-img img {
+        height: 6rem;
+    }
 
 .medium-card-title {
     margin-bottom: 10px;
