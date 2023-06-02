@@ -53,7 +53,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
     app.Use((context, next) =>
     {
-        context.Request.PathBase = "/matheus/mypage";
+        //context.Request.PathBase = "/matheus/mypage";
         return next();
     });
 }
