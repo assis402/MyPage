@@ -43,6 +43,19 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
         ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
 });
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("https://matheusassis.dev",
+                                             "https://www.matheusassis.dev");
+                      });
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -73,6 +86,7 @@ app.UseRequestLocalization(new RequestLocalizationOptions
     SupportedUICultures = supportedCultures
 });
 
+app.UseCors(MyAllowSpecificOrigins);
 app.UseForwardedHeaders();
 app.UseHttpsRedirection();
 app.UseRouting();
