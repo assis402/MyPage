@@ -29,4 +29,5 @@ This project was built in ASP.NET MVC and integrated with the Github API for dis
 - [x] Projects page.
 - [x] Language switcher.
 - [x] Bundling and Minification.
-- [ ] Deploy at jenkins 
+- [x] Deploy at jenkins. 
+- [ ] Redis Cache.
