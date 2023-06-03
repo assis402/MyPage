@@ -56,6 +56,7 @@
 }
 
 .search-button {
+    -webkit-tap-highlight-color: transparent;
     padding: 0;
     background-color: #323240;
     height: 25px;
@@ -76,6 +77,7 @@
     }
 
 .clear-filter-button {
+    -webkit-tap-highlight-color: transparent;
     background-color: #323240;
     height: 25px;
     width: 26px;
@@ -108,7 +110,8 @@
 }
 
     .search-box::placeholder {
-        color: #39394a;
+        color: #585866;
+        font-weight: 300;
     }
 
 .tag-list {
@@ -155,6 +158,7 @@
     align-items: center;
     white-space: nowrap;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     user-select: none;
     transition: border .2s linear, opacity .2s linear, background-color .2s linear;
 }
@@ -165,7 +169,7 @@
     opacity: 1 !important;
 }
 
-.project-tag-search:hover {
+.project-tag-search:hover, .project-tag-search:focus {
     border: 1px solid #888787;
     opacity: 1;
 }
@@ -264,6 +268,7 @@
 }
 
 .project-link {
+    -webkit-tap-highlight-color: transparent;
     font-weight: 200;
     display: flex;
     align-items: center;
@@ -283,6 +288,12 @@
 .project-link-img {
     height: 18px;
     filter: grayscale(0.4);
+    transition: filter linear .2s;
+}
+
+.project-link-img-nuget {
+    height: 18px;
+    filter: grayscale(.4) brightness(2);
     transition: filter linear .2s;
 }
 
@@ -306,6 +317,10 @@
 
     .project-link:hover .project-link-img {
         filter: grayscale(0) !important;
+    }
+
+    .project-link:hover .project-link-img-nuget {
+        filter: grayscale(.0) brightness(2.5) !important;
     }
 
     .project-link:hover .project-link-svg {

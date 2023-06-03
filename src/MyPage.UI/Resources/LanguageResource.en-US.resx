@@ -162,6 +162,9 @@
   <data name="Culture" xml:space="preserve">
     <value>en_US</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>contact@matheusassis.dev</value>
+  </data>
   <data name="FitbankDate_01" xml:space="preserve">
     <value>november 2020 - april 2021</value>
   </data>

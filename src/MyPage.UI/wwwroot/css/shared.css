@@ -93,7 +93,7 @@ a {
     align-items: center;
     justify-content: center;
     padding: 8px 12px;
-    font-size: 16px;
+    font-size: 18px;
     transition: opacity .2s linear;
     font-weight: 300;
     -webkit-tap-highlight-color: transparent;
@@ -112,17 +112,29 @@ a {
 
 .name {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 25px;
+}
+
+.name::after {
+    content: ".dev";
+    font-weight: 700;
+    background: -webkit-linear-gradient(right,#a932e3,#6325f9);
+    background: -o-linear-gradient(left,#a932e3,#6325f9);
+    background: -moz-linear-gradient(left,#a932e3,#6325f9);
+    background: linear-gradient(to left,#a932e3,#6325f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .my-photo-wrapper {
     display: flex;
+    cursor: pointer;
 }
 
 .my-photo {
     border-radius: 100%;
-    width: 4.6rem;
-    margin-right: 25px;
+    width: 5rem;
+    margin-right: 20px;
 }
 
 .menu-languages {
@@ -188,7 +200,7 @@ a {
     }
 
     .name {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .menu-language-flag {
@@ -198,21 +210,24 @@ a {
 
 .contact-external-container {
     padding-top: 40px;
-    padding-bottom: 70px;
+    padding-bottom: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 40px;
+    align-items: center;    
+    column-gap: 40px;
+    row-gap: 30px;
     background: linear-gradient(to right, #060708, #242430);
 }
 
 .contact-container {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    column-gap: 50px;
+    row-gap: 30px;
 }
 
 .mini-title {
@@ -280,6 +295,7 @@ a {
 }
 
 .copy-img {
+    -webkit-tap-highlight-color: transparent;
     height: 22px;
     filter: invert(0.7);
     -webkit-user-select: none;
@@ -302,5 +318,15 @@ a {
 
     .contact-external-container {
         gap: 30px;
+    }
+
+    .medium-card-img {
+        height: 5rem;
+        min-width: 5rem;
+        max-width: 5rem;
+    }
+
+    .medium-card-img img {
+        height: 5rem;
     }
 }

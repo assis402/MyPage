@@ -187,6 +187,15 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a contato@matheusassis.dev.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a novembro 2020 - abril de 2021.
         /// </summary>
         public static string FitbankDate_01 {

@@ -21,7 +21,8 @@
 }
 
 .presentation-text {
-    font-weight: 200;
+    font-weight: 300;
+    color: #bfbfbf;
 }
 
 #about-body-container {
@@ -98,8 +99,8 @@
 
 .about-body {
     text-align: left;
-    font-weight: 200;
-    color: #dfdfdf;
+    font-weight: 300;
+    color: #bfbfbf;
 }
 
 .emphasis {
@@ -215,13 +216,11 @@
 
 @media(max-width: 900px) {
     .about-title {
-        font-size: 35px;
+        font-size: 2.1rem;
     }
-}
 
-@media(max-width: 800px) {
-    .about-title {
-        font-size: 32px;
+    .medium-body {
+        padding: 0 8%;
     }
 }
 
@@ -233,13 +232,13 @@
     .about-minified {
         flex-direction: column;
         height: auto;
-        gap: 10px;
+        gap: 30px;
         width: 100%;
-        padding-bottom: 30px;
+        padding-bottom: 3rem;
     }
 
     .about-title {
-        text-align: left;
+        text-align: center;
         justify-content: center;
     }
 
@@ -247,15 +246,15 @@
         padding: 0 0;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: space-evenly;
         flex-direction: column;
-        margin-top: 26%;
+        margin-top: 30%;
         margin-bottom: 14%;
     }
 
     .about-external-container {
         height: auto;
-        min-height: auto;
+        min-height: 100vh;
     }
 
     .main-stack {
@@ -378,12 +377,12 @@
 }
 
 .fitbank-border-circle {
-    border: 2px solid #231891;
+    border: 2px solid #5f00ff;
 }
 
 .fitbank-full-circle {
-    background: #231891;
-    border: 2px solid #231891;
+    background: #5f00ff;
+    border: 2px solid #5f00ff;
 }
 
 .timeline-company {
@@ -446,11 +445,11 @@
 }
 
 .fitbank-bar {
-    background-color: #231891;
+    background-color: #5f00ff;
 }
 
 .fitbank-arrow {
-    border-right: 11px solid #231891;
+    border-right: 11px solid #5f00ff;
 }
 
 .timeline-company-arrow {
@@ -483,6 +482,7 @@
 }
 
 .medium-card {
+    -webkit-tap-highlight-color: transparent;
     display: flex;
     max-width: 45rem;
     align-items: center;
@@ -553,6 +553,7 @@
     transition: opacity linear .2s;
     user-select: none;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
     .more:hover, .more:focus {
@@ -580,7 +581,7 @@
     }
 
     .timeline-body {
-        padding: 0 10%;
+        padding: 0 8%;
     }
 
     .medium-body {

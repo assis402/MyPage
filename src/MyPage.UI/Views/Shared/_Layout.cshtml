@@ -10,7 +10,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="theme-color" content="#22222">
-    <title>Matheus - MyPage</title>
+    <title>Matheus de Assis Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap" rel="stylesheet">
@@ -28,13 +28,11 @@
         <div class="menu" id="menu">
             <div class="menu-container" id="menu-container">
                 <div class="perfil">
-                    <div class="my-photo-wrapper">
-                        <a asp-controller="home" asp-action="index">
-                            <img class="my-photo" id="my-photo" src="~/img/perfil.png" alt="My perfil photo" loading="lazy" />
-                        </a>
+                    <div class="my-photo-wrapper" onclick="window.open('/','_self')">
+                        <img class="my-photo" id="my-photo" src="~/img/perfil.png" alt="My perfil photo" loading="lazy" />
                     </div>
-                    <p class="name" id="name">
-                        <a asp-controller="home" asp-action="index">MyPage</a>
+                    <p id="name">
+                        <a asp-controller="home" asp-action="index" class="name">matheusassis</a>
                     </p>
                 </div>
 
@@ -108,8 +106,8 @@
                 </div>
                 <div class="contact email" onclick="">
                     <img class="contact-logo" src="~/img/email.svg" />
-                    <span>assis4002@gmail.com</span>
-                    <img id="email" class="copy-img" src="~/img/copy.svg" onclick="copyEmail('assis4002@gmail.com')"/>
+                    <span>@LanguageResource["Email"]</span>
+                    <img id="email" class="copy-img" src="~/img/copy.svg" onclick="copyEmail('@LanguageResource["Email"]')" />
                 </div>
             </div>
         </footer>
