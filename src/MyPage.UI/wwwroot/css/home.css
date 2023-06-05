@@ -377,12 +377,12 @@
 }
 
 .fitbank-border-circle {
-    border: 2px solid #5f00ff;
+    border: 2px solid #4901ef;
 }
 
 .fitbank-full-circle {
-    background: #5f00ff;
-    border: 2px solid #5f00ff;
+    background: #4901ef;
+    border: 2px solid #4901ef;
 }
 
 .timeline-company {
@@ -445,11 +445,11 @@
 }
 
 .fitbank-bar {
-    background-color: #5f00ff;
+    background-color: #4901ef;
 }
 
 .fitbank-arrow {
-    border-right: 11px solid #5f00ff;
+    border-right: 11px solid #4901ef;
 }
 
 .timeline-company-arrow {
