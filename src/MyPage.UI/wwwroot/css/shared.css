@@ -118,10 +118,10 @@ a {
     .name::after {
         content: ".dev";
         font-weight: 700;
-        background: -webkit-linear-gradient(right,#9b43f1,#491af5);
-        background: -o-linear-gradient(left,#9b43f1,#491af5);
-        background: -moz-linear-gradient(left,#9b43f1,#491af5);
-        background: linear-gradient(to left,#9b43f1,#491af5);
+        background: -webkit-linear-gradient(left,#9c45ff,#6325f9);
+        background: -o-linear-gradient(left,#9c45ff,#6325f9);
+        background: -moz-linear-gradient(left,#9c45ff,#6325f9);
+        background: linear-gradient(to left,#9c45ff,#6325f9);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
