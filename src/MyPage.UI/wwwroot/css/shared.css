@@ -115,16 +115,16 @@ a {
     font-size: 25px;
 }
 
-.name::after {
-    content: ".dev";
-    font-weight: 700;
-    background: -webkit-linear-gradient(right,#a932e3,#6325f9);
-    background: -o-linear-gradient(left,#a932e3,#6325f9);
-    background: -moz-linear-gradient(left,#a932e3,#6325f9);
-    background: linear-gradient(to left,#a932e3,#6325f9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+    .name::after {
+        content: ".dev";
+        font-weight: 700;
+        background: -webkit-linear-gradient(right,#9832e3,#5819f1);
+        background: -o-linear-gradient(left,#9832e3,#5819f1);
+        background: -moz-linear-gradient(left,#9832e3,#5819f1);
+        background: linear-gradient(to left,#9832e3,#5819f1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
 .my-photo-wrapper {
     display: flex;
