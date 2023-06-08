@@ -56,8 +56,8 @@
         </div>
     </div>
 </div>
-<div class="timeline-external-container">
-    <div class="timeline-container">
+<div class="gradient-external-container">
+    <div class="gradient-container">
         <div class="mini-title">@LanguageResource["Background"]</div>
         <div class="timeline-body">
             <div class="timeline-exp">
@@ -123,8 +123,8 @@
         </div>
     </div>
 </div>
-<div class="medium-external-container">
-    <div class="medium-container">
+<div class="black-external-container">
+    <div class="black-container">
         <div class="mini-title">@LanguageResource["MediumTitle"]</div>
         @if (LanguageResource["Culture"] == "pt_BR")
         {
@@ -156,5 +156,37 @@
                 <p class="more-text">@LanguageResource["MediumMore"]</p>
             </div>            
         }
+    </div>
+</div>
+<div class="gradient-external-container">
+    <div class="gradient-container">
+        <div class="mini-title">@LanguageResource["CoursesTitle"]</div>
+        <div class="courses-body">
+            @foreach (var publication in Model.PublicationList.Take(5))
+            {
+                <div class="course-card">
+                    <div class="course-certificate">
+                        <div class="course-certificate-front-shadow"></div>
+                        <img src="https://udemy-certificate.s3.amazonaws.com/image/UC-0aa73201-1793-4fef-9628-b2cd11af91f9.jpg?v=1617970572000" alt="certificate" />
+                    </div>
+                    <div class="course-title">C# Primeiros Passos: Lógica de Programação e Algoritmos</div>
+                    <div class="course-body">
+                        <div>
+                            <img src="~/img/platform.svg" alt="platform" /> Udemy
+                        </div>
+                        <div>
+                            <img src="~/img/instructor.svg" alt="instructor" /> Nelio Alves
+                        </div>
+                        <div>
+                            <img src="~/img/workload.svg" alt="workload" /> 36.5 horas
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="more" onclick="window.open('@Settings.MediumUserUrl','medium')">
+            <span class="material-symbols-outlined">more_horiz</span>
+            <p class="more-text">@LanguageResource["CoursesMore"]</p>
+        </div>
     </div>
 </div>

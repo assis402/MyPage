@@ -217,6 +217,9 @@ a {
     align-items: center;    
     column-gap: 40px;
     row-gap: 30px;
+}
+
+.projects-footer {
     background: linear-gradient(to right, #060708, #242430);
 }
 

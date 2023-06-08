@@ -159,6 +159,12 @@
   <data name="Contact" xml:space="preserve">
     <value>CONTATO</value>
   </data>
+  <data name="CoursesMore" xml:space="preserve">
+    <value>veja todos os meus certificados</value>
+  </data>
+  <data name="CoursesTitle" xml:space="preserve">
+    <value>CURSOS CONCLUÍDOS</value>
+  </data>
   <data name="Culture" xml:space="preserve">
     <value>pt_BR</value>
   </data>

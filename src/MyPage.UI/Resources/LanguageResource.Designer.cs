@@ -187,6 +187,24 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a veja todos os meus certificados.
+        /// </summary>
+        public static string CoursesMore {
+            get {
+                return ResourceManager.GetString("CoursesMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a CURSOS CONCLUÍDOS.
+        /// </summary>
+        public static string CoursesTitle {
+            get {
+                return ResourceManager.GetString("CoursesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a contato@matheusassis.dev.
         /// </summary>
         public static string Email {
