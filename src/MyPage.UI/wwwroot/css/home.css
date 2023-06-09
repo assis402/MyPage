@@ -535,11 +535,13 @@
 
 .courses-body {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 40px;
     margin-bottom: 15px;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 960px;
 }
 
 .course-card {
@@ -549,13 +551,30 @@
     flex-direction: column;
     user-select: none;
     cursor: pointer;
-    color: #CACCD9;
-    font-size: 17px;
+    font-size: 13px;
+    transition: all .2s ease-in-out;
+    position: relative;
 }
+
+    .course-card:hover {
+        transform: scale(1.1);
+    }
 
 .course-certificate {
     position: relative;
     height: 135px;
+}
+
+.course-tag {
+    padding: 5px 8px;
+    background: #343445e0;
+    position: absolute;
+    font-weight: 300;
+    bottom: 5%;
+    right: 3%;
+    z-index: 1;
+    border-radius: 30px;
+    letter-spacing: 1px;
 }
 
 .course-certificate-front-shadow {
@@ -574,25 +593,36 @@
 }
 
 .course-title {
-    background-color: #343444;
-    font-size: 18px;
+    background-color: #2e2e3d69;
+    font-size: 15px;
     font-weight: 500;
+    padding: 10px 15px 0px 15px;
 }
 
 .course-body {
-    background-color: #272734;
+    display: flex;
+    flex-direction: column;
+    background-color: #2e2e3d69;
+    padding: 15px;
+    gap: 10px;
 }
 
-.course-body div {
-}
+    .course-body div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        opacity: 0.7;
+        line-height: 21px;
+        transition: opacity .2s linear;
+    }
 
-.course-body img {
-    height: 30px;
-}
+        .course-body div:hover {
+            opacity: 1;
+        }
 
-.course-platform img {
-
-}
+    .course-body img {
+        height: 21px;
+    }
 
 .more-text {
     font-weight: 200;

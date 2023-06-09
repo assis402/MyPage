@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Text;
 
 namespace MyPage.Application.Helpers
 {
@@ -20,5 +21,8 @@ namespace MyPage.Application.Helpers
 
             return char.ToUpper(value[0]) + value[1..];
         }
+
+        public static StringBuilder Append(this string @string, string text)
+            => new StringBuilder(@string).Append(text);
     }
 }

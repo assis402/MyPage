@@ -1,0 +1,34 @@
+﻿@using MyPage.Application.Helpers;
+@using MyPage.Application.Models.Pages;
+@model ProjectsPageModel
+
+<div class="courses-page-external-container">
+    <div class="courses-page-container">
+        @{
+            int[] list = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        }
+        @foreach (var publication in list.Take(6))
+        {
+            <div class="course-card">
+                <div class="course-certificate">
+                    <div class="course-tag">BACKEND</div>
+                    <div class="course-certificate-front-shadow"></div>
+                    <img src="https://udemy-certificate.s3.amazonaws.com/image/UC-0aa73201-1793-4fef-9628-b2cd11af91f9.jpg?v=1617970572000" alt="certificate" />
+                </div>
+                <div class="course-title">C# Primeiros Passos: Lógica de Programação e Algoritmos</div>
+                <div class="course-body">
+                    <div>
+                        <img src="~/img/platform.svg" alt="platform" /> Udemy
+                    </div>
+                    <div>
+                        <img src="~/img/instructor.svg" alt="instructor" /> Nelio Alves
+                    </div>
+                    <div>
+                        <img src="~/img/workload.svg" alt="workload" /> 36.5 horas
+                    </div>
+                </div>
+                <div class="gradient-bar"></div>
+            </div>
+        }
+    </div>
+</div>

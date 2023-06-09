@@ -8,6 +8,8 @@
 
         public string PublicationsCacheKey { get; set; }
 
+        public string CoursesCacheKey { get; set; }
+
         public int CacheExpirationInDays { get; set; }
 
         public GitHubSettings GitHubSettings { get; set; }
