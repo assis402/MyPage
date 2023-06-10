@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using MyPage.Application.Helpers;
+using MyPage.Application.Models.Courses;
 using MyPage.Application.Models.Enums;
 using MyPage.Application.Services.Interfaces;
 
@@ -18,13 +19,20 @@ namespace MyPage.UI.Controllers
             _coursesService = coursesService;
         }
 
-        public async Task<IActionResult> Index()
-        {
-            var currentLanguage = _languageResource["Culture"].Value.ToEnum<Language>();
-            var projectsPageModel = await _coursesService.GetAll(currentLanguage);
+        //public async Task<IActionResult> Index()
+        //{
+        //    var currentLanguage = _languageResource["Culture"].Value.ToEnum<Language>();
+        //    var projectsPageModel = await _coursesService.GetAll(currentLanguage);
 
-            return View(projectsPageModel);
-        }
+        //    return View(projectsPageModel);
+        //}
+
+        [HttpPost("[controller]")]
+        public async Task<IActionResult> Insert(CourseInsertModel courseInsertModel)
+        {
+            await _coursesService.InsertCourse(courseInsertModel);
+            return Ok();
+        } 
 
         public IActionResult ClearCache()
         {

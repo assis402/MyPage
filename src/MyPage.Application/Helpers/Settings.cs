@@ -17,5 +17,7 @@
         public string MediumIntegrationUrl { get; set; }
 
         public string MediumUserUrl { get; set; }
+
+        public string FirebaseProjectId { get; set; }
     }
 }

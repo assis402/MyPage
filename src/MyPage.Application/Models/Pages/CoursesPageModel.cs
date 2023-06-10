@@ -1,18 +1,19 @@
-﻿using MyPage.Application.Models.Enums;
+﻿using MyPage.Application.Data.Entities;
+using MyPage.Application.Models.Enums;
 using MyPage.Application.Models.GitHubIntegration;
 
 namespace MyPage.Application.Models.Pages
 {
     public class CoursesPageModel
     {
-        internal CoursesPageModel(ICollection<GitHubRepositoryModel> projectList, Language currentLanguage)
+        public CoursesPageModel(ICollection<CourseCertificate> courseCertificateList, Language currentLanguage)
         {
-            foreach (var project in projectList)
-                project.SetDescriptionByLanguage(currentLanguage);
+            foreach (var courseCertificate in courseCertificateList)
+                courseCertificate.SetTitleByLanguage(currentLanguage);
 
-            ProjectList = projectList;
+            CourseCertificateList = courseCertificateList;
         }
 
-        public ICollection<GitHubRepositoryModel> ProjectList { get; private set; }
+        public ICollection<CourseCertificate> CourseCertificateList { get; private set; }
     }
 }

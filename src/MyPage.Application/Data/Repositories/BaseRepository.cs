@@ -1,39 +1,54 @@
 ﻿using Google.Cloud.Firestore;
+using Google.Cloud.Firestore.V1;
+using MyPage.Application.Data.Entities;
 using MyPage.Application.Data.Repositories.Interfaces;
+using MyPage.Application.Helpers;
 
 namespace MyPage.Application.Data.Repositories
 {
-    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
+    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
     {
-        private string _projectId;
-        private FirestoreDb _fireStoreDb;
+        private readonly CollectionReference _entityCollection;
 
-        public BaseRepository()
+        public BaseRepository(MyPageContextDb myPageContextDb)
         {
-            string arquivoApiKey = @"D:\_blazor\Blazor_Firestorer\Blazor_Firestorer\Server\FirestoreApiKey\blazorcrudfirestore-1565827c5156.json";
-            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", arquivoApiKey);
-            _projectId = "blazorcrudfirestore";
-            _fireStoreDb = FirestoreDb.Create(projectId);
+            _entityCollection = myPageContextDb.Database.Collection(Utils.GetCollectionName<TEntity>());
         }
 
-        public Task<ICollection<TEntity>> GetAll()
+        public async Task<ICollection<TEntity>> GetAll()
         {
-            throw new NotImplementedException();
+            var entityList = new List<TEntity>();
+
+            var snapshot = await _entityCollection.GetSnapshotAsync();
+
+            foreach (var document in snapshot.Documents)
+            {
+                if (document.Exists)
+                {
+                    var dictionayDocument = document.ToDictionary();
+                    var entity = dictionayDocument.ToJson().ToObject<TEntity>();
+                    entityList.Add(entity);
+                }
+            }
+
+            return entityList;
         }
 
-        public Task Insert(TEntity employee)
+        public async Task Insert(TEntity entity)
         {
-            throw new NotImplementedException();
+            await _entityCollection.AddAsync(entity);
         }
 
-        public Task Update(TEntity employee)
+        public async Task Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            var documentReference = _entityCollection.Document(entity.Id);
+            await documentReference.SetAsync(entity, SetOptions.Overwrite);
         }
 
-        public Task Delete(string id)
+        public async Task Delete(string id)
         {
-            throw new NotImplementedException();
+            var documentReference = _entityCollection.Document(id);
+            await documentReference.DeleteAsync();
         }
     }
 }

@@ -1,12 +1,27 @@
 ﻿using Google.Cloud.Firestore;
+using MyPage.Application.CustomAttributes;
+using MyPage.Application.Models.Courses;
 using MyPage.Application.Models.Enums;
 
 namespace MyPage.Application.Data.Entities
 {
     [FirestoreData]
-    public class CourseCertificate
+    [Collection("courseCertificates")]
+    public class CourseCertificate : BaseEntity
     {
-        public string Id { get; set; }
+        public CourseCertificate(CourseInsertModel courseInsertModel)
+        {
+            TitleDictonary = courseInsertModel.TitleDictionary;
+            WorkLoad = courseInsertModel.workLoad;
+            ConclusionDate = courseInsertModel.ConclusionDate;
+            Tag = courseInsertModel.Tag;
+            Instructor = courseInsertModel.Instructor;
+            CourseUrl = courseInsertModel.CourseUrl;
+            InstructorUrl = courseInsertModel.InstructorUrl;
+            CertificateOriginalUrl = courseInsertModel.CertificateOriginalUrl;
+            CertificateFullResolutionUrl = courseInsertModel.CertificateFullResolutionUrl;
+            CertificateCardResolutionUrl = courseInsertModel.CertificateCardResolutionUrl;
+        }
 
         public string Title { get; set; }
 
@@ -39,5 +54,11 @@ namespace MyPage.Application.Data.Entities
 
         [FirestoreProperty]
         public string CertificateCardResolutionUrl { get; set; }
+
+        public void SetTitleByLanguage(Language currentLanguage)
+        {
+            if (TitleDictonary.TryGetValue(currentLanguage, out string title))
+                Title = title;
+        }
     }
 }

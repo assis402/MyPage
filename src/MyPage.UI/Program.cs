@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
+using MyPage.Application.Data;
+using MyPage.Application.Data.Repositories;
+using MyPage.Application.Data.Repositories.Interfaces;
 using MyPage.Application.Helpers;
 using MyPage.Application.Integrations;
 using MyPage.Application.Integrations.Interfaces;
@@ -20,6 +23,7 @@ builder.Services.Configure<Settings>(configuration)
                 .AddSingleton(sp => sp.GetRequiredService<IOptions<Settings>>().Value);
 
 builder.Services.AddMemoryCache();
+builder.Services.AddSingleton<MyPageContextDb>();
 builder.Services.AddTransient<IAboutService, AboutService>();
 builder.Services.AddTransient<IProjectsService, ProjectsService>();
 builder.Services.AddTransient<IGitHubIntegration, GitHubIntegration>();
@@ -27,6 +31,9 @@ builder.Services.AddTransient<IMediumIntegration, MediumIntegration>();
 builder.Services.AddTransient<IPublicationsCacheService, PublicationsCacheService>();
 builder.Services.AddTransient<IProjectsCacheService, ProjectsCacheService>();
 builder.Services.AddTransient<ITagsCacheService, TagsCacheService>();
+builder.Services.AddTransient<ICoursesCacheService, CoursesCacheService>();
+builder.Services.AddTransient<ICoursesService, CoursesService>();
+builder.Services.AddTransient<ICourseCertificateRepository, CoursesCertificateRepository>();
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 builder.Services.AddControllersWithViews()
                 .AddDataAnnotationsLocalization(option =>
