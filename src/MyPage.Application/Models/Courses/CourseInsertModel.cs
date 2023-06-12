@@ -12,7 +12,7 @@ namespace MyPage.Application.Models.Courses
     {
         public IDictionary<Language, string> TitleDictionary { get; set; }
 
-        public double workLoad { get; set; }
+        public double WorkLoad { get; set; }
 
         public DateTime ConclusionDate { get; set; }
 

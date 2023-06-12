@@ -11,7 +11,7 @@ namespace MyPage.Application.Integrations
 
         public MediumIntegration(Settings settings)
         {
-            _mediumUrl = settings.MediumIntegrationUrl;
+            _mediumUrl = settings.MediumSettings.IntegrationUrl;
         }
 
         public async Task<IEnumerable<MediumPublicationModel>> GetPublications()

@@ -14,8 +14,8 @@ namespace MyPage.Application.Services
         public ProjectsCacheService(Settings settings,
                                     IMemoryCache memoryCache)
         {
-            _key = settings.ProjectsCacheKey;
-            _cacheExpirationInDays = settings.CacheExpirationInDays;
+            _key = settings.CacheSettings.ProjectsCacheKey;
+            _cacheExpirationInDays = settings.CacheSettings.CacheExpirationInDays;
             _memoryCache = memoryCache;
         }
 

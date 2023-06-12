@@ -27,13 +27,6 @@ namespace MyPage.UI.Controllers
         //    return View(projectsPageModel);
         //}
 
-        [HttpPost("[controller]")]
-        public async Task<IActionResult> Insert(CourseInsertModel courseInsertModel)
-        {
-            await _coursesService.InsertCourse(courseInsertModel);
-            return Ok();
-        } 
-
         public IActionResult ClearCache()
         {
             try

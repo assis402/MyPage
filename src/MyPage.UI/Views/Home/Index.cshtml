@@ -151,7 +151,7 @@
         </div>
         @if (Model.PublicationList.Count() > 5)
         {
-            <div class="more" onclick="window.open('@Settings.MediumUserUrl','medium')">
+            <div class="more" onclick="window.open('@Settings.MediumSettings.UserUrl','medium')">
                 <span class="material-symbols-outlined">more_horiz</span>
                 <p class="more-text">@LanguageResource["MediumMore"]</p>
             </div>            
@@ -189,7 +189,7 @@
                 </div>
             }
         </div>
-        <div class="more" onclick="window.open('@Settings.MediumUserUrl','medium')">
+        <div class="more" onclick="window.open('@Settings.MediumSettings.UserUrl','medium')">
             <span class="material-symbols-outlined">more_horiz</span>
             <p class="more-text">@LanguageResource["CoursesMore"]</p>
         </div>

@@ -4,6 +4,7 @@
     "inputFiles": [
       "wwwroot/css/home.css",
       "wwwroot/css/projects.css",
+      "wwwroot/css/admin.css",
       "wwwroot/css/shared.css"
     ]
   },

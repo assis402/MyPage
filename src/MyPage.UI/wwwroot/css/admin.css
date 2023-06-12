@@ -1,0 +1,84 @@
+﻿.admin-external-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.admin-container {
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 310px;
+    gap: 60px;
+    background: #121218;
+    position: relative;
+    font-weight: 200;
+}
+
+.admin-container h1 {
+    font-size: 3rem;
+    margin-top: 0;
+}
+
+.admin-container p {
+    max-width: 300px;
+}
+
+.admin-first-div {
+    padding-right: 60px;
+}
+
+.admin-divisor {
+    height: 80%;
+    width: 2px;
+    background-color: #252531;
+}
+
+.admin-container img {
+    height: 35px;
+}
+
+.google-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    padding-right: 15px;
+    background-color: #252531;
+    gap: 10px;
+    font-weight: 500;
+    transition: border .2s linear;
+    border: 1px solid transparent;
+}
+
+.google-button:hover, .google-button:focus  {
+    border: 1px solid #4f4e53;
+}
+
+.admin-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.option-button {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 13px;
+    width: 210px;
+    background-color: #252531;
+    font-weight: 200;
+    transition: border .2s linear;
+    border: 1px solid transparent;
+}
+
+.option-button:hover, .option-button:focus {
+    border: 1px solid #4f4e53;
+}

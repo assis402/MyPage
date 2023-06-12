@@ -1,3 +1,4 @@
+using Google.Api;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
@@ -24,6 +25,7 @@ builder.Services.Configure<Settings>(configuration)
 
 builder.Services.AddMemoryCache();
 builder.Services.AddSingleton<MyPageContextDb>();
+builder.Services.AddTransient<IAdminService, AdminService>();
 builder.Services.AddTransient<IAboutService, AboutService>();
 builder.Services.AddTransient<IProjectsService, ProjectsService>();
 builder.Services.AddTransient<IGitHubIntegration, GitHubIntegration>();
@@ -49,6 +51,13 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
     options.ForwardedHeaders =
         ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
 });
+builder.Services.AddAuthentication("CookieAuthentication")
+                .AddCookie("CookieAuthentication", config =>
+                {
+                    config.Cookie.Name = "UserLoginCookie";
+                    config.LoginPath = "/Admin/Login";
+                    config.ExpireTimeSpan = TimeSpan.FromSeconds(10);
+                });
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
@@ -96,8 +105,8 @@ app.UseCors(MyAllowSpecificOrigins);
 app.UseForwardedHeaders();
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

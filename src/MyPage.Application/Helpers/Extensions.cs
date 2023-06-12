@@ -1,6 +1,8 @@
 ﻿using MyPage.Application.CustomAttributes;
 using Newtonsoft.Json;
 using System.Net;
+using System.Runtime.ConstrainedExecution;
+using System.Security.Claims;
 using System.Text;
 
 namespace MyPage.Application.Helpers
@@ -12,7 +14,7 @@ namespace MyPage.Application.Helpers
 
         public static string ToJson(this object obj)
             => JsonConvert.SerializeObject(obj);
-        
+
         public static TObject ToObject<TObject>(this string obj)
             => JsonConvert.DeserializeObject<TObject>(obj);
 

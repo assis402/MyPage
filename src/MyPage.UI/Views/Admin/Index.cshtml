@@ -1,0 +1,41 @@
+﻿@*@if (ViewBag.LoggedWithNonMatheusAccount)
+{}*@
+
+<div class="admin-external-container" id="about-external-container">
+    <div class="admin-container">
+        <div class="gradient-bar"></div>
+        <div class="admin-first-div">
+            <h1>Admin</h1>
+            <p>Apenas o proprietário deste site pode utilizar esta página.</p>
+        </div>
+        <div class="admin-divisor"></div>
+        @if (ViewBag.IsAuthenticated)
+        {
+            <a class="google-button" asp-controller="admin" asp-action="login">
+                <img src="~/img/google.svg"/>
+                Login com Google
+            </a>
+        }
+        else
+        {
+            <div class="admin-options">
+                <a class="option-button" asp-controller="admin" asp-action="login">
+                    <img src="~/img/clear-cache.svg" />
+                    Gerenciar cursos
+                </a>
+                <a class="option-button" asp-controller="admin" asp-action="login">
+                    <img src="~/img/clear-cache.svg" />
+                    Limpar cache de projetos
+                </a>
+                <a class="option-button" asp-controller="admin" asp-action="login">
+                    <img src="~/img/clear-cache.svg" />
+                    Limpar cache de artigos 
+                </a>
+                <a class="option-button" asp-controller="admin" asp-action="login">
+                    <img src="~/img/clear-cache.svg" />
+                    Limpar cache de cursos
+                </a>
+            </div>
+        }
+    </div>
+</div>

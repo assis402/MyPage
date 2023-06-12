@@ -13,8 +13,8 @@ namespace MyPage.Application.Services
         public TagsCacheService(Settings settings,
                                 IMemoryCache memoryCache)
         {
-            _key = settings.TagsCacheKey;
-            _cacheExpirationInDays = settings.CacheExpirationInDays;
+            _key = settings.CacheSettings.TagsCacheKey;
+            _cacheExpirationInDays = settings.CacheSettings.CacheExpirationInDays;
             _memoryCache = memoryCache;
         }
 

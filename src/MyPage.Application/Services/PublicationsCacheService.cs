@@ -14,8 +14,8 @@ namespace MyPage.Application.Services
         public PublicationsCacheService(Settings settings,
                                         IMemoryCache memoryCache)
         {
-            _key = settings.PublicationsCacheKey;
-            _cacheExpirationInDays = settings.CacheExpirationInDays;
+            _key = settings.CacheSettings.PublicationsCacheKey;
+            _cacheExpirationInDays = settings.CacheSettings.CacheExpirationInDays;
             _memoryCache = memoryCache;
         }
 

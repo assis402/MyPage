@@ -14,8 +14,8 @@ namespace MyPage.Application.Services
         public CoursesCacheService(Settings settings,
                                     IMemoryCache memoryCache)
         {
-            _key = settings.CoursesCacheKey;
-            _cacheExpirationInDays = settings.CacheExpirationInDays;
+            _key = settings.CacheSettings.CoursesCacheKey;
+            _cacheExpirationInDays = settings.CacheSettings.CacheExpirationInDays;
             _memoryCache = memoryCache;
         }
 

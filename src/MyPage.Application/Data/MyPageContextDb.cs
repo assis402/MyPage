@@ -20,7 +20,7 @@ namespace MyPage.Application.Data
             var filePath = Path.GetFullPath(Path.Combine(root, $@"..\firebase.json"));
 
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", filePath);
-            Database = FirestoreDb.Create(settings.FirebaseProjectId);
+            Database = FirestoreDb.Create(settings.GoogleSettings.FirebaseProjectId);
         }
     }
 }

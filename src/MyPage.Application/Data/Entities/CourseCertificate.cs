@@ -12,7 +12,7 @@ namespace MyPage.Application.Data.Entities
         public CourseCertificate(CourseInsertModel courseInsertModel)
         {
             TitleDictonary = courseInsertModel.TitleDictionary;
-            WorkLoad = courseInsertModel.workLoad;
+            WorkLoad = courseInsertModel.WorkLoad;
             ConclusionDate = courseInsertModel.ConclusionDate;
             Tag = courseInsertModel.Tag;
             Instructor = courseInsertModel.Instructor;
