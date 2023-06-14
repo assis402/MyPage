@@ -14,7 +14,7 @@ namespace MyPage.Application.Data.Entities
         {
         }
 
-        public CourseCertificate(CourseInsertModel courseInsertModel)
+        public CourseCertificate(CourseCertificateModel courseInsertModel)
         {
             TitleDictonary = courseInsertModel.TitleDictionary;
             WorkLoad = courseInsertModel.WorkLoad;

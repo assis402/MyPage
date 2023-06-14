@@ -3,7 +3,7 @@
 @model ProjectsPageModel
 
 <div class="modal" id="modal">
-    <div class="modal-internal" onclick="closeVideoModel()">
+    <div class="modal-internal" onclick="closeVideoModal()">
         <iframe class="video"
                 id="video"
                 width="560"
@@ -69,7 +69,7 @@
                             }
                             @if (project.CustomProperties.VideoUrl.IsNotNullAndNotEmpty())
                             {
-                                <div class="project-link" onclick="openVideoModel('@project.CustomProperties.VideoUrl')">
+                                <div class="project-link" onclick="openVideoModal('@project.CustomProperties.VideoUrl')">
                                     <span>@LanguageResource["VideoText"]</span>
                                     <i class="far fa-play-circle project-link-icon"></i>
                                 </div>

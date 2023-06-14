@@ -70,18 +70,57 @@
     filter: invert(.8);
 }
 
-.edit-button {
+.course-buttons {
     position: absolute;
-    bottom: 0;
-    width: 25px;
     z-index: 2;
-    height: 30px;
+    right: 3%;
+    top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 }
 
-.edit-button img {
-    height: 25px;
-    width: 25px;
-    filter: invert(.8);
+.course-button {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background .2s linear;
+}
+
+.edit-button {
+    background: #5e20c9c2;
+}
+
+.delete-button {
+    background: #c92020c2;
+}
+
+.course-button img {
+    height: 18px;
+    width: 18px;
+    filter: invert(1);
+    margin-bottom: 1.5px;
+}
+
+.edit-button:hover, .edit-button:focus {
+    background: #5e22c4;
+}
+
+.delete-button:hover, .delete-button:focus {
+    background: #da2121;
+}
+
+.course-modal {
+    display: none;
+    flex-direction: column;
+    width: 600px;
+    min-height: 500px;
+    background-color: #131319;
+    padding
 }
 
 @media screen and (max-width: 1320px) {

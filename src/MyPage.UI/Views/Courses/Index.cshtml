@@ -1,21 +1,56 @@
 ﻿@using MyPage.Application.Helpers;
+@using MyPage.Application.Models.Courses;
 @using MyPage.Application.Models.Pages;
 @model CoursesPageModel
+@{
+    var courseModel = new CourseCertificateModel();
+}
 
+<div class="modal" id="modal">
+    <div class="modal-internal" onclick="closeCourseModal()">
+        <div class="course-modal" id="add-course-modal" onclick="return false;">
+            <h2>Add Course</h2>
+            <hr />
+            <label for="fname">Workload:</label>
+            <input type="number" id="fname" name="fname">
+            <label for="fname">Tag:</label>
+            <input type="text" id="fname" name="fname">
+            <label for="fname">Instructor:</label>
+            <input type="text" id="fname" name="fname">
+            <label for="fname">Course Page URL:</label>
+            <input type="text" id="fname" name="fname">
+            <label for="fname">Instructor Page URL:</label>
+            <input type="text" id="fname" name="fname">
+            <label for="fname">Certificate Original URL:</label>
+            <input type="text" id="fname" name="fname">
+            <label for="fname">Certificate Full Resolution URL:</label>
+            <input type="text" id="fname" name="fname">
+            <label for="fname">Certificate Card Resolution URL:</label>
+            <input type="text" id="fname" name="fname">
+        </div>
+        <div class="course-modal" id="update-course-modal">
+            <h1>Update Course</h1>
+
+        </div>
+        <div class="course-modal" id="delete-course-modal">
+            <h1>Delete Course</h1>
+        </div>
+    </div>
+</div>
 <div class="courses-page-external-container">
     <div class="courses-page-container">
         @if (!User.Identity.IsAuthenticated)
         {
             <div class="admin-section">
-                <span>
+                <span>  
                     <img src="~/img/admin.svg" />
                     Admin
                 </span>
                 <span>
-                    <a asp-controller="courses" asp-action="insertcourse" class="simple-button">
+                    <div class="simple-button" onclick="openCourseModal('add')">
                         <img src="~/img/add.svg" />
                         <div class="inner-button">@LanguageResource["AddCourseButton"]</div>
-                    </a>
+                    </div>
                     <a asp-controller="courses" asp-action="insertcourse" class="simple-button">
                         <img src="~/img/clear-cache.svg" />
                         <div class="inner-button">clear cache</div>
@@ -32,9 +67,14 @@
                 <div class="course-certificate">
                     @if (!User.Identity.IsAuthenticated)
                     {
-                        <a asp-controller="courses" asp-action="insertcourse" class="edit-button">
-                            <img src="~/img/edit-courses.svg" />
-                        </a>
+                        <span class="course-buttons">
+                            <div class="course-button edit-button" onclick="openCourseModal('update')">
+                                <img src="~/img/edit-courses.svg" />
+                            </div>
+                            <div class="course-button delete-button" onclick="openCourseModal('delete')">
+                                <img src="~/img/delete.svg" />
+                            </div>
+                        </span>
                     }
                     <div class="course-tag">BACKEND</div>
                     <div class="course-certificate-front-shadow"></div>

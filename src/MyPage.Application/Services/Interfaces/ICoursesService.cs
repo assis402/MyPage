@@ -8,7 +8,7 @@ namespace MyPage.Application.Services.Interfaces
     {
         public Task<CoursesPageModel> GetCoursesPageModel(Language currentLanguage);
 
-        public Task InsertCourse(CourseInsertModel course);
+        public Task InsertCourse(CourseCertificateModel course);
 
         public void ClearCoursesCache();
     }

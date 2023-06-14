@@ -14,6 +14,7 @@
     "inputFiles": [
       "wwwroot/js/home.js",
       "wwwroot/js/projects.js",
+      "wwwroot/js/courses.js",
       "wwwroot/js/shared.js"
     ],
     "minify": {

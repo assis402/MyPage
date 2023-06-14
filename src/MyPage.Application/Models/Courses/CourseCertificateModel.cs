@@ -8,8 +8,13 @@ using System.Threading.Tasks;
 
 namespace MyPage.Application.Models.Courses
 {
-    public class CourseInsertModel
+    public class CourseCertificateModel
     {
+        public CourseCertificateModel()
+        {
+            TitleDictionary = new Dictionary<Language, string>();
+        }
+
         public IDictionary<Language, string> TitleDictionary { get; set; }
 
         public double WorkLoad { get; set; }

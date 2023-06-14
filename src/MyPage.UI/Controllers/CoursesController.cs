@@ -29,7 +29,7 @@ namespace MyPage.UI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult InsertCourse([Bind] CourseInsertModel courseInsertModel)
+        public ActionResult InsertCourse([Bind] CourseCertificateModel courseInsertModel)
         {
             try
             {

@@ -29,7 +29,7 @@ namespace MyPage.Application.Services
             return new CoursesPageModel(courseCertificates, currentLanguage);
         }
 
-        public async Task InsertCourse(CourseInsertModel course)
+        public async Task InsertCourse(CourseCertificateModel course)
         {
             await _courseCertificateRepository.Insert(new CourseCertificate(course));
         }
