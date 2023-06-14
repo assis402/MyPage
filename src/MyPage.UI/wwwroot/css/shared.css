@@ -177,7 +177,7 @@ a {
     opacity: 1;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
     ::-webkit-scrollbar {
         -webkit-appearance: none;
         width: 0;
@@ -219,7 +219,7 @@ a {
     row-gap: 30px;
 }
 
-.projects-footer {
+.secundary-footer {
     background: linear-gradient(to right, #060708, #242430);
 }
 
@@ -322,7 +322,7 @@ a {
     background: linear-gradient(to right, #27006a, #541db1);
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
     .contact-container {
         flex-direction: column;
         gap: 30px;

@@ -27,25 +27,5 @@ namespace MyPage.UI.Controllers
 
             return View(projectsPageModel);
         }
-
-        public IActionResult ClearCache()
-        {
-            try
-            {
-                _portfolioService.ClearPortfolioProjectsCache();
-                _portfolioService.ClearPortfolioTagsCache();
-                return Ok("Cache in memory \"Projects\" cleared successfully.");
-            }
-            catch (Exception ex)
-            {
-                var errorMessage = new
-                {
-                    Message = "Error when clearing Cache in memory \"Projects\".",
-                    Exception = ex.Message
-                };
-
-                return BadRequest(errorMessage);
-            }
-        }
     }
 }

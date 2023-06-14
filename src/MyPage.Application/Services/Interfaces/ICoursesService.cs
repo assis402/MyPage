@@ -6,7 +6,7 @@ namespace MyPage.Application.Services.Interfaces
 {
     public interface ICoursesService
     {
-        public Task<CoursesPageModel> GetCourses(Language currentLanguage);
+        public Task<CoursesPageModel> GetCoursesPageModel(Language currentLanguage);
 
         public Task InsertCourse(CourseInsertModel course);
 

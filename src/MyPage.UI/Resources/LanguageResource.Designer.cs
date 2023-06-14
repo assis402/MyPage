@@ -151,6 +151,15 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a adicionar curso.
+        /// </summary>
+        public static string AddCourseButton {
+            get {
+                return ResourceManager.GetString("AddCourseButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a EXPERIÊNCIA.
         /// </summary>
         public static string Background {
@@ -183,6 +192,15 @@ namespace MyPage.UI.Resources {
         public static string Contact {
             get {
                 return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a cursos.
+        /// </summary>
+        public static string CoursesMenu {
+            get {
+                return ResourceManager.GetString("CoursesMenu", resourceCulture);
             }
         }
         

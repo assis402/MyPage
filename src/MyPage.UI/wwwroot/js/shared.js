@@ -1,5 +1,5 @@
 function menuSwitch() {
-    if (window.matchMedia("(min-width: 720px)").matches) {
+    if (window.matchMedia("(min-width: 768px)").matches) {
         document.getElementById("menu-items").style.display = "flex";
         document.getElementById("menu-button-mobile").style.display = "none";
 

@@ -6,6 +6,6 @@ namespace MyPage.Application.Services.Interfaces
     {
         public Task<AboutPageModel> GetAboutPageModel();
 
-        public void ClearAboutCache();
+        public void ClearPublicationsCache();
     }
 }

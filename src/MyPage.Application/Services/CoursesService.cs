@@ -23,7 +23,7 @@ namespace MyPage.Application.Services
             _courseCertificateRepository = courseCertificateRepository;
         }
 
-        public async Task<CoursesPageModel> GetCourses(Language currentLanguage)
+        public async Task<CoursesPageModel> GetCoursesPageModel(Language currentLanguage)
         {
             var courseCertificates = await _courseCertificateRepository.GetAll();
             return new CoursesPageModel(courseCertificates, currentLanguage);

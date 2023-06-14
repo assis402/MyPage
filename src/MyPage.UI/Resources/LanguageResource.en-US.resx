@@ -147,6 +147,9 @@
   <data name="AboutTitle_Name" xml:space="preserve">
     <value>Matheus de Assis</value>
   </data>
+  <data name="AddCourseButton" xml:space="preserve">
+    <value>add course</value>
+  </data>
   <data name="Background" xml:space="preserve">
     <value>BACKGROUND</value>
   </data>
@@ -158,6 +161,9 @@
   </data>
   <data name="Contact" xml:space="preserve">
     <value>CONTACT</value>
+  </data>
+  <data name="CoursesMenu" xml:space="preserve">
+    <value>courses</value>
   </data>
   <data name="CoursesMore" xml:space="preserve">
     <value>see all my certificates</value>

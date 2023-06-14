@@ -2,6 +2,7 @@
 using MyPage.Application.CustomAttributes;
 using MyPage.Application.Models.Courses;
 using MyPage.Application.Models.Enums;
+using System.Drawing;
 
 namespace MyPage.Application.Data.Entities
 {
@@ -9,6 +10,10 @@ namespace MyPage.Application.Data.Entities
     [Collection("courseCertificates")]
     public class CourseCertificate : BaseEntity
     {
+        public CourseCertificate()
+        {
+        }
+
         public CourseCertificate(CourseInsertModel courseInsertModel)
         {
             TitleDictonary = courseInsertModel.TitleDictionary;

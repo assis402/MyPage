@@ -372,4 +372,8 @@
         margin: 0 30px;
         min-width: unset;
     }
+
+    .project:hover {
+        transform: none;
+    }
 }

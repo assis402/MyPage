@@ -20,7 +20,26 @@
 
 .admin-container h1 {
     font-size: 3rem;
+    margin: 0;
+}
+
+.admin-container span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.admin-container span img {
+    height: 40px;
+    filter: invert();
+}
+
+.admin-container h5 {
+    font-weight: 300;
     margin-top: 0;
+    margin-bottom: 35px;
+    color: #878792;
 }
 
 .admin-container p {
@@ -70,15 +89,22 @@
     font-size: 13px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 10px 13px;
-    width: 210px;
+    width: 180px;
     background-color: #252531;
-    font-weight: 200;
+    font-weight: 500;
     transition: border .2s linear;
     border: 1px solid transparent;
+    line-height: 20px;
 }
 
 .option-button:hover, .option-button:focus {
     border: 1px solid #4f4e53;
+}
+
+.option-button img {
+    height: 20px;
+    filter: invert(1);
+    margin-right: 15px;
 }

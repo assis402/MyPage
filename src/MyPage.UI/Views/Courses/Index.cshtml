@@ -1,9 +1,28 @@
 ﻿@using MyPage.Application.Helpers;
 @using MyPage.Application.Models.Pages;
-@model ProjectsPageModel
+@model CoursesPageModel
 
 <div class="courses-page-external-container">
     <div class="courses-page-container">
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div class="admin-section">
+                <span>
+                    <img src="~/img/admin.svg" />
+                    Admin
+                </span>
+                <span>
+                    <a asp-controller="courses" asp-action="insertcourse" class="simple-button">
+                        <img src="~/img/add.svg" />
+                        <div class="inner-button">@LanguageResource["AddCourseButton"]</div>
+                    </a>
+                    <a asp-controller="courses" asp-action="insertcourse" class="simple-button">
+                        <img src="~/img/clear-cache.svg" />
+                        <div class="inner-button">clear cache</div>
+                    </a>
+                </span>
+            </div>
+        }
         @{
             int[] list = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         }
@@ -11,6 +30,12 @@
         {
             <div class="course-card">
                 <div class="course-certificate">
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <a asp-controller="courses" asp-action="insertcourse" class="edit-button">
+                            <img src="~/img/edit-courses.svg" />
+                        </a>
+                    }
                     <div class="course-tag">BACKEND</div>
                     <div class="course-certificate-front-shadow"></div>
                     <img src="https://udemy-certificate.s3.amazonaws.com/image/UC-0aa73201-1793-4fef-9628-b2cd11af91f9.jpg?v=1617970572000" alt="certificate" />

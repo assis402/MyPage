@@ -40,6 +40,9 @@
                     <a asp-controller="home" asp-action="index" class="menu-item">
                         @LanguageResource["AboutMenu"]
                     </a>
+                    <a asp-controller="courses" asp-action="index" class="menu-item">
+                        @LanguageResource["CoursesMenu"]
+                    </a>
                     <a asp-controller="projects" asp-action="index" class="menu-item">
                         @LanguageResource["ProjectsMenu"]
                     </a>
@@ -64,6 +67,9 @@
                     <a asp-controller="home" asp-action="index" class="menu-item">
                         @LanguageResource["AboutMenu"]
                     </a>
+                    <a asp-controller="courses" asp-action="index" class="menu-item">
+                        @LanguageResource["CoursesMenu"]
+                    </a>
                     <a asp-controller="projects" asp-action="index" class="menu-item">
                         @LanguageResource["ProjectsMenu"]
                     </a>
@@ -86,7 +92,7 @@
         @{
             var pageName = ViewContext.RouteData.Values["controller"]?.ToString()?.ToLower();
         }
-        <footer class="contact-external-container @(pageName == "projects" ? "projects-footer" : "")" id="contact-external-container">
+        <footer class="contact-external-container @(pageName != "home" ? "secundary-footer" : "")" id="contact-external-container">
             <div class="mini-title">@LanguageResource["Contact"]</div>
             <div class="contact-container">
                 <div class="contact" onclick="window.open('https://github.com/assis402','github')">

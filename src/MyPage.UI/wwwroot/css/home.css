@@ -130,7 +130,7 @@
     align-items: center;
     cursor: pointer;
     width: 150px;
-    height: 40px;
+    height: 45px;
     transition: color .2s linear,border .2s linear;
     border: 1px solid #000;
     font-weight: 500;
@@ -150,7 +150,7 @@
     align-items: center;
     cursor: pointer;
     width: 150px;
-    height: 40px;
+    height: 45px;
     transition: color .2s linear,border .2s linear;
     font-weight: 500;
     color: #fff;
@@ -224,7 +224,7 @@
     }
 }
 
-@media(max-width: 720px) {
+@media(max-width: 768px) {
     #about-body-container {
         padding: 0 8%;
     }
@@ -655,7 +655,7 @@
     color: #ceced3;
 }
 
-@media(max-width: 720px) {
+@media(max-width: 768px) {
     .timeline-exp-title {
         font-size: 14px;
         width: 180px;

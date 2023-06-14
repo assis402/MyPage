@@ -19,30 +19,29 @@ namespace MyPage.UI.Controllers
             _coursesService = coursesService;
         }
 
-        //public async Task<IActionResult> Index()
-        //{
-        //    var currentLanguage = _languageResource["Culture"].Value.ToEnum<Language>();
-        //    var projectsPageModel = await _coursesService.GetAll(currentLanguage);
+        public async Task<IActionResult> Index()
+        {
+            var currentLanguage = _languageResource["Culture"].Value.ToEnum<Language>();
+            var coursesPageModel = await _coursesService.GetCoursesPageModel(currentLanguage);
 
-        //    return View(projectsPageModel);
-        //}
+            return View(coursesPageModel);
+        }
 
-        public IActionResult ClearCache()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult InsertCourse([Bind] CourseInsertModel courseInsertModel)
         {
             try
             {
-                _coursesService.ClearCoursesCache();
-                return Ok("Cache in memory \"Courses\" cleared successfully.");
-            }
-            catch (Exception ex)
-            {
-                var errorMessage = new
+                if (ModelState.IsValid)
                 {
-                    Message = "Error when clearing Cache in memory \"Courses\".",
-                    Exception = ex.Message
-                };
+                }
 
-                return BadRequest(errorMessage);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
             }
         }
     }

@@ -22,6 +22,6 @@ namespace MyPage.Application.Services
             return new AboutPageModel(publicationList);
         }
 
-        public void ClearAboutCache() => _publicationsCacheService.ClearCache();
+        public void ClearPublicationsCache() => _publicationsCacheService.ClearCache();
     }
 }
