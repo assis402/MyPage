@@ -120,7 +120,7 @@
     width: 600px;
     min-height: 500px;
     background-color: #131319;
-    padding
+    padding: 20px;
 }
 
 @media screen and (max-width: 1320px) {

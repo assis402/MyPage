@@ -7,13 +7,15 @@
 }
 
 <div class="modal" id="modal">
-    <div class="modal-internal" onclick="closeCourseModal()">
-        <div class="course-modal" id="add-course-modal" onclick="return false;">
+    <div class="modal-internal">
+        <div class="course-modal" id="add-course-modal">
             <h2>Add Course</h2>
             <hr />
-            <label for="fname">Workload:</label>
-            <input type="number" id="fname" name="fname">
-            <label for="fname">Tag:</label>
+            <div class="form-group">
+                <input class ="form-field" placeholder="0" type="number" id="fname" name="fname">
+                <label class="form-label" for="fname">Workload</label>
+            </div>
+@*            <label for="fname">Tag:</label>
             <input type="text" id="fname" name="fname">
             <label for="fname">Instructor:</label>
             <input type="text" id="fname" name="fname">
@@ -26,7 +28,7 @@
             <label for="fname">Certificate Full Resolution URL:</label>
             <input type="text" id="fname" name="fname">
             <label for="fname">Certificate Card Resolution URL:</label>
-            <input type="text" id="fname" name="fname">
+            <input type="text" id="fname" name="fname">*@
         </div>
         <div class="course-modal" id="update-course-modal">
             <h1>Update Course</h1>
