@@ -25,11 +25,11 @@
                 @LanguageResource["PresentationText"]
             </p>
             <div class="presentation-buttons">
-                <div class="about-button" onclick="showAbout()">
+                <div class="gradient-button" onclick="showAbout()">
                     <img class="about-icon" src="~/img/info.svg" />
                     <div class="inner-button">@LanguageResource["AboutButton"]</div>
                 </div>
-                <a asp-controller="projects" asp-action="index" class="projects-button">
+                <a asp-controller="projects" asp-action="index" class="outlined-button">
                     <img class="projects-icon" src="~/img/projects.svg" />
                     <div class="inner-button">@LanguageResource["ProjectsButton"]</div>
                 </a>
@@ -48,7 +48,7 @@
                 @LanguageResource["AboutBody_03"]
             </p>
             <div class="presentation-buttons second-buttons">
-                <a asp-controller="projects" asp-action="index" class="about-button second-button">
+                <a asp-controller="projects" asp-action="index" class="gradient-button second-button">
                     <img class="projects-icon" src="~/img/projects.svg" />
                     <div class="inner-button">@LanguageResource["SecondProjectsButton"]</div>
                 </a>

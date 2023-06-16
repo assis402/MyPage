@@ -1,6 +1,7 @@
 ﻿@using MyPage.Application.Helpers;
 @using MyPage.Application.Models.Courses;
 @using MyPage.Application.Models.Pages;
+@using MyPage.Application.Models.Enums;
 @model CoursesPageModel
 @{
     var courseModel = new CourseCertificateModel();
@@ -9,26 +10,58 @@
 <div class="modal" id="modal">
     <div class="modal-internal">
         <div class="course-modal" id="add-course-modal">
-            <h2>Add Course</h2>
-            <hr />
-            <div class="form-group">
-                <input class ="form-field" placeholder="0" type="number" id="fname" name="fname" required>
-                <label class="form-label" for="fname">Workload</label>
+            <div class="close-modal-button" onclick="closeCourseModal()">
+                <img src="~/img/close.svg" />
             </div>
-@*            <label for="fname">Tag:</label>
-            <input type="text" id="fname" name="fname">
-            <label for="fname">Instructor:</label>
-            <input type="text" id="fname" name="fname">
-            <label for="fname">Course Page URL:</label>
-            <input type="text" id="fname" name="fname">
-            <label for="fname">Instructor Page URL:</label>
-            <input type="text" id="fname" name="fname">
-            <label for="fname">Certificate Original URL:</label>
-            <input type="text" id="fname" name="fname">
-            <label for="fname">Certificate Full Resolution URL:</label>
-            <input type="text" id="fname" name="fname">
-            <label for="fname">Certificate Card Resolution URL:</label>
-            <input type="text" id="fname" name="fname">*@
+            <h2>Add Course</h2>
+            <form asp-action="Index" method="get" class="form">
+                <div class="from-scroll"> 
+                    @foreach (Language language in Enum.GetValues(typeof(Language)))
+                    {
+                        <div class="form-group">
+                            <input class="form-field" placeholder="0" type="text" id="fname" name="fname" required>
+                            <label class="form-label" for="fname">Course Title (@language.Description())</label>
+                        </div>
+                    }
+                    <div class="form-group">
+                        <input class="form-field" type="date" id="fname" name="fname" required>
+                        <label class="form-label" for="fname">Conclusion Date</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-field" placeholder="Ex: Backend" type="text" id="fname" name="fname" required>
+                        <label class="form-label" for="fname">Tag</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-field" placeholder="URL" type="url" id="fname" name="fname" required>
+                        <label class="form-label" for="fname">CourseUrl</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-field" placeholder="URL" type="url" id="fname" name="fname" required>
+                        <label class="form-label" for="fname">InstructorUrl</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-field" placeholder="URL" type="url" id="fname" name="fname" required>
+                        <label class="form-label" for="fname">CertificateOriginalUrl</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-field" placeholder="URL" type="url" id="fname" name="fname" required>
+                        <label class="form-label" for="fname">CertificateFullResolutionUrl</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-field" placeholder="URL" type="url" id="fname" name="fname" required>
+                        <label class="form-label" for="fname">CertificateCardResolutionUrl</label>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <div class="outlined-button" onclick="closeCourseModal()">
+                        <div class="inner-button">cancel</div>
+                    </div>
+                    <a asp-controller="projects" asp-action="index" class="gradient-button" style="border: 1px solid #323241;">
+                        <div class="inner-button">add course</div>
+                    </a>
+                </div>
+            </form>
+
         </div>
         <div class="course-modal" id="update-course-modal">
             <h1>Update Course</h1>

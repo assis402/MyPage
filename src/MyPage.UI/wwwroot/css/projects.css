@@ -72,9 +72,9 @@
     transition: background-color .2s linear;
 }
 
-    .search-button:active, .search-button:hover, .search-button:focus {
-        background-color: #8e8eb0;
-    }
+.search-button:active, .search-button:hover, .search-button:focus {
+    background-color: #8e8eb0;
+}
 
 .clear-filter-button {
     -webkit-tap-highlight-color: transparent;
@@ -91,9 +91,9 @@
     transition: background-color .2s linear;
 }
 
-    .clear-filter-button:active, .clear-filter-button:hover, .clear-filter-button:focus {
-        background-color: #8e8eb0;
-    }
+.clear-filter-button:active, .clear-filter-button:hover, .clear-filter-button:focus {
+    background-color: #8e8eb0;
+}
 
 .search-box {
     background-color: transparent;

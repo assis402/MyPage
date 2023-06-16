@@ -178,7 +178,7 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-    ::-webkit-scrollbar {
+    body::-webkit-scrollbar {
         -webkit-appearance: none;
         width: 0;
     }
@@ -322,8 +322,41 @@ a {
     background: linear-gradient(to right, #27006a, #541db1);
 }
 
+.form {
+    position: relative;
+    min-height: 500px;
+}
+
+.from-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+    overflow-y: scroll;
+    padding-top: 20px;
+    padding-right: 30px;
+    height: 500px;
+    margin-bottom: 40px;
+}
+
+.from-scroll::-webkit-scrollbar {
+    height: 12px;
+}
+
+.from-scroll::-webkit-scrollbar-track {
+    background: #0d0e12;
+    border-radius: 10px;
+    margin: 0 0px;
+}
+
+.from-scroll::-webkit-scrollbar-thumb {
+    background-color: #444456;
+    border-radius: 20px;
+    border: 3px solid #0d0e12;
+}
+
 .form-group {
     position: relative;
+    height: 50px;
 }
 
 .form-field {
@@ -336,7 +369,7 @@ a {
     color: #fff;
     font-size: 15px;
     outline: none;
-    border-bottom: 2px solid #4d4d65;
+    border-bottom: 1px solid #4d4d65;
     transition: border-bottom .2s linear;
     z-index: 2;
 }
@@ -357,7 +390,7 @@ a {
 }
 
 .form-field:focus + .form-label {
-    transform: scale(.8) translateY(-20px);
+    transform: scale(.8) translateY(-25px);
 }
 
 .form-field:focus::placeholder {
@@ -365,11 +398,11 @@ a {
 }
 
 .form-field:focus {
-    border-bottom: 2px solid #b5b5c7;
+    border-bottom: 1px solid #b5b5c7;
 }
 
 .form-field:valid + .form-label {
-    transform: scale(.8) translateY(-20px);
+    transform: scale(.8) translateY(-25px);
 }
 
 input::-webkit-outer-spin-button,
@@ -378,11 +411,40 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
 input[type=number] {
     -moz-appearance: textfield;
 }
 
+input[type="date"] {
+    font-family: "Poppins", sans-serif;
+}
+
+input[type="date"]:focus::-webkit-datetime-edit-text,
+input[type="date"]:focus::-webkit-datetime-edit-month-field,
+input[type="date"]:focus::-webkit-datetime-edit-day-field,
+input[type="date"]:focus::-webkit-datetime-edit-year-field {
+    color: #fff;
+}
+
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+    color: transparent;
+    transition: color .2s linear;
+}
+
 @media (max-width: 768px) {
+    from-scroll::-webkit-scrollbar {
+        -webkit-appearance: default-button !important;
+        width: auto !important;
+    }
+
     .contact-container {
         flex-direction: column;
         gap: 30px;

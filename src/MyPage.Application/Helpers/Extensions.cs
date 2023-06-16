@@ -1,6 +1,8 @@
 ﻿using MyPage.Application.CustomAttributes;
 using Newtonsoft.Json;
+using System.ComponentModel;
 using System.Net;
+using System.Reflection;
 using System.Runtime.ConstrainedExecution;
 using System.Security.Claims;
 using System.Text;
@@ -31,5 +33,17 @@ namespace MyPage.Application.Helpers
 
         public static StringBuilder Append(this string @string, string text)
             => new StringBuilder(@string).Append(text);
+
+        public static string Description(this Enum value)
+        {
+            var field = value.GetType().GetField(value.ToString());
+            var array = (DescriptionAttribute[])field.GetCustomAttributes(typeof(DescriptionAttribute), inherit: false);
+            if (array.Length != 0)
+            {
+                return array[0].Description;
+            }
+
+            return value.ToString();
+        }
     }
 }
