@@ -377,6 +377,14 @@ a {
     z-index: 2;
 }
 
+.form-field:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+    color: #fff !important;
+    -webkit-text-fill-color: #fff;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+}
+
 .form-label {
     position: absolute;
     transition: all .2s ease-in-out;

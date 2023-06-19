@@ -1,4 +1,5 @@
-﻿using MyPage.Application.Data.Entities;
+﻿using Google.Protobuf.WellKnownTypes;
+using MyPage.Application.Data.Entities;
 using MyPage.Application.Models.Enums;
 
 namespace MyPage.Application.Models.Courses
@@ -12,13 +13,9 @@ namespace MyPage.Application.Models.Courses
 
         public CourseCertificateModel(CourseCertificate courseCertificateEntity)
         {
-            var dictionary = new Dictionary<Language, string>();
-
-            foreach (var item in courseCertificateEntity.TitleDictionary)
-                dictionary.Add((Language)item.Key, item.Value);
-
-            TitleDictionary = dictionary;
+            TitleDictionary = courseCertificateEntity.TitleDictionary;
             WorkLoad = courseCertificateEntity.WorkLoad;
+            //ConclusionDate = courseCertificateEntity.ConclusionDate.ToDateTime();
             ConclusionDate = courseCertificateEntity.ConclusionDate;
             Tag = courseCertificateEntity.Tag;
             Platform = courseCertificateEntity.Platform;
