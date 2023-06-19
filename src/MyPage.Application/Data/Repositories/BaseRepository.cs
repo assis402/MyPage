@@ -1,5 +1,4 @@
 ﻿using Google.Cloud.Firestore;
-using Google.Cloud.Firestore.V1;
 using MyPage.Application.Data.Entities;
 using MyPage.Application.Data.Repositories.Interfaces;
 using MyPage.Application.Helpers;
@@ -34,7 +33,23 @@ namespace MyPage.Application.Data.Repositories
             return entityList;
         }
 
-        public async Task Insert(TEntity entity)
+        public async Task<TEntity> GetById(string id)
+        {
+            var document = await _entityCollection.Document(id).GetSnapshotAsync();
+
+            if (document.Exists)
+            {
+                var dictionayDocument = document.ToDictionary();
+                var entity = dictionayDocument.ToJson().ToObject<TEntity>();
+                return entity;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task Add(TEntity entity)
         {
             await _entityCollection.AddAsync(entity);
         }

@@ -27,22 +27,51 @@ namespace MyPage.UI.Controllers
             return View(coursesPageModel);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult InsertCourse([Bind] CourseCertificateModel courseInsertModel)
+        //[Authorize]
+        public IActionResult Add()
         {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                }
+            return View("AddUpdateCourse", new AddUpdateCoursePageModel());
+        }
 
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+        [HttpPost]
+        //[Authorize]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> Add(CourseCertificateModel courseModel)
+        {
+            await _coursesService.Add(courseModel);
+            return RedirectToAction(nameof(Index));
+        }
+
+        //[Authorize]
+        public async Task<IActionResult> Update(string id)
+        {
+            var courseModel = await _coursesService.GetById(id);
+            return View("AddUpdateCourse", new AddUpdateCoursePageModel(courseModel));
+        }
+
+        [HttpPut]
+        //[Authorize]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(CourseCertificateModel courseModel)
+        {
+            await _coursesService.Update(courseModel);
+            return RedirectToAction(nameof(Index));
+        }
+
+        //[Authorize]
+        public async Task<IActionResult> Delete(string id)
+        {
+            var courseModel = await _coursesService.GetById(id);
+            return View("DeleteCourse", courseModel);
+        }
+
+        [HttpDelete]
+        //[Authorize]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(CourseCertificateModel courseModel)
+        {
+            await _coursesService.DeleteById(courseModel.Id);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

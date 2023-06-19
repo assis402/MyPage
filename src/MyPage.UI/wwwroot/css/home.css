@@ -142,6 +142,7 @@
     -ms-user-select: none;
     user-select: none;
     padding: 0 3px;
+    font-family: 'Poppins';
 }
 
 .outlined-button {
@@ -162,6 +163,8 @@
     user-select: none;
     padding: 0 5px;
     -webkit-tap-highlight-color: transparent;
+    background: transparent;
+    font-family: 'Poppins';
 }
 
 .gradient-button:hover {

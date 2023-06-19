@@ -1,80 +1,16 @@
-﻿@using MyPage.Application.Helpers;
+﻿@using MyPage.Application.Data.Entities;
+@using MyPage.Application.Helpers;
 @using MyPage.Application.Models.Courses;
 @using MyPage.Application.Models.Pages;
 @using MyPage.Application.Models.Enums;
 @model CoursesPageModel
 @{
-    var courseModel = new CourseCertificateModel();
+    var isAuthenticated = User.Identity?.IsAuthenticated ?? false;
 }
 
-<div class="modal" id="modal">
-    <div class="modal-internal">
-        <div class="course-modal" id="add-course-modal">
-            <div class="close-modal-button" onclick="closeCourseModal()">
-                <img src="~/img/close.svg" />
-            </div>
-            <h2>Add Course</h2>
-            <form asp-action="Index" method="get" class="form">
-                <div class="from-scroll"> 
-                    @foreach (Language language in Enum.GetValues(typeof(Language)))
-                    {
-                        <div class="form-group">
-                            <input class="form-field" placeholder="0" type="text" id="fname" name="fname" required>
-                            <label class="form-label" for="fname">Course Title (@language.Description())</label>
-                        </div>
-                    }
-                    <div class="form-group">
-                        <input class="form-field" type="date" id="fname" name="fname" required>
-                        <label class="form-label" for="fname">Conclusion Date</label>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-field" placeholder="Ex: Backend" type="text" id="fname" name="fname" required>
-                        <label class="form-label" for="fname">Tag</label>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-field" placeholder="URL" type="url" id="fname" name="fname" required>
-                        <label class="form-label" for="fname">CourseUrl</label>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-field" placeholder="URL" type="url" id="fname" name="fname" required>
-                        <label class="form-label" for="fname">InstructorUrl</label>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-field" placeholder="URL" type="url" id="fname" name="fname" required>
-                        <label class="form-label" for="fname">CertificateOriginalUrl</label>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-field" placeholder="URL" type="url" id="fname" name="fname" required>
-                        <label class="form-label" for="fname">CertificateFullResolutionUrl</label>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-field" placeholder="URL" type="url" id="fname" name="fname" required>
-                        <label class="form-label" for="fname">CertificateCardResolutionUrl</label>
-                    </div>
-                </div>
-                <div class="modal-buttons">
-                    <div class="outlined-button" onclick="closeCourseModal()">
-                        <div class="inner-button">cancel</div>
-                    </div>
-                    <a asp-controller="projects" asp-action="index" class="gradient-button" style="border: 1px solid #323241;">
-                        <div class="inner-button">add course</div>
-                    </a>
-                </div>
-            </form>
-
-        </div>
-        <div class="course-modal" id="update-course-modal">
-            <h1>Update Course</h1>
-
-        </div>
-        <div class="course-modal" id="delete-course-modal">
-            <h1>Delete Course</h1>
-        </div>
-    </div>
-</div>
 <div class="courses-page-external-container">
     <div class="courses-page-container">
-        @if (!User.Identity.IsAuthenticated)
+        @if (!isAuthenticated)
         {
             <div class="admin-section">
                 <span>  
@@ -82,49 +18,46 @@
                     Admin
                 </span>
                 <span>
-                    <div class="simple-button" onclick="openCourseModal('add')">
+                    <a asp-controller="Courses" asp-action="Add" class="simple-button">
                         <img src="~/img/add.svg" />
-                        <div class="inner-button">@LanguageResource["AddCourseButton"]</div>
-                    </div>
-                    <a asp-controller="courses" asp-action="insertcourse" class="simple-button">
+                        <div class="inner-button">add course</div>
+                    </a>
+                    <a asp-controller="Courses" asp-action="Clear" class="simple-button">
                         <img src="~/img/clear-cache.svg" />
                         <div class="inner-button">clear cache</div>
                     </a>
                 </span>
             </div>
         }
-        @{
-            int[] list = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-        }
-        @foreach (var publication in list.Take(6))
+        @foreach (var courseCertificate in Model.CourseCertificateList)
         {
             <div class="course-card">
                 <div class="course-certificate">
-                    @if (!User.Identity.IsAuthenticated)
+                    @if (!isAuthenticated)
                     {
                         <span class="course-buttons">
-                            <div class="course-button edit-button" onclick="openCourseModal('update')">
+                            <a asp-controller="Courses" asp-action="Update" asp-route-id="" class="course-button edit-button">
                                 <img src="~/img/edit-courses.svg" />
-                            </div>
-                            <div class="course-button delete-button" onclick="openCourseModal('delete')">
+                            </a>
+                            <a asp-controller="Courses" asp-action="Delete" asp-route-id="" class="course-button delete-button">
                                 <img src="~/img/delete.svg" />
-                            </div>
+                            </a>
                         </span>
                     }
-                    <div class="course-tag">BACKEND</div>
+                    <div class="course-tag">@courseCertificate.Tag.ToUpper()</div>
                     <div class="course-certificate-front-shadow"></div>
-                    <img src="https://udemy-certificate.s3.amazonaws.com/image/UC-0aa73201-1793-4fef-9628-b2cd11af91f9.jpg?v=1617970572000" alt="certificate" />
+                    <img src="@courseCertificate.CertificateCardResolutionUrl" alt="certificate" />
                 </div>
-                <div class="course-title">C# Primeiros Passos: Lógica de Programação e Algoritmos</div>
+                <div class="course-title">@courseCertificate.CurrentTitle</div>
                 <div class="course-body">
-                    <div>
-                        <img src="~/img/platform.svg" alt="platform" /> Udemy
+                    <div onclick="window.open('@courseCertificate.CourseUrl','platform')">
+                        <img src="~/img/platform.svg" alt="platform" /> @courseCertificate.Platform
+                    </div>
+                    <div onclick="window.open('@courseCertificate.InstructorUrl','instructor-page')">
+                        <img src="~/img/instructor.svg" alt="instructor" /> @courseCertificate.Instructor
                     </div>
                     <div>
-                        <img src="~/img/instructor.svg" alt="instructor" /> Nelio Alves
-                    </div>
-                    <div>
-                        <img src="~/img/workload.svg" alt="workload" /> 36.5 horas
+                        <img src="~/img/workload.svg" alt="workload" /> @courseCertificate.WorkLoad!.Value.ToString("F1") @LanguageResource["Hours"]
                     </div>
                 </div>
                 <div class="gradient-bar"></div>

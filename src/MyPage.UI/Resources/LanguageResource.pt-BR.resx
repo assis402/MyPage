@@ -147,9 +147,6 @@
   <data name="AboutTitle_Name" xml:space="preserve">
     <value>Matheus de Assis</value>
   </data>
-  <data name="AddCourseButton" xml:space="preserve">
-    <value>adicionar curso</value>
-  </data>
   <data name="Background" xml:space="preserve">
     <value>EXPERIÊNCIA</value>
   </data>
@@ -194,6 +191,9 @@
   </data>
   <data name="FitbankTitle_02" xml:space="preserve">
     <value>Desenvolvedor Backend Junior</value>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>horas</value>
   </data>
   <data name="LabsitDate_01" xml:space="preserve">
     <value>agosto 2021 - maio de 2022</value>

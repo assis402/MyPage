@@ -6,7 +6,9 @@ namespace MyPage.Application.Data.Repositories.Interfaces
     {
         public Task<ICollection<TEntity>> GetAll();
 
-        public Task Insert(TEntity entity);
+        public Task<TEntity> GetById(string id);
+
+        public Task Add(TEntity entity);
 
         public Task Update(TEntity entity);
 

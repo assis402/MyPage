@@ -1,10 +1,5 @@
-﻿using Google.Cloud.Firestore;
+﻿using MyPage.Application.Data.Entities;
 using MyPage.Application.Models.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyPage.Application.Models.Courses
 {
@@ -15,13 +10,39 @@ namespace MyPage.Application.Models.Courses
             TitleDictionary = new Dictionary<Language, string>();
         }
 
+        public CourseCertificateModel(CourseCertificate courseCertificateEntity)
+        {
+            var dictionary = new Dictionary<Language, string>();
+
+            foreach (var item in courseCertificateEntity.TitleDictionary)
+                dictionary.Add((Language)item.Key, item.Value);
+
+            TitleDictionary = dictionary;
+            WorkLoad = courseCertificateEntity.WorkLoad;
+            ConclusionDate = courseCertificateEntity.ConclusionDate;
+            Tag = courseCertificateEntity.Tag;
+            Platform = courseCertificateEntity.Platform;
+            Instructor = courseCertificateEntity.Instructor;
+            CourseUrl = courseCertificateEntity.CourseUrl;
+            InstructorUrl = courseCertificateEntity.InstructorUrl;
+            CertificateOriginalUrl = courseCertificateEntity.CertificateOriginalUrl;
+            CertificateFullResolutionUrl = courseCertificateEntity.CertificateFullResolutionUrl;
+            CertificateCardResolutionUrl = courseCertificateEntity.CertificateCardResolutionUrl;
+        }
+
+        public string Id { get; set; }
+
         public IDictionary<Language, string> TitleDictionary { get; set; }
 
-        public double WorkLoad { get; set; }
+        public string CurrentTitle { get; set; }
+
+        public double? WorkLoad { get; set; }
 
         public DateTime ConclusionDate { get; set; }
 
         public string Tag { get; set; }
+
+        public string Platform { get; set; }
 
         public string Instructor { get; set; }
 
@@ -34,5 +55,18 @@ namespace MyPage.Application.Models.Courses
         public string CertificateFullResolutionUrl { get; set; }
 
         public string CertificateCardResolutionUrl { get; set; }
+
+        public void SetTitleByLanguage(Language currentLanguage)
+        {
+            CurrentTitle = GetTitleByLanguage(currentLanguage);
+        }
+
+        public string GetTitleByLanguage(Language currentLanguage)
+        {
+            if (TitleDictionary.TryGetValue(currentLanguage, out string title))
+                return title;
+            else
+                return null;
+        }
     }
 }

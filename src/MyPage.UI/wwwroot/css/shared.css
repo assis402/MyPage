@@ -309,9 +309,9 @@ a {
     transition: filter .2s linear;
 }
 
-.copy-img:hover, .copy-img:active, .copy-img:focus {
-    filter: invert(1);
-}
+    .copy-img:hover, .copy-img:active, .copy-img:focus {
+        filter: invert(1);
+    }
 
 .gradient-bar {
     position: absolute;
@@ -324,7 +324,10 @@ a {
 
 .form {
     position: relative;
-    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
 }
 
 .from-scroll {
@@ -338,21 +341,21 @@ a {
     margin-bottom: 40px;
 }
 
-.from-scroll::-webkit-scrollbar {
-    height: 12px;
-}
+    .from-scroll::-webkit-scrollbar {
+        height: 12px;
+    }
 
-.from-scroll::-webkit-scrollbar-track {
-    background: #0d0e12;
-    border-radius: 10px;
-    margin: 0 0px;
-}
+    .from-scroll::-webkit-scrollbar-track {
+        background: #0d0e12;
+        border-radius: 10px;
+        margin: 0 0px;
+    }
 
-.from-scroll::-webkit-scrollbar-thumb {
-    background-color: #444456;
-    border-radius: 20px;
-    border: 3px solid #0d0e12;
-}
+    .from-scroll::-webkit-scrollbar-thumb {
+        background-color: #444456;
+        border-radius: 20px;
+        border: 3px solid #0d0e12;
+    }
 
 .form-group {
     position: relative;
@@ -418,26 +421,39 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 input[type=number] {
     -moz-appearance: textfield;
+    transition: color .2s linear;
 }
+
+input[type=number]:invalid:not(:focus) {
+    color: transparent;
+}
+
 
 input[type="date"] {
     font-family: "Poppins", sans-serif;
 }
 
-input[type="date"]:focus::-webkit-datetime-edit-text,
-input[type="date"]:focus::-webkit-datetime-edit-month-field,
-input[type="date"]:focus::-webkit-datetime-edit-day-field,
-input[type="date"]:focus::-webkit-datetime-edit-year-field {
-    color: #fff;
-}
+    input[type="date"]:focus::-webkit-datetime-edit-text,
+    input[type="date"]:focus::-webkit-datetime-edit-month-field,
+    input[type="date"]:focus::-webkit-datetime-edit-day-field,
+    input[type="date"]:focus::-webkit-datetime-edit-year-field {
+        color: #fff;
+    }
 
-input[type="date"]::-webkit-datetime-edit-text,
-input[type="date"]::-webkit-datetime-edit-month-field,
-input[type="date"]::-webkit-datetime-edit-day-field,
-input[type="date"]::-webkit-datetime-edit-year-field {
-    color: transparent;
-    transition: color .2s linear;
-}
+    input[type="date"]:not(:focus):invalid::-webkit-datetime-edit-text,
+    input[type="date"]:not(:focus):invalid::-webkit-datetime-edit-month-field,
+    input[type="date"]:not(:focus):invalid::-webkit-datetime-edit-day-field,
+    input[type="date"]:not(:focus):invalid::-webkit-datetime-edit-year-field {
+        color: transparent;
+        transition: color .2s linear;
+    }
+
+    input[type="date"]:valid::-webkit-datetime-edit-text + .form-label,
+    input[type="date"]:valid::-webkit-datetime-edit-month-field + .form-label,
+    input[type="date"]:valid::-webkit-datetime-edit-day-field + .form-label,
+    input[type="date"]:valid::-webkit-datetime-edit-year-field + .form-label {
+        transform: scale(.8) translateY(-25px);
+    }
 
 @media (max-width: 768px) {
     from-scroll::-webkit-scrollbar {
@@ -460,7 +476,7 @@ input[type="date"]::-webkit-datetime-edit-year-field {
         max-width: 5rem;
     }
 
-    .medium-card-img img {
-        height: 5rem;
-    }
+        .medium-card-img img {
+            height: 5rem;
+        }
 }

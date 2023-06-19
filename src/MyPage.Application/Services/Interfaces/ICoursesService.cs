@@ -8,7 +8,13 @@ namespace MyPage.Application.Services.Interfaces
     {
         public Task<CoursesPageModel> GetCoursesPageModel(Language currentLanguage);
 
-        public Task InsertCourse(CourseCertificateModel course);
+        public Task<CourseCertificateModel> GetById(string id);
+
+        public Task Add(CourseCertificateModel course);
+
+        public Task Update(CourseCertificateModel course);
+
+        public Task DeleteById(string id);
 
         public void ClearCoursesCache();
     }

@@ -10,15 +10,12 @@ namespace MyPage.Application.Services
 {
     public class CoursesService : ICoursesService
     {
-        private readonly Settings _settings;
         private readonly ICoursesCacheService _coursesCacheService;
         private readonly ICourseCertificateRepository _courseCertificateRepository;
 
-        public CoursesService(Settings settings,
-            ICoursesCacheService coursesCacheService,
+        public CoursesService(ICoursesCacheService coursesCacheService,
             ICourseCertificateRepository courseCertificateRepository)
         {
-            _settings = settings;
             _coursesCacheService = coursesCacheService;
             _courseCertificateRepository = courseCertificateRepository;
         }
@@ -26,12 +23,29 @@ namespace MyPage.Application.Services
         public async Task<CoursesPageModel> GetCoursesPageModel(Language currentLanguage)
         {
             var courseCertificates = await _courseCertificateRepository.GetAll();
-            return new CoursesPageModel(courseCertificates, currentLanguage);
+            var courseCertificateModels = courseCertificates.Select(x => new CourseCertificateModel(x)).ToList();
+            return new CoursesPageModel(courseCertificateModels, currentLanguage);
         }
 
-        public async Task InsertCourse(CourseCertificateModel course)
+        public async Task<CourseCertificateModel> GetById(string id)
         {
-            await _courseCertificateRepository.Insert(new CourseCertificate(course));
+            var entity = await _courseCertificateRepository.GetById(id);
+            return new CourseCertificateModel(entity);
+        }
+
+        public async Task Add(CourseCertificateModel course)
+        {
+            await _courseCertificateRepository.Add(new CourseCertificate(course));
+        }
+
+        public async Task Update(CourseCertificateModel course)
+        {
+            await _courseCertificateRepository.Update(new CourseCertificate(course));
+        }
+
+        public async Task DeleteById(string id)
+        {
+            await _courseCertificateRepository.Delete(id);
         }
 
         public void ClearCoursesCache() => _coursesCacheService.ClearCache();

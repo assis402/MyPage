@@ -1,10 +1,5 @@
-﻿using MyPage.Application.CustomAttributes;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.ComponentModel;
-using System.Net;
-using System.Reflection;
-using System.Runtime.ConstrainedExecution;
-using System.Security.Claims;
 using System.Text;
 
 namespace MyPage.Application.Helpers

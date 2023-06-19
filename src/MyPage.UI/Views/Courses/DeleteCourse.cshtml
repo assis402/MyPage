@@ -1,0 +1,21 @@
+﻿@using MyPage.Application.Data.Entities;
+@using MyPage.Application.Models.Courses;
+@using MyPage.Application.Models.Enums;
+@model CourseCertificateModel;
+
+<div class="courses-page-external-container">
+    <div class="courses-page-container">
+        <div class="course-model-container">
+            <form asp-controller="Courses" asp-action="Delete" method="delete" enctype="multipart/form-data" class="form">
+                <input type="text" name="Id" value="@Model.Id" hidden />
+                <p>Are you sure you want to delete the course certificate "@Model.GetTitleByLanguage(Language.EN_US)"?</p>
+                <div class="
+uttons">
+                    <input type="reset" class="outlined-button" value="cancel" onclick="closeCourseModal()" />
+                    <input type="submit" class="gradient-button" style="border: 1px solid #323241;" value="delete course" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<h2>Delete Course</h2>

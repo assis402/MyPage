@@ -1,16 +1,8 @@
 ﻿using GoogleAuthentication.Services;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Localization;
 using MyPage.Application.Helpers;
-using MyPage.Application.Models.Courses;
-using MyPage.Application.Models.Enums;
-using MyPage.Application.Models.Google;
-using MyPage.Application.Services;
 using MyPage.Application.Services.Interfaces;
-using Pipelines.Sockets.Unofficial.Buffers;
-using System.Security.Claims;
 
 namespace MyPage.UI.Controllers
 {

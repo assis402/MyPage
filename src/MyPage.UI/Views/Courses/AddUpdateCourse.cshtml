@@ -1,0 +1,70 @@
+﻿@using MyPage.Application.Models.Courses;
+@using MyPage.Application.Models.Enums;
+@model AddUpdateCoursePageModel;
+
+<div class="courses-page-external-container">
+        <div class="course-model-container">
+            <h2>@Model.PageTitle</h2>
+            <a asp-controller="Courses" asp-action="Index" class="back-button">
+                <img src="~/img/back.svg" />
+            </a>
+            <form asp-controller="Courses" asp-action="@Model.Action" method="@Model.Method" enctype="multipart/form-data" class="form">
+                <input type="text" name="Id" value="@Model.CourseCertificate.Id" hidden />
+                @{
+                    var languages = (Language[])Enum.GetValues(typeof(Language));
+                }
+                @for (int index = 0; index < languages.Count(); index++)
+                {
+                    <div class="form-group">
+                        <input type="text" name="TitleDictionary[@index].Key" value="@languages[index]" hidden />
+                        <input class="form-field" type="text" name="TitleDictionary[@index].Value" value="@Model.CourseCertificate.GetTitleByLanguage(languages[index])" required />
+                        <label class="form-label">Course Title (@languages[index].Description())</label>
+                    </div>
+                }
+                <div class="form-group">
+                    <input class="form-field" placeholder="Ex: Udemy" type="text" name="Platform" value="@Model.CourseCertificate.Platform" required />
+                    <label class="form-label">Platform Name</label>
+                </div>
+                <div class="form-group">
+                    <input class="form-field" type="number" step="0.01" name="Workload" value="@Model.CourseCertificate.WorkLoad" required />
+                    <label class="form-label">Workload</label>
+                </div>
+                <div class="form-group">
+                    <input class="form-field" type="date" name="ConclusionDate" value="@Model.CourseCertificate.ConclusionDate" required />
+                    <label class="form-label">Conclusion Date</label>
+                </div>
+                <div class="form-group">
+                    <input class="form-field" placeholder="Ex: Backend" type="text" name="Tag" value="@Model.CourseCertificate.Tag" required />
+                    <label class="form-label">Tag</label>
+                </div>
+                <div class="form-group">
+                    <input class="form-field" placeholder="URL" type="text" name="CourseUrl" value="@Model.CourseCertificate.CourseUrl" required />
+                    <label class="form-label">Course URL</label>
+                </div>
+                <div class="form-group">
+                    <input class="form-field" placeholder="URL" type="text" name="Instructor" value="@Model.CourseCertificate.Instructor" required />
+                    <label class="form-label">Instructor Name</label>
+                </div>
+                <div class="form-group">
+                    <input class="form-field" placeholder="URL" type="text" name="InstructorUrl" value="@Model.CourseCertificate.InstructorUrl" required />
+                    <label class="form-label">Instructor Page URL</label>
+                </div>
+                <div class="form-group">
+                    <input class="form-field" placeholder="URL" type="text" name="CertificateOriginalUrl" value="@Model.CourseCertificate.CertificateOriginalUrl" required />
+                    <label class="form-label">Certificate Original URL</label>
+                </div>
+                <div class="form-group">
+                    <input class="form-field" placeholder="URL" type="text" name="CertificateFullResolutionUrl" value="@Model.CourseCertificate.CertificateFullResolutionUrl" required />
+                    <label class="form-label">Certificate Image URL (Full Resolution)</label>
+                </div>
+                <div class="form-group">
+                    <input class="form-field" placeholder="URL" type="text" name="CertificateCardResolutionUrl" value="@Model.CourseCertificate.CertificateCardResolutionUrl" required />
+                    <label class="form-label">Certificate Image URL (Card Resolution)</label>
+                </div>
+                <div class="modal-buttons">
+                    <input type="reset" class="outlined-button" value="cancel" onclick="closeCourseModal()" />
+                    <input type="submit" class="gradient-button" style="border: 1px solid #131319;" value="@Model.ConfirmButtonText" />
+                </div>
+            </form>
+        </div>
+</div>

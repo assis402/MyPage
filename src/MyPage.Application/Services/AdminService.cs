@@ -2,13 +2,7 @@
 using MyPage.Application.Helpers;
 using MyPage.Application.Models.Google;
 using MyPage.Application.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
 using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyPage.Application.Services
 {

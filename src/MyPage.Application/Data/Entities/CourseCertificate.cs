@@ -2,7 +2,6 @@
 using MyPage.Application.CustomAttributes;
 using MyPage.Application.Models.Courses;
 using MyPage.Application.Models.Enums;
-using System.Drawing;
 
 namespace MyPage.Application.Data.Entities
 {
@@ -12,14 +11,21 @@ namespace MyPage.Application.Data.Entities
     {
         public CourseCertificate()
         {
+            TitleDictionary = new Dictionary<int, string>();
         }
 
         public CourseCertificate(CourseCertificateModel courseInsertModel)
         {
-            TitleDictonary = courseInsertModel.TitleDictionary;
-            WorkLoad = courseInsertModel.WorkLoad;
+            var dictionary = new Dictionary<int, string>();
+
+            foreach (var item in courseInsertModel.TitleDictionary)
+                dictionary.Add((int)item.Key, item.Value);
+
+            TitleDictionary = dictionary;
+            WorkLoad = courseInsertModel.WorkLoad.Value;
             ConclusionDate = courseInsertModel.ConclusionDate;
             Tag = courseInsertModel.Tag;
+            Platform = courseInsertModel.Platform;
             Instructor = courseInsertModel.Instructor;
             CourseUrl = courseInsertModel.CourseUrl;
             InstructorUrl = courseInsertModel.InstructorUrl;
@@ -28,10 +34,8 @@ namespace MyPage.Application.Data.Entities
             CertificateCardResolutionUrl = courseInsertModel.CertificateCardResolutionUrl;
         }
 
-        public string Title { get; set; }
-
         [FirestoreProperty]
-        public IDictionary<Language, string> TitleDictonary { get; set; }
+        public IDictionary<int, string> TitleDictionary { get; set; }
 
         [FirestoreProperty]
         public double WorkLoad { get; set; }
@@ -41,6 +45,9 @@ namespace MyPage.Application.Data.Entities
 
         [FirestoreProperty]
         public string Tag { get; set; }
+
+        [FirestoreProperty]
+        public string Platform { get; set; }
 
         [FirestoreProperty]
         public string Instructor { get; set; }
@@ -59,11 +66,5 @@ namespace MyPage.Application.Data.Entities
 
         [FirestoreProperty]
         public string CertificateCardResolutionUrl { get; set; }
-
-        public void SetTitleByLanguage(Language currentLanguage)
-        {
-            if (TitleDictonary.TryGetValue(currentLanguage, out string title))
-                Title = title;
-        }
     }
 }

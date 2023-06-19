@@ -6,6 +6,7 @@ namespace MyPage.Application.Models.Enums
     {
         [Description("Portuguese")]
         PT_BR,
+
         [Description("English")]
         EN_US
     }
