@@ -19,8 +19,7 @@ namespace MyPage.Application.Data.Entities
         {
             TitleDictionary = courseInsertModel.TitleDictionary;
             WorkLoad = courseInsertModel.WorkLoad.Value;
-            //ConclusionDate = Timestamp.FromDateTime(courseInsertModel.ConclusionDate);
-            ConclusionDate = courseInsertModel.ConclusionDate.ToUniversalTime();
+            ConclusionDate = Timestamp.FromDateTime(courseInsertModel.ConclusionDate);
             Tag = courseInsertModel.Tag;
             Platform = courseInsertModel.Platform;
             Instructor = courseInsertModel.Instructor;
@@ -44,8 +43,7 @@ namespace MyPage.Application.Data.Entities
         public double WorkLoad { get; set; }
 
         [FirestoreProperty]
-        public DateTime ConclusionDate { get; set; }
-        //public Timestamp ConclusionDate { get; set; }
+        public Timestamp ConclusionDate { get; set; }
 
         [FirestoreProperty]
         public string Tag { get; set; }

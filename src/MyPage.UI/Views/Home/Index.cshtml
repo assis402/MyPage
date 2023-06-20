@@ -29,7 +29,7 @@
                     <img class="about-icon" src="~/img/info.svg" />
                     <div class="inner-button">@LanguageResource["AboutButton"]</div>
                 </div>
-                <a asp-controller="projects" asp-action="index" class="outlined-button">
+                <a asp-controller="Projects" asp-action="Index" class="outlined-button">
                     <img class="projects-icon" src="~/img/projects.svg" />
                     <div class="inner-button">@LanguageResource["ProjectsButton"]</div>
                 </a>
@@ -48,7 +48,7 @@
                 @LanguageResource["AboutBody_03"]
             </p>
             <div class="presentation-buttons second-buttons">
-                <a asp-controller="projects" asp-action="index" class="gradient-button second-button">
+                <a asp-controller="Projects" asp-action="Index" class="gradient-button second-button">
                     <img class="projects-icon" src="~/img/projects.svg" />
                     <div class="inner-button">@LanguageResource["SecondProjectsButton"]</div>
                 </a>
@@ -163,30 +163,10 @@
         <div class="mini-title">@LanguageResource["CoursesTitle"]</div>
         <div class="courses-body">
             @{
-                int[] list = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            }
-            @foreach (var publication in list.Take(6))
-            {
-                <div class="course-card">
-                    <div class="course-certificate">
-                        <div class="course-tag">BACKEND</div>
-                        <div class="course-certificate-front-shadow"></div>
-                        <img src="https://udemy-certificate.s3.amazonaws.com/image/UC-0aa73201-1793-4fef-9628-b2cd11af91f9.jpg?v=1617970572000" alt="certificate" />
-                    </div>
-                    <div class="course-title">C# Primeiros Passos: Lógica de Programação e Algoritmos</div>
-                    <div class="course-body">
-                        <div>
-                            <img src="~/img/platform.svg" alt="platform" /> Udemy
-                        </div>
-                        <div>
-                            <img src="~/img/instructor.svg" alt="instructor" /> Nelio Alves
-                        </div>
-                        <div>
-                            <img src="~/img/workload.svg" alt="workload" /> 36.5 horas
-                        </div>
-                    </div>
-                    <div class="gradient-bar"></div>
-                </div>
+                foreach (var courseCertificate in Model.CourseCertificateList)
+                {
+                    await Html.RenderPartialAsync("~/Views/Courses/_CourseCard.cshtml", courseCertificate);
+                }
             }
         </div>
         <div class="more" onclick="window.open('@Settings.MediumSettings.UserUrl','medium')">

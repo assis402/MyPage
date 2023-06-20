@@ -1,5 +1,4 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using MyPage.Application.Data.Entities;
+﻿using MyPage.Application.Data.Entities;
 using MyPage.Application.Models.Enums;
 
 namespace MyPage.Application.Models.Courses
@@ -13,10 +12,10 @@ namespace MyPage.Application.Models.Courses
 
         public CourseCertificateModel(CourseCertificate courseCertificateEntity)
         {
+            Id = courseCertificateEntity.Id;
             TitleDictionary = courseCertificateEntity.TitleDictionary;
             WorkLoad = courseCertificateEntity.WorkLoad;
-            //ConclusionDate = courseCertificateEntity.ConclusionDate.ToDateTime();
-            ConclusionDate = courseCertificateEntity.ConclusionDate;
+            ConclusionDate = courseCertificateEntity.ConclusionDate.ToDateTime();
             Tag = courseCertificateEntity.Tag;
             Platform = courseCertificateEntity.Platform;
             Instructor = courseCertificateEntity.Instructor;
@@ -52,6 +51,11 @@ namespace MyPage.Application.Models.Courses
         public string CertificateFullResolutionUrl { get; set; }
 
         public string CertificateCardResolutionUrl { get; set; }
+
+        public string GetCertificateImgUrl()
+        {
+            return CertificateOriginalUrl ?? CertificateFullResolutionUrl;
+        }
 
         public void SetTitleByLanguage(Language currentLanguage)
         {

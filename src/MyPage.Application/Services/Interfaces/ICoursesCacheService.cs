@@ -1,8 +1,8 @@
-﻿using MyPage.Application.Data.Entities;
+﻿using MyPage.Application.Models.Courses;
 
 namespace MyPage.Application.Services.Interfaces
 {
-    public interface ICoursesCacheService : IMemoryCacheService<ICollection<CourseCertificate>>
+    public interface ICoursesCacheService : IMemoryCacheService<ICollection<CourseCertificateModel>>
     {
     }
 }

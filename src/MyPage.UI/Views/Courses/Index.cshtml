@@ -4,13 +4,10 @@
 @using MyPage.Application.Models.Pages;
 @using MyPage.Application.Models.Enums;
 @model CoursesPageModel
-@{
-    var isAuthenticated = User.Identity?.IsAuthenticated ?? false;
-}
 
 <div class="courses-page-external-container">
     <div class="courses-page-container">
-        @if (!isAuthenticated)
+        @if (!User.Identity?.IsAuthenticated ?? false)
         {
             <div class="admin-section">
                 <span>  
@@ -29,39 +26,11 @@
                 </span>
             </div>
         }
-        @foreach (var courseCertificate in Model.CourseCertificateList)
-        {
-            <div class="course-card">
-                <div class="course-certificate">
-                    @if (!isAuthenticated)
-                    {
-                        <span class="course-buttons">
-                            <a asp-controller="Courses" asp-action="Update" asp-route-id="" class="course-button edit-button">
-                                <img src="~/img/edit-courses.svg" />
-                            </a>
-                            <a asp-controller="Courses" asp-action="Delete" asp-route-id="" class="course-button delete-button">
-                                <img src="~/img/delete.svg" />
-                            </a>
-                        </span>
-                    }
-                    <div class="course-tag">@courseCertificate.Tag.ToUpper()</div>
-                    <div class="course-certificate-front-shadow"></div>
-                    <img src="@courseCertificate.CertificateCardResolutionUrl" alt="certificate" />
-                </div>
-                <div class="course-title">@courseCertificate.CurrentTitle</div>
-                <div class="course-body">
-                    <div onclick="window.open('@courseCertificate.CourseUrl','platform')">
-                        <img src="~/img/platform.svg" alt="platform" /> @courseCertificate.Platform
-                    </div>
-                    <div onclick="window.open('@courseCertificate.InstructorUrl','instructor-page')">
-                        <img src="~/img/instructor.svg" alt="instructor" /> @courseCertificate.Instructor
-                    </div>
-                    <div>
-                        <img src="~/img/workload.svg" alt="workload" /> @courseCertificate.WorkLoad!.Value.ToString("F1") @LanguageResource["Hours"]
-                    </div>
-                </div>
-                <div class="gradient-bar"></div>
-            </div>
+        @{
+            foreach (var courseCertificate in Model.CourseCertificateList)
+            {
+                await Html.RenderPartialAsync("_CourseCard", courseCertificate);
+            }
         }
     </div>
 </div>

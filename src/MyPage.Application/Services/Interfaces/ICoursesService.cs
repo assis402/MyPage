@@ -8,6 +8,10 @@ namespace MyPage.Application.Services.Interfaces
     {
         public Task<CoursesPageModel> GetCoursesPageModel(Language currentLanguage);
 
+        public Task<ICollection<CourseCertificateModel>> GetAllFromCache();
+
+        public Task<ICollection<CourseCertificateModel>> GetAll();
+
         public Task<CourseCertificateModel> GetById(string id);
 
         public Task Add(CourseCertificateModel course);

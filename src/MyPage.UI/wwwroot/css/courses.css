@@ -28,6 +28,7 @@
     align-items: center;
     border: 2px dashed #3f3f43;
     font-weight: 500;
+    margin-bottom: 10px;
 }
 
     .admin-section span {
@@ -91,7 +92,7 @@
 }
 
 .edit-button {
-    background: #5e20c9c2;
+    background: #4814c5c2;
 }
 
 .delete-button {
@@ -100,13 +101,13 @@
 
 .course-button img {
     height: 18px;
-    width: 18px;
+    width: 18px !important;
     filter: invert(1);
     margin-bottom: 1.5px;
 }
 
 .edit-button:hover, .edit-button:focus {
-    background: #5e22c4;
+    background: #5222c5;
 }
 
 .delete-button:hover, .delete-button:focus {
@@ -122,11 +123,11 @@
     margin: 20px 0;
 }
 
-.course-model-container h2 {
-    margin-top: 0;
-    margin-bottom: 30px;
-    text-align: center;
-}
+    .course-model-container h2 {
+        margin-top: 0;
+        margin-bottom: 30px;
+        text-align: center;
+    }
 
 .modal-buttons {
     display: flex;
@@ -191,5 +192,34 @@
 
     .course-card:hover {
         transform: none;
+    }
+
+    .admin-section span {
+        font-size: 14px;
+        gap: 5px;
+    }
+
+    .admin-section img {
+        height: 16px;
+    }
+
+    .simple-button {
+        padding: 6px 8px;
+    }
+
+        .simple-button .inner-button {
+            line-height: 17px;
+            font-size: 12px !important;
+        }
+
+        .simple-button img {
+            height: 18px;
+        }
+
+    .course-button img {
+        height: 15px;
+        width: 15px !important;
+        filter: invert(1);
+        margin-bottom: 1.5px;
     }
 }

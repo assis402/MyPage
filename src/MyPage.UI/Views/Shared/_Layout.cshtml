@@ -32,25 +32,25 @@
                         <img class="my-photo" id="my-photo" src="~/img/perfil.png" alt="My perfil photo" loading="lazy" />
                     </div>
                     <p id="name">
-                        <a asp-controller="home" asp-action="index" class="name">matheusassis</a>
+                        <a asp-controller="Home" asp-action="Index" class="name">matheusassis</a>
                     </p>
                 </div>
 
                 <div class="menu-items" id="menu-items">
-                    <a asp-controller="home" asp-action="index" class="menu-item">
+                    <a asp-controller="Home" asp-action="Index" class="menu-item">
                         @LanguageResource["AboutMenu"]
                     </a>
-                    <a asp-controller="courses" asp-action="index" class="menu-item">
+                    <a asp-controller="Courses" asp-action="Index" class="menu-item">
                         @LanguageResource["CoursesMenu"]
                     </a>
-                    <a asp-controller="projects" asp-action="index" class="menu-item">
+                    <a asp-controller="Projects" asp-action="Index" class="menu-item">
                         @LanguageResource["ProjectsMenu"]
                     </a>
                     <div class="menu-languages">
-                        <a asp-controller="language" asp-action="change" asp-route-culture="en-US" class="language-link">
+                        <a asp-controller="Language" asp-action="Change" asp-route-culture="en-US" class="language-link">
                             <img class="menu-language-flag @(culture == "en_US" ? "menu-language-flag-active" : "")" src="~/img/en-us.svg" />
                         </a>
-                        <a asp-controller="language" asp-action="change" asp-route-culture="pt-BR" class="language-link">
+                        <a asp-controller="Language" asp-action="Change" asp-route-culture="pt-BR" class="language-link">
                             <img class="menu-language-flag @(culture == "pt_BR" ? "menu-language-flag-active" : "")" id="ptBR-flag" src="~/img/pt-br.svg" />
                         </a>
                     </div>
@@ -64,21 +64,21 @@
             </div>
             <div class="menu-mobile" id="menu-mobile">
                 <div class="menu-items-mobile">
-                    <a asp-controller="home" asp-action="index" class="menu-item">
+                    <a asp-controller="Home" asp-action="Index" class="menu-item">
                         @LanguageResource["AboutMenu"]
                     </a>
-                    <a asp-controller="courses" asp-action="index" class="menu-item">
+                    <a asp-controller="Courses" asp-action="Index" class="menu-item">
                         @LanguageResource["CoursesMenu"]
                     </a>
-                    <a asp-controller="projects" asp-action="index" class="menu-item">
+                    <a asp-controller="Projects" asp-action="Index" class="menu-item">
                         @LanguageResource["ProjectsMenu"]
                     </a>
                 </div>
                 <div class="menu-languages-mobile">
-                    <a asp-controller="language" asp-action="change" asp-route-culture="en-US" class="language-link">
+                    <a asp-controller="Language" asp-action="Change" asp-route-culture="en-US" class="language-link">
                         <img class="menu-language-flag @(culture == "en_US" ? "menu-language-flag-active" : "")" src="~/img/en-us.svg" />
                     </a>
-                    <a asp-controller="language" asp-action="change" asp-route-culture="pt-BR" class="language-link">
+                    <a asp-controller="Language" asp-action="Change" asp-route-culture="pt-BR" class="language-link">
                         <img class="menu-language-flag @(culture == "pt_BR" ? "menu-language-flag-active" : "")" src="~/img/pt-br.svg" />
                     </a>
                 </div>

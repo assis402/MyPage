@@ -377,13 +377,13 @@ a {
     z-index: 2;
 }
 
-.form-field:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
-    color: #fff !important;
-    -webkit-text-fill-color: #fff;
-    font-size: 15px;
-    font-family: "Poppins", sans-serif;
-}
+    .form-field:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+        color: #fff !important;
+        -webkit-text-fill-color: #fff;
+        font-size: 15px;
+        font-family: "Poppins", sans-serif;
+    }
 
 .form-label {
     position: absolute;
@@ -432,10 +432,9 @@ input[type=number] {
     transition: color .2s linear;
 }
 
-input[type=number]:invalid:not(:focus) {
-    color: transparent;
-}
-
+    input[type=number]:invalid:not(:focus) {
+        color: transparent;
+    }
 
 input[type="date"] {
     font-family: "Poppins", sans-serif;

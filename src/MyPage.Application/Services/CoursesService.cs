@@ -1,6 +1,5 @@
 ﻿using MyPage.Application.Data.Entities;
 using MyPage.Application.Data.Repositories.Interfaces;
-using MyPage.Application.Helpers;
 using MyPage.Application.Models.Courses;
 using MyPage.Application.Models.Enums;
 using MyPage.Application.Models.Pages;
@@ -22,9 +21,19 @@ namespace MyPage.Application.Services
 
         public async Task<CoursesPageModel> GetCoursesPageModel(Language currentLanguage)
         {
-            var courseCertificates = await _courseCertificateRepository.GetAll();
-            var courseCertificateModels = courseCertificates.Select(x => new CourseCertificateModel(x)).ToList();
+            var courseCertificateModels = await GetAllFromCache();
             return new CoursesPageModel(courseCertificateModels, currentLanguage);
+        }
+
+        public async Task<ICollection<CourseCertificateModel>> GetAllFromCache()
+        {
+            return await _coursesCacheService.GetOrCreate(GetAll);
+        }
+
+        public async Task<ICollection<CourseCertificateModel>> GetAll()
+        {
+            var courseCertificates = await _courseCertificateRepository.GetAll();
+            return courseCertificates.Select(x => new CourseCertificateModel(x)).ToList();
         }
 
         public async Task<CourseCertificateModel> GetById(string id)

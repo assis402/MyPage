@@ -677,4 +677,16 @@
     .timeline-body, .courses-body, .medium-body {
         padding: 0 8%;
     }
+
+    .course-certificate-front-shadow {
+        height: 160px;
+    }
+
+    .course-certificate img {
+        height: 160px;
+    }
+
+    .course-certificate {
+        height: 160px;
+    }
 }

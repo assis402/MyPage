@@ -34,8 +34,6 @@ namespace MyPage.UI.Controllers
         }
 
         [HttpPost]
-        //[Authorize]
-        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Add(CourseCertificateModel courseModel)
         {
             await _coursesService.Add(courseModel);
@@ -50,8 +48,6 @@ namespace MyPage.UI.Controllers
         }
 
         [HttpPut]
-        //[Authorize]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(CourseCertificateModel courseModel)
         {
             await _coursesService.Update(courseModel);
@@ -66,8 +62,6 @@ namespace MyPage.UI.Controllers
         }
 
         [HttpDelete]
-        //[Authorize]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(CourseCertificateModel courseModel)
         {
             await _coursesService.DeleteById(courseModel.Id);
