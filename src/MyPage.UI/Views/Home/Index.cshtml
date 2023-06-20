@@ -161,7 +161,7 @@
 <div class="gradient-external-container">
     <div class="gradient-container">
         <div class="mini-title">@LanguageResource["CoursesTitle"]</div>
-        <div class="courses-body">
+        @*<div class="courses-body">
             @foreach (var publication in Model.PublicationList.Take(5))
             {
                 <div class="course-card">
@@ -183,8 +183,8 @@
                     </div>
                 </div>
             }
-        </div>
-        <div class="more" onclick="window.open('@Settings.MediumUserUrl','medium')">
+        </div>*@
+        <div class="more">
             <span class="material-symbols-outlined">more_horiz</span>
             <p class="more-text">@LanguageResource["CoursesMore"]</p>
         </div>
