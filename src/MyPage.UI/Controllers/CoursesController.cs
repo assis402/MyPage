@@ -30,9 +30,10 @@ namespace MyPage.UI.Controllers
         //[Authorize]
         public IActionResult Add()
         {
-            return View("AddUpdateCourse", new AddUpdateCoursePageModel());
+            return View();
         }
 
+        //[Authorize]
         [HttpPost]
         public async Task<IActionResult> Add(CourseCertificateModel courseModel)
         {
@@ -44,10 +45,11 @@ namespace MyPage.UI.Controllers
         public async Task<IActionResult> Update(string id)
         {
             var courseModel = await _coursesService.GetById(id);
-            return View("AddUpdateCourse", new AddUpdateCoursePageModel(courseModel));
+            return View(courseModel);
         }
 
-        [HttpPut]
+        //[Authorize]
+        [HttpPost]
         public async Task<IActionResult> Update(CourseCertificateModel courseModel)
         {
             await _coursesService.Update(courseModel);
@@ -58,10 +60,10 @@ namespace MyPage.UI.Controllers
         public async Task<IActionResult> Delete(string id)
         {
             var courseModel = await _coursesService.GetById(id);
-            return View("DeleteCourse", courseModel);
+            return View(courseModel);
         }
 
-        [HttpDelete]
+        [HttpPost]
         public async Task<IActionResult> Delete(CourseCertificateModel courseModel)
         {
             await _coursesService.DeleteById(courseModel.Id);

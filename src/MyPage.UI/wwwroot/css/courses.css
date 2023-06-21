@@ -159,6 +159,11 @@
         filter: invert(1);
     }
 
+.course-form-button {
+    border: 1px solid #000;
+    font-size: 16px !important;
+}
+
 @media screen and (max-width: 1320px) {
     .courses-page-container {
         max-width: 940px;

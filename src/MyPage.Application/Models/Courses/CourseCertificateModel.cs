@@ -34,7 +34,7 @@ namespace MyPage.Application.Models.Courses
 
         public double? WorkLoad { get; set; }
 
-        public DateTime ConclusionDate { get; set; }
+        public DateTime? ConclusionDate { get; set; }
 
         public string Tag { get; set; }
 

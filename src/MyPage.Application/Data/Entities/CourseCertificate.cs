@@ -17,9 +17,10 @@ namespace MyPage.Application.Data.Entities
 
         public CourseCertificate(CourseCertificateModel courseInsertModel)
         {
+            Id = courseInsertModel.Id;
             TitleDictionary = courseInsertModel.TitleDictionary;
             WorkLoad = courseInsertModel.WorkLoad.Value;
-            ConclusionDate = Timestamp.FromDateTime(courseInsertModel.ConclusionDate);
+            ConclusionDate = Timestamp.FromDateTime(courseInsertModel.ConclusionDate?.ToUniversalTime() ?? DateTime.UtcNow);
             Tag = courseInsertModel.Tag;
             Platform = courseInsertModel.Platform;
             Instructor = courseInsertModel.Instructor;

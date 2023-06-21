@@ -3,7 +3,10 @@
 
 <div class="course-card">
     <div class="course-certificate" onclick="window.open('@Model.GetCertificateImgUrl()','certicate-img')">
-        @if (!User.Identity?.IsAuthenticated ?? false)
+        @{
+            var pageName = ViewContext.RouteData.Values["controller"]?.ToString()?.ToLower();
+        }
+        @if ((!User.Identity?.IsAuthenticated ?? false) && pageName == "courses")
         {
             <span class="course-buttons">
                 <a asp-controller="Courses" asp-action="Update" asp-route-id="@Model.Id" class="course-button edit-button">

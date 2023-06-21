@@ -5,7 +5,7 @@ namespace MyPage.UI.Controllers
 {
     public class LanguageController : Controller
     {
-        [Route("change")]
+        [Route("Change")]
         public IActionResult Change(string culture)
         {
             var requestCulture = new RequestCulture(culture);

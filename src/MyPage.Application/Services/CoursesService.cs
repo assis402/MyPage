@@ -45,16 +45,19 @@ namespace MyPage.Application.Services
         public async Task Add(CourseCertificateModel course)
         {
             await _courseCertificateRepository.Add(new CourseCertificate(course));
+            ClearCoursesCache();
         }
 
         public async Task Update(CourseCertificateModel course)
         {
             await _courseCertificateRepository.Update(new CourseCertificate(course));
+            ClearCoursesCache();
         }
 
         public async Task DeleteById(string id)
         {
             await _courseCertificateRepository.Delete(id);
+            ClearCoursesCache();
         }
 
         public void ClearCoursesCache() => _coursesCacheService.ClearCache();

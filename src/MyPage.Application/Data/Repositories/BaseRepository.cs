@@ -26,6 +26,7 @@ namespace MyPage.Application.Data.Repositories
                 {
                     var dictionayDocument = document.ToDictionary();
                     var entity = dictionayDocument.ToJson().ToObject<TEntity>();
+                    entity.Id = document.Id;
                     entityList.Add(entity);
                 }
             }
@@ -41,6 +42,7 @@ namespace MyPage.Application.Data.Repositories
             {
                 var dictionayDocument = document.ToDictionary();
                 var entity = dictionayDocument.ToJson().ToObject<TEntity>();
+                entity.Id = document.Id;
                 return entity;
             }
             else
