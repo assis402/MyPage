@@ -21,6 +21,9 @@ namespace MyPage.UI.Controllers
 
         public async Task<IActionResult> Index()
         {
+            if (TempData["Message"] is not null)
+                ViewBag.Message = TempData["Message"]!.ToString();
+
             var currentLanguage = _languageResource["Culture"].Value.ToEnum<Language>();
             var coursesPageModel = await _coursesService.GetCoursesPageModel(currentLanguage);
 
@@ -67,6 +70,21 @@ namespace MyPage.UI.Controllers
         public async Task<IActionResult> Delete(CourseCertificateModel courseModel)
         {
             await _coursesService.DeleteById(courseModel.Id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult ClearCache()
+        {
+            try
+            {
+                _coursesService.ClearCoursesCache();
+                TempData["Message"] = "Cache in memory Courses cleared successfully.";
+            }
+            catch (Exception ex)
+            {
+                TempData["Message"] = "Error when clearing cache in memory Courses.";
+            }
+
             return RedirectToAction(nameof(Index));
         }
     }

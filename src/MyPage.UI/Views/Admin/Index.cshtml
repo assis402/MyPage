@@ -19,7 +19,7 @@
             <p>Only the owner of this site may use this page.</p>
         </div>
         <div class="admin-divisor"></div>
-        @if (ViewBag.IsAuthenticated)
+        @if (!ViewBag.IsAuthenticated)
         {
             <a class="google-button" asp-controller="admin" asp-action="login">
                 <img src="~/img/google.svg" />
@@ -29,7 +29,7 @@
         else
         {
             <div class="admin-options">
-                <a class="option-button" asp-controller="Courses" asp-action="index">
+                <a class="option-button" asp-controller="Courses" asp-action="Index">
                     <img src="~/img/edit-courses.svg" />
                     manage certificates
                 </a>

@@ -2,11 +2,11 @@
 @model CourseCertificateModel
 
 <div class="course-card">
-    <div class="course-certificate" onclick="window.open('@Model.GetCertificateImgUrl()','certicate-img')">
+    <div class="course-certificate">
         @{
             var pageName = ViewContext.RouteData.Values["controller"]?.ToString()?.ToLower();
         }
-        @if ((!User.Identity?.IsAuthenticated ?? false) && pageName == "courses")
+        @if ((User.Identity?.IsAuthenticated ?? false) && pageName == "courses")
         {
             <span class="course-buttons">
                 <a asp-controller="Courses" asp-action="Update" asp-route-id="@Model.Id" class="course-button edit-button">
@@ -17,8 +17,8 @@
                 </a>
             </span>
         }
-        <div class="course-tag">@Model.Tag.ToUpper()</div>
-        <div class="course-certificate-front-shadow"></div>
+        <div class="course-tag" onclick="window.open('@Model.GetCertificateImgUrl()','certicate-img')">@Model.Tag.ToUpper()</div>
+        <div class="course-certificate-front-shadow" onclick="window.open('@Model.GetCertificateImgUrl()','certicate-img')"></div>
         <img src="@Model.CertificateCardResolutionUrl" alt="certificate" />
     </div>
     <div class="course-title" onclick="window.open('@Model.CourseUrl','platform')">@Model.CurrentTitle</div>

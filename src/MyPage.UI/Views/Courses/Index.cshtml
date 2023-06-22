@@ -5,9 +5,18 @@
 @using MyPage.Application.Models.Enums;
 @model CoursesPageModel
 
+@if (ViewBag.Message != null)
+{
+    <script>
+        window.onload = () => {
+            alert('@ViewBag.Message');
+        }
+    </script>
+}
+
 <div class="courses-page-external-container">
     <div class="courses-page-container">
-        @if (!User.Identity?.IsAuthenticated ?? false)
+        @if (User.Identity?.IsAuthenticated ?? false)
         {
             <div class="admin-section">
                 <span>  
@@ -19,7 +28,7 @@
                         <img src="~/img/add.svg" />
                         <div class="inner-button">add course</div>
                     </a>
-                    <a asp-controller="Courses" asp-action="Clear" class="simple-button">
+                    <a asp-controller="Courses" asp-action="ClearCache" class="simple-button">
                         <img src="~/img/clear-cache.svg" />
                         <div class="inner-button">clear cache</div>
                     </a>
