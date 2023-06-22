@@ -1,5 +1,6 @@
 ﻿using GoogleAuthentication.Services;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyPage.Application.Helpers;
 using MyPage.Application.Services.Interfaces;
@@ -49,6 +50,12 @@ namespace MyPage.UI.Controllers
 
         public IActionResult Login() => Redirect(_googleLoginUrl);
 
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
         public async Task<IActionResult> Callback(string code)
         {
             var googleProfile = await _adminService.GetGoogleProfile(code);
@@ -66,6 +73,7 @@ namespace MyPage.UI.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize]
         public IActionResult ClearCoursesCache()
         {
             try
@@ -81,6 +89,7 @@ namespace MyPage.UI.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize]
         public IActionResult ClearPublicationsCache()
         {
             try
@@ -96,6 +105,7 @@ namespace MyPage.UI.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize]
         public IActionResult ClearProjectsCache()
         {
             try

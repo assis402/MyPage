@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using MyPage.Application.Helpers;
 using MyPage.Application.Models.Courses;
@@ -30,36 +31,36 @@ namespace MyPage.UI.Controllers
             return View(coursesPageModel);
         }
 
-        //[Authorize]
+        [Authorize]
         public IActionResult Add()
         {
             return View();
         }
 
-        //[Authorize]
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Add(CourseCertificateModel courseModel)
         {
             await _coursesService.Add(courseModel);
             return RedirectToAction(nameof(Index));
         }
 
-        //[Authorize]
+        [Authorize]
         public async Task<IActionResult> Update(string id)
         {
             var courseModel = await _coursesService.GetById(id);
             return View(courseModel);
         }
 
-        //[Authorize]
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Update(CourseCertificateModel courseModel)
         {
             await _coursesService.Update(courseModel);
             return RedirectToAction(nameof(Index));
         }
 
-        //[Authorize]
+        [Authorize]
         public async Task<IActionResult> Delete(string id)
         {
             var courseModel = await _coursesService.GetById(id);
@@ -67,12 +68,14 @@ namespace MyPage.UI.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Delete(CourseCertificateModel courseModel)
         {
             await _coursesService.DeleteById(courseModel.Id);
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize]
         public IActionResult ClearCache()
         {
             try
