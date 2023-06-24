@@ -1,4 +1,8 @@
-﻿body, head {
+﻿html {
+    scroll-behavior: smooth;
+}
+
+body, head {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
 }
@@ -29,20 +33,35 @@ a {
 }
 
 .menu {
+    position: relative;
     flex-wrap: wrap;
     display: flex;
     z-index: 10000;
 }
 
 .menu-container {
+    position: relative;
     display: flex;
     width: 100%;
     align-items: center;
-    background: rgb(0, 0, 0);
     justify-content: space-between;
     padding: 20px;
     z-index: 10000;
     border-bottom: 0px solid rgba(210, 213, 255, 0.3);
+    transition: border-bottom .3s linear, padding .3s linear;
+}
+
+.menu-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba(0,0,0,.35);
+    backdrop-filter: blur(4px);
+    transition: opacity .2s linear;
 }
 
 .menu-items {
@@ -62,7 +81,6 @@ a {
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: row;
-    background: rgb(0, 0, 0);
     width: 100%;
     height: auto;
     opacity: 0;
@@ -95,7 +113,7 @@ a {
     padding: 8px 12px;
     font-size: 18px;
     transition: opacity .2s linear;
-    font-weight: 300;
+    font-weight: 400;
     -webkit-tap-highlight-color: transparent;
 }
 

@@ -2,6 +2,7 @@
 @model AboutPageModel;
 
 <div class="about-external-container" id="about-external-container">
+    <div class="background"></div>
     <div class="about-container">
         <div class="about-minified">
             <p class="about-title">@LanguageResource["AboutTitle_Greeting"] <br /> <b>@LanguageResource["AboutTitle_Name"]</b></p>
@@ -25,16 +26,22 @@
                 @LanguageResource["PresentationText"]
             </p>
             <div class="presentation-buttons">
-                <div class="gradient-button" onclick="showAbout()">
+                <a href="#about-more" class="gradient-button">
                     <img class="about-icon" src="~/img/info.svg" />
                     <div class="inner-button">@LanguageResource["AboutButton"]</div>
-                </div>
+                </a>
                 <a asp-controller="Projects" asp-action="Index" class="outlined-button">
                     <img class="projects-icon" src="~/img/projects.svg" />
                     <div class="inner-button">@LanguageResource["ProjectsButton"]</div>
                 </a>
             </div>
         </div>
+    </div>
+    <div class="about-top-divisor" id="about-more"></div>
+</div>
+<div class="black-external-container">
+    <div class="black-container">
+        <div class="mini-title">@LanguageResource["MediumTitle"]</div>
         <div id="about-body-container">
             <p class="about-body" id="about-body-1">
                 @string.Format(LanguageResource["AboutBody_01"], Model.WorkYears, Model.WorkMonths)
@@ -47,6 +54,19 @@
             <p class="about-body" id="about-body-3">
                 @LanguageResource["AboutBody_03"]
             </p>
+            <div class="about-skills">
+                <div class="skill csharp">
+                    <p class="skill-title">C# .NET</p>
+                    <div class="skill-bar">
+                        <div class="skill-bar-1"></div>
+                        <div class="skill-bar-2"></div>
+                        <div class="skill-bar-3"></div>
+                        <div class="skill-bar-4"></div>
+                        <div class="skill-bar-5"></div>
+                    </div>
+                </div>
+            </div>
+
             <div class="presentation-buttons second-buttons">
                 <a asp-controller="Projects" asp-action="Index" class="gradient-button second-button">
                     <img class="projects-icon" src="~/img/projects.svg" />

@@ -1,7 +1,24 @@
 ﻿.about-external-container {
+    position: relative;
     display: flex;
     justify-content: center;
     min-height: 100vh;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    filter: blur(0.7px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: bottom;
+    z-index: -2;
+    background-image: url(../img/background.jpg);
+    opacity: 0.48;
+    box-shadow: inset 0 120px 120px -20px rgba(0,0,0,0.8);
 }
 
 .about-container {
@@ -25,12 +42,17 @@
     color: #bfbfbf;
 }
 
+.about-top-divisor {
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    bottom: 0;
+}
+
 #about-body-container {
     padding: 0 10%;
-    opacity: 0;
-    display: none;
     transition: opacity .2s linear;
-    max-width: 1100px;
+    max-width: 900px;
 }
 
 .about-minified {
@@ -55,13 +77,12 @@
 
 .main-stack {
     display: flex;
-    background: linear-gradient(to right,#070808,#242430);
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
     height: 140px;
     padding: 15px 30px;
-    background-color: #0c0c0c;
+    background-color: rgba(12,12,14,0.53);
     z-index: -1;
 }
 
@@ -202,6 +223,28 @@
 .inner-button {
     font-size: 15px;
 }
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    jus
+}
+
+.skill-bar {
+    display: flex;
+    max-width: 700px;
+    height: 20px;
+    transform: skew(-.3rad);
+    background: linear-gradient(to right,#27006a,#541db1);
+}
+
+    .skill-bar div {
+        height: 20px;
+        width: 20%;
+        transform: skew(-.3rad);
+        border: solid 1px white;
+    }
 
 @media(max-width: 1200px) {
     .about-title {
