@@ -21,8 +21,9 @@ function handleMobileMenu() {
         if (window.pageYOffset > 20 || document.body.scrollTop > 20) {
             document.getElementById("menu-container").style.borderBottom = "1px solid rgba(255, 255, 255, 0.15)"
         }
-
-        document.getElementById("menu-background").style.opacity = "0";
+        else {
+            document.getElementById("menu-background").style.opacity = "0";
+        }
 
         setTimeout(() => {
             document.getElementById("menu-mobile").style.display = "none"
@@ -60,7 +61,10 @@ function scrollFunction() {
         document.getElementById("my-photo").style.transition = "width .3s linear, margin .3s linear";
         document.getElementById("menu-container").style.padding = "20px";
         document.getElementById("menu-container").style.borderBottom = "0px solid rgba(255, 255, 255, 0)";
-        document.getElementById("menu-background").style.opacity = "0";
+
+        if (!menuIsOpen) {
+            document.getElementById("menu-background").style.opacity = "0";
+        }
     }
 }
 

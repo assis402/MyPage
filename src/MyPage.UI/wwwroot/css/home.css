@@ -197,7 +197,7 @@
 }
 
 .second-buttons {
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .second-button {
@@ -224,26 +224,92 @@
     font-size: 15px;
 }
 
+.about-body-internal-container {
+    margin: 40px 0 60px 0;
+    max-width: 900px; 
+}
+
+.about-skills {     
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 .skill {
     display: flex;
     flex-direction: column;
-    font-size: 13px;
-    jus
+    width: 100%;
+    max-width: 600px;
 }
 
+    .skill p {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
 .skill-bar {
+    position: relative;
     display: flex;
-    max-width: 700px;
-    height: 20px;
-    transform: skew(-.3rad);
-    background: linear-gradient(to right,#27006a,#541db1);
+    justify-content: space-between;
+    height: 17px;
+    transform: skew(-.5rad);
+    background: linear-gradient(to right,#27006a,#7b2dff);
 }
 
     .skill-bar div {
-        height: 20px;
-        width: 20%;
-        transform: skew(-.3rad);
-        border: solid 1px white;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        height: 17px;
+        width: 18%;
+        border: solid 1px #4d4d4d;
+    }
+
+.skill-gaps {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    height: 17px;
+    width: 100%;
+}
+
+    .skill-gaps span {
+        display: block;
+        background: black;
+        width: 2.5%;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+
+.skill-nolevel {
+    background-color: black !important;
+}
+
+.about-certifications {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+}
+
+    .about-certifications a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all .2s ease-in-out;
+    }
+
+    .about-certifications a:hover {
+        transform: scale(1.1);
+    }
+
+    .about-certifications img {
+        height: 150px;
     }
 
 @media(max-width: 1200px) {
@@ -331,6 +397,10 @@
     .tech-icon {
         height: 60px;
     }
+
+    .about-certifications a {
+        width: 135px;
+    }
 }
 
 .margin-top {
@@ -348,12 +418,6 @@
     align-items: center;
     flex-direction: column;
     justify-content: flex-start;
-}
-
-.mini-sub-title {
-    color: #9b9a9a;
-    font-weight: 200;
-    font-size: 12px;
 }
 
 .timeline-body {
@@ -515,7 +579,6 @@
     align-items: center;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 10px;
 }
 
 .medium-body {

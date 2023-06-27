@@ -253,9 +253,21 @@ a {
 
 .mini-title {
     color: #caccd9;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 14px;
     letter-spacing: 2px;
+    text-align: center;
+}
+
+.mini-sub-title {
+    margin-top: 20px;
+    color: #8e9098;
+    font-weight: 200;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 .mini-footer {

@@ -133,6 +133,15 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SOBRE.
+        /// </summary>
+        public static string AboutTitle {
+            get {
+                return ResourceManager.GetString("AboutTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Olá, me chamo.
         /// </summary>
         public static string AboutTitle_Greeting {
@@ -165,6 +174,15 @@ namespace MyPage.UI.Resources {
         public static string BackgroundMore {
             get {
                 return ResourceManager.GetString("BackgroundMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a CERTIFICAÇÕES.
+        /// </summary>
+        public static string CertificationsTitle {
+            get {
+                return ResourceManager.GetString("CertificationsTitle", resourceCulture);
             }
         }
         
@@ -426,6 +444,15 @@ namespace MyPage.UI.Resources {
         public static string SecondProjectsButton {
             get {
                 return ResourceManager.GetString("SecondProjectsButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a HABILIDADES TÉCNICAS.
+        /// </summary>
+        public static string SkillsTitle {
+            get {
+                return ResourceManager.GetString("SkillsTitle", resourceCulture);
             }
         }
         

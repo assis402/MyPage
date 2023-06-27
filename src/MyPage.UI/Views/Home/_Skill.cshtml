@@ -1,0 +1,18 @@
+﻿@using MyPage.Application.Models.PartialViews;
+@model SkillModel;
+
+<div class="skill">
+    <p>@Model.Title</p>
+    <div class="skill-bar">
+        <span class="skill-gaps">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        @for (int i = 1; i <= 5; i++)
+        {
+            <div class="@(i > Model.Level ? "skill-nolevel" : "")"></div>
+        }
+    </div>
+</div>
