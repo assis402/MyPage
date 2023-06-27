@@ -1,0 +1,55 @@
+﻿@if (ViewBag.Message != null)
+{
+    <script>
+        window.onload = () => {
+            alert('@ViewBag.Message');
+        }
+    </script>
+}
+
+<div class="admin-external-container" id="about-external-container">
+    <div class="admin-container">
+        <div class="gradient-bar"></div>
+        <div class="admin-first-div">
+            <span>
+                <img src="~/img/admin.svg" />
+                <h1>Admin Panel</h1>
+            </span>
+            <h5>*English page only.</h5>
+            <p>Only the owner of this site may use this page.</p>
+        </div>
+        <div class="admin-divisor"></div>
+        @if (!ViewBag.IsAuthenticated)
+        {
+            <a class="google-button" asp-controller="admin" asp-action="login">
+                <img src="~/img/google.svg" />
+                Login com Google
+            </a>
+        }
+        else
+        {
+            <div class="admin-options">
+                <a class="option-button" asp-controller="Courses" asp-action="Index">
+                    <img src="~/img/edit-courses.svg" />
+                    manage certificates
+                </a>
+                <a class="option-button" asp-controller="Admin" asp-action="ClearProjectsCache">
+                    <img src="~/img/clear-cache.svg" />
+                    clear projects cache
+                </a>
+                <a class="option-button" asp-controller="Admin" asp-action="ClearPublicationsCache">
+                    <img src="~/img/clear-cache.svg" />
+                    clear articles cache
+                </a>
+                <a class="option-button" asp-controller="Admin" asp-action="ClearCoursesCache">
+                    <img src="~/img/clear-cache.svg" />
+                    clear courses cache
+                </a>
+                <a class="option-button" asp-controller="Admin" asp-action="Logout">
+                    <img src="~/img/logout.svg" />
+                    logout
+                </a>
+            </div>
+        }
+    </div>
+</div>

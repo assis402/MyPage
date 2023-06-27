@@ -1,0 +1,55 @@
+﻿@using MyPage.Application.Models.Courses;
+@using MyPage.Application.Models.Enums;
+@model CourseCertificateModel;
+
+@{
+    var languages = (Language[])Enum.GetValues(typeof(Language));
+}
+@for (int index = 0; index < languages.Count(); index++)
+{
+    <div class="form-group">
+        <input type="text" name="TitleDictionary[@index].Key" value="@languages[index]" hidden />
+        <input class="form-field" type="text" name="TitleDictionary[@index].Value" value="@Model.GetTitleByLanguage(languages[index])" required />
+        <label class="form-label">Course Title (@languages[index].Description())</label>
+    </div>
+}
+<div class="form-group">
+    <input class="form-field" placeholder="Ex: Udemy" type="text" name="Platform" value="@Model.Platform" required />
+    <label class="form-label">Platform Name</label>
+</div>
+<div class="form-group">
+    <input class="form-field" type="text" placeholder="ex: 10,5" inputmode="numeric" pattern="^-?\d+(\,\d+)?$" name="Workload" value="@Model.WorkLoad" required />
+    <label class="form-label">Workload In Hours</label>
+</div>
+<div class="form-group">
+    <input class="form-field" type="date" name="ConclusionDate" value="@Model.ConclusionDate?.ToString("yyyy-MM-dd")" required />
+    <label class="form-label">Conclusion Date</label>
+</div>
+<div class="form-group">
+    <input class="form-field" placeholder="Ex: Backend" type="text" name="Tag" value="@Model.Tag" required />
+    <label class="form-label">Tag</label>
+</div>
+<div class="form-group">
+    <input class="form-field" placeholder="URL" type="text" name="CourseUrl" value="@Model.CourseUrl" required />
+    <label class="form-label">Course URL</label>
+</div>
+<div class="form-group">
+    <input class="form-field" placeholder="URL" type="text" name="Instructor" value="@Model.Instructor" required />
+    <label class="form-label">Instructor Name</label>
+</div>
+<div class="form-group">
+    <input class="form-field" placeholder="URL" type="text" name="InstructorUrl" value="@Model.InstructorUrl" required />
+    <label class="form-label">Instructor Page URL</label>
+</div>
+<div class="form-group">
+    <input class="form-field" placeholder="URL" type="text" name="CertificateOriginalUrl" value="@Model.CertificateOriginalUrl" required />
+    <label class="form-label">Certificate Original URL</label>
+</div>
+<div class="form-group">
+    <input class="form-field" placeholder="URL" type="text" name="CertificateFullResolutionUrl" value="@Model.CertificateFullResolutionUrl" required />
+    <label class="form-label">Certificate Image URL (Full Resolution)</label>
+</div>
+<div class="form-group">
+    <input class="form-field" placeholder="URL" type="text" name="CertificateCardResolutionUrl" value="@Model.CertificateCardResolutionUrl" required />
+    <label class="form-label">Certificate Image URL (Card Resolution)</label>
+</div>

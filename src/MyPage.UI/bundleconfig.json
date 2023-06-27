@@ -4,6 +4,8 @@
     "inputFiles": [
       "wwwroot/css/home.css",
       "wwwroot/css/projects.css",
+      "wwwroot/css/admin.css",
+      "wwwroot/css/courses.css",
       "wwwroot/css/shared.css"
     ]
   },
@@ -12,6 +14,7 @@
     "inputFiles": [
       "wwwroot/js/home.js",
       "wwwroot/js/projects.js",
+      "wwwroot/js/courses.js",
       "wwwroot/js/shared.js"
     ],
     "minify": {

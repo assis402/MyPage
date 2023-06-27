@@ -1,0 +1,45 @@
+﻿@using MyPage.Application.Data.Entities;
+@using MyPage.Application.Helpers;
+@using MyPage.Application.Models.Courses;
+@using MyPage.Application.Models.Pages;
+@using MyPage.Application.Models.Enums;
+@model CoursesPageModel
+
+@if (ViewBag.Message != null)
+{
+    <script>
+        window.onload = () => {
+            alert('@ViewBag.Message');
+        }
+    </script>
+}
+
+<div class="courses-page-external-container">
+    <div class="courses-page-container">
+        @if (User.Identity?.IsAuthenticated ?? false)
+        {
+            <div class="admin-section">
+                <span>  
+                    <img src="~/img/admin.svg" />
+                    Admin
+                </span>
+                <span>
+                    <a asp-controller="Courses" asp-action="Add" class="simple-button">
+                        <img src="~/img/add.svg" />
+                        <div class="inner-button">add course</div>
+                    </a>
+                    <a asp-controller="Courses" asp-action="ClearCache" class="simple-button">
+                        <img src="~/img/clear-cache.svg" />
+                        <div class="inner-button">clear cache</div>
+                    </a>
+                </span>
+            </div>
+        }
+        @{
+            foreach (var courseCertificate in Model.CourseCertificateList)
+            {
+                await Html.RenderPartialAsync("_CourseCard", courseCertificate);
+            }
+        }
+    </div>
+</div>

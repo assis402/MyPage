@@ -141,6 +141,9 @@
   <data name="AboutMenu" xml:space="preserve">
     <value>sobre</value>
   </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>SOBRE</value>
+  </data>
   <data name="AboutTitle_Greeting" xml:space="preserve">
     <value>Olá, me chamo</value>
   </data>
@@ -153,11 +156,17 @@
   <data name="BackgroundMore" xml:space="preserve">
     <value>veja mais detalhes no Linkedin</value>
   </data>
+  <data name="CertificationsTitle" xml:space="preserve">
+    <value>CERTIFICAÇÕES</value>
+  </data>
   <data name="Company" xml:space="preserve">
     <value>Empresa</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>CONTATO</value>
+  </data>
+  <data name="CoursesMenu" xml:space="preserve">
+    <value>cursos</value>
   </data>
   <data name="CoursesMore" xml:space="preserve">
     <value>veja todos os meus certificados</value>
@@ -188,6 +197,9 @@
   </data>
   <data name="FitbankTitle_02" xml:space="preserve">
     <value>Desenvolvedor Backend Junior</value>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>horas</value>
   </data>
   <data name="LabsitDate_01" xml:space="preserve">
     <value>agosto 2021 - maio de 2022</value>
@@ -236,6 +248,9 @@
   </data>
   <data name="SecondProjectsButton" xml:space="preserve">
     <value>confira meus projetos pessoais</value>
+  </data>
+  <data name="SkillsTitle" xml:space="preserve">
+    <value>HABILIDADES TÉCNICAS</value>
   </data>
   <data name="VideoText" xml:space="preserve">
     <value>vídeo</value>

@@ -133,6 +133,15 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SOBRE.
+        /// </summary>
+        public static string AboutTitle {
+            get {
+                return ResourceManager.GetString("AboutTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Olá, me chamo.
         /// </summary>
         public static string AboutTitle_Greeting {
@@ -169,6 +178,15 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a CERTIFICAÇÕES.
+        /// </summary>
+        public static string CertificationsTitle {
+            get {
+                return ResourceManager.GetString("CertificationsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Empresa.
         /// </summary>
         public static string Company {
@@ -183,6 +201,15 @@ namespace MyPage.UI.Resources {
         public static string Contact {
             get {
                 return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a cursos.
+        /// </summary>
+        public static string CoursesMenu {
+            get {
+                return ResourceManager.GetString("CoursesMenu", resourceCulture);
             }
         }
         
@@ -264,6 +291,15 @@ namespace MyPage.UI.Resources {
         public static string FitbankTitle_02 {
             get {
                 return ResourceManager.GetString("FitbankTitle_02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a horas.
+        /// </summary>
+        public static string Hours {
+            get {
+                return ResourceManager.GetString("Hours", resourceCulture);
             }
         }
         
@@ -408,6 +444,15 @@ namespace MyPage.UI.Resources {
         public static string SecondProjectsButton {
             get {
                 return ResourceManager.GetString("SecondProjectsButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a HABILIDADES TÉCNICAS.
+        /// </summary>
+        public static string SkillsTitle {
+            get {
+                return ResourceManager.GetString("SkillsTitle", resourceCulture);
             }
         }
         

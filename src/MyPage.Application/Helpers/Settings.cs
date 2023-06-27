@@ -2,18 +2,12 @@
 {
     public class Settings
     {
-        public string ProjectsCacheKey { get; set; }
+        public GoogleSettings GoogleSettings { get; init; }
 
-        public string TagsCacheKey { get; set; }
+        public CacheSettings CacheSettings { get; init; }
 
-        public string PublicationsCacheKey { get; set; }
+        public MediumSettings MediumSettings { get; init; }
 
-        public int CacheExpirationInDays { get; set; }
-
-        public GitHubSettings GitHubSettings { get; set; }
-
-        public string MediumIntegrationUrl { get; set; }
-
-        public string MediumUserUrl { get; set; }
+        public GitHubSettings GitHubSettings { get; init; }
     }
 }

@@ -1,0 +1,19 @@
+﻿@using MyPage.Application.Models.Courses;
+
+<div class="courses-page-external-container">
+    <div class="course-model-container">
+        <h2>Add New Course</h2>
+        <a asp-controller="Courses" asp-action="Index" class="back-button">
+            <img src="~/img/back.svg" />
+        </a>
+        <form asp-controller="Courses" asp-action="Add" method="post" enctype="multipart/form-data" class="form">
+            @{
+                await Html.RenderPartialAsync("_CourseForm", new CourseCertificateModel());
+            }
+            <div class="modal-buttons">
+                <a asp-controller="Courses" asp-action="Index" class="outlined-button">cancel</a>
+                <input type="submit" class="gradient-button course-form-button" value="add" />
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,4 +1,8 @@
-﻿body, head {
+﻿html {
+    scroll-behavior: smooth;
+}
+
+body, head {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
 }
@@ -29,20 +33,35 @@ a {
 }
 
 .menu {
+    position: relative;
     flex-wrap: wrap;
     display: flex;
     z-index: 10000;
 }
 
 .menu-container {
+    position: relative;
     display: flex;
     width: 100%;
     align-items: center;
-    background: rgb(0, 0, 0);
     justify-content: space-between;
     padding: 20px;
     z-index: 10000;
     border-bottom: 0px solid rgba(210, 213, 255, 0.3);
+    transition: border-bottom .3s linear, padding .3s linear;
+}
+
+.menu-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba(0,0,0,.35);
+    backdrop-filter: blur(4px);
+    transition: opacity .2s linear;
 }
 
 .menu-items {
@@ -62,7 +81,6 @@ a {
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: row;
-    background: rgb(0, 0, 0);
     width: 100%;
     height: auto;
     opacity: 0;
@@ -95,7 +113,7 @@ a {
     padding: 8px 12px;
     font-size: 18px;
     transition: opacity .2s linear;
-    font-weight: 300;
+    font-weight: 400;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -177,8 +195,8 @@ a {
     opacity: 1;
 }
 
-@media screen and (max-width: 720px) {
-    ::-webkit-scrollbar {
+@media screen and (max-width: 768px) {
+    body::-webkit-scrollbar {
         -webkit-appearance: none;
         width: 0;
     }
@@ -214,12 +232,12 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     column-gap: 40px;
     row-gap: 30px;
 }
 
-.projects-footer {
+.secundary-footer {
     background: linear-gradient(to right, #060708, #242430);
 }
 
@@ -235,9 +253,21 @@ a {
 
 .mini-title {
     color: #caccd9;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 14px;
-    letter-spacing: 2;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.mini-sub-title {
+    margin-top: 20px;
+    color: #8e9098;
+    font-weight: 200;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 .mini-footer {
@@ -313,7 +343,165 @@ a {
         filter: invert(1);
     }
 
-@media (max-width: 720px) {
+.gradient-bar {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #27006a, #541db1);
+}
+
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+    .form p {
+        text-align: justify;
+    }
+
+.from-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+    overflow-y: scroll;
+    padding-top: 20px;
+    padding-right: 30px;
+    height: 500px;
+    margin-bottom: 40px;
+}
+
+    .from-scroll::-webkit-scrollbar {
+        height: 12px;
+    }
+
+    .from-scroll::-webkit-scrollbar-track {
+        background: #0d0e12;
+        border-radius: 10px;
+        margin: 0 0px;
+    }
+
+    .from-scroll::-webkit-scrollbar-thumb {
+        background-color: #444456;
+        border-radius: 20px;
+        border: 3px solid #0d0e12;
+    }
+
+.form-group {
+    position: relative;
+    height: 50px;
+}
+
+.form-field {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    height: 20px;
+    padding: 5px 0;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    border-bottom: 1px solid #4d4d65;
+    transition: border-bottom .2s linear;
+    z-index: 2;
+}
+
+    .form-field:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+        color: #fff !important;
+        -webkit-text-fill-color: #fff;
+        font-size: 15px;
+        font-family: "Poppins", sans-serif;
+    }
+
+.form-label {
+    position: absolute;
+    transition: all .2s ease-in-out;
+    transform-origin: left;
+    z-index: 1;
+    color: #a8a8b9;
+}
+
+.form-field::placeholder {
+    color: #585866;
+    font-weight: 300;
+    opacity: 0;
+    transition: opacity .2s linear;
+}
+
+.form-field:focus + .form-label {
+    transform: scale(.8) translateY(-25px);
+}
+
+.form-field:focus::placeholder {
+    opacity: 1;
+}
+
+.form-field:focus {
+    border-bottom: 1px solid #b5b5c7;
+}
+
+.form-field:valid + .form-label {
+    transform: scale(.8) translateY(-25px);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+input {
+    -moz-appearance: textfield;
+    transition: color .2s linear;
+}
+
+    input:invalid:not(:focus) {
+        color: transparent;
+    }
+
+    input[type="date"] {
+        font-family: "Poppins", sans-serif;
+    }
+
+        input[type="date"]:focus::-webkit-datetime-edit-text,
+        input[type="date"]:focus::-webkit-datetime-edit-month-field,
+        input[type="date"]:focus::-webkit-datetime-edit-day-field,
+        input[type="date"]:focus::-webkit-datetime-edit-year-field {
+            color: #fff;
+        }
+
+        input[type="date"]:not(:focus):invalid::-webkit-datetime-edit-text,
+        input[type="date"]:not(:focus):invalid::-webkit-datetime-edit-month-field,
+        input[type="date"]:not(:focus):invalid::-webkit-datetime-edit-day-field,
+        input[type="date"]:not(:focus):invalid::-webkit-datetime-edit-year-field {
+            color: transparent;
+            transition: color .2s linear;
+        }
+
+        input[type="date"]:valid::-webkit-datetime-edit-text + .form-label,
+        input[type="date"]:valid::-webkit-datetime-edit-month-field + .form-label,
+        input[type="date"]:valid::-webkit-datetime-edit-day-field + .form-label,
+        input[type="date"]:valid::-webkit-datetime-edit-year-field + .form-label {
+            transform: scale(.8) translateY(-25px);
+        }
+
+@media (max-width: 768px) {
+    from-scroll::-webkit-scrollbar {
+        -webkit-appearance: default-button !important;
+        width: auto !important;
+    }
+
     .contact-container {
         flex-direction: column;
         gap: 30px;
@@ -329,7 +517,7 @@ a {
         max-width: 5rem;
     }
 
-    .medium-card-img img {
-        height: 5rem;
-    }
+        .medium-card-img img {
+            height: 5rem;
+        }
 }

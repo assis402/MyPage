@@ -27,7 +27,7 @@ function removeSelectedTag(tagName) {
     document.getElementById(tagName).className = "project-tag-search";
 }
 
-function openVideoModel(videoUrl) {
+function openVideoModal(videoUrl) {
     document.getElementById("video").src = videoUrl;
     document.getElementById("modal").style.display = "flex";
 
@@ -36,7 +36,7 @@ function openVideoModel(videoUrl) {
     }, 200)
 }
 
-function closeVideoModel() {
+function closeVideoModal() {
     document.getElementById("video").src = "";
     document.getElementById("modal").style.opacity = "0";
 

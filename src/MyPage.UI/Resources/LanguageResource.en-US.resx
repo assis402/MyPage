@@ -141,6 +141,9 @@
   <data name="AboutMenu" xml:space="preserve">
     <value>about</value>
   </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>ABOUT</value>
+  </data>
   <data name="AboutTitle_Greeting" xml:space="preserve">
     <value>Hello, my name is</value>
   </data>
@@ -153,11 +156,17 @@
   <data name="BackgroundMore" xml:space="preserve">
     <value>see more details on Linkedin</value>
   </data>
+  <data name="CertificationsTitle" xml:space="preserve">
+    <value>CERTIFICATIONS</value>
+  </data>
   <data name="Company" xml:space="preserve">
     <value>Company</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>CONTACT</value>
+  </data>
+  <data name="CoursesMenu" xml:space="preserve">
+    <value>courses</value>
   </data>
   <data name="CoursesMore" xml:space="preserve">
     <value>see all my certificates</value>
@@ -188,6 +197,9 @@
   </data>
   <data name="FitbankTitle_02" xml:space="preserve">
     <value>Junior Backend Developer</value>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>hours</value>
   </data>
   <data name="LabsitDate_01" xml:space="preserve">
     <value>august 2021 - may 2022</value>
@@ -236,6 +248,9 @@
   </data>
   <data name="SecondProjectsButton" xml:space="preserve">
     <value>look out my personal projects</value>
+  </data>
+  <data name="SkillsTitle" xml:space="preserve">
+    <value>TECH SKILLS</value>
   </data>
   <data name="VideoText" xml:space="preserve">
     <value>video</value>

@@ -1,0 +1,22 @@
+﻿@using MyPage.Application.Models.Courses;
+@using MyPage.Application.Models.Enums;
+@model CourseCertificateModel;
+
+<div class="courses-page-external-container">
+        <div class="course-model-container">
+            <h2>Update Course</h2>
+            <a asp-controller="Courses" asp-action="Index" class="back-button">
+                <img src="~/img/back.svg" />
+            </a>
+            <form asp-controller="Courses" asp-action="Update" method="post" enctype="multipart/form-data" class="form">
+                <input type="text" name="Id" value="@Model.Id" hidden />
+                @{
+                    await Html.RenderPartialAsync("_CourseForm", Model);
+                }  
+                <div class="modal-buttons">
+                    <a asp-controller="Courses" asp-action="Index" class="outlined-button">cancel</a>
+                    <input type="submit" class="gradient-button course-form-button" value="update" />
+                </div>
+            </form>
+        </div>
+</div>

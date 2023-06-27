@@ -1,7 +1,9 @@
 ﻿@using MyPage.Application.Models.Pages;
+@using MyPage.Application.Models.PartialViews;
 @model AboutPageModel;
 
 <div class="about-external-container" id="about-external-container">
+    <div class="background"></div>
     <div class="about-container">
         <div class="about-minified">
             <p class="about-title">@LanguageResource["AboutTitle_Greeting"] <br /> <b>@LanguageResource["AboutTitle_Name"]</b></p>
@@ -25,30 +27,66 @@
                 @LanguageResource["PresentationText"]
             </p>
             <div class="presentation-buttons">
-                <div class="about-button" onclick="showAbout()">
+                <a href="#about-more" class="gradient-button" style="border: 1px solid #0c0f12;">
                     <img class="about-icon" src="~/img/info.svg" />
                     <div class="inner-button">@LanguageResource["AboutButton"]</div>
-                </div>
-                <a asp-controller="projects" asp-action="index" class="projects-button">
+                </a>
+                <a asp-controller="Projects" asp-action="Index" class="outlined-button">
                     <img class="projects-icon" src="~/img/projects.svg" />
                     <div class="inner-button">@LanguageResource["ProjectsButton"]</div>
                 </a>
             </div>
         </div>
+    </div>
+    <div class="about-top-divisor" id="about-more"></div>
+</div>
+<div class="black-external-container">
+    <div class="black-container">
+        <div class="mini-title">@LanguageResource["AboutTitle"]</div>
         <div id="about-body-container">
-            <p class="about-body" id="about-body-1">
-                @string.Format(LanguageResource["AboutBody_01"], Model.WorkYears, Model.WorkMonths)
-                <span class="emphasis">@LanguageResource["AboutEmphases_01"]</span>
-            </p>
-            <p class="about-body" id="about-body-2">
-                @LanguageResource["AboutBody_02"] <span class="emphasis">Angular</span>@LanguageResource["AboutBody_02.1"]
-                <span class="emphasis"> @LanguageResource["AboutEmphases_02"]</span>
-            </p>
-            <p class="about-body" id="about-body-3">
-                @LanguageResource["AboutBody_03"]
-            </p>
+            <div class="about-body-internal-container">
+                <p class="about-body" id="about-body-1">
+                    @string.Format(LanguageResource["AboutBody_01"], Model.WorkYears, Model.WorkMonths)
+                    <span class="emphasis">@LanguageResource["AboutEmphases_01"]</span>
+                </p>
+                <p class="about-body" id="about-body-2">
+                    @LanguageResource["AboutBody_02"] <span class="emphasis">Angular</span>@LanguageResource["AboutBody_02.1"]
+                    <span class="emphasis"> @LanguageResource["AboutEmphases_02"]</span>
+                </p>
+                <p class="about-body" id="about-body-3">
+                    @LanguageResource["AboutBody_03"]
+                </p>
+            </div>
+            <div class="about-body-internal-container">
+                <div class="mini-sub-title">@LanguageResource["SkillsTitle"]</div>
+                <div class="about-skills">
+                    @{
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("C# .NET", 4));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("Testes Unitários", 4));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("Testes Integrados", 3));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("Typescript", 2));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("Angular", 2));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("React / React Native", 2));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("Devops", 1));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("Cloud Computing (Azure)", 1));
+                    }
+                </div>
+            </div>
+            <div class="about-body-internal-container">
+                <div class="mini-sub-title">@LanguageResource["CertificationsTitle"]</div>
+                <div class="about-certifications">
+                    <a href="https://www.credly.com/earner/earned/badge/5cbc2b5a-1af3-4063-bcd3-daac3ec79ede">
+                        <p>Azure Fundamentals<br />(AZ-900)</p>
+                        <img src="~/img/az900.png" />
+                    </a>
+                    <a href="https://www.credly.com/earner/earned/badge/c72e321b-57ff-456d-98f0-143ed07bb575">
+                        <p>Azure Developer Associate<br />(AZ-204)</p>
+                        <img src="~/img/az204.png" />
+                    </a>
+                </div>
+            </div>
             <div class="presentation-buttons second-buttons">
-                <a asp-controller="projects" asp-action="index" class="about-button second-button">
+                <a asp-controller="Projects" asp-action="Index" class="gradient-button second-button">
                     <img class="projects-icon" src="~/img/projects.svg" />
                     <div class="inner-button">@LanguageResource["SecondProjectsButton"]</div>
                 </a>
@@ -151,40 +189,25 @@
         </div>
         @if (Model.PublicationList.Count() > 5)
         {
-            <div class="more" onclick="window.open('@Settings.MediumUserUrl','medium')">
+            <div class="more" onclick="window.open('@Settings.MediumSettings.UserUrl','medium')">
                 <span class="material-symbols-outlined">more_horiz</span>
                 <p class="more-text">@LanguageResource["MediumMore"]</p>
-            </div>            
+            </div>
         }
     </div>
 </div>
 <div class="gradient-external-container">
     <div class="gradient-container">
         <div class="mini-title">@LanguageResource["CoursesTitle"]</div>
-        @*<div class="courses-body">
-            @foreach (var publication in Model.PublicationList.Take(5))
-            {
-                <div class="course-card">
-                    <div class="course-certificate">
-                        <div class="course-certificate-front-shadow"></div>
-                        <img src="https://udemy-certificate.s3.amazonaws.com/image/UC-0aa73201-1793-4fef-9628-b2cd11af91f9.jpg?v=1617970572000" alt="certificate" />
-                    </div>
-                    <div class="course-title">C# Primeiros Passos: Lógica de Programação e Algoritmos</div>
-                    <div class="course-body">
-                        <div>
-                            <img src="~/img/platform.svg" alt="platform" /> Udemy
-                        </div>
-                        <div>
-                            <img src="~/img/instructor.svg" alt="instructor" /> Nelio Alves
-                        </div>
-                        <div>
-                            <img src="~/img/workload.svg" alt="workload" /> 36.5 horas
-                        </div>
-                    </div>
-                </div>
+        <div class="courses-body">
+            @{
+                foreach (var courseCertificate in Model.CourseCertificateList)
+                {
+                    await Html.RenderPartialAsync("~/Views/Courses/_CourseCard.cshtml", courseCertificate);
+                }
             }
-        </div>*@
-        <div class="more">
+        </div>
+        <div class="more" onclick="window.open('@Settings.MediumSettings.UserUrl','medium')">
             <span class="material-symbols-outlined">more_horiz</span>
             <p class="more-text">@LanguageResource["CoursesMore"]</p>
         </div>

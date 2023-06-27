@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
+using MyPage.Application.Helpers;
+using MyPage.Application.Models.Enums;
 using MyPage.Application.Services.Interfaces;
 
 namespace MyPage.UI.Controllers
@@ -6,32 +9,20 @@ namespace MyPage.UI.Controllers
     public class HomeController : Controller
     {
         private readonly IAboutService _aboutService;
+        private readonly IStringLocalizer<LanguageResource> _languageResource;
 
-        public HomeController(IAboutService aboutService) => _aboutService = aboutService;
+        public HomeController(IAboutService aboutService,
+            IStringLocalizer<LanguageResource> languageResource)
+        {
+            _aboutService = aboutService;
+            _languageResource = languageResource;
+        }
 
         public async Task<IActionResult> Index()
         {
-            var pageModel = await _aboutService.GetAboutPageModel();
+            var currentLanguage = _languageResource["Culture"].Value.ToEnum<Language>();
+            var pageModel = await _aboutService.GetAboutPageModel(currentLanguage);
             return View(pageModel);
-        }
-
-        public IActionResult ClearCache()
-        {
-            try
-            {
-                _aboutService.ClearAboutCache();
-                return Ok("Cache in memory \"Publications\" cleared successfully.");
-            }
-            catch (Exception ex)
-            {
-                var errorMessage = new
-                {
-                    Message = "Error when clearing Cache in memory \"Publications\".",
-                    Exception = ex.Message
-                };
-
-                return BadRequest(errorMessage);
-            }
         }
     }
 }
