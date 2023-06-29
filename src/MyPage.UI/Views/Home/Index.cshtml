@@ -57,18 +57,19 @@
                     @LanguageResource["AboutBody_03"]
                 </p>
             </div>
-            <div class="about-body-internal-container">
+            <div class="about-body-internal-container" id="about-skills">
                 <div class="mini-sub-title">@LanguageResource["SkillsTitle"]</div>
                 <div class="about-skills">
                     @{
-                        await Html.RenderPartialAsync("_Skill", new SkillModel("C# .NET", 4));
-                        await Html.RenderPartialAsync("_Skill", new SkillModel("Testes Unitários", 4));
-                        await Html.RenderPartialAsync("_Skill", new SkillModel("Testes Integrados", 3));
-                        await Html.RenderPartialAsync("_Skill", new SkillModel("Typescript", 2));
-                        await Html.RenderPartialAsync("_Skill", new SkillModel("Angular", 2));
-                        await Html.RenderPartialAsync("_Skill", new SkillModel("React / React Native", 2));
-                        await Html.RenderPartialAsync("_Skill", new SkillModel("Devops", 1));
-                        await Html.RenderPartialAsync("_Skill", new SkillModel("Cloud Computing (Azure)", 1));
+                        var animationDelay = 0;
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("C# .NET", 4, animationDelay += 200));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("Testes Unitários", 4, animationDelay += 200));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("Testes Integrados", 3, animationDelay += 200));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("Typescript", 2, animationDelay += 200));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("Angular", 2, animationDelay += 200));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("React / React Native", 2, animationDelay += 200));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("Devops", 1, animationDelay += 200));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("Cloud Computing (Azure)", 1, animationDelay += 200));
                     }
                 </div>
             </div>
@@ -99,8 +100,13 @@
         <div class="mini-title">@LanguageResource["Background"]</div>
         <div class="timeline-body">
             <div class="timeline-exp">
-                <div class="timeline-exp-date">@LanguageResource["LabsitDate_02"]</div>
                 <div class="timeline-exp-circle labsit-full-circle"></div>
+                <div class="timeline-exp-date">
+                    @LanguageResource["LabsitDate_02"]
+                    <img class="timeline-dots" src="~/img/dots.svg" />
+                    @LanguageResource["LabsitDate_02.1"]
+                </div>
+                @*<div class="timeline-exp-date">@LanguageResource["LabsitDate_02"]</div>*@
                 <div class="timeline-exp-title">
                     @LanguageResource["LabsitTitle_02"]
                     <div class="timeline-exp-subtitle">@LanguageResource["LabsitSubtitle_02"]</div>
@@ -109,7 +115,11 @@
             <div class="timeline-bar labsit-bar"></div>
             <div class="timeline-exp-wrapper">
                 <div class="timeline-exp">
-                    <div class="timeline-exp-date">@LanguageResource["LabsitDate_01"]</div>
+                    <div class="timeline-exp-date">
+                        @LanguageResource["LabsitDate_01"]
+                        <img class="timeline-dots" src="~/img/dots.svg" />
+                        @LanguageResource["LabsitDate_01.1"]
+                    </div>
                     <div class="timeline-exp-circle labsit-border-circle"></div>
                     <div class="timeline-exp-title">
                         @LanguageResource["LabsitTitle_01"]
@@ -117,18 +127,22 @@
                     </div>
                 </div>
                 <div class="timeline-company" onclick="window.open('https://labsit.io/','labsit')">
+                    <span class="timeline-company-arrow labsit-arrow"></span>
                     <span class="material-symbols-outlined company-icon" title="@LanguageResource["Company"]">
                         work
                     </span>
                     <span title="@LanguageResource["Company"]">Labsit</span>
                     <img class="mini-out-logo" src="~/img/out.svg" />
-                    <span class="timeline-company-arrow labsit-arrow"></span>
                 </div>
                 <div class="timeline-bar labsit-bar"></div>
             </div>
             <div class="timeline-exp margin-top">
-                <div class="timeline-exp-date">@LanguageResource["FitbankDate_02"]</div>
                 <div class="timeline-exp-circle fitbank-full-circle"></div>
+                <div class="timeline-exp-date">
+                    @LanguageResource["FitbankDate_02"]
+                    <img class="timeline-dots" src="~/img/dots.svg" />
+                    @LanguageResource["FitbankDate_02.1"]
+                </div>
                 <div class="timeline-exp-title">
                     @LanguageResource["FitbankTitle_02"]
                     <div class="timeline-exp-subtitle">@LanguageResource["FitbankSubtitle_02"]</div>
@@ -137,20 +151,24 @@
             <div class="timeline-bar fitbank-bar"></div>
             <div class="timeline-exp-wrapper">
                 <div class="timeline-exp">
-                    <div class="timeline-exp-date">@LanguageResource["FitbankDate_01"]</div>
                     <div class="timeline-exp-circle fitbank-border-circle"></div>
+                    <div class="timeline-exp-date">
+                        @LanguageResource["FitbankDate_01"]
+                        <img class="timeline-dots" src="~/img/dots.svg" />
+                        @LanguageResource["FitbankDate_01.1"]
+                    </div>
                     <div class="timeline-exp-title">
                         @LanguageResource["FitbankTitle_01"]
                         <div class="timeline-exp-subtitle">@LanguageResource["FitbankSubtitle_01"]</div>
                     </div>
                 </div>
                 <div class="timeline-company" onclick="window.open('https://fitbank.com.br/','fitbank')">
+                    <span class="timeline-company-arrow fitbank-arrow"></span>
                     <span class="material-symbols-outlined company-icon" title="@LanguageResource["Company"]">
                         work
                     </span>
                     <span title="@LanguageResource["Company"]">FitBank</span>
                     <img class="mini-out-logo" src="~/img/out.svg" />
-                    <span class="timeline-company-arrow fitbank-arrow"></span>
                 </div>
                 <div class="timeline-bar fitbank-bar"></div>
             </div>

@@ -181,10 +181,16 @@
     <value>contato@matheusassis.dev</value>
   </data>
   <data name="FitbankDate_01" xml:space="preserve">
-    <value>novembro 2020 - abril de 2021</value>
+    <value>nov 2020</value>
+  </data>
+  <data name="FitbankDate_01.1" xml:space="preserve">
+    <value>abr 2021</value>
   </data>
   <data name="FitbankDate_02" xml:space="preserve">
-    <value>abril 2021 - agosto de 2021</value>
+    <value>abr 2021</value>
+  </data>
+  <data name="FitbankDate_02.1" xml:space="preserve">
+    <value>ago 2021</value>
   </data>
   <data name="FitbankSubtitle_01" xml:space="preserve">
     <value>Testes manuais (exploratórios, em APIs e etc) e documentações de testes</value>
@@ -202,10 +208,16 @@
     <value>horas</value>
   </data>
   <data name="LabsitDate_01" xml:space="preserve">
-    <value>agosto 2021 - maio de 2022</value>
+    <value>ago 2021</value>
+  </data>
+  <data name="LabsitDate_01.1" xml:space="preserve">
+    <value>maio 2022</value>
   </data>
   <data name="LabsitDate_02" xml:space="preserve">
-    <value>janeiro de 2023 - atualmente</value>
+    <value>jan 2023</value>
+  </data>
+  <data name="LabsitDate_02.1" xml:space="preserve">
+    <value>atualmente</value>
   </data>
   <data name="LabsitSubTitle_01" xml:space="preserve">
     <value>C#, .NET Core, MySQL, SQL Server, Redis, APIs Rest, Microsserviços e Testes Unitários</value>

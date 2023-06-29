@@ -74,5 +74,18 @@ function copyEmail(email) {
 }
 
 menuSwitch();
-window.onscroll = () => scrollFunction();
+
+window.onscroll = () => {
+    animateAbout();
+    scrollFunction();
+}
+
 window.addEventListener("resize", () => menuSwitch())
+
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+} else {
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+}
