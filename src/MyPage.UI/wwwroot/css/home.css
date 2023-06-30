@@ -454,7 +454,7 @@
     flex-grow: 4;
     flex-basis: 0;
     text-align: left;
-    width: 420px;
+    width: 520px;
     font-weight: 200;
     height: 27px;
     font-size: 18px;
@@ -593,6 +593,25 @@
     border-top: 21px solid transparent;
     border-bottom: 21px solid transparent;
     transform: rotate(180deg);
+}
+
+.timeline-exp-attributions {
+}
+
+.timeline-exp-attributions p {
+    font-size: 15px;
+    margin-top: 2em;
+    color: #fff;
+}
+
+    .timeline-exp-attributions ul {
+        font-size: 14px;
+        padding-inline-start: 15px;
+        color: #ababab;
+    }
+
+li:not(:last-child) {
+    margin-bottom: 4px !important;
 }
 
 .black-external-container {
@@ -793,7 +812,7 @@
 @media(max-width: 768px) {
     .timeline-exp-title {
         font-size: 14px;
-        width: 198px;
+        width: 240px;
         height: 20px;
     }
 
@@ -803,8 +822,8 @@
 
     .timeline-exp-date {
         font-size: 11px;
-        max-width: 77px;
-        min-width: 77px;
+        max-width: 67px;
+        min-width: 67px;
     }
 
     .timeline-body {
@@ -812,7 +831,7 @@
     }
 
     .timeline-bar {
-        left: 103px;
+        left: 93px;
     }
 
     .timeline-company {
@@ -828,7 +847,19 @@
     }
 
     .timeline-exp-circle {
-        left: 97px;
+        left: 87px;
+    }
+
+    .timeline-exp-attributions p {
+        font-size: 13px;
+    }
+
+    .timeline-exp-attributions ul {
+        font-size: 11px;
+    }
+
+    li:not(:last-child) {
+        margin-bottom: 2px !important;
     }
 
     .company-icon {

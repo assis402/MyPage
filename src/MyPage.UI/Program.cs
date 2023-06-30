@@ -55,7 +55,7 @@ builder.Services.AddAuthentication("CookieAuthentication")
                 {
                     config.Cookie.Name = "UserLoginCookie";
                     config.LoginPath = "/Admin/Login";
-                    config.ExpireTimeSpan = TimeSpan.FromSeconds(10);
+                    config.ExpireTimeSpan = TimeSpan.FromHours(2);
                 });
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
