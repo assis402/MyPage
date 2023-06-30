@@ -193,7 +193,7 @@
 }
 
 .outlined-button:hover {
-    border: 1px solid #636369;
+    border: 1px solid #a2a3af;
 }
 
 .second-buttons {
@@ -226,10 +226,10 @@
 
 .about-body-internal-container {
     margin: 40px 0 60px 0;
-    max-width: 900px; 
+    max-width: 900px;
 }
 
-.about-skills {     
+.about-skills {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -256,16 +256,22 @@
     height: 17px;
     transform: skew(-.5rad);
     background: linear-gradient(to right,#27006a,#7b2dff);
+    transition: all 2s ease;
+    box-shadow: inset -610px 0 0 0 black;
 }
 
-    .skill-bar div {
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        height: 17px;
-        width: 18%;
-        border: solid 1px #4d4d4d;
-    }
+.skill-bar-animation {
+    box-shadow: inset 0 0 0 0 black;
+}
+
+.skill-bar div {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 17px;
+    width: 18%;
+    border: solid 1px #4d4d4d;
+}
 
 .skill-gaps {
     position: absolute;
@@ -279,7 +285,7 @@
         display: block;
         background: black;
         width: 2.5%;
-        border-top: 2px solid black;
+        border-top: 4px solid black;
         border-bottom: 2px solid black;
     }
 
@@ -304,9 +310,9 @@
         transition: all .2s ease-in-out;
     }
 
-    .about-certifications a:hover {
-        transform: scale(1.1);
-    }
+        .about-certifications a:hover {
+            transform: scale(1.1);
+        }
 
     .about-certifications img {
         height: 150px;
@@ -423,32 +429,32 @@
 .timeline-body {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     margin-top: 40px;
     margin-bottom: 15px;
+    position: relative;
 }
 
 .timeline-exp-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     position: relative;
 }
 
 .timeline-exp {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    gap: 54px;
 }
 
 .timeline-exp-title {
-    flex-grow: 1;
+    flex-grow: 4;
     flex-basis: 0;
     text-align: left;
-    width: 320px;
+    width: 520px;
     font-weight: 200;
     height: 27px;
     font-size: 18px;
@@ -461,17 +467,26 @@
 }
 
 .timeline-exp-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     flex-grow: 1;
     flex-basis: 0;
-    text-align: right;
     font-weight: 200;
-    font-size: 18px;
+    font-size: 14px;
+    max-width: 100px;
+    min-width: 100px;
+    height: 20px;
+    line-height: 20px;
+    gap: 6px;
 }
 
 .timeline-exp-circle {
     width: 10px;
     height: 10px;
-    border-radius: 10px
+    border-radius: 10px;
+    position: absolute;
+    left: 120px;
 }
 
 .labsit-border-circle {
@@ -501,19 +516,18 @@
     background-color: #262936;
     position: absolute;
     bottom: 0;
-    margin-left: -155.5px;
+    left: 132px;
     display: flex;
     align-items: center;
     font-size: 14px;
-    color: #b8b8b9;
+    color: #d5d2d2;
     font-weight: 500;
-    justify-content: inherit;
-    padding-left: 10px;
-    gap: 15px;
+    padding-right: 15px;
+    gap: 12px;
     transition: color .2s linear,border .2s linear;
     cursor: pointer;
-    border: 1px solid #424248;
-    border-right: 0;
+    border: 1px solid transparent;
+    border-left: 0;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -522,28 +536,39 @@
 
 .company-icon {
     opacity: .8;
-    transition: opacity .2s linear;
+    transition: color .2s linear;
 }
 
 .mini-out-logo {
     height: 12px;
     filter: invert(.8);
+    margin-left: 8px;
 }
 
 .timeline-company:hover {
     color: #fff;
-    border: 1px solid #b0b0bf;
-    border-right: 0;
+    border: 1px solid #a2a3af;
+    border-left: 0;
 }
 
     .timeline-company:hover + .company-icon {
-        opacity: 1;
+        color: #fff !important;
     }
 
 .timeline-bar {
     width: 2px;
     height: 120px;
     background-color: #dfdfdf;
+    left: 125.6px;
+    position: relative;
+}
+
+.timeline-arrow {
+    height: 11px;
+    filter: invert();
+    margin-right: 8px;
+    width: 11px;
+    opacity: 0.5;
 }
 
 .labsit-bar {
@@ -565,8 +590,28 @@
 .timeline-company-arrow {
     width: 0;
     height: 0;
-    border-top: 22px solid transparent;
+    border-top: 21px solid transparent;
     border-bottom: 21px solid transparent;
+    transform: rotate(180deg);
+}
+
+.timeline-exp-attributions {
+}
+
+.timeline-exp-attributions p {
+    font-size: 15px;
+    margin-top: 2em;
+    color: #fff;
+}
+
+    .timeline-exp-attributions ul {
+        font-size: 14px;
+        padding-inline-start: 15px;
+        color: #ababab;
+    }
+
+li:not(:last-child) {
+    margin-bottom: 4px !important;
 }
 
 .black-external-container {
@@ -767,7 +812,7 @@
 @media(max-width: 768px) {
     .timeline-exp-title {
         font-size: 14px;
-        width: 180px;
+        width: 240px;
         height: 20px;
     }
 
@@ -776,11 +821,52 @@
     }
 
     .timeline-exp-date {
-        font-size: 14px;
-        height: 20px;
+        font-size: 11px;
+        max-width: 67px;
+        min-width: 67px;
     }
 
-    .timeline-body, .courses-body, .medium-body {
+    .timeline-body {
+        padding: 0 6%;
+    }
+
+    .timeline-bar {
+        left: 93px;
+    }
+
+    .timeline-company {
+        width: 125px;
+        height: 35px;
+        left: 109px;
+        font-size: 13px;
+    }
+
+    .timeline-company-arrow {
+        border-top: 19px solid transparent;
+        border-bottom: 19px solid transparent;
+    }
+
+    .timeline-exp-circle {
+        left: 87px;
+    }
+
+    .timeline-exp-attributions p {
+        font-size: 13px;
+    }
+
+    .timeline-exp-attributions ul {
+        font-size: 11px;
+    }
+
+    li:not(:last-child) {
+        margin-bottom: 2px !important;
+    }
+
+    .company-icon {
+        font-size: 18px;
+    }
+
+    .courses-body, .medium-body {
         padding: 0 8%;
     }
 
