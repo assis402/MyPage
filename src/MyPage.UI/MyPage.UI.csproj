@@ -15,13 +15,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Resources\LanguageResource.en-US.Designer.cs">
-	    <DependentUpon>LanguageResource.en-US.resx</DependentUpon>
+	  <Compile Update="Resources\LanguageResource.pt-BR.Designer.cs">
+	    <DependentUpon>LanguageResource.pt-BR.resx</DependentUpon>
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	  </Compile>
-	  <Compile Update="Resources\LanguageResource.pt-BR.Designer.cs">
-	    <DependentUpon>LanguageResource.pt-BR.resx</DependentUpon>
+	  <Compile Update="Resources\LanguageResource.en-US.Designer.cs">
+	    <DependentUpon>LanguageResource.en-US.resx</DependentUpon>
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	  </Compile>
@@ -33,12 +33,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Update="Resources\LanguageResource.en-US.resx">
-	    <LastGenOutput>LanguageResource.en-US.Designer.cs</LastGenOutput>
-	    <Generator>PublicResXFileCodeGenerator</Generator>
-	  </EmbeddedResource>
 	  <EmbeddedResource Update="Resources\LanguageResource.pt-BR.resx">
 	    <LastGenOutput>LanguageResource.pt-BR.Designer.cs</LastGenOutput>
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\LanguageResource.en-US.resx">
+	    <LastGenOutput>LanguageResource.en-US.Designer.cs</LastGenOutput>
 	    <Generator>PublicResXFileCodeGenerator</Generator>
 	  </EmbeddedResource>
 	  <EmbeddedResource Update="Resources\LanguageResource.resx">

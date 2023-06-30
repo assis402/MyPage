@@ -241,7 +241,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a nov 2020.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a abr 2021.
         /// </summary>
         public static string FitbankDate_01 {
             get {
@@ -250,7 +250,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a abr 2021.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a nov 2020.
         /// </summary>
         public static string FitbankDate_01_1 {
             get {
@@ -259,7 +259,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a abr 2021.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ago 2021.
         /// </summary>
         public static string FitbankDate_02 {
             get {
@@ -268,7 +268,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a ago 2021.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a abr 2021.
         /// </summary>
         public static string FitbankDate_02_1 {
             get {
@@ -322,7 +322,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a ago 2021.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a maio 2022.
         /// </summary>
         public static string LabsitDate_01 {
             get {
@@ -331,7 +331,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a maio 2022.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ago 2021.
         /// </summary>
         public static string LabsitDate_01_1 {
             get {
@@ -340,7 +340,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a jan 2023.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a atualmente.
         /// </summary>
         public static string LabsitDate_02 {
             get {
@@ -349,7 +349,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a atualmente.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a maio 2022.
         /// </summary>
         public static string LabsitDate_02_1 {
             get {

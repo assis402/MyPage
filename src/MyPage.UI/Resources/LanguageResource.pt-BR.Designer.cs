@@ -22,14 +22,14 @@ namespace MyPage.UI.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class LanguageResource_pt_BRe {
+    public class LanguageResource___Cópia {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal LanguageResource_pt_BRe() {
+        internal LanguageResource___Cópia() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MyPage.UI.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyPage.UI.Resources.LanguageResource.pt-BRe", typeof(LanguageResource_pt_BRe).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyPage.UI.Resources.LanguageResource - Cópia", typeof(LanguageResource___Cópia).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Sou estudante de Análise e Desenvolvimento de Sistemas e trabalho com desenvolvimento de software há mais de dois anos, majoritariamente com foco em Backend na linguagem.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Sou estudante de Análise e Desenvolvimento de Sistemas e trabalho com desenvolvimento de software há {0} anos e {1} meses, majoritariamente com foco em Backend na linguagem.
         /// </summary>
         public static string AboutBody_01 {
             get {
@@ -124,6 +124,24 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a sobre.
+        /// </summary>
+        public static string AboutMenu {
+            get {
+                return ResourceManager.GetString("AboutMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SOBRE.
+        /// </summary>
+        public static string AboutTitle {
+            get {
+                return ResourceManager.GetString("AboutTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Olá, me chamo.
         /// </summary>
         public static string AboutTitle_Greeting {
@@ -151,6 +169,24 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a veja mais detalhes no Linkedin.
+        /// </summary>
+        public static string BackgroundMore {
+            get {
+                return ResourceManager.GetString("BackgroundMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a CERTIFICAÇÕES.
+        /// </summary>
+        public static string CertificationsTitle {
+            get {
+                return ResourceManager.GetString("CertificationsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Empresa.
         /// </summary>
         public static string Company {
@@ -169,7 +205,43 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a novembro 2020 - abril de 2021.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a cursos.
+        /// </summary>
+        public static string CoursesMenu {
+            get {
+                return ResourceManager.GetString("CoursesMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a veja todos os meus certificados.
+        /// </summary>
+        public static string CoursesMore {
+            get {
+                return ResourceManager.GetString("CoursesMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a CURSOS CONCLUÍDOS.
+        /// </summary>
+        public static string CoursesTitle {
+            get {
+                return ResourceManager.GetString("CoursesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a contato@matheusassis.dev.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a abr 2021.
         /// </summary>
         public static string FitbankDate_01 {
             get {
@@ -178,11 +250,29 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a abril 2021 - agosto de 2021.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a nov 2020.
+        /// </summary>
+        public static string FitbankDate_01_1 {
+            get {
+                return ResourceManager.GetString("FitbankDate_01.1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ago 2021.
         /// </summary>
         public static string FitbankDate_02 {
             get {
                 return ResourceManager.GetString("FitbankDate_02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a abr 2021.
+        /// </summary>
+        public static string FitbankDate_02_1 {
+            get {
+                return ResourceManager.GetString("FitbankDate_02.1", resourceCulture);
             }
         }
         
@@ -223,7 +313,16 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a agosto 2021 - maio de 2022.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a horas.
+        /// </summary>
+        public static string Hours {
+            get {
+                return ResourceManager.GetString("Hours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a maio 2022.
         /// </summary>
         public static string LabsitDate_01 {
             get {
@@ -232,11 +331,29 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a janeiro de 2023 - atualmente.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ago 2021.
+        /// </summary>
+        public static string LabsitDate_01_1 {
+            get {
+                return ResourceManager.GetString("LabsitDate_01.1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a atualmente.
         /// </summary>
         public static string LabsitDate_02 {
             get {
                 return ResourceManager.GetString("LabsitDate_02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a jan 2023.
+        /// </summary>
+        public static string LabsitDate_02_1 {
+            get {
+                return ResourceManager.GetString("LabsitDate_02.1", resourceCulture);
             }
         }
         
@@ -295,6 +412,33 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a veja meus outros artigos.
+        /// </summary>
+        public static string MediumMore {
+            get {
+                return ResourceManager.GetString("MediumMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Publicado em.
+        /// </summary>
+        public static string MediumPostDate {
+            get {
+                return ResourceManager.GetString("MediumPostDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ARTIGOS NO MEDIUM.
+        /// </summary>
+        public static string MediumTitle {
+            get {
+                return ResourceManager.GetString("MediumTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Esta é minha página profissional, onde busco contar um resumo da minha trajetória, elencar conhecimentos e expor projetos pessoais..
         /// </summary>
         public static string PresentationText {
@@ -313,11 +457,47 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a projetos.
+        /// </summary>
+        public static string ProjectsMenu {
+            get {
+                return ResourceManager.GetString("ProjectsMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a pesquise um projeto.
+        /// </summary>
+        public static string SearchDefaultText {
+            get {
+                return ResourceManager.GetString("SearchDefaultText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a confira meus projetos pessoais.
         /// </summary>
         public static string SecondProjectsButton {
             get {
                 return ResourceManager.GetString("SecondProjectsButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a HABILIDADES TÉCNICAS.
+        /// </summary>
+        public static string SkillsTitle {
+            get {
+                return ResourceManager.GetString("SkillsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a vídeo.
+        /// </summary>
+        public static string VideoText {
+            get {
+                return ResourceManager.GetString("VideoText", resourceCulture);
             }
         }
     }

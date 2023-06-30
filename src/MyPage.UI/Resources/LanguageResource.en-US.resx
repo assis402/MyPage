@@ -181,16 +181,16 @@
     <value>contact@matheusassis.dev</value>
   </data>
   <data name="FitbankDate_01" xml:space="preserve">
-    <value>Nov 2020</value>
+    <value>Apr 2021</value>
   </data>
   <data name="FitbankDate_01.1" xml:space="preserve">
-    <value>Apr 2021</value>
+    <value>Nov 2020</value>
   </data>
   <data name="FitbankDate_02" xml:space="preserve">
-    <value>Apr 2021</value>
+    <value>Aug 2021</value>
   </data>
   <data name="FitbankDate_02.1" xml:space="preserve">
-    <value>Aug 2021</value>
+    <value>Apr 2021</value>
   </data>
   <data name="FitbankSubtitle_01" xml:space="preserve">
     <value>Manual tests (exploratory, APIs, etc) and test documentation</value>
@@ -208,17 +208,16 @@
     <value>hours</value>
   </data>
   <data name="LabsitDate_01" xml:space="preserve">
-    <value>
-Aug 2021</value>
-  </data>
-  <data name="LabsitDate_01.1" xml:space="preserve">
     <value>May 2022</value>
   </data>
+  <data name="LabsitDate_01.1" xml:space="preserve">
+    <value>Aug 2021</value>
+  </data>
   <data name="LabsitDate_02" xml:space="preserve">
-    <value>Jan 2023</value>
+    <value>Today</value>
   </data>
   <data name="LabsitDate_02.1" xml:space="preserve">
-    <value>Today</value>
+    <value>May 2022</value>
   </data>
   <data name="LabsitSubtitle_01" xml:space="preserve">
     <value>C#, .NET Core, MySQL, SQL Server, Redis, APIs Rest, Microservices and Unit Tests</value>
@@ -230,7 +229,7 @@ Aug 2021</value>
     <value>Mid-level Backend Developer</value>
   </data>
   <data name="LabsitTitle_02" xml:space="preserve">
-    <value>Fullstack Developer</value>
+    <value>Mid-level Fullstack Developer</value>
   </data>
   <data name="MainStackBody" xml:space="preserve">
     <value>.NET Backend Developer</value>
