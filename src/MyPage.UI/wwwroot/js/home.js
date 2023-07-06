@@ -12,3 +12,45 @@ function animateAbout() {
         }
     }
 }
+
+function seeMoreTimeline(id) {
+    let internalDiv = document.getElementById('timeline-exp-internal-' + id)
+    let timelineBar = document.getElementById('timeline-bar-' + id)
+    timelineBar.style.height = `${internalDiv.offsetHeight + 30}px`
+
+    let timelineTechs = document.getElementById('timeline-techs-' + id)
+    let timelineAttri = document.getElementById('timeline-attri-' + id)
+    let timelineSeeMore = document.getElementById('timeline-seemore-' + id)
+    let timelineSeeLess = document.getElementById('timeline-seeless-' + id)
+
+    timelineSeeMore.style.opacity = '0';
+    timelineSeeMore.style.display = 'none';
+
+    timelineTechs.style.opacity = '1';
+    timelineAttri.style.opacity = '1';
+    timelineSeeLess.style.opacity = '1';
+
+    if (id != 'exp1')
+        seeLessTimeline('exp1');
+    if (id != 'exp2')
+        seeLessTimeline('exp2');
+    if (id != 'exp3')
+        seeLessTimeline('exp3');
+}
+
+function seeLessTimeline(id) {
+    let timelineBar = document.getElementById('timeline-bar-' + id)
+    timelineBar.style.height = '200px'
+
+    let timelineTechs = document.getElementById('timeline-techs-' + id)
+    let timelineAttri = document.getElementById('timeline-attri-' + id)
+    let timelineSeeMore = document.getElementById('timeline-seemore-' + id)
+    let timelineSeeLess = document.getElementById('timeline-seeless-' + id)
+
+    timelineSeeMore.style.opacity = '1';
+    timelineSeeMore.style.display = 'flex';
+
+    timelineTechs.style.opacity = '0';
+    timelineAttri.style.opacity = '0';
+    timelineSeeLess.style.opacity = '0';
+}

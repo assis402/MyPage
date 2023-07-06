@@ -150,6 +150,9 @@
   <data name="AboutTitle_Name" xml:space="preserve">
     <value>Matheus de Assis</value>
   </data>
+  <data name="Attributions" xml:space="preserve">
+    <value>Atribuições</value>
+  </data>
   <data name="Background" xml:space="preserve">
     <value>EXPERIÊNCIA</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="Company" xml:space="preserve">
     <value>Empresa</value>
+  </data>
+  <data name="CompanySubTitle" xml:space="preserve">
+    <value>Alocado na empresa</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>CONTATO</value>
@@ -180,6 +186,18 @@
   <data name="Email" xml:space="preserve">
     <value>contato@matheusassis.dev</value>
   </data>
+  <data name="FitbankAttri_01" xml:space="preserve">
+    <value>&lt;li&gt;Testes manuais em APIs, Workers e UI Admin;&lt;/li&gt;
+&lt;li&gt;Documentação de testes e detalhamento de fluxos do software;&lt;/li&gt;
+&lt;li&gt;Colaboração com a equipe de desenvolvimento, fornecendo feedback sobre a qualidade do software;&lt;/li&gt;</value>
+  </data>
+  <data name="FitbankAttri_02" xml:space="preserve">
+    <value>&lt;li&gt;Desenvolvimento de novas funcionalidades em projetos diversos;&lt;/li&gt;
+&lt;li&gt;Correção de bugs e implementações pontuais;&lt;/li&gt;
+&lt;li&gt;Elaboração de documentação para orientação e para novas entregas;&lt;/li&gt;
+&lt;li&gt;Revisões de código (code reviews), oferecendo feedback construtivo aos colegas de equipe;&lt;/li&gt;
+&lt;li&gt;Manutenção de APIs e Workers para integração de sistemas e serviços;&lt;/li&gt;</value>
+  </data>
   <data name="FitbankDate_01" xml:space="preserve">
     <value>abr 2021</value>
   </data>
@@ -192,11 +210,14 @@
   <data name="FitbankDate_02.1" xml:space="preserve">
     <value>abr 2021</value>
   </data>
-  <data name="FitbankSubtitle_01" xml:space="preserve">
-    <value>Testes manuais (exploratórios, em APIs e etc) e documentações de testes</value>
+  <data name="FitbankResume_01" xml:space="preserve">
+    <value>Testes manuais, Postman e SQL Server.</value>
   </data>
-  <data name="FitbankSubtitle_02" xml:space="preserve">
-    <value>C#, .NET Framework, ASP.NET, Xamarin, JavaScript, SQL Server e APIs</value>
+  <data name="FitbankResume_02" xml:space="preserve">
+    <value>Backend com C# .NET Framework e frontend com C# ASP.NET MVC.</value>
+  </data>
+  <data name="FitbankTechs_02" xml:space="preserve">
+    <value>C#, .NET Framework, ASP.NET, Xamarin, JavaScript, SQL Server, APIs e Workers.</value>
   </data>
   <data name="FitbankTitle_01" xml:space="preserve">
     <value>Estagiário de Testes</value>
@@ -207,29 +228,31 @@
   <data name="Hours" xml:space="preserve">
     <value>horas</value>
   </data>
-  <data name="LabsitDate_01" xml:space="preserve">
-    <value>maio 2022</value>
+  <data name="LabsitAttri_01" xml:space="preserve">
+    <value>&lt;li&gt;Desenvolvimento de novas funcionalidades em projetos diversos;&lt;/li&gt;
+&lt;li&gt;Investigação e diagnóstico de erros em ambiente de produção;&lt;/li&gt;
+&lt;li&gt;Correção de bugs e implementações pontuais;&lt;/li&gt;
+&lt;li&gt;Criação e acompanhamento de processos de mudança (GMUD) em ambiente de produção;&lt;/li&gt;
+&lt;li&gt;Elaboração de documentação para orientação e para novas entregas;&lt;/li&gt;
+&lt;li&gt;Atuação em equipes de sustentação em projetos diversos;&lt;/li&gt;
+&lt;li&gt;Revisões de código (code reviews), oferecendo feedback construtivo aos colegas de equipe;&lt;/li&gt;
+&lt;li&gt;Criação e manutenção de APIs, Workers e Consumers para integração de sistemas e serviços;&lt;/li&gt;
+&lt;li&gt;Participação do processo de planejamento de novos projetos, auxiliando nas definições técnicas.&lt;/li&gt;</value>
   </data>
-  <data name="LabsitDate_01.1" xml:space="preserve">
+  <data name="LabsitDate_01" xml:space="preserve">
     <value>ago 2021</value>
   </data>
-  <data name="LabsitDate_02" xml:space="preserve">
+  <data name="LabsitDate_01.1" xml:space="preserve">
     <value>atualmente</value>
   </data>
-  <data name="LabsitDate_02.1" xml:space="preserve">
-    <value>maio 2022</value>
+  <data name="LabsitResume_01" xml:space="preserve">
+    <value>Backend com C# .NET e frontend com Angular (UI Admin's).</value>
   </data>
-  <data name="LabsitSubTitle_01" xml:space="preserve">
-    <value>C#, .NET Core, MySQL, SQL Server, Redis, APIs Rest, Microsserviços e Testes Unitários</value>
-  </data>
-  <data name="LabsitSubTitle_02" xml:space="preserve">
-    <value>C#, .NET Core, Angular 8, ASP.NET, .NET Framework, MySQL, SQL Server, APIs Rest, Microsserviços e Testes Unitários</value>
+  <data name="LabsitTechs_01" xml:space="preserve">
+    <value>C#, .NET Core, Angular, ASP.NET, .NET Framework, MySQL, SQL Server, Redis, APIs Rest, Microsserviços e Testes Unitários.</value>
   </data>
   <data name="LabsitTitle_01" xml:space="preserve">
-    <value>Desenvolvedor Backend Pleno</value>
-  </data>
-  <data name="LabsitTitle_02" xml:space="preserve">
-    <value>Desenvolvedor Fullstack</value>
+    <value>Desenvolvedor Fullstack Pleno</value>
   </data>
   <data name="MainStackBody" xml:space="preserve">
     <value>Desenvolvedor Backend .NET</value>
@@ -251,7 +274,6 @@
   </data>
   <data name="ProjectsButton" xml:space="preserve">
     <value>ver projetos</value>
-    <comment> </comment>
   </data>
   <data name="ProjectsMenu" xml:space="preserve">
     <value>projetos</value>
@@ -262,8 +284,17 @@
   <data name="SecondProjectsButton" xml:space="preserve">
     <value>confira meus projetos pessoais</value>
   </data>
+  <data name="SeeLess" xml:space="preserve">
+    <value>ver menos</value>
+  </data>
+  <data name="SeeMore" xml:space="preserve">
+    <value>ver mais</value>
+  </data>
   <data name="SkillsTitle" xml:space="preserve">
     <value>HABILIDADES TÉCNICAS</value>
+  </data>
+  <data name="Technologies" xml:space="preserve">
+    <value>Tecnologias</value>
   </data>
   <data name="VideoText" xml:space="preserve">
     <value>vídeo</value>

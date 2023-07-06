@@ -67,9 +67,10 @@
                         await Html.RenderPartialAsync("_Skill", new SkillModel("Testes Integrados", 3, animationDelay += 200));
                         await Html.RenderPartialAsync("_Skill", new SkillModel("Typescript", 2, animationDelay += 200));
                         await Html.RenderPartialAsync("_Skill", new SkillModel("Angular", 2, animationDelay += 200));
-                        await Html.RenderPartialAsync("_Skill", new SkillModel("React / React Native", 2, animationDelay += 200));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("React Native", 2, animationDelay += 200));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("Cloud Computing (Azure)", 2, animationDelay += 200));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel("React", 1, animationDelay += 200));
                         await Html.RenderPartialAsync("_Skill", new SkillModel("Devops", 1, animationDelay += 200));
-                        await Html.RenderPartialAsync("_Skill", new SkillModel("Cloud Computing (Azure)", 1, animationDelay += 200));
                     }
                 </div>
             </div>
@@ -99,80 +100,125 @@
     <div class="gradient-container">
         <div class="mini-title">@LanguageResource["Background"]</div>
         <div class="timeline-body">
-            <div class="timeline-exp">
-                <div class="timeline-exp-circle labsit-full-circle"></div>
-                <div class="timeline-exp-date">
-                    @LanguageResource["LabsitDate_02"]
-                    <img class="timeline-arrow" src="~/img/arrow.svg" />
-                    @LanguageResource["LabsitDate_02.1"]
-                </div>
-                <div class="timeline-exp-title">
-                    @LanguageResource["LabsitTitle_02"]
-                    <div class="timeline-exp-subtitle">@LanguageResource["LabsitSubtitle_02"]</div>
-                    @*<div class="timeline-exp-attributions">
-                        <p>Atribuições:</p>
-                        <ul>
-                            <li>Desenvolvimento de novas funcionalidades em projetos diversos;</li>
-                            <li>Investigação e diagnóstico de erros em ambiente de produção;</li>
-                            <li>Correção de bugs e implementações pontuais;</li>
-                            <li>Criação e acompanhamento de processos de mudança (GMUD) em ambiente de produção;</li>
-                            <li>Elaboração de documentação para orientação e para novas entregas;</li>
-                            <li>Atuação em equipes de sustentação em projetos diversos;</li>
-                            <li>Revisões de código (code reviews), oferecendo feedback construtivo aos colegas de equipe;</li>
-                            <li>Criação e manutenção de APIs, Workers e Consumers para integração de sistemas e serviços;</li>
-                            <li>Participação do processo de planejamento de novos projetos, auxiliando nas definições técnicas.</li>
-                        </ul>
-                    </div>*@
-                </div>
-            </div>
-            <div class="timeline-bar labsit-bar"></div>
-            <div class="timeline-exp-wrapper">
+            <div class="timeline">
                 <div class="timeline-exp">
                     <div class="timeline-exp-date">
-                        @LanguageResource["LabsitDate_01"]
-                        <img class="timeline-arrow" src="~/img/arrow.svg" />
                         @LanguageResource["LabsitDate_01.1"]
+                        <img class="timeline-arrow" src="~/img/arrow.svg" />
+                        @LanguageResource["LabsitDate_01"]
                     </div>
-                    <div class="timeline-exp-circle labsit-border-circle"></div>
+                    <div class="timeline-exp-circle labsit-full-circle"></div>
                     <div class="timeline-exp-title">
                         @LanguageResource["LabsitTitle_01"]
-                        <div class="timeline-exp-subtitle">@LanguageResource["LabsitSubtitle_01"]</div>
+                        <div class="timeline-exp-internal" id="timeline-exp-internal-exp3">
+                            <div class="timeline-exp-subtitle">
+                                @LanguageResource["CompanySubTitle"]
+                                <a href="https://ri.dotz.com.br/quem-somos/">Dotz Inc.</a>
+                            </div>
+                            <div class="timeline-exp-div timeline-resume" id="timeline-resume">
+                                @LanguageResource["LabsitResume_01"]
+                            </div>
+
+                            <div class="more more-timeline" onclick="seeMoreTimeline('exp3')" id="timeline-seemore-exp3">
+                                <p class="more-text more-text-exp">@LanguageResource["SeeMore"]</p>
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </div>
+
+                            <div class="timeline-exp-div timeline-exp-details" id="timeline-techs-exp3">
+                                <p class="timeline-exp-p">@LanguageResource["Technologies"]: </p>
+                                @LanguageResource["LabsitTechs_01"]
+                            </div>
+                            <div class="timeline-exp-div timeline-exp-details" id="timeline-attri-exp3">
+                                <p class="timeline-exp-p">@LanguageResource["Attributions"]:</p>
+                                <ul>
+                                    @Html.Raw(LanguageResource["LabsitAttri_01"])
+                                </ul>
+                            </div>
+                            <div class="more more-timeline timeline-exp-details" onclick="seeLessTimeline('exp3')" id="timeline-seeless-exp3">
+                                <p class="more-text more-text-exp">@LanguageResource["SeeLess"]</p>
+                                <span class="material-symbols-outlined">expand_less</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="timeline-bar labsit-bar" id="timeline-bar-exp3"></div>
                 <div class="timeline-company" onclick="window.open('https://labsit.io/','labsit')">
                     <span class="timeline-company-arrow labsit-arrow"></span>
                     <span class="material-symbols-outlined company-icon" title="@LanguageResource["Company"]">
                         work
                     </span>
                     <span title="@LanguageResource["Company"]">Labsit</span>
-                    <img class="mini-out-logo" src="~/img/out.svg" />
                 </div>
-                <div class="timeline-bar labsit-bar"></div>
             </div>
             <div class="timeline-exp margin-top">
-                <div class="timeline-exp-circle fitbank-full-circle"></div>
                 <div class="timeline-exp-date">
                     @LanguageResource["FitbankDate_02"]
                     <img class="timeline-arrow" src="~/img/arrow.svg" />
                     @LanguageResource["FitbankDate_02.1"]
                 </div>
+                <div class="timeline-exp-circle fitbank-full-circle"></div>
                 <div class="timeline-exp-title">
                     @LanguageResource["FitbankTitle_02"]
-                    <div class="timeline-exp-subtitle">@LanguageResource["FitbankSubtitle_02"]</div>
+                    <div class="timeline-exp-internal" id="timeline-exp-internal-exp2">
+                        <div class="timeline-exp-div timeline-resume" id="timeline-resume">
+                            @LanguageResource["FitbankResume_02"]
+                        </div>
+
+                        <div class="more more-timeline" onclick="seeMoreTimeline('exp2')" id="timeline-seemore-exp2">
+                            <p class="more-text more-text-exp">@LanguageResource["SeeMore"]</p>
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </div>
+
+                        <div class="timeline-exp-div timeline-exp-details" id="timeline-techs-exp2">
+                            <p class="timeline-exp-p">@LanguageResource["Technologies"]: </p>
+                            @LanguageResource["FitbankTechs_02"]
+                        </div>
+                        <div class="timeline-exp-div timeline-exp-details" id="timeline-attri-exp2">
+                            <p class="timeline-exp-p">@LanguageResource["Attributions"]:</p>
+                            <ul>
+                                @Html.Raw(LanguageResource["FitbankAttri_02"])
+                            </ul>
+                        </div>
+                        <div class="more more-timeline timeline-exp-details" onclick="seeLessTimeline('exp2')" id="timeline-seeless-exp2">
+                            <p class="more-text more-text-exp">@LanguageResource["SeeLess"]</p>
+                            <span class="material-symbols-outlined">expand_less</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="timeline-bar fitbank-bar"></div>
+            <div class="timeline-bar fitbank-bar" id="timeline-bar-exp2"></div>
             <div class="timeline-exp-wrapper">
                 <div class="timeline-exp">
-                    <div class="timeline-exp-circle fitbank-border-circle"></div>
                     <div class="timeline-exp-date">
                         @LanguageResource["FitbankDate_01"]
                         <img class="timeline-arrow" src="~/img/arrow.svg" />
                         @LanguageResource["FitbankDate_01.1"]
                     </div>
+                    <div class="timeline-exp-circle fitbank-border-circle"></div>
                     <div class="timeline-exp-title">
                         @LanguageResource["FitbankTitle_01"]
-                        <div class="timeline-exp-subtitle">@LanguageResource["FitbankSubtitle_01"]</div>
+                        <div class="timeline-exp-internal" id="timeline-exp-internal-exp1">
+                            <div class="timeline-exp-div timeline-resume" id="timeline-resume">
+                                @LanguageResource["FitbankResume_01"]
+                            </div>
+
+                            <div class="more more-timeline" onclick="seeMoreTimeline('exp1')" id="timeline-seemore-exp1">
+                                <p class="more-text more-text-exp">@LanguageResource["SeeMore"]</p>
+                                <span class="material-symbols-outlined">expand_more</span>
+                            </div>
+                            <div class="timeline-exp-div timeline-exp-details" id="timeline-techs-exp1">
+                            </div>
+                            <div class="timeline-exp-div timeline-exp-details" id="timeline-attri-exp1">
+                                <p class="timeline-exp-p">@LanguageResource["Attributions"]:</p>
+                                <ul>
+                                    @Html.Raw(LanguageResource["FitbankAttri_01"])
+                                </ul>
+                            </div>
+                            <div class="more more-timeline timeline-exp-details" onclick="seeLessTimeline('exp1')" id="timeline-seeless-exp1">
+                                <p class="more-text more-text-exp">@LanguageResource["SeeLess"]</p>
+                                <span class="material-symbols-outlined">expand_less</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-company" onclick="window.open('https://fitbank.com.br/','fitbank')">
@@ -181,12 +227,11 @@
                         work
                     </span>
                     <span title="@LanguageResource["Company"]">FitBank</span>
-                    <img class="mini-out-logo" src="~/img/out.svg" />
                 </div>
-                <div class="timeline-bar fitbank-bar"></div>
+                <div class="timeline-bar fitbank-bar" id="timeline-bar-exp1"></div>
             </div>
         </div>
-        <div class="more" onclick="window.open('https://linkedin.com/in/assisdematheus/','linkedin')">
+        <div class="more" onclick="window.open('https://linkedin.com/in/assisdematheus/','linkedin')" style="z-index: 2">
             <span class="material-symbols-outlined">more_horiz</span>
             <p class="more-text">@LanguageResource["BackgroundMore"]</p>
         </div>
@@ -232,7 +277,7 @@
         <div class="mini-title">@LanguageResource["CoursesTitle"]</div>
         <div class="courses-body">
             @{
-                foreach (var courseCertificate in Model.CourseCertificateList)
+                foreach (var courseCertificate in Model.CourseCertificateList.Take(6))
                 {
                     await Html.RenderPartialAsync("~/Views/Courses/_CourseCard.cshtml", courseCertificate);
                 }

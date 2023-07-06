@@ -28,19 +28,25 @@ function removeSelectedTag(tagName) {
 }
 
 function openVideoModal(videoUrl) {
-    document.getElementById("video").src = videoUrl;
-    document.getElementById("modal").style.display = "flex";
+    let video = document.getElementById("video");
+    let modal = document.getElementById("modal");
+
+    video.src = videoUrl;
+    modal.style.display = "flex";
 
     setTimeout(() => {
-        document.getElementById("modal").style.opacity = "1";
+        modal.style.opacity = "1";
     }, 200)
 }
 
 function closeVideoModal() {
-    document.getElementById("video").src = "";
-    document.getElementById("modal").style.opacity = "0";
+    let video = document.getElementById("video");
+    let modal = document.getElementById("modal");
+
+    video.src = "";
+    modal.style.opacity = "0";
 
     setTimeout(() => {
-        document.getElementById("modal").style.display = "none";
+        modal.style.display = "none";
     }, 200)
 }

@@ -2,10 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
 }
 
 .admin-container {
+    margin-top: 150px;
+    margin-bottom: 100px;
     padding: 0 60px;
     display: flex;
     align-items: center;
@@ -26,7 +27,6 @@
     .admin-container span {
         display: flex;
         align-items: center;
-        justify-content: center;
         gap: 10px;
     }
 
@@ -108,3 +108,61 @@
         filter: invert(1);
         margin-right: 15px;
     }
+
+@media(max-width: 950px) {
+    .admin-container h1 {
+        font-size: 2rem;
+    }
+
+    .admin-container {
+        padding: 60px 40px;
+        flex-direction: column;
+        height: auto;
+        gap: 40px;
+        margin-bottom: 100px;
+    }
+
+    .admin-divisor {
+        height: 1px;
+        width: 105%;
+    }
+
+    .admin-options {
+        width: 80%;
+    }
+
+    .admin-container p {
+        margin: 0;
+    }
+
+    .admin-first-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 0;
+    }
+
+    .option-button {
+        width: 100%;
+    }
+}
+
+@media(max-width: 768px) {
+    .admin-container p {
+        margin: 0;
+        font-size: 13px;
+    }
+
+    .option-button {
+        font-size: 11px;
+    }
+
+        .option-button img {
+            height: 17px;
+            margin-right: 10px;
+        }
+
+    .admin-container span img {
+        height: 25px;
+    }
+}

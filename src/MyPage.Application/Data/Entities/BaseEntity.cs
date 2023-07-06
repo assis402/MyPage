@@ -1,6 +1,4 @@
-﻿using Google.Cloud.Firestore;
-
-namespace MyPage.Application.Data.Entities
+﻿namespace MyPage.Application.Data.Entities
 {
     public abstract class BaseEntity
     {
