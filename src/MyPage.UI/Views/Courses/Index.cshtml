@@ -35,6 +35,10 @@
                 </span>
             </div>
         }
+        else
+        {
+            @*<p>@(Model.CourseCertificateList.Count) completed courses.</p>*@
+        }
         @{
             foreach (var courseCertificate in Model.CourseCertificateList)
             {

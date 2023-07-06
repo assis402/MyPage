@@ -1,69 +1,76 @@
-function menuSwitch() {
-    if (window.matchMedia("(min-width: 768px)").matches) {
-        document.getElementById("menu-items").style.display = "flex";
-        document.getElementById("menu-button-mobile").style.display = "none";
+menuSwitch();
 
-        document.getElementById("menu-items").style.flexDirection = "row";
-        document.getElementById("menu-items").style.alignItems = "center";
-        document.getElementById("menu-items").style.justifyContent = "center";
+function menuSwitch() {
+    let menuBackground = document.getElementById("menu-background");
+    let menuItems = document.getElementById("menu-items");
+    let menuButtonMobile = document.getElementById("menu-button-mobile");
+    let menuIsOpen = document.getElementById("menu-mobile").style.opacity === "1";
+
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        menuItems.style.display = "flex";
+        menuButtonMobile.style.display = "none";
+
+        menuItems.style.flexDirection = "row";
+        menuItems.style.alignItems = "center";
+        menuItems.style.justifyContent = "center";
     } else {
-        document.getElementById("menu-items").style.display = "none";
-        document.getElementById("menu-button-mobile").style.display = "block";
+        menuItems.style.display = "none";
+        menuButtonMobile.style.display = "block";
     }
 }
 
 function handleMobileMenu() {
-    let menuIsOpen = document.getElementById("menu-mobile").style.opacity === "1";
+    let menuBackground = document.getElementById("menu-background");
+    let menuMobile = document.getElementById("menu-mobile");
+    let menuIsOpen = menuMobile.style.opacity === "1";
+
     if (menuIsOpen) {
-        document.getElementById("menu-mobile").style.opacity = "0";
-        document.getElementById("menu-mobile").style.transition = "opacity .3s linear";
+        menuMobile.style.opacity = "0";
 
         if (window.pageYOffset > 20 || document.body.scrollTop > 20) {
-            document.getElementById("menu-container").style.borderBottom = "1px solid rgba(255, 255, 255, 0.15)"
+            menuBackground.style.borderBottom = "1px solid rgba(255, 255, 255, 0.15)"
         }
         else {
-            document.getElementById("menu-background").style.opacity = "0";
+            menuBackground.style.opacity = "0";
         }
 
         setTimeout(() => {
-            document.getElementById("menu-mobile").style.display = "none"
-        }, 300);
+            menuMobile.style.display = "none"
+        }, 200);
     } else {
-        document.getElementById("menu-mobile").style.display = "flex"
+        menuMobile.style.display = "flex"
 
         setTimeout(() => {
-            document.getElementById("menu-container").style.borderBottom = "0px solid rgba(255, 255, 255, 0.0)"
-
-            document.getElementById("menu-mobile").style.opacity = "1";
-            document.getElementById("menu-mobile").style.transition = "opacity .3s linear";
-            document.getElementById("menu-background").style.opacity = "1";
+            menuMobile.style.opacity = "1";
+            menuBackground.style.opacity = "1";
         }, 1);
     }
 }
 
 function scrollFunction() {
+    let menuBackground = document.getElementById("menu-background");
+    let menuContainer = document.getElementById("menu-container");
+    let myPhoto = document.getElementById("my-photo");
     let menuIsOpen = document.getElementById("menu-mobile").style.opacity === "1";
 
     if (window.pageYOffset > 20 || document.body.scrollTop > 20) {
-        document.getElementById("menu-container").style.padding = "0 20px"
-        document.getElementById("menu-background").style.opacity = "1";
-        document.getElementById("my-photo").style.width = "0"
-        document.getElementById("my-photo").style.marginRight = "5px"
+        menuContainer.style.padding = "0 20px"
+        menuBackground.style.opacity = "1";
+        myPhoto.style.width = "0"
+        myPhoto.style.marginRight = "5px"
+        myPhoto.style.transition = "width .3s linear, margin .3s linear";
 
         if (!menuIsOpen) {
-            document.getElementById("menu-container").style.borderBottom = "1px solid rgba(210, 213, 255, 0.15)"
+            menuBackground.style.borderBottom = "1px solid rgba(210, 213, 255, 0.15)"
         }
-
-        document.getElementById("my-photo").style.transition = "width .3s linear, margin .3s linear";
     } else {
-        document.getElementById("my-photo").style.width = "5rem";
-        document.getElementById("my-photo").style.marginRight = "20px";
-        document.getElementById("my-photo").style.transition = "width .3s linear, margin .3s linear";
-        document.getElementById("menu-container").style.padding = "20px";
-        document.getElementById("menu-container").style.borderBottom = "0px solid rgba(255, 255, 255, 0)";
+        myPhoto.style.width = "5rem";
+        myPhoto.style.marginRight = "20px";
+        myPhoto.style.transition = "width .3s linear, margin .3s linear";
+        menuContainer.style.padding = "20px";
 
         if (!menuIsOpen) {
-            document.getElementById("menu-background").style.opacity = "0";
+            menuBackground.style.opacity = "0";
         }
     }
 }
@@ -72,8 +79,6 @@ function copyEmail(email) {
     navigator.clipboard.writeText(email);
     document.getElementById("email").src = "/img/copy-checked.svg"
 }
-
-menuSwitch();
 
 window.onscroll = () => {
     animateAbout();
