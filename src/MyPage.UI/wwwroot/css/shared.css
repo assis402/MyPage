@@ -396,6 +396,7 @@ a {
 .form-group {
     position: relative;
     height: 50px;
+    display: flex;
 }
 
 .form-field {
@@ -452,6 +453,24 @@ a {
     transform: scale(.8) translateY(-25px);
 }
 
+.checkbox {
+    position: relative !important;
+    width: 20px;
+    margin-left: 25px;
+}
+
+.checkbox-label {
+    position: relative !important;
+}
+
+.checkbox:focus + .form-label {
+    transform: none;
+}
+
+.checkbox:valid + .form-label {
+    transform: none;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -497,6 +516,11 @@ input {
         input[type="date"]:valid::-webkit-datetime-edit-year-field + .form-label {
             transform: scale(.8) translateY(-25px);
         }
+
+    input[type=checkbox] {
+        filter: invert();
+        accent-color: #aed42b;
+    }
 
 @media (max-width: 768px) {
     from-scroll::-webkit-scrollbar {

@@ -433,6 +433,7 @@
     margin-top: 40px;
     margin-bottom: 15px;
     position: relative;
+    max-width: 600px;
 }
 
 .timeline-exp-wrapper {
@@ -450,7 +451,7 @@
     gap: 54px;
 }
 
-.timeline-exp-title {
+.timeline-exp-external {
     flex-grow: 4;
     flex-basis: 0;
     text-align: left;
@@ -458,6 +459,7 @@
     font-weight: 200;
     height: 27px;
     font-size: 18px;
+    margin-left: 153px;
 }
 
 .timeline-exp-subtitle {
@@ -488,6 +490,10 @@
     height: 20px;
     line-height: 20px;
     gap: 6px;
+    left: 0;
+    position: absolute;
+    top: 3px;
+    letter-spacing: 1px;
 }
 
 .timeline-exp-circle {
@@ -565,7 +571,7 @@
 
 .timeline-bar {
     width: 2px;
-    height: 200px;
+    height: 255px;
     background-color: #dfdfdf;
     left: 125.6px;
     position: relative;
@@ -578,6 +584,7 @@
     margin-right: 8px;
     width: 11px;
     opacity: 0.5;
+    transform: rotate(90deg);
 }
 
 .labsit-bar {
@@ -606,6 +613,13 @@
 
 .timeline {
     position: relative;
+}
+
+.timeline-exp-title {
+    font-weight: 400;
+}
+
+.timeline-exp-internal {
 }
 
 .timeline-exp-details-button {
@@ -872,38 +886,50 @@ li:not(:last-child) {
 }
 
 @media(max-width: 768px) {
-    .timeline-exp-title {
-        font-size: 14px;
+    .timeline-exp-external {
+        font-size: 16px;
         height: 20px;
+        margin-left: 40px;
     }
 
     .timeline-exp-subtitle {
-        font-size: 11px;
+        font-size: 13px;
     }
 
     .timeline-exp-date {
-        font-size: 11px;
-        max-width: 67px;
-        min-width: 67px;
+        font-size: 13px;
+        left: auto;
+        max-width: initial;
+        flex-direction: row-reverse;
+        min-width: auto;
+        align-items: center;
+        gap: 8px;
+        top: 0;
+    }
+
+    .timeline-arrow {
+        transform: rotate(0);
+        margin-right: 0;
     }
 
     .timeline-body {
+        max-width: 400px;
         padding: 0 6%;
     }
 
     .timeline-bar {
-        left: 93px;
+        left: 16px;
     }
 
     .timeline-company {
         width: 125px;
         height: 35px;
-        left: 98px;
+        left: 22px;
         font-size: 13px;
     }
 
     .more-text-exp {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .more-timeline span {
@@ -916,12 +942,16 @@ li:not(:last-child) {
         border-bottom: 19px solid transparent;
     }
 
+    .timeline-exp-internal {
+        margin-top: 36px;
+    }
+
     .timeline-exp-circle {
-        left: 87px;
+        left: 10px;
     }
 
     .timeline-exp-div {
-        font-size: 11px;
+        font-size: 13px;
     }
 
         .timeline-exp-div p {
@@ -929,7 +959,7 @@ li:not(:last-child) {
         }
 
         .timeline-exp-div ul {
-            font-size: 11px;
+            font-size: 12px;
         }
 
     li:not(:last-child) {

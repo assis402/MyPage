@@ -16,7 +16,7 @@ function animateAbout() {
 function seeMoreTimeline(id) {
     let internalDiv = document.getElementById('timeline-exp-internal-' + id)
     let timelineBar = document.getElementById('timeline-bar-' + id)
-    timelineBar.style.height = `${internalDiv.offsetHeight + 30}px`
+    timelineBar.style.height = `${internalDiv.offsetHeight + 40}px`
 
     let timelineTechs = document.getElementById('timeline-techs-' + id)
     let timelineAttri = document.getElementById('timeline-attri-' + id)
@@ -40,7 +40,7 @@ function seeMoreTimeline(id) {
 
 function seeLessTimeline(id) {
     let timelineBar = document.getElementById('timeline-bar-' + id)
-    timelineBar.style.height = '200px'
+    timelineBar.style.height = '255px'
 
     let timelineTechs = document.getElementById('timeline-techs-' + id)
     let timelineAttri = document.getElementById('timeline-attri-' + id)

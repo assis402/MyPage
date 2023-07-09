@@ -1,10 +1,9 @@
 menuSwitch();
 
 function menuSwitch() {
-    let menuBackground = document.getElementById("menu-background");
     let menuItems = document.getElementById("menu-items");
     let menuButtonMobile = document.getElementById("menu-button-mobile");
-    let menuIsOpen = document.getElementById("menu-mobile").style.opacity === "1";
+    let timelineArrow = document.getElementById('timeline-arrow');
 
     if (window.matchMedia("(min-width: 768px)").matches) {
         menuItems.style.display = "flex";
@@ -94,3 +93,13 @@ if (history.scrollRestoration) {
         window.scrollTo(0, 0);
     }
 }
+
+const checkbox = document.getElementById('checkbox');
+
+checkbox.addEventListener('change', (event) => {
+    if (checkbox.checked) {
+        checkbox.value = 'true';
+    } else {
+        checkbox.value = 'false';
+    }
+})

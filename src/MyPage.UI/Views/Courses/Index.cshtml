@@ -5,6 +5,10 @@
 @using MyPage.Application.Models.Enums;
 @model CoursesPageModel
 
+@{
+    var isAuthenticated = User.Identity?.IsAuthenticated ?? false;
+}
+
 @if (ViewBag.Message != null)
 {
     <script>
@@ -16,7 +20,7 @@
 
 <div class="courses-page-external-container">
     <div class="courses-page-container">
-        @if (User.Identity?.IsAuthenticated ?? false)
+        @if (isAuthenticated)
         {
             <div class="admin-section">
                 <span>  
@@ -40,7 +44,8 @@
             @*<p>@(Model.CourseCertificateList.Count) completed courses.</p>*@
         }
         @{
-            foreach (var courseCertificate in Model.CourseCertificateList)
+            var courseList = isAuthenticated ? Model.CourseCertificateList : Model.CourseCertificateList.Where(x => x.IsVisible);
+            foreach (var courseCertificate in courseList)
             {
                 await Html.RenderPartialAsync("_CourseCard", courseCertificate);
             }

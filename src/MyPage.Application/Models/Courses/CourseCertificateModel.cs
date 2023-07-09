@@ -14,6 +14,7 @@ namespace MyPage.Application.Models.Courses
         {
             Id = courseCertificateEntity.Id;
             TitleDictionary = courseCertificateEntity.TitleDictionary;
+            IsVisible = courseCertificateEntity.IsVisible;
             WorkLoad = courseCertificateEntity.WorkLoad;
             ConclusionDate = courseCertificateEntity.ConclusionDate.ToDateTime();
             Tag = courseCertificateEntity.Tag;
@@ -29,6 +30,8 @@ namespace MyPage.Application.Models.Courses
         public string Id { get; set; }
 
         public IDictionary<Language, string> TitleDictionary { get; set; }
+
+        public bool IsVisible { get; set; }
 
         public string CurrentTitle { get; set; }
 

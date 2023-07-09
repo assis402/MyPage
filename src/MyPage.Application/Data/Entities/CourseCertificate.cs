@@ -19,6 +19,7 @@ namespace MyPage.Application.Data.Entities
         {
             Id = courseInsertModel.Id;
             TitleDictionary = courseInsertModel.TitleDictionary;
+            IsVisible = courseInsertModel.IsVisible;
             WorkLoad = courseInsertModel.WorkLoad.Value;
             ConclusionDate = Timestamp.FromDateTime(courseInsertModel.ConclusionDate?.ToUniversalTime() ?? DateTime.UtcNow);
             Tag = courseInsertModel.Tag;
@@ -39,6 +40,9 @@ namespace MyPage.Application.Data.Entities
             get { return TitleDictionary.ToJson(); }
             set { TitleDictionary = value.ToObject<IDictionary<Language, string>>(); }
         }
+
+        [FirestoreProperty]
+        public bool IsVisible { get; set; }
 
         [FirestoreProperty]
         public double WorkLoad { get; set; }
