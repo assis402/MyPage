@@ -318,9 +318,9 @@ a {
     position: absolute;
     top: -22px;
     text-align: center;
-    font-size: 11px;
+    font-size: 13px;
     border-radius: 4px;
-    background: rgba(42,48,74,.42);
+    background: rgba(42,48,74,.8);
     user-select: none;
     opacity: 0;
 }
@@ -334,7 +334,7 @@ a {
         left: 39%;
         border: 0.55rem solid transparent;
         border-bottom: none;
-        border-top-color: rgba(42,48,74,.42);
+        border-top-color: rgba(42,48,74,.8);
     }
 
 .fade-animation {
