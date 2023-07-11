@@ -99,22 +99,19 @@
                 <div class="contact" onclick="window.open('https://github.com/assis402','github')">
                     <img class="contact-logo" src="~/img/github.svg" />
                     <span>Github</span>
-                    <img class="out-logo" src="~/img/out.svg" />
                 </div>
                 <div class="contact" onclick="window.open('https://linkedin.com/in/assisdematheus/','linkedin')">
                     <img class="contact-logo" src="~/img/linkedin.svg" />
                     <span>Linkedin</span>
-                    <img class="out-logo" src="~/img/out.svg" />
                 </div>
                 <div class="contact" onclick="window.open('@Settings.MediumSettings.UserUrl','medium')">
                     <img class="contact-logo" src="~/img/medium.svg" />
                     <span>Medium</span>
-                    <img class="out-logo" src="~/img/out.svg" />
                 </div>
-                <div class="contact email" onclick="">
+                <div class="contact email" onclick="copyEmail('@LanguageResource["Email"]')">
+                    <div class="copy-popup" id="copy-popup">@LanguageResource["Copied"]</div>
                     <img class="contact-logo" src="~/img/email.svg" />
                     <span>@LanguageResource["Email"]</span>
-                    <img id="email" class="copy-img" src="~/img/copy.svg" onclick="copyEmail('@LanguageResource["Email"]')" />
                 </div>
             </div>
         </footer>

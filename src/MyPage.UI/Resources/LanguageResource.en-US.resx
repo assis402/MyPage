@@ -171,6 +171,9 @@
   <data name="Contact" xml:space="preserve">
     <value>CONTACT</value>
   </data>
+  <data name="Copied" xml:space="preserve">
+    <value>copied!</value>
+  </data>
   <data name="CoursesMenu" xml:space="preserve">
     <value>courses</value>
   </data>
@@ -225,8 +228,14 @@
   <data name="FitbankTitle_02" xml:space="preserve">
     <value>Junior Backend Developer</value>
   </data>
+  <data name="HardSkillsObs" xml:space="preserve">
+    <value>This is a purely illustrative representation of a self-assessment of my technical skills.</value>
+  </data>
   <data name="Hours" xml:space="preserve">
     <value>hours</value>
+  </data>
+  <data name="IntegrationTest" xml:space="preserve">
+    <value>Integration Tests</value>
   </data>
   <data name="LabsitAttri_01" xml:space="preserve">
     <value>&lt;li&gt;Development of new functionalities in various projects;&lt;/li&gt;
@@ -291,10 +300,13 @@
     <value>see more</value>
   </data>
   <data name="SkillsTitle" xml:space="preserve">
-    <value>TECH SKILLS</value>
+    <value>HARD SKILLS</value>
   </data>
   <data name="Technologies" xml:space="preserve">
     <value>Technologies</value>
+  </data>
+  <data name="UnitTest" xml:space="preserve">
+    <value>Unit Tests</value>
   </data>
   <data name="VideoText" xml:space="preserve">
     <value>video</value>

@@ -76,7 +76,12 @@ function scrollFunction() {
 
 function copyEmail(email) {
     navigator.clipboard.writeText(email);
-    document.getElementById("email").src = "/img/copy-checked.svg"
+
+    let copyPopup = document.getElementById("copy-popup");
+
+    copyPopup.classList.remove("fade-animation");
+    void copyPopup.offsetWidth;
+    copyPopup.classList.add("fade-animation");
 }
 
 window.onscroll = () => {

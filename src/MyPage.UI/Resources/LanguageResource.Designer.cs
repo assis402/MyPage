@@ -223,6 +223,15 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a copiado!.
+        /// </summary>
+        public static string Copied {
+            get {
+                return ResourceManager.GetString("Copied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a cursos.
         /// </summary>
         public static string CoursesMenu {
@@ -364,11 +373,29 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Esta é uma representação meramente ilustrativa de uma autoavaliação das minhas habilidades técnicas..
+        /// </summary>
+        public static string HardSkillsObs {
+            get {
+                return ResourceManager.GetString("HardSkillsObs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a horas.
         /// </summary>
         public static string Hours {
             get {
                 return ResourceManager.GetString("Hours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Testes Integrados.
+        /// </summary>
+        public static string IntegrationTest {
+            get {
+                return ResourceManager.GetString("IntegrationTest", resourceCulture);
             }
         }
         
@@ -541,7 +568,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a HABILIDADES TÉCNICAS.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a HARD SKILLS.
         /// </summary>
         public static string SkillsTitle {
             get {
@@ -555,6 +582,15 @@ namespace MyPage.UI.Resources {
         public static string Technologies {
             get {
                 return ResourceManager.GetString("Technologies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Testes Unitários.
+        /// </summary>
+        public static string UnitTest {
+            get {
+                return ResourceManager.GetString("UnitTest", resourceCulture);
             }
         }
         

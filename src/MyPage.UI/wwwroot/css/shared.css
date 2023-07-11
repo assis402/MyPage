@@ -293,11 +293,11 @@ a {
     align-items: center;
     gap: 20px;
     font-weight: 500;
-    color: #dfdfdf;
+    color: #aeaebc;
     cursor: pointer;
     height: 45px;
     padding: 0 12px;
-    transition: background .2s linear;
+    transition: color .2s linear;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -308,18 +308,83 @@ a {
     font-size: 15px;
     cursor: text;
     user-select: text;
+    cursor: pointer;
+    position: relative;
+}
+
+.copy-popup {
+    color: white;
+    padding: 4px 9px;
+    position: absolute;
+    top: -22px;
+    text-align: center;
+    font-size: 11px;
+    border-radius: 4px;
+    background: rgba(42,48,74,.42);
+    user-select: none;
+    opacity: 0;
+}
+
+    .copy-popup::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 100%;
+        left: 39%;
+        border: 0.55rem solid transparent;
+        border-bottom: none;
+        border-top-color: rgba(42,48,74,.42);
+    }
+
+.fade-animation {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    animation-name: fade;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 .contact:hover {
-    background: rgba(42, 48, 74, 0.42);
+    color: white;
 }
+
+    .contact:hover > .contact-logo {
+        filter: invert(1);
+    }
+
+/*.contact:hover > .copy-popup {
+        opacity: 1;
+    }*/
 
 .contact-logo {
     height: 25px;
-    filter: invert(0.7);
+    filter: invert(0.6);
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    transition: filter .2s linear;
 }
 
 .out-logo {
@@ -341,9 +406,13 @@ a {
     transition: filter .2s linear;
 }
 
-    .copy-img:hover, .copy-img:active, .copy-img:focus {
-        filter: invert(1);
-    }
+.email:hover > .copy-img {
+    filter: invert(1);
+}
+
+.copy-img:hover, .copy-img:active, .copy-img:focus {
+    filter: invert(1);
+}
 
 .gradient-bar {
     position: absolute;

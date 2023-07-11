@@ -63,8 +63,8 @@
                     @{
                         var animationDelay = 0;
                         await Html.RenderPartialAsync("_Skill", new SkillModel("C# .NET", 4, animationDelay += 200));
-                        await Html.RenderPartialAsync("_Skill", new SkillModel("Testes Unitários", 4, animationDelay += 200));
-                        await Html.RenderPartialAsync("_Skill", new SkillModel("Testes Integrados", 3, animationDelay += 200));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel(LanguageResource["UnitTest"], 4, animationDelay += 200));
+                        await Html.RenderPartialAsync("_Skill", new SkillModel(LanguageResource["IntegrationTest"], 3, animationDelay += 200));
                         await Html.RenderPartialAsync("_Skill", new SkillModel("Typescript", 2, animationDelay += 200));
                         await Html.RenderPartialAsync("_Skill", new SkillModel("Angular", 2, animationDelay += 200));
                         await Html.RenderPartialAsync("_Skill", new SkillModel("React Native", 2, animationDelay += 200));
@@ -72,6 +72,7 @@
                         await Html.RenderPartialAsync("_Skill", new SkillModel("React", 1, animationDelay += 200));
                         await Html.RenderPartialAsync("_Skill", new SkillModel("Devops", 1, animationDelay += 200));
                     }
+                    <p class="about-skills-obs">@LanguageResource["HardSkillsObs"]</p>
                 </div>
             </div>
             <div class="about-body-internal-container">
