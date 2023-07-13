@@ -72,17 +72,16 @@
                         await Html.RenderPartialAsync("_Skill", new SkillModel("React", 1, animationDelay += 200));
                         await Html.RenderPartialAsync("_Skill", new SkillModel("Devops", 1, animationDelay += 200));
                     }
-                    <p class="about-skills-obs">@LanguageResource["HardSkillsObs"]</p>
                 </div>
             </div>
             <div class="about-body-internal-container">
                 <div class="mini-sub-title">@LanguageResource["CertificationsTitle"]</div>
                 <div class="about-certifications">
-                    <a href="https://www.credly.com/earner/earned/badge/5cbc2b5a-1af3-4063-bcd3-daac3ec79ede">
+                    <a href="https://www.credly.com/earner/earned/badge/5cbc2b5a-1af3-4063-bcd3-daac3ec79ede" target=”_blank”>
                         <p>Azure Fundamentals<br />(AZ-900)</p>
                         <img src="~/img/az900.png" />
                     </a>
-                    <a href="https://www.credly.com/earner/earned/badge/c72e321b-57ff-456d-98f0-143ed07bb575">
+                    <a href="https://www.credly.com/earner/earned/badge/c72e321b-57ff-456d-98f0-143ed07bb575" target=”_blank”>
                         <p>Azure Developer Associate<br />(AZ-204)</p>
                         <img src="~/img/az204.png" />
                     </a>
@@ -114,7 +113,7 @@
                             <span class="timeline-exp-title">@LanguageResource["LabsitTitle_01"]</span>
                             <div class="timeline-exp-subtitle">
                                 @LanguageResource["CompanySubTitle"]
-                                <a href="https://ri.dotz.com.br/quem-somos/">Dotz Inc.</a>
+                                <a href="https://ri.dotz.com.br/quem-somos/" target=”_blank”>Dotz Inc.</a>
                             </div>
                             <div class="timeline-exp-div timeline-resume" id="timeline-resume">
                                 @LanguageResource["LabsitResume_01"]
@@ -284,9 +283,9 @@
                 }
             }
         </div>
-        <div class="more" onclick="window.open('@Settings.MediumSettings.UserUrl','medium')">
+        <a asp-controller="Courses" asp-action="Index" class="more">
             <span class="material-symbols-outlined">more_horiz</span>
             <p class="more-text">@LanguageResource["CoursesMore"]</p>
-        </div>
+        </a>
     </div>
 </div>

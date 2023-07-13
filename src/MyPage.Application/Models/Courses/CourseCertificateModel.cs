@@ -1,4 +1,5 @@
 ﻿using MyPage.Application.Data.Entities;
+using MyPage.Application.Helpers;
 using MyPage.Application.Models.Enums;
 
 namespace MyPage.Application.Models.Courses
@@ -8,6 +9,7 @@ namespace MyPage.Application.Models.Courses
         public CourseCertificateModel()
         {
             TitleDictionary = new Dictionary<Language, string>();
+            IsVisible = true;
         }
 
         public CourseCertificateModel(CourseCertificate courseCertificateEntity)
@@ -16,7 +18,10 @@ namespace MyPage.Application.Models.Courses
             TitleDictionary = courseCertificateEntity.TitleDictionary;
             IsVisible = courseCertificateEntity.IsVisible;
             WorkLoad = courseCertificateEntity.WorkLoad;
-            ConclusionDate = courseCertificateEntity.ConclusionDate.ToDateTime();
+
+            DateTime.TryParse(courseCertificateEntity.ConclusionDate, out DateTime conclusionDate);
+
+            ConclusionDate = conclusionDate;
             Tag = courseCertificateEntity.Tag;
             Platform = courseCertificateEntity.Platform;
             Instructor = courseCertificateEntity.Instructor;

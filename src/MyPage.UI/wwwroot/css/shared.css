@@ -254,9 +254,9 @@ a {
 }
 
 .mini-title {
-    color: #caccd9;
-    font-weight: 300;
-    font-size: 14px;
+    color: #dfe0e8;
+    font-weight: 400;
+    font-size: 15px;
     letter-spacing: 2px;
     text-align: center;
 }
@@ -264,8 +264,8 @@ a {
 .mini-sub-title {
     margin-top: 20px;
     color: #8e9098;
-    font-weight: 200;
-    font-size: 12px;
+    font-weight: 400;
+    font-size: 13px;
     letter-spacing: 2px;
     text-align: center;
     margin-top: 20px;
@@ -307,6 +307,7 @@ a {
 .email {
     font-size: 15px;
     cursor: text;
+    user-select: text;
     user-select: text;
     cursor: pointer;
     position: relative;

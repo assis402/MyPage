@@ -21,7 +21,7 @@ namespace MyPage.Application.Data.Entities
             TitleDictionary = courseInsertModel.TitleDictionary;
             IsVisible = courseInsertModel.IsVisible;
             WorkLoad = courseInsertModel.WorkLoad.Value;
-            ConclusionDate = Timestamp.FromDateTime(courseInsertModel.ConclusionDate?.ToUniversalTime() ?? DateTime.UtcNow);
+            ConclusionDate = courseInsertModel.ConclusionDate?.ToString();
             Tag = courseInsertModel.Tag;
             Platform = courseInsertModel.Platform;
             Instructor = courseInsertModel.Instructor;
@@ -48,7 +48,7 @@ namespace MyPage.Application.Data.Entities
         public double WorkLoad { get; set; }
 
         [FirestoreProperty]
-        public Timestamp ConclusionDate { get; set; }
+        public string ConclusionDate { get; set; }
 
         [FirestoreProperty]
         public string Tag { get; set; }
