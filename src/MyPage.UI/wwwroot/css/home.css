@@ -119,7 +119,7 @@
 }
 
 .about-body {
-    text-align: left;
+    text-align: justify;
     font-weight: 300;
     color: #bfbfbf;
 }
@@ -197,17 +197,45 @@
 }
 
 .second-buttons {
+    flex-direction: column;
     margin-top: 50px;
+    gap: 20px !important;
 }
 
 .second-button {
-    width: auto;
+    width: 290px;
     padding: 5px 15px;
     font-size: 15px;
 }
 
-    .second-button:hover {
-        border: 1px solid #636369;
+.curriculum-button {
+    cursor: default;
+    background: black;
+}
+
+.curriculum-options {
+    display: flex;
+    gap: 10px;
+    width: 0;
+    opacity: 0;
+    transition: opacity 0.2s linear .5s, width .5s ease;
+    justify-content: flex-end;
+    z-index: -1;
+}
+
+    .curriculum-options a {
+        cursor: pointer;
+        color: #b1b4bd;
+        transition: color .2s linear;
+    }
+
+    .curriculum-options span {
+        font-weight: 200;
+        color: #737579;
+    }
+
+    .curriculum-options a:hover {
+        color: white;
     }
 
 .about-icon {
@@ -222,6 +250,8 @@
 
 .inner-button {
     font-size: 15px;
+    line-height: 12px;
+    cursor: pointer;
 }
 
 .about-body-internal-container {
@@ -355,6 +385,10 @@
 }
 
 @media(max-width: 768px) {
+    .about-body {
+        text-align: left;
+    }
+
     #about-body-container {
         padding: 0 8%;
     }
@@ -516,11 +550,11 @@
     left: 120px;
 }
 
-.labsit-border-circle {
+.company02-border-circle {
     border: 2px solid #d500d3;
 }
 
-.labsit-full-circle {
+.company02-full-circle {
     background: #d500d3;
     border: 2px solid #d500d3;
     -webkit-box-shadow: 0 0 15px 10px rgba(213,0,211,.3);
@@ -528,11 +562,11 @@
     box-shadow: 0 0 15px 10px rgba(213,0,211,.3);
 }
 
-.fitbank-border-circle {
+.company01-border-circle {
     border: 2px solid #4901ef;
 }
 
-.fitbank-full-circle {
+.company01-full-circle {
     background: #4901ef;
     border: 2px solid #4901ef;
 }
@@ -599,19 +633,19 @@
     transform: rotate(90deg);
 }
 
-.labsit-bar {
+.company02-bar {
     background-color: #d500d3;
 }
 
-.labsit-arrow {
+.company02-arrow {
     border-right: 11px solid #d500d3;
 }
 
-.fitbank-bar {
+.company01-bar {
     background-color: #4901ef;
 }
 
-.fitbank-arrow {
+.company01-arrow {
     border-right: 11px solid #4901ef;
 }
 

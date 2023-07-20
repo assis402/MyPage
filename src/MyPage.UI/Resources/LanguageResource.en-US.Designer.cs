@@ -171,108 +171,108 @@ namespace MyPage.UI.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a november 2020 - april 2021.
         /// </summary>
-        public static string FitbankDate_01 {
+        public static string Company01Date_01 {
             get {
-                return ResourceManager.GetString("FitbankDate_01", resourceCulture);
+                return ResourceManager.GetString("Company01Date_01", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a april 2021 - august 2021.
         /// </summary>
-        public static string FitbankDate_02 {
+        public static string Company01Date_02 {
             get {
-                return ResourceManager.GetString("FitbankDate_02", resourceCulture);
+                return ResourceManager.GetString("Company01Date_02", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Testes manuais (exploratórios, em APIs e etc) e documentações de testes.
         /// </summary>
-        public static string FitbankSubtitle_01 {
+        public static string Company01Subtitle_01 {
             get {
-                return ResourceManager.GetString("FitbankSubtitle_01", resourceCulture);
+                return ResourceManager.GetString("Company01Subtitle_01", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a C#, .NET Framework, ASP.NET, Xamarin, JavaScript, SQL Server e APIs.
         /// </summary>
-        public static string FitbankSubtitle_02 {
+        public static string Company01Subtitle_02 {
             get {
-                return ResourceManager.GetString("FitbankSubtitle_02", resourceCulture);
+                return ResourceManager.GetString("Company01Subtitle_02", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a QA Intern.
         /// </summary>
-        public static string FitbankTitle_01 {
+        public static string Company01Title_01 {
             get {
-                return ResourceManager.GetString("FitbankTitle_01", resourceCulture);
+                return ResourceManager.GetString("Company01Title_01", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Junior Backend Developer.
         /// </summary>
-        public static string FitbankTitle_02 {
+        public static string Company01Title_02 {
             get {
-                return ResourceManager.GetString("FitbankTitle_02", resourceCulture);
+                return ResourceManager.GetString("Company01Title_02", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a august 2021 - may 2022.
         /// </summary>
-        public static string LabsitDate_01 {
+        public static string Company02Date_01 {
             get {
-                return ResourceManager.GetString("LabsitDate_01", resourceCulture);
+                return ResourceManager.GetString("Company02Date_01", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a january 2023 - today.
         /// </summary>
-        public static string LabsitDate_02 {
+        public static string Company02Date_02 {
             get {
-                return ResourceManager.GetString("LabsitDate_02", resourceCulture);
+                return ResourceManager.GetString("Company02Date_02", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a C#, .NET Core, MySQL, SQL Server, Redis, APIs Rest, Microsserviços e Testes Unitários.
         /// </summary>
-        public static string LabsitSubTitle_01 {
+        public static string Company02SubTitle_01 {
             get {
-                return ResourceManager.GetString("LabsitSubTitle_01", resourceCulture);
+                return ResourceManager.GetString("Company02SubTitle_01", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a C#, .NET Core, Angular 8, ASP.NET, .NET Framework, MySQL, SQL Server, APIs Rest, Microsserviços e Testes Unitários.
         /// </summary>
-        public static string LabsitSubTitle_02 {
+        public static string Company02SubTitle_02 {
             get {
-                return ResourceManager.GetString("LabsitSubTitle_02", resourceCulture);
+                return ResourceManager.GetString("Company02SubTitle_02", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Mid-level Backend Developer.
         /// </summary>
-        public static string LabsitTitle_01 {
+        public static string Company02Title_01 {
             get {
-                return ResourceManager.GetString("LabsitTitle_01", resourceCulture);
+                return ResourceManager.GetString("Company02Title_01", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Fullstack Developer.
         /// </summary>
-        public static string LabsitTitle_02 {
+        public static string Company02Title_02 {
             get {
-                return ResourceManager.GetString("LabsitTitle_02", resourceCulture);
+                return ResourceManager.GetString("Company02Title_02", resourceCulture);
             }
         }
         

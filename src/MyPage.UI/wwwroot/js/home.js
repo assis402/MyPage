@@ -54,3 +54,11 @@ function seeLessTimeline(id) {
     timelineAttri.style.opacity = '0';
     timelineSeeLess.style.opacity = '0';
 }
+
+function openCurriculumOptions() {
+    let options = document.getElementById('curriculum-options');
+
+    options.style.width = '130px';
+    options.style.opacity = '1';
+    options.style.zIndex = '1';
+}

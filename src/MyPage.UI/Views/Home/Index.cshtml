@@ -46,12 +46,10 @@
         <div id="about-body-container">
             <div class="about-body-internal-container">
                 <p class="about-body" id="about-body-1">
-                    @string.Format(LanguageResource["AboutBody_01"], Model.WorkYears, Model.WorkMonths)
-                    <span class="emphasis">@LanguageResource["AboutEmphases_01"]</span>
+                    @Html.Raw(string.Format(LanguageResource["AboutBody_01"], DateTime.Today.Year - 1997))
                 </p>
                 <p class="about-body" id="about-body-2">
-                    @LanguageResource["AboutBody_02"] <span class="emphasis">Angular</span>@LanguageResource["AboutBody_02.1"]
-                    <span class="emphasis"> @LanguageResource["AboutEmphases_02"]</span>
+                    @Html.Raw(string.Format(LanguageResource["AboutBody_02"], Model.WorkYears, Model.WorkMonths))
                 </p>
                 <p class="about-body" id="about-body-3">
                     @LanguageResource["AboutBody_03"]
@@ -92,6 +90,14 @@
                     <img class="projects-icon" src="~/img/projects.svg" />
                     <div class="inner-button">@LanguageResource["SecondProjectsButton"]</div>
                 </a>
+                <div class="outlined-button second-button curriculum-button" onclick="openCurriculumOptions()">
+                    <div class="inner-button">@LanguageResource["DownloadCV"]</div>
+                    <div class="curriculum-options" id="curriculum-options"> 
+                        <a href="~/CV Matheus - Português.pdf" id="curriculum-br-option" target=”_blank”>PT-BR</a>
+                        <span id="curriculum-option-separator">|</span>
+                        <a href="~/CV Matheus - English.pdf" id="curriculum-us-option" target=”_blank”>EN-US</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -102,21 +108,21 @@
         <div class="timeline-body">
             <div class="timeline">
                 <div class="timeline-exp">
-                    <div class="timeline-exp-circle labsit-full-circle"></div>
+                    <div class="timeline-exp-circle company02-full-circle"></div>
                     <div class="timeline-exp-external">
                         <div class="timeline-exp-date">
-                            @LanguageResource["LabsitDate_01.1"]
+                            @LanguageResource["Company02Date_01.1"]
                             <img class="timeline-arrow" src="~/img/line.svg" id="timeline-arrow" />
-                            @LanguageResource["LabsitDate_01"]
+                            @LanguageResource["Company02Date_01"]
                         </div>
                         <div class="timeline-exp-internal" id="timeline-exp-internal-exp3">
-                            <span class="timeline-exp-title">@LanguageResource["LabsitTitle_01"]</span>
+                            <span class="timeline-exp-title">@LanguageResource["Company02Title_01"]</span>
                             <div class="timeline-exp-subtitle">
                                 @LanguageResource["CompanySubTitle"]
                                 <a href="https://ri.dotz.com.br/quem-somos/" target=”_blank”>Dotz Inc.</a>
                             </div>
                             <div class="timeline-exp-div timeline-resume" id="timeline-resume">
-                                @LanguageResource["LabsitResume_01"]
+                                @LanguageResource["Company02Resume_01"]
                             </div>
 
                             <div class="more more-timeline" onclick="seeMoreTimeline('exp3')" id="timeline-seemore-exp3">
@@ -126,12 +132,12 @@
 
                             <div class="timeline-exp-div timeline-exp-details" id="timeline-techs-exp3">
                                 <p class="timeline-exp-p">@LanguageResource["Technologies"]: </p>
-                                @LanguageResource["LabsitTechs_01"]
+                                @LanguageResource["Company02Techs_01"]
                             </div>
                             <div class="timeline-exp-div timeline-exp-details" id="timeline-attri-exp3">
                                 <p class="timeline-exp-p">@LanguageResource["Attributions"]:</p>
                                 <ul>
-                                    @Html.Raw(LanguageResource["LabsitAttri_01"])
+                                    @Html.Raw(LanguageResource["Company02Attri_01"])
                                 </ul>
                             </div>
                             <div class="more more-timeline timeline-exp-details" onclick="seeLessTimeline('exp3')" id="timeline-seeless-exp3">
@@ -141,9 +147,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-bar labsit-bar" id="timeline-bar-exp3"></div>
-                <div class="timeline-company" onclick="window.open('https://labsit.io/','labsit')">
-                    <span class="timeline-company-arrow labsit-arrow"></span>
+                <div class="timeline-bar company02-bar" id="timeline-bar-exp3"></div>
+                <div class="timeline-company" onclick="window.open('https://labsit.io/','company02')">
+                    <span class="timeline-company-arrow company02-arrow"></span>
                     <span class="material-symbols-outlined company-icon" title="@LanguageResource["Company"]">
                         work
                     </span>
@@ -151,17 +157,17 @@
                 </div>
             </div>
             <div class="timeline-exp margin-top">
-                <div class="timeline-exp-circle fitbank-full-circle"></div>
+                <div class="timeline-exp-circle company01-full-circle"></div>
                 <div class="timeline-exp-external">
                     <div class="timeline-exp-date">
-                        @LanguageResource["FitbankDate_02"]
+                        @LanguageResource["Company01Date_02"]
                         <img class="timeline-arrow" src="~/img/line.svg" />
-                        @LanguageResource["FitbankDate_02.1"]
+                        @LanguageResource["Company01Date_02.1"]
                     </div>
                     <div class="timeline-exp-internal" id="timeline-exp-internal-exp2">
-                        <span class="timeline-exp-title">@LanguageResource["FitbankTitle_02"]</span>
+                        <span class="timeline-exp-title">@LanguageResource["Company01Title_02"]</span>
                         <div class="timeline-exp-div timeline-resume" id="timeline-resume">
-                            @LanguageResource["FitbankResume_02"]
+                            @LanguageResource["Company01Resume_02"]
                         </div>
 
                         <div class="more more-timeline" onclick="seeMoreTimeline('exp2')" id="timeline-seemore-exp2">
@@ -171,12 +177,12 @@
 
                         <div class="timeline-exp-div timeline-exp-details" id="timeline-techs-exp2">
                             <p class="timeline-exp-p">@LanguageResource["Technologies"]: </p>
-                            @LanguageResource["FitbankTechs_02"]
+                            @LanguageResource["Company01Techs_02"]
                         </div>
                         <div class="timeline-exp-div timeline-exp-details" id="timeline-attri-exp2">
                             <p class="timeline-exp-p">@LanguageResource["Attributions"]:</p>
                             <ul>
-                                @Html.Raw(LanguageResource["FitbankAttri_02"])
+                                @Html.Raw(LanguageResource["Company01Attri_02"])
                             </ul>
                         </div>
                         <div class="more more-timeline timeline-exp-details" onclick="seeLessTimeline('exp2')" id="timeline-seeless-exp2">
@@ -186,20 +192,20 @@
                     </div>
                 </div>
             </div>
-            <div class="timeline-bar fitbank-bar" id="timeline-bar-exp2"></div>
+            <div class="timeline-bar company01-bar" id="timeline-bar-exp2"></div>
             <div class="timeline-exp-wrapper">
                 <div class="timeline-exp">
-                    <div class="timeline-exp-circle fitbank-border-circle"></div>
+                    <div class="timeline-exp-circle company01-border-circle"></div>
                     <div class="timeline-exp-external">
                         <div class="timeline-exp-date">
-                            @LanguageResource["FitbankDate_01"]
+                            @LanguageResource["Company01Date_01"]
                             <img class="timeline-arrow" src="~/img/line.svg" />
-                            @LanguageResource["FitbankDate_01.1"]
+                            @LanguageResource["Company01Date_01.1"]
                         </div>
                         <div class="timeline-exp-internal" id="timeline-exp-internal-exp1">
-                            <span class="timeline-exp-title">@LanguageResource["FitbankTitle_01"]</span>
+                            <span class="timeline-exp-title">@LanguageResource["Company01Title_01"]</span>
                             <div class="timeline-exp-div timeline-resume" id="timeline-resume">
-                                @LanguageResource["FitbankResume_01"]
+                                @LanguageResource["Company01Resume_01"]
                             </div>
 
                             <div class="more more-timeline" onclick="seeMoreTimeline('exp1')" id="timeline-seemore-exp1">
@@ -211,7 +217,7 @@
                             <div class="timeline-exp-div timeline-exp-details" id="timeline-attri-exp1">
                                 <p class="timeline-exp-p">@LanguageResource["Attributions"]:</p>
                                 <ul>
-                                    @Html.Raw(LanguageResource["FitbankAttri_01"])
+                                    @Html.Raw(LanguageResource["Company01Attri_01"])
                                 </ul>
                             </div>
                             <div class="more more-timeline timeline-exp-details" onclick="seeLessTimeline('exp1')" id="timeline-seeless-exp1">
@@ -221,14 +227,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-company" onclick="window.open('https://fitbank.com.br/','fitbank')">
-                    <span class="timeline-company-arrow fitbank-arrow"></span>
+                <div class="timeline-company" onclick="window.open('https://fitbank.com.br/','company01')">
+                    <span class="timeline-company-arrow company01-arrow"></span>
                     <span class="material-symbols-outlined company-icon" title="@LanguageResource["Company"]">
                         work
                     </span>
                     <span title="@LanguageResource["Company"]">FitBank</span>
                 </div>
-                <div class="timeline-bar fitbank-bar" id="timeline-bar-exp1"></div>
+                <div class="timeline-bar company01-bar" id="timeline-bar-exp1"></div>
             </div>
         </div>
         <div class="more" onclick="window.open('https://linkedin.com/in/assisdematheus/','linkedin')" style="z-index: 2">

@@ -118,25 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutBody_01" xml:space="preserve">
-    <value>I'm an Information Technology student and I've been working with software development for {0} years and {1} months, mostly focusing on Backend in the</value>
+    <value>I am {0} years old and I entered the job market in 2018, working in the construction sector as a Civil Engineering intern. In 2020 I decided to migrate my career to software development, where I have been working ever since.</value>
   </data>
   <data name="AboutBody_02" xml:space="preserve">
-    <value>I worked on projects in which I also used other technologies, such as web frontend (dashboard admin) in</value>
-  </data>
-  <data name="AboutBody_02.1" xml:space="preserve">
-    <value>, databases in</value>
+    <value>I am a Information Technology student and I have been working in this area for {0} years and {1} months, focusing on Backend using the  &lt;span class="emphasis"&gt;C# .NET&lt;/span&gt; language. Currently, I work as a &lt;span class="emphasis"&gt;Mid-level Fullstack Developer&lt;/span&gt;, using technologies such as &lt;span class="emphasis"&gt;.NET (Core 3.1 and 6)&lt;/span&gt; and &lt;span class="emphasis"&gt;Angular (8 and 12)&lt;/span&gt;. In addition, I also have experience in other technologies such as &lt;span class="emphasis"&gt;.NET Framework 4.7, ASP.NET MVC, databases in SQL Server, MySql and Redis, Unit Tests, Microservices architecture, Kubernetes, Docker and Messaging&lt;/span&gt;.</value>
   </data>
   <data name="AboutBody_03" xml:space="preserve">
-    <value>Personally, I cover other topics and technologies during my studies, such as mobile app development with React Native and cloud computing platforms, more specifically with Microsoft Azure, from which I passed the AZ-900 and AZ-204 certifications.</value>
+    <value>Besides my main focus, I also have interest and study other technologies, such as application development with React Native and cloud computing platforms, more specifically Microsoft Azure.</value>
   </data>
   <data name="AboutButton" xml:space="preserve">
     <value>read more</value>
-  </data>
-  <data name="AboutEmphases_01" xml:space="preserve">
-    <value>C# language (.NET and .NET Framework).</value>
-  </data>
-  <data name="AboutEmphases_02" xml:space="preserve">
-    <value>SQL Server, MySql, Redis and MongoDB, unit tests and microservices architecture.</value>
   </data>
   <data name="AboutMenu" xml:space="preserve">
     <value>about</value>
@@ -189,43 +180,41 @@
   <data name="Email" xml:space="preserve">
     <value>contact@matheusassis.dev</value>
   </data>
-  <data name="FitbankAttri_01" xml:space="preserve">
-    <value>&lt;li&gt;Manual testing of APIs, Workers and UI Admin;&lt;/li&gt;
+  <data name="Company01Attri_01" xml:space="preserve">
+    <value>&lt;li&gt;Manual testing on APIs, Workers and UI Admin;&lt;/li&gt;
 &lt;li&gt;Test documentation and detailed software flows;&lt;/li&gt;
 &lt;li&gt;Collaboration with the development team, providing feedback on the quality of the software;&lt;/li&gt;</value>
   </data>
-  <data name="FitbankAttri_02" xml:space="preserve">
-    <value>&lt;li&gt;Development of new functionalities in various projects;&lt;/li&gt;
-&lt;li&gt;Error investigation and diagnosis in production;&lt;/li&gt;
-&lt;li&gt;Elaborate documentation for orientation and for new deliveries;&lt;/li&gt;
+  <data name="Company01Attri_02" xml:space="preserve">
+    <value>&lt;li&gt;Development of new features, bug fixes and short implementations;&lt;/li&gt;
 &lt;li&gt;Code reviews, providing constructive feedback to teammates;&lt;/li&gt;
-&lt;li&gt;Maintenance of APIs and Workers for system and service integration;&lt;/li&gt;</value>
+&lt;li&gt;Maintenance of APIs and Workers for system improvement and elaborate documentation for orientation.&lt;/li&gt;</value>
   </data>
-  <data name="FitbankDate_01" xml:space="preserve">
+  <data name="Company01Date_01" xml:space="preserve">
     <value>Apr 2021</value>
   </data>
-  <data name="FitbankDate_01.1" xml:space="preserve">
+  <data name="Company01Date_01.1" xml:space="preserve">
     <value>Nov 2020</value>
   </data>
-  <data name="FitbankDate_02" xml:space="preserve">
+  <data name="Company01Date_02" xml:space="preserve">
     <value>Aug 2021</value>
   </data>
-  <data name="FitbankDate_02.1" xml:space="preserve">
+  <data name="Company01Date_02.1" xml:space="preserve">
     <value>Apr 2021</value>
   </data>
-  <data name="FitbankResume_01" xml:space="preserve">
+  <data name="Company01Resume_01" xml:space="preserve">
     <value>Manual testing, Postman and SQL Server.</value>
   </data>
-  <data name="FitbankResume_02" xml:space="preserve">
+  <data name="Company01Resume_02" xml:space="preserve">
     <value>Backend with C# .NET Framework and frontend with C# ASP.NET MVC.</value>
   </data>
-  <data name="FitbankTechs_02" xml:space="preserve">
+  <data name="Company01Techs_02" xml:space="preserve">
     <value>C#, .NET Framework, ASP.NET, Xamarin, JavaScript, SQL Server, APIs and Workers.</value>
   </data>
-  <data name="FitbankTitle_01" xml:space="preserve">
+  <data name="Company01Title_01" xml:space="preserve">
     <value>QA Intern</value>
   </data>
-  <data name="FitbankTitle_02" xml:space="preserve">
+  <data name="Company01Title_02" xml:space="preserve">
     <value>Junior Backend Developer</value>
   </data>
   <data name="HardSkillsObs" xml:space="preserve">
@@ -237,30 +226,29 @@
   <data name="IntegrationTest" xml:space="preserve">
     <value>Integration Tests</value>
   </data>
-  <data name="LabsitAttri_01" xml:space="preserve">
-    <value>&lt;li&gt;Development of new functionalities in various projects;&lt;/li&gt;
-&lt;li&gt;Error investigation and diagnosis in production;&lt;/li&gt;
+  <data name="Company02Attri_01" xml:space="preserve">
+    <value>&lt;li&gt;Development of new functionalities in diverse projects, bug fixes and short implementations;&lt;/li&gt;
+&lt;li&gt;Working in support team, investigating and diagnosing errors in production;&lt;/li&gt;
 &lt;li&gt;Bug fixes and spot implementations;&lt;/li&gt;
-&lt;li&gt;Creation and monitoring of change management in production;&lt;/li&gt;
+&lt;li&gt;Creating and monitoring change management in production;&lt;/li&gt;
 &lt;li&gt;Elaborate documentation for orientation and for new deliveries;&lt;/li&gt;
-&lt;li&gt;Working in support teams in various projects;&lt;/li&gt;
 &lt;li&gt;Code reviews, providing constructive feedback to teammates;&lt;/li&gt;
 &lt;li&gt;Development and maintenance of APIs, Workers and Consumers for system and service integration;&lt;/li&gt;
 &lt;li&gt;Participation in the planning process of new projects, helping with the technical definitions.&lt;/li&gt;</value>
   </data>
-  <data name="LabsitDate_01" xml:space="preserve">
+  <data name="Company02Date_01" xml:space="preserve">
     <value>Aug 2021</value>
   </data>
-  <data name="LabsitDate_01.1" xml:space="preserve">
+  <data name="Company02Date_01.1" xml:space="preserve">
     <value>Today</value>
   </data>
-  <data name="LabsitResume_01" xml:space="preserve">
+  <data name="Company02Resume_01" xml:space="preserve">
     <value>Backend with C# .NET and frontend with Angular (UI Admin).</value>
   </data>
-  <data name="LabsitTechs_01" xml:space="preserve">
+  <data name="Company02Techs_01" xml:space="preserve">
     <value>C#, .NET Core, Angular 8, ASP.NET, .NET Framework, MySQL, SQL Server, Redis, APIs Rest, Microservices and Unit Tests.</value>
   </data>
-  <data name="LabsitTitle_01" xml:space="preserve">
+  <data name="Company02Title_01" xml:space="preserve">
     <value>Mid-level Fullstack Developer</value>
   </data>
   <data name="MainStackBody" xml:space="preserve">
@@ -310,5 +298,8 @@
   </data>
   <data name="VideoText" xml:space="preserve">
     <value>video</value>
+  </data>
+  <data name="DownloadCV" xml:space="preserve">
+    <value>download my CV</value>
   </data>
 </root>

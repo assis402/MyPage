@@ -61,7 +61,8 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Sou estudante de Análise e Desenvolvimento de Sistemas e trabalho com desenvolvimento de software há {0} anos e {1} meses, majoritariamente com foco em Backend na linguagem.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Tenho {0} anos e entrei no mercado de trabalho em 2018, atuando no setor da construção civil como estagiário de Engenharia Civil. Em 2020 decidi mudar de carreira para a área de desenvolvimento de software, onde tenho atuado desde então.
+        ///.
         /// </summary>
         public static string AboutBody_01 {
             get {
@@ -70,7 +71,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Atuei em projetos nos quais também utilizei outras tecnologias, como frontend web (dashboard admin) em.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Sou estudante de Análise e Desenvolvimento de Sistemas e trabalho nesta área há {0} anos e {1} meses, com foco principalmente em Backend utilizando a linguagem &lt;span class=&quot;emphasis&quot;&gt;C# .NET&lt;/span&gt;. Atualmente, desempenho a função de &lt;span class=&quot;emphasis&quot;&gt;Desenvolvedor Fullstack Pleno&lt;/span&gt;, utilizando tecnologias como &lt;span class=&quot;emphasis&quot;&gt;.NET (Core 3.1 e 6)&lt;/span&gt; e &lt;span class=&quot;emphasis&quot;&gt;Angular (8 e 12)&lt;/span&gt;. Além disso, também possuo experiência em outras tecnologias, como &lt;span class=&quot;emphasis&quot;&gt; [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         public static string AboutBody_02 {
             get {
@@ -79,16 +80,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a , banco de dados em.
-        /// </summary>
-        public static string AboutBody_02_1 {
-            get {
-                return ResourceManager.GetString("AboutBody_02.1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Pessoalmente, abordo outros tópicos e tecnologias durante meus estudos, como desenvolvimento de aplicativos com React Native e plataformas de computação em nuvem, mais especificamente a Microsoft Azure, da qual obtive aprovação nas certificações AZ-900 e AZ-204..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Além do meu foco principal, também tenho interesse e estudo outras tecnologias, como o desenvolvimento de aplicativos com React Native e plataformas de computação em nuvem, mais especificamente a Microsoft Azure..
         /// </summary>
         public static string AboutBody_03 {
             get {
@@ -205,6 +197,171 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;li&gt;Testes manuais em APIs, Workers e UI Admin;&lt;/li&gt;
+        ///&lt;li&gt;Documentação de testes e detalhamento de fluxos do software;&lt;/li&gt;
+        ///&lt;li&gt;Colaboração com a equipe de desenvolvimento, fornecendo feedback sobre a qualidade do software;&lt;/li&gt;.
+        /// </summary>
+        public static string Company01Attri_01 {
+            get {
+                return ResourceManager.GetString("Company01Attri_01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;li&gt;Desenvolvimento de novas funcionalidades em projetos diversos;&lt;/li&gt;
+        ///&lt;li&gt;Correção de bugs e implementações pontuais;&lt;/li&gt;
+        ///&lt;li&gt;Elaboração de documentação para orientação e para novas entregas;&lt;/li&gt;
+        ///&lt;li&gt;Revisões de código (code reviews), oferecendo feedback construtivo aos colegas de equipe;&lt;/li&gt;
+        ///&lt;li&gt;Manutenção de APIs e Workers para integração de sistemas e serviços;&lt;/li&gt;.
+        /// </summary>
+        public static string Company01Attri_02 {
+            get {
+                return ResourceManager.GetString("Company01Attri_02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a abr 2021.
+        /// </summary>
+        public static string Company01Date_01 {
+            get {
+                return ResourceManager.GetString("Company01Date_01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a nov 2020.
+        /// </summary>
+        public static string Company01Date_01_1 {
+            get {
+                return ResourceManager.GetString("Company01Date_01.1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ago 2021.
+        /// </summary>
+        public static string Company01Date_02 {
+            get {
+                return ResourceManager.GetString("Company01Date_02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a abr 2021.
+        /// </summary>
+        public static string Company01Date_02_1 {
+            get {
+                return ResourceManager.GetString("Company01Date_02.1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Testes manuais, Postman e SQL Server..
+        /// </summary>
+        public static string Company01Resume_01 {
+            get {
+                return ResourceManager.GetString("Company01Resume_01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Backend com C# .NET Framework e frontend com C# ASP.NET MVC..
+        /// </summary>
+        public static string Company01Resume_02 {
+            get {
+                return ResourceManager.GetString("Company01Resume_02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a C#, .NET Framework, ASP.NET, Xamarin, JavaScript, SQL Server, APIs e Workers..
+        /// </summary>
+        public static string Company01Techs_02 {
+            get {
+                return ResourceManager.GetString("Company01Techs_02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Estagiário de Testes.
+        /// </summary>
+        public static string Company01Title_01 {
+            get {
+                return ResourceManager.GetString("Company01Title_01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Desenvolvedor Backend Junior.
+        /// </summary>
+        public static string Company01Title_02 {
+            get {
+                return ResourceManager.GetString("Company01Title_02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;li&gt;Desenvolvimento de novas funcionalidades em projetos diversos;&lt;/li&gt;
+        ///&lt;li&gt;Investigação e diagnóstico de erros em ambiente de produção;&lt;/li&gt;
+        ///&lt;li&gt;Correção de bugs e implementações pontuais;&lt;/li&gt;
+        ///&lt;li&gt;Criação e acompanhamento de processos de mudança (GMUD) em ambiente de produção;&lt;/li&gt;
+        ///&lt;li&gt;Elaboração de documentação para orientação e para novas entregas;&lt;/li&gt;
+        ///&lt;li&gt;Atuação em equipes de sustentação em projetos diversos;&lt;/li&gt;
+        ///&lt;li&gt;Revisões de código (code reviews), oferecendo feedback construtivo aos colega [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        public static string Company02Attri_01 {
+            get {
+                return ResourceManager.GetString("Company02Attri_01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ago 2021.
+        /// </summary>
+        public static string Company02Date_01 {
+            get {
+                return ResourceManager.GetString("Company02Date_01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a atualmente.
+        /// </summary>
+        public static string Company02Date_01_1 {
+            get {
+                return ResourceManager.GetString("Company02Date_01.1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Backend com C# .NET e frontend com Angular (UI Admin&apos;s)..
+        /// </summary>
+        public static string Company02Resume_01 {
+            get {
+                return ResourceManager.GetString("Company02Resume_01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a C#, .NET Core, Angular, ASP.NET, .NET Framework, MySQL, SQL Server, Redis, APIs Rest, Microsserviços e Testes Unitários..
+        /// </summary>
+        public static string Company02Techs_01 {
+            get {
+                return ResourceManager.GetString("Company02Techs_01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Desenvolvedor Fullstack Pleno.
+        /// </summary>
+        public static string Company02Title_01 {
+            get {
+                return ResourceManager.GetString("Company02Title_01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Alocado na empresa.
         /// </summary>
         public static string CompanySubTitle {
@@ -219,6 +376,15 @@ namespace MyPage.UI.Resources {
         public static string Contact {
             get {
                 return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a copiado!.
+        /// </summary>
+        public static string Copied {
+            get {
+                return ResourceManager.GetString("Copied", resourceCulture);
             }
         }
         
@@ -259,107 +425,11 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;li&gt;Testes manuais em APIs, Workers e UI Admin;&lt;/li&gt;
-        ///&lt;li&gt;Documentação de testes e detalhamento de fluxos do software;&lt;/li&gt;
-        ///&lt;li&gt;Colaboração com a equipe de desenvolvimento, fornecendo feedback sobre a qualidade do software;&lt;/li&gt;.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Esta é uma representação meramente ilustrativa de uma autoavaliação das minhas habilidades técnicas..
         /// </summary>
-        public static string FitbankAttri_01 {
+        public static string HardSkillsObs {
             get {
-                return ResourceManager.GetString("FitbankAttri_01", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;li&gt;Desenvolvimento de novas funcionalidades em projetos diversos;&lt;/li&gt;
-        ///&lt;li&gt;Correção de bugs e implementações pontuais;&lt;/li&gt;
-        ///&lt;li&gt;Elaboração de documentação para orientação e para novas entregas;&lt;/li&gt;
-        ///&lt;li&gt;Revisões de código (code reviews), oferecendo feedback construtivo aos colegas de equipe;&lt;/li&gt;
-        ///&lt;li&gt;Manutenção de APIs e Workers para integração de sistemas e serviços;&lt;/li&gt;.
-        /// </summary>
-        public static string FitbankAttri_02 {
-            get {
-                return ResourceManager.GetString("FitbankAttri_02", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a abr 2021.
-        /// </summary>
-        public static string FitbankDate_01 {
-            get {
-                return ResourceManager.GetString("FitbankDate_01", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a nov 2020.
-        /// </summary>
-        public static string FitbankDate_01_1 {
-            get {
-                return ResourceManager.GetString("FitbankDate_01.1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a ago 2021.
-        /// </summary>
-        public static string FitbankDate_02 {
-            get {
-                return ResourceManager.GetString("FitbankDate_02", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a abr 2021.
-        /// </summary>
-        public static string FitbankDate_02_1 {
-            get {
-                return ResourceManager.GetString("FitbankDate_02.1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Testes manuais, Postman e SQL Server..
-        /// </summary>
-        public static string FitbankResume_01 {
-            get {
-                return ResourceManager.GetString("FitbankResume_01", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Backend com C# .NET Framework e frontend com C# ASP.NET MVC..
-        /// </summary>
-        public static string FitbankResume_02 {
-            get {
-                return ResourceManager.GetString("FitbankResume_02", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a C#, .NET Framework, ASP.NET, Xamarin, JavaScript, SQL Server, APIs e Workers..
-        /// </summary>
-        public static string FitbankTechs_02 {
-            get {
-                return ResourceManager.GetString("FitbankTechs_02", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Estagiário de Testes.
-        /// </summary>
-        public static string FitbankTitle_01 {
-            get {
-                return ResourceManager.GetString("FitbankTitle_01", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Desenvolvedor Backend Junior.
-        /// </summary>
-        public static string FitbankTitle_02 {
-            get {
-                return ResourceManager.GetString("FitbankTitle_02", resourceCulture);
+                return ResourceManager.GetString("HardSkillsObs", resourceCulture);
             }
         }
         
@@ -373,62 +443,11 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;li&gt;Desenvolvimento de novas funcionalidades em projetos diversos;&lt;/li&gt;
-        ///&lt;li&gt;Investigação e diagnóstico de erros em ambiente de produção;&lt;/li&gt;
-        ///&lt;li&gt;Correção de bugs e implementações pontuais;&lt;/li&gt;
-        ///&lt;li&gt;Criação e acompanhamento de processos de mudança (GMUD) em ambiente de produção;&lt;/li&gt;
-        ///&lt;li&gt;Elaboração de documentação para orientação e para novas entregas;&lt;/li&gt;
-        ///&lt;li&gt;Atuação em equipes de sustentação em projetos diversos;&lt;/li&gt;
-        ///&lt;li&gt;Revisões de código (code reviews), oferecendo feedback construtivo aos colega [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Testes Integrados.
         /// </summary>
-        public static string LabsitAttri_01 {
+        public static string IntegrationTest {
             get {
-                return ResourceManager.GetString("LabsitAttri_01", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a ago 2021.
-        /// </summary>
-        public static string LabsitDate_01 {
-            get {
-                return ResourceManager.GetString("LabsitDate_01", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a atualmente.
-        /// </summary>
-        public static string LabsitDate_01_1 {
-            get {
-                return ResourceManager.GetString("LabsitDate_01.1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Backend com C# .NET e frontend com Angular (UI Admin&apos;s)..
-        /// </summary>
-        public static string LabsitResume_01 {
-            get {
-                return ResourceManager.GetString("LabsitResume_01", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a C#, .NET Core, Angular, ASP.NET, .NET Framework, MySQL, SQL Server, Redis, APIs Rest, Microsserviços e Testes Unitários..
-        /// </summary>
-        public static string LabsitTechs_01 {
-            get {
-                return ResourceManager.GetString("LabsitTechs_01", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Desenvolvedor Fullstack Pleno.
-        /// </summary>
-        public static string LabsitTitle_01 {
-            get {
-                return ResourceManager.GetString("LabsitTitle_01", resourceCulture);
+                return ResourceManager.GetString("IntegrationTest", resourceCulture);
             }
         }
         
@@ -541,7 +560,7 @@ namespace MyPage.UI.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a HABILIDADES TÉCNICAS.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a HARD SKILLS.
         /// </summary>
         public static string SkillsTitle {
             get {
@@ -555,6 +574,15 @@ namespace MyPage.UI.Resources {
         public static string Technologies {
             get {
                 return ResourceManager.GetString("Technologies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Testes Unitários.
+        /// </summary>
+        public static string UnitTest {
+            get {
+                return ResourceManager.GetString("UnitTest", resourceCulture);
             }
         }
         
