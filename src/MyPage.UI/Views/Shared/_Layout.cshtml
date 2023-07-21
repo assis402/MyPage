@@ -93,6 +93,9 @@
         @{
             var pageName = ViewContext.RouteData.Values["controller"]?.ToString()?.ToLower();
         }
+        <div class="scroll-up-button" onclick="scrollUp()" id="scroll-up-button">
+            <img src="~/img/top-arrow.svg" />
+        </div>
         <footer class="contact-external-container @(pageName != "home" ? "secundary-footer" : "")" id="contact-external-container">
             <div class="mini-title">@LanguageResource["Contact"]</div>
             <div class="contact-container">

@@ -51,8 +51,10 @@ function scrollFunction() {
     let menuContainer = document.getElementById("menu-container");
     let myPhoto = document.getElementById("my-photo");
     let menuIsOpen = document.getElementById("menu-mobile").style.opacity === "1";
+    let scrollUpButton = document.getElementById("scroll-up-button");
 
     if (window.pageYOffset > 20 || document.body.scrollTop > 20) {
+        scrollUpButton.style.bottom = "20px";
         menuContainer.style.padding = "0 20px"
         menuBackground.style.opacity = "1";
         myPhoto.style.width = "0"
@@ -63,6 +65,7 @@ function scrollFunction() {
             menuBackground.style.borderBottom = "1px solid rgba(210, 213, 255, 0.15)"
         }
     } else {
+        scrollUpButton.style.bottom = "-80px";
         myPhoto.style.width = "5rem";
         myPhoto.style.marginRight = "20px";
         myPhoto.style.transition = "width .3s linear, margin .3s linear";
@@ -82,6 +85,10 @@ function copyEmail(email) {
     copyPopup.classList.remove("fade-animation");
     void copyPopup.offsetWidth;
     copyPopup.classList.add("fade-animation");
+}
+
+function scrollUp() {
+    window.scrollTo(0, 0);
 }
 
 window.onscroll = () => {

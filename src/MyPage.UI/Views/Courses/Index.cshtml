@@ -19,6 +19,12 @@
 }
 
 <div class="courses-page-external-container">
+    <div class="mini-title">@LanguageResource["CoursesTitle"]
+        @if (LanguageResource["Culture"] == "en_US")
+        {
+            <div class="mini-sub-title-courses">(titles were translated)</div>
+        }
+    </div>
     <div class="courses-page-container">
         @if (isAuthenticated)
         {
