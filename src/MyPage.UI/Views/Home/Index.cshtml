@@ -77,17 +77,17 @@
                 <div class="about-certifications">
                     <a href="https://www.credly.com/earner/earned/badge/5cbc2b5a-1af3-4063-bcd3-daac3ec79ede" target=”_blank”>
                         <p>Azure Fundamentals<br />(AZ-900)</p>
-                        <img src="~/img/az900.png" />
+                        <img src="~/img/az900.webp" loading="lazy" />
                     </a>
                     <a href="https://www.credly.com/earner/earned/badge/c72e321b-57ff-456d-98f0-143ed07bb575" target=”_blank”>
                         <p>Azure Developer Associate<br />(AZ-204)</p>
-                        <img src="~/img/az204.png" />
+                        <img src="~/img/az204.webp" loading="lazy" />
                     </a>
                 </div>
             </div>
             <div class="presentation-buttons second-buttons">
                 <a asp-controller="Projects" asp-action="Index" class="gradient-button second-button">
-                    <img class="projects-icon" src="~/img/projects.svg" />
+                    <img class="projects-icon" src="~/img/projects.svg" loading="lazy" />
                     <div class="inner-button">@LanguageResource["SecondProjectsButton"]</div>
                 </a>
                 <div class="outlined-button second-button curriculum-button" onclick="openCurriculumOptions()">
@@ -112,7 +112,7 @@
                     <div class="timeline-exp-external">
                         <div class="timeline-exp-date">
                             @LanguageResource["Company02Date_01.1"]
-                            <img class="timeline-arrow" src="~/img/line.svg" id="timeline-arrow" />
+                            <img class="timeline-arrow" src="~/img/line.svg" id="timeline-arrow" loading="lazy" />
                             @LanguageResource["Company02Date_01"]
                         </div>
                         <div class="timeline-exp-internal" id="timeline-exp-internal-exp3">
@@ -127,7 +127,7 @@
 
                             <div class="more more-timeline" onclick="seeMoreTimeline('exp3')" id="timeline-seemore-exp3">
                                 <p class="more-text more-text-exp">@LanguageResource["SeeMore"]</p>
-                                <span class="material-symbols-outlined">expand_more</span>
+                                <img class="material-symbols-outlined" src="~/img/expand_more.svg" loading="lazy" />
                             </div>
 
                             <div class="timeline-exp-div timeline-exp-details" id="timeline-techs-exp3">
@@ -142,7 +142,7 @@
                             </div>
                             <div class="more more-timeline timeline-exp-details" onclick="seeLessTimeline('exp3')" id="timeline-seeless-exp3">
                                 <p class="more-text more-text-exp">@LanguageResource["SeeLess"]</p>
-                                <span class="material-symbols-outlined">expand_less</span>
+                                <img class="material-symbols-outlined" src="~/img/expand_less.svg" loading="lazy" />
                             </div>
                         </div>
                     </div>
@@ -150,9 +150,7 @@
                 <div class="timeline-bar company02-bar" id="timeline-bar-exp3"></div>
                 <div class="timeline-company" onclick="window.open('https://labsit.io/','company02')">
                     <span class="timeline-company-arrow company02-arrow"></span>
-                    <span class="material-symbols-outlined company-icon" title="@LanguageResource["Company"]">
-                        work
-                    </span>
+                    <img class="material-symbols-outlined company-icon" src="~/img/work.svg" title="@LanguageResource["Company"]" loading="lazy" />
                     <span title="@LanguageResource["Company"]">Labsit</span>
                 </div>
             </div>
@@ -161,7 +159,7 @@
                 <div class="timeline-exp-external">
                     <div class="timeline-exp-date">
                         @LanguageResource["Company01Date_02"]
-                        <img class="timeline-arrow" src="~/img/line.svg" />
+                        <img class="timeline-arrow" src="~/img/line.svg" loading="lazy" />
                         @LanguageResource["Company01Date_02.1"]
                     </div>
                     <div class="timeline-exp-internal" id="timeline-exp-internal-exp2">
@@ -172,7 +170,7 @@
 
                         <div class="more more-timeline" onclick="seeMoreTimeline('exp2')" id="timeline-seemore-exp2">
                             <p class="more-text more-text-exp">@LanguageResource["SeeMore"]</p>
-                            <span class="material-symbols-outlined">expand_more</span>
+                            <img class="material-symbols-outlined" src="~/img/expand_more.svg" loading="lazy" />
                         </div>
 
                         <div class="timeline-exp-div timeline-exp-details" id="timeline-techs-exp2">
@@ -187,7 +185,7 @@
                         </div>
                         <div class="more more-timeline timeline-exp-details" onclick="seeLessTimeline('exp2')" id="timeline-seeless-exp2">
                             <p class="more-text more-text-exp">@LanguageResource["SeeLess"]</p>
-                            <span class="material-symbols-outlined">expand_less</span>
+                            <img class="material-symbols-outlined" src="~/img/expand_less.svg" loading="lazy" />
                         </div>
                     </div>
                 </div>
@@ -199,7 +197,7 @@
                     <div class="timeline-exp-external">
                         <div class="timeline-exp-date">
                             @LanguageResource["Company01Date_01"]
-                            <img class="timeline-arrow" src="~/img/line.svg" />
+                            <img class="timeline-arrow" src="~/img/line.svg" loading="lazy" />
                             @LanguageResource["Company01Date_01.1"]
                         </div>
                         <div class="timeline-exp-internal" id="timeline-exp-internal-exp1">
@@ -210,7 +208,7 @@
 
                             <div class="more more-timeline" onclick="seeMoreTimeline('exp1')" id="timeline-seemore-exp1">
                                 <p class="more-text more-text-exp">@LanguageResource["SeeMore"]</p>
-                                <span class="material-symbols-outlined">expand_more</span>
+                                <img class="material-symbols-outlined" src="~/img/expand_more.svg" loading="lazy" />
                             </div>
                             <div class="timeline-exp-div timeline-exp-details" id="timeline-techs-exp1">
                             </div>
@@ -222,23 +220,21 @@
                             </div>
                             <div class="more more-timeline timeline-exp-details" onclick="seeLessTimeline('exp1')" id="timeline-seeless-exp1">
                                 <p class="more-text more-text-exp">@LanguageResource["SeeLess"]</p>
-                                <span class="material-symbols-outlined">expand_less</span>
+                                <img class="material-symbols-outlined" src="~/img/expand_less.svg" loading="lazy" />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="timeline-company" onclick="window.open('https://fitbank.com.br/','company01')">
                     <span class="timeline-company-arrow company01-arrow"></span>
-                    <span class="material-symbols-outlined company-icon" title="@LanguageResource["Company"]">
-                        work
-                    </span>
+                    <img class="material-symbols-outlined company-icon" src="~/img/work.svg" title="@LanguageResource["Company"]" loading="lazy" />
                     <span title="@LanguageResource["Company"]">FitBank</span>
                 </div>
                 <div class="timeline-bar company01-bar" id="timeline-bar-exp1"></div>
             </div>
         </div>
         <div class="more" onclick="window.open('https://linkedin.com/in/assisdematheus/','linkedin')" style="z-index: 2">
-            <span class="material-symbols-outlined">more_horiz</span>
+            <img class="material-symbols-outlined" src="~/img/more_horiz.svg" loading="lazy" />
             <p class="more-text">@LanguageResource["BackgroundMore"]</p>
         </div>
     </div>
@@ -255,7 +251,7 @@
             {
                 <div class="medium-card" onclick="window.open('@publication.Url','medium post')">
                     <div class="medium-card-img">
-                        <img src="@publication.ImageUrl" />
+                        <img src="@publication.ImageUrl" loading="lazy" />
                     </div>
                     <div class="medium-card-content">
                         <span class="medium-card-title">@publication.Title</span>
@@ -272,7 +268,7 @@
         @if (Model.PublicationList.Count() > 5)
         {
             <div class="more" onclick="window.open('@Settings.MediumSettings.UserUrl','medium')">
-                <span class="material-symbols-outlined">more_horiz</span>
+                <img class="material-symbols-outlined" src="~/img/more_horiz.svg" loading="lazy" />
                 <p class="more-text">@LanguageResource["MediumMore"]</p>
             </div>
         }
@@ -290,7 +286,7 @@
             }
         </div>
         <a asp-controller="Courses" asp-action="Index" class="more">
-            <span class="material-symbols-outlined">more_horiz</span>
+            <img class="material-symbols-outlined" src="~/img/more_horiz.svg" loading="lazy" />
             <p class="more-text">@LanguageResource["CoursesMore"]</p>
         </a>
     </div>

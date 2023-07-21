@@ -58,27 +58,27 @@
                         <div class="project-links">
                             <div class="project-link" onclick="window.open('@project.Url','github')">
                                 <span>github</span>
-                                <i class="fab fa-github project-link-icon"></i>
+                                <img class="project-link-img project-link-img-invert" src="~/img/github.svg" loading="lazy" />
                             </div>
                             @if (project.CustomProperties.NuGetUrl.IsNotNullAndNotEmpty())
                             {
                                 <div class="project-link" onclick="window.open('@project.CustomProperties.NuGetUrl','nuget')">
                                     <span>nuget</span>
-                                    <img class="project-link-img-nuget" src="~/img/nuget.png" />
+                                    <img class="project-link-img-nuget" src="~/img/nuget.webp" loading="lazy" />
                                 </div>
                             }
                             @if (project.CustomProperties.VideoUrl.IsNotNullAndNotEmpty())
                             {
                                 <div class="project-link" onclick="openVideoModal('@project.CustomProperties.VideoUrl')">
                                     <span>@LanguageResource["VideoText"]</span>
-                                    <i class="far fa-play-circle project-link-icon"></i>
+                                    <img class="project-link-img project-link-img-invert" src="~/img/play.svg" loading="lazy" />
                                 </div>
                             }
                             @if (project.CustomProperties.SwaggerUrl.IsNotNullAndNotEmpty())
                             {
                                 <div class="project-link" onclick="window.open('@project.CustomProperties.SwaggerUrl','github')">
                                     <span>swagger</span>
-                                    <img class="project-link-img" src="~/img/swagger.png" />
+                                    <img class="project-link-img" src="~/img/swagger.png" loading="lazy" />
                                 </div>
                             }
                         </div>

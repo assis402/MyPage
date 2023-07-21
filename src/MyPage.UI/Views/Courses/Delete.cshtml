@@ -7,7 +7,7 @@
     <div class="course-model-container">
         <h2>Delete Course</h2>
         <a asp-controller="Courses" asp-action="Index" class="back-button">
-            <img src="~/img/back.svg" />
+            <img src="~/img/back.svg" loading="lazy" />
         </a>
         <form asp-controller="Courses" asp-action="Delete" method="post" enctype="multipart/form-data" class="form">
             <input type="text" name="Id" value="@Model.Id" hidden />

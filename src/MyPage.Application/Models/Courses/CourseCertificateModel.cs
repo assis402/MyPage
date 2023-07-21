@@ -1,5 +1,4 @@
 ﻿using MyPage.Application.Data.Entities;
-using MyPage.Application.Helpers;
 using MyPage.Application.Models.Enums;
 
 namespace MyPage.Application.Models.Courses

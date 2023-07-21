@@ -1,9 +1,8 @@
-menuSwitch();
+﻿menuSwitch();
 
 function menuSwitch() {
     let menuItems = document.getElementById("menu-items");
     let menuButtonMobile = document.getElementById("menu-button-mobile");
-    let timelineArrow = document.getElementById('timeline-arrow');
 
     if (window.matchMedia("(min-width: 768px)").matches) {
         menuItems.style.display = "flex";
@@ -115,3 +114,15 @@ checkbox.addEventListener('change', (event) => {
         checkbox.value = 'false';
     }
 })
+
+const FontLoad = async (fonts = [], callback = () => { }) => {
+    await fonts;
+    for (const font of fonts) {
+        document.fonts.check(`80px ${font}`)
+            ? document.fonts.load(`80px ${font}`).then(() => { console.log(`Font: ${font} loaded ✔️`) })
+            : console.log(`Font: ${font} not founded.`)
+    }
+    document.fonts.ready.then(() => { console.log("Ready"); callback() })
+}
+
+FontLoad(['Poppins', 'FONT_NOT_FOUNDED'], () => console.log("External function"))

@@ -29,17 +29,17 @@
         @if (isAuthenticated)
         {
             <div class="admin-section">
-                <span>  
-                    <img src="~/img/admin.svg" />
+                <span>
+                    <img src="~/img/admin.svg" loading="lazy" />
                     Admin
                 </span>
                 <span>
                     <a asp-controller="Courses" asp-action="Add" class="simple-button">
-                        <img src="~/img/add.svg" />
+                        <img src="~/img/add.svg" loading="lazy"  />
                         <div class="inner-button">add course</div>
                     </a>
                     <a asp-controller="Courses" asp-action="ClearCache" class="simple-button">
-                        <img src="~/img/clear-cache.svg" />
+                        <img src="~/img/clear-cache.svg" loading="lazy" />
                         <div class="inner-button">clear cache</div>
                     </a>
                 </span>

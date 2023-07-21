@@ -294,6 +294,10 @@
     transition: filter linear .2s;
 }
 
+.project-link-img-invert {
+    filter: grayscale(0.4) invert(.7);
+}
+
 .project-link-svg {
     height: 18px;
     transition: filter linear .2s;
@@ -322,6 +326,10 @@
 
     .project-link:hover .project-link-svg {
         filter: invert(1) !important;
+    }
+
+    .project-link:hover .project-link-img-invert {
+        filter: grayscale(0) invert(1) !important;
     }
 
 @media screen and (max-width: 1430px) {

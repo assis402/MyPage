@@ -10,10 +10,10 @@
         {
             <span class="course-buttons">
                 <a asp-controller="Courses" asp-action="Update" asp-route-id="@Model.Id" class="course-button edit-button">
-                    <img src="~/img/edit-courses.svg" />
+                    <img src="~/img/edit-courses.svg" loading="lazy" />
                 </a>
                 <a asp-controller="Courses" asp-action="Delete" asp-route-id="@Model.Id" class="course-button delete-button">
-                    <img src="~/img/delete.svg" />
+                    <img src="~/img/delete.svg" loading="lazy" />
                 </a>
             </span>
         }
@@ -24,13 +24,13 @@
     <div class="course-title" onclick="window.open('@Model.CourseUrl','platform')">@Model.CurrentTitle</div>
     <div class="course-body">
         <div onclick="window.open('@Model.CourseUrl','platform')">
-            <img src="~/img/platform.svg" alt="platform" /> @Model.Platform
+            <img src="~/img/platform.svg" alt="platform" loading="lazy" /> @Model.Platform
         </div>
         <div onclick="window.open('@Model.InstructorUrl','instructor-page')">
-            <img src="~/img/instructor.svg" alt="instructor" /> @Model.Instructor
+            <img src="~/img/instructor.svg" alt="instructor" loading="lazy" /> @Model.Instructor
         </div>
         <div>
-            <img src="~/img/workload.svg" alt="workload" /> @Model.WorkLoad!.Value.ToString("F1") @LanguageResource["Hours"]
+            <img src="~/img/workload.svg" alt="workload" loading="lazy" /> @Model.WorkLoad!.Value.ToString("F1") @LanguageResource["Hours"]
         </div>
     </div>
     <div class="gradient-bar"></div>
