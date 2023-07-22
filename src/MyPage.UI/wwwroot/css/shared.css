@@ -137,7 +137,7 @@ a {
     padding: 20px;
     z-index: 10000;
     border-bottom: 0px solid rgba(210, 213, 255, 0.3);
-    transition: border-bottom .3s linear, padding .3s linear;
+    transition: border-bottom .3s ease-in-out, padding .3s ease-in-out;
 }
 
 .menu-background {
@@ -152,7 +152,7 @@ a {
     -webkit-backdrop-filter: blur(7px);
     backdrop-filter: blur(7px);
     border-bottom: 0px solid rgba(210, 213, 255, 0.3);
-    transition: border-bottom .2s linear,opacity .2s linear, height .2s ease;
+    transition: border-bottom .2s linear,opacity .2s linear, height .2s ease-in-out;
 }
 
 .menu-items {

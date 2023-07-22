@@ -933,6 +933,7 @@ li:not(:last-child) {
 
 .material-symbols-outlined {
     height: 24px;
+    width: 24px;
     filter: invert(.8);
 }
 
