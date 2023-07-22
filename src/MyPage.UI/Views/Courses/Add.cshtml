@@ -4,11 +4,11 @@
     <div class="course-model-container">
         <h2>Add New Course</h2>
         <a asp-controller="Courses" asp-action="Index" class="back-button">
-            <img src="~/img/back.svg" loading="lazy" />
+            <img src="~/img/back.svg" loading="lazy" alt="back" />
         </a>
         <form asp-controller="Courses" asp-action="Add" method="post" enctype="multipart/form-data" class="form">
             @{
-                await Html.RenderPartialAsync("_CourseForm", new CourseCertificateModel());
+                await Html.RenderPartialAsync("_CourseForm", new CourseCertificateModel() { IsVisible = true });
             }
             <div class="modal-buttons">
                 <a asp-controller="Courses" asp-action="Index" class="outlined-button">cancel</a>

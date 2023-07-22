@@ -8,7 +8,6 @@ namespace MyPage.Application.Models.Courses
         public CourseCertificateModel()
         {
             TitleDictionary = new Dictionary<Language, string>();
-            IsVisible = true;
         }
 
         public CourseCertificateModel(CourseCertificate courseCertificateEntity)

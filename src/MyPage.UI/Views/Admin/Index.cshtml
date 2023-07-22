@@ -12,7 +12,7 @@
         <div class="gradient-bar"></div>
         <div class="admin-first-div">
             <span>
-                <img src="~/img/admin.svg" loading="lazy" />
+                <img src="~/img/admin.svg" loading="lazy" alt="admin" />
                 <h1>Admin Panel</h1>
             </span>
             <h5>*English page only.</h5>
@@ -22,7 +22,7 @@
         @if (!ViewBag.IsAuthenticated)
         {
             <a class="google-button" asp-controller="admin" asp-action="login">
-                <img src="~/img/google.svg" loading="lazy" />
+                <img src="~/img/google.svg" loading="lazy" alt="google" />
                 Login com Google
             </a>
         }
@@ -30,23 +30,23 @@
         {
             <div class="admin-options">
                 <a class="option-button" asp-controller="Courses" asp-action="Index">
-                    <img src="~/img/edit-courses.svg" loading="lazy" />
+                    <img src="~/img/edit-courses.svg" loading="lazy" alt="edit" />
                     manage certificates
                 </a>
                 <a class="option-button" asp-controller="Admin" asp-action="ClearProjectsCache">
-                    <img src="~/img/clear-cache.svg" loading="lazy" />
+                    <img src="~/img/clear-cache.svg" loading="lazy" alt="clear" />
                     clear projects cache
                 </a>
                 <a class="option-button" asp-controller="Admin" asp-action="ClearPublicationsCache">
-                    <img src="~/img/clear-cache.svg" loading="lazy" />
+                    <img src="~/img/clear-cache.svg" loading="lazy" alt="clear" />
                     clear articles cache
                 </a>
                 <a class="option-button" asp-controller="Admin" asp-action="ClearCoursesCache">
-                    <img src="~/img/clear-cache.svg" loading="lazy" />
+                    <img src="~/img/clear-cache.svg" loading="lazy" alt="clear" />
                     clear courses cache
                 </a>
                 <a class="option-button" asp-controller="Admin" asp-action="Logout">
-                    <img src="~/img/logout.svg" loading="lazy" />
+                    <img src="~/img/logout.svg" loading="lazy" alt="clear" />
                     logout
                 </a>
             </div>

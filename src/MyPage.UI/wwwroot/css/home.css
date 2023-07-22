@@ -239,11 +239,13 @@
 
 .about-icon {
     height: 25px;
+    width: 25px;
     filter: invert(.8);
 }
 
 .projects-icon {
     height: 25px;
+    width: 25px;
     filter: invert(.8);
 }
 
@@ -357,6 +359,7 @@
 
     .about-certifications img {
         height: 150px;
+        width: 150px;
     }
 
 @media(max-width: 1200px) {
@@ -447,6 +450,7 @@
 
     .tech-icon {
         height: 60px;
+        width: 60px;
     }
 
     .about-certifications a {
@@ -503,12 +507,12 @@
     max-width: 500px;
     font-weight: 200;
     height: 27px;
-    font-size: 18px;
+    font-size: 19px;
     margin-left: 153px;
 }
 
 .timeline-exp-subtitle {
-    font-size: 14px;
+    font-size: 15px;
     color: #ababab;
     margin-top: 2px;
 }
@@ -518,7 +522,7 @@
     }
 
 .timeline-exp-div {
-    font-size: 14px;
+    font-size: 15px;
     color: #ababab;
 }
 
@@ -884,6 +888,7 @@ li:not(:last-child) {
 
     .course-body img {
         height: 21px;
+        width: 21px;
     }
 
 .more-text {
@@ -917,7 +922,7 @@ li:not(:last-child) {
 
 .more-timeline {
     width: fit-content;
-    padding: 2px 10px;
+    padding: 5px 10px;
     gap: 2px;
 }
 

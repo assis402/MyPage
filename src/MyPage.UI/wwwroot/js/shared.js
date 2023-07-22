@@ -57,17 +57,20 @@ function scrollFunction() {
         menuContainer.style.padding = "0 20px"
         menuBackground.style.opacity = "1";
         myPhoto.style.width = "0"
+        myPhoto.style.height = "0"
         myPhoto.style.marginRight = "5px"
-        myPhoto.style.transition = "width .3s linear, margin .3s linear";
+        myPhoto.style.transition = "height .3s ease, width .3s ease, margin .3s ease";
 
         if (!menuIsOpen) {
             menuBackground.style.borderBottom = "1px solid rgba(210, 213, 255, 0.15)"
         }
     } else {
         scrollUpButton.style.bottom = "-80px";
+        scrollUpButton.style.border = "1px solid #53535a4f";
         myPhoto.style.width = "5rem";
+        myPhoto.style.height = "5rem";
         myPhoto.style.marginRight = "20px";
-        myPhoto.style.transition = "width .3s linear, margin .3s linear";
+        myPhoto.style.transition = "height .3s ease, width .3s ease, margin .3s ease";
         menuContainer.style.padding = "20px";
 
         if (!menuIsOpen) {
@@ -116,3 +119,7 @@ if (checkbox != undefined) {
         }
     })
 }
+
+$(window).load(function () {
+    $(".loader").fadeOut("slow");
+});

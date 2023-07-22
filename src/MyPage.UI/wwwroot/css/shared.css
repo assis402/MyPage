@@ -63,6 +63,16 @@ header {
     z-index: 10000;
 }
 
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background: rgb(0,0,0);
+}
+
 body {
     margin: 0;
     background: #000000;
@@ -103,11 +113,12 @@ a {
 
     .scroll-up-button img {
         height: 33px;
+        width: 33px;
         filter: invert();
     }
 
-    .scroll-up-button:hover {
-        border: 1px solid #a2a3af;
+    .scroll-up-button:active, scroll-up-button:focus {
+        border: 1px solid #a2a3af !important;
     }
 
 .menu {
@@ -141,7 +152,7 @@ a {
     -webkit-backdrop-filter: blur(7px);
     backdrop-filter: blur(7px);
     border-bottom: 0px solid rgba(210, 213, 255, 0.3);
-    transition: border-bottom .3s linear,opacity .3s linear, height .2s ease;
+    transition: border-bottom .2s linear,opacity .2s linear, height .2s ease;
 }
 
 .menu-items {
@@ -232,6 +243,7 @@ a {
 .my-photo {
     border-radius: 100%;
     width: 5rem;
+    height: 5rem;
     margin-right: 20px;
 }
 
@@ -468,6 +480,7 @@ a {
 
 .contact-logo {
     height: 25px;
+    width: 25px;
     filter: invert(0.6);
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -681,20 +694,12 @@ input {
 
 @media (max-width: 768px) {
     .scroll-up-button {
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
     }
 
         .scroll-up-button img {
             height: 25px;
-        }
-
-        .scroll-up-button:hover {
-            border: 1px solid #53535a4f;
-        }
-
-        .scroll-up-button:active {
-            border: 1px solid #a2a3af;
         }
 
     from-scroll::-webkit-scrollbar {

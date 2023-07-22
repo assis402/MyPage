@@ -10,6 +10,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="theme-color" content="#000" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="My professional page (portfolio)">
     <title>Matheus de Assis Developer</title>
     <link rel="preload" href="~/css/site.min.css" as="style" />
     <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
@@ -43,10 +44,10 @@
                         @LanguageResource["ProjectsMenu"]
                     </a>
                     <div class="menu-languages">
-                        <a asp-controller="Language" asp-action="Change" asp-route-culture="en-US" class="language-link">
+                        <a asp-controller="Language" asp-action="Change" asp-route-culture="en-US" class="language-link" aria-label="Change language page to EN-US">
                             <img class="menu-language-flag @(culture == "en_US" ? "menu-language-flag-active" : "")" src="~/img/en-us.svg" loading="lazy" />
                         </a>
-                        <a asp-controller="Language" asp-action="Change" asp-route-culture="pt-BR" class="language-link">
+                        <a asp-controller="Language" asp-action="Change" asp-route-culture="pt-BR" class="language-link" aria-label="Change language page to PT-BR">
                             <img class="menu-language-flag @(culture == "pt_BR" ? "menu-language-flag-active" : "")" id="ptBR-flag" src="~/img/pt-br.svg" loading="lazy" />
                         </a>
                     </div>
@@ -66,17 +67,17 @@
                 </a>
             </div>
             <div class="menu-languages-mobile">
-                <a asp-controller="Language" asp-action="Change" asp-route-culture="en-US" class="language-link">
+                <a asp-controller="Language" asp-action="Change" asp-route-culture="en-US" class="language-link" aria-label="Change language page to EN-US">
                         <img class="menu-language-flag @(culture == "en_US" ? "menu-language-flag-active" : "")" src="~/img/en-us.svg" loading="lazy" />
                 </a>
-                <a asp-controller="Language" asp-action="Change" asp-route-culture="pt-BR" class="language-link">
+                <a asp-controller="Language" asp-action="Change" asp-route-culture="pt-BR" class="language-link" aria-label="Change language page to PT-BR">
                         <img class="menu-language-flag @(culture == "pt_BR" ? "menu-language-flag-active" : "")" src="~/img/pt-br.svg" loading="lazy" />
                 </a>
             </div>
         </div>
         </div>
     </header>
-
+    <div class="loader"></div>
     <div class="body-footer-container">
         @RenderBody()
 
@@ -84,26 +85,26 @@
             var pageName = ViewContext.RouteData.Values["controller"]?.ToString()?.ToLower();
         }
         <div class="scroll-up-button" onclick="scrollUp()" id="scroll-up-button">
-            <img src="~/img/top-arrow.svg" loading="lazy" />
+            <img src="~/img/top-arrow.svg" loading="lazy" alt="top" />
         </div>
         <footer class="contact-external-container @(pageName != "home" ? "secundary-footer" : "")" id="contact-external-container">
             <div class="mini-title">@LanguageResource["Contact"]</div>
             <div class="contact-container">
                 <div class="contact" onclick="window.open('https://github.com/assis402','github')">
-                    <img class="contact-logo" src="~/img/github.svg" loading="lazy" />
+                    <img class="contact-logo" src="~/img/github.svg" loading="lazy" alt="git" />
                     <span>Github</span>
                 </div>
                 <div class="contact" onclick="window.open('https://linkedin.com/in/assisdematheus/','linkedin')">
-                    <img class="contact-logo" src="~/img/linkedin.svg" loading="lazy" />
+                    <img class="contact-logo" src="~/img/linkedin.svg" loading="lazy" alt="linkedin" />
                     <span>Linkedin</span>
                 </div>
                 <div class="contact" onclick="window.open('@Settings.MediumSettings.UserUrl','medium')">
-                    <img class="contact-logo" src="~/img/medium.svg" loading="lazy" />
+                    <img class="contact-logo" src="~/img/medium.svg" loading="lazy" alt="medium" />
                     <span>Medium</span>
                 </div>
                 <div class="contact email" onclick="copyEmail('@LanguageResource["Email"]')">
                     <div class="copy-popup" id="copy-popup">@LanguageResource["Copied"]</div>
-                    <img class="contact-logo" src="~/img/email.svg" loading="lazy" />
+                    <img class="contact-logo" src="~/img/email.svg" loading="lazy" alt="email" />
                     <span>@LanguageResource["Email"]</span>
                 </div>
             </div>
@@ -111,4 +112,5 @@
     </div>
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="~/js/site.min.js" asp-append-version="true"></script>

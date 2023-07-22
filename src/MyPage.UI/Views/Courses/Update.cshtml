@@ -6,7 +6,7 @@
         <div class="course-model-container">
             <h2>Update Course</h2>
             <a asp-controller="Courses" asp-action="Index" class="back-button">
-                <img src="~/img/back.svg" loading="lazy" />
+                <img src="~/img/back.svg" loading="lazy" alt="back" />
             </a>
             <form asp-controller="Courses" asp-action="Update" method="post" enctype="multipart/form-data" class="form">
                 <input type="text" name="Id" value="@Model.Id" hidden />
