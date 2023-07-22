@@ -1,19 +1,23 @@
 ﻿menuSwitch();
 
+const Menu = document.querySelector('.menu-btn');
+
+Menu.addEventListener('click', () => toggleMenu())
+
+function toggleMenu() {
+    Menu.classList.toggle('ativo');
+}
 function menuSwitch() {
     let menuItems = document.getElementById("menu-items");
-    let menuButtonMobile = document.getElementById("menu-button-mobile");
 
     if (window.matchMedia("(min-width: 768px)").matches) {
         menuItems.style.display = "flex";
-        menuButtonMobile.style.display = "none";
 
         menuItems.style.flexDirection = "row";
         menuItems.style.alignItems = "center";
         menuItems.style.justifyContent = "center";
     } else {
         menuItems.style.display = "none";
-        menuButtonMobile.style.display = "block";
     }
 }
 
