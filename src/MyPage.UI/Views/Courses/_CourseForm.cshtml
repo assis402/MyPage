@@ -55,5 +55,5 @@
 </div>
 <div class="form-group">
     <label class="form-label checkbox-label">Visible on the course page?</label>
-    <input id="checkbox" class="form-field checkbox" placeholder="URL" type="checkbox" name="IsVisible" checked="@Model.IsVisible" />
+    <input id="checkbox" class="form-field checkbox" placeholder="URL" type="checkbox" name="IsVisible" checked="@Model.IsVisible.ToString()" value="@Model.IsVisible.ToString()" />
 </div>
