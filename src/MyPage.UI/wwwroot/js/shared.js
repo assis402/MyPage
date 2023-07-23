@@ -94,7 +94,18 @@ function copyEmail(email) {
 }
 
 function scrollUp() {
-    window.scrollTo(0, 0);
+    //if ('scrollRestoration' in history) {
+    //    history.scrollRestoration = 'manual';
+    //}
+    //window.scrollTo(0, 0);
+    ////window.pageYOffset = 0;
+    //document.body.scrollTop = document.documentElement.scrollTop = 0;
+    $("html, body").animate({ scrollTop: "0px" }, 300);
+
+    let button = document.getElementById("scroll-up-button");
+    button.classList.remove("zoom-animation");
+    void button.offsetWidth;
+    button.classList.add("zoom-animation");
 }
 
 window.onscroll = () => {

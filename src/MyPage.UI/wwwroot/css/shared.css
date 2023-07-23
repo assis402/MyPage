@@ -117,10 +117,6 @@ a {
         filter: invert();
     }
 
-    .scroll-up-button:active, scroll-up-button:focus {
-        border: 1px solid #a2a3af !important;
-    }
-
 .menu-btn {
     cursor: pointer;
     display: none;
@@ -469,6 +465,44 @@ a {
 
     100% {
         opacity: 0;
+    }
+}
+
+.zoom-animation {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: .4s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    animation-name: zoom;
+    animation-duration: .4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+}
+
+@keyframes zoom {
+    0% {
+        border: 1px solid #53535a4f;
+        transform: scale(1.0);
+    }
+
+    40% {
+        border: 1px solid #efefff8c;
+        transform: scale(1.2);
+    }
+
+    50% {
+        border: 1px solid #efefff8c;
+        transform: scale(1.2);
+    }
+
+    60% {
+        border: 1px solid #efefff8c;
+        transform: scale(1.2);
+    }
+
+    100% {
+        border: 1px solid #53535a4f;
+        transform: scale(1.0);
     }
 }
 
