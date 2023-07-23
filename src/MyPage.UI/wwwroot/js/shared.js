@@ -63,7 +63,7 @@ function scrollFunction() {
         myPhoto.style.width = "0"
         myPhoto.style.height = "0"
         myPhoto.style.marginRight = "5px"
-        myPhoto.style.transition = "height .3s ease-in-out, width .3s ease-in-out, margin .3s ease-in-out";
+        myPhoto.style.transition = "height .2s ease-in-out, width .2s ease-in-out, margin .2s ease-in-out";
 
         if (!menuIsOpen) {
             menuBackground.style.borderBottom = "1px solid rgba(210, 213, 255, 0.15)"
@@ -74,7 +74,7 @@ function scrollFunction() {
         myPhoto.style.width = "5rem";
         myPhoto.style.height = "5rem";
         myPhoto.style.marginRight = "20px";
-        myPhoto.style.transition = "height .3s ease-in-out, width .3s ease-in-out, margin .3s ease-in-out";
+        myPhoto.style.transition = "height .2s ease-in-out, width .2s ease-in-out, margin .2s ease-in-out";
         menuContainer.style.padding = "20px";
 
         if (!menuIsOpen) {
